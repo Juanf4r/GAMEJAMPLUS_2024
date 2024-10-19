@@ -8,6 +8,8 @@ TagManager:
   - Meat
   - PowerUPTP
   - PowerUPVelocity
+  - PowerUPAttack
+  - PowerUp
   layers:
   - Default
   - TransparentFX

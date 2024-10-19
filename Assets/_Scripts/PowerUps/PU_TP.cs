@@ -6,8 +6,8 @@ public class PU_TP : MonoBehaviour
 {
     public static PU_TP Instance;
 
-    [SerializeField] private GameObject refPlayer1;
-    [SerializeField] private GameObject refPlayer2;
+    private GameObject refPlayer1;
+    private GameObject refPlayer2;
 
     private void Awake()
     {
@@ -19,22 +19,34 @@ public class PU_TP : MonoBehaviour
         {
             Instance = this;
         }
+
+        refPlayer1 = GameObject.Find("Player1");
+        refPlayer2 = GameObject.Find("Player2");
+
+        if (refPlayer1 == null || refPlayer2 == null)
+        {
+            Debug.LogError("Player1 o Player2 no se encontraron en la escena.");
+        }
     }
 
     public void teleportP1()
     {
-        Vector3 tempPosition = refPlayer1.transform.localPosition;
-        refPlayer1.transform.localPosition = refPlayer2.transform.localPosition;
-        refPlayer2.transform.localPosition = tempPosition;
-        //Destroy(gameObject);
+        if (refPlayer1 != null && refPlayer2 != null)
+        {
+            Vector3 tempPosition = refPlayer1.transform.localPosition;
+            refPlayer1.transform.localPosition = refPlayer2.transform.localPosition;
+            refPlayer2.transform.localPosition = tempPosition;
+        }
     }
 
     public void teleportP2()
     {
-        Vector3 tempPosition = refPlayer2.transform.localPosition;
-        refPlayer2.transform.localPosition = refPlayer1.transform.localPosition;
-        refPlayer1.transform.localPosition = tempPosition;
-        //Destroy(gameObject);
+        if (refPlayer1 != null && refPlayer2 != null)
+        {
+            Vector3 tempPosition = refPlayer2.transform.localPosition;
+            refPlayer2.transform.localPosition = refPlayer1.transform.localPosition;
+            refPlayer1.transform.localPosition = tempPosition;
+        }
     }
 
 }

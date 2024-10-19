@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -26,6 +27,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject refPlayer2;
     [SerializeField] private GameObject spawn1;
     [SerializeField] private GameObject spawn2;
+
+    [Header("PowerUps")]
+    [SerializeField] private GameObject tpUP;   
+    [SerializeField] private GameObject velUP;  
+    [SerializeField] private GameObject attUP;
+    [SerializeField] private GameObject[] spawnPowerUP;
+    [SerializeField] private GameObject vacio;
 
     private void Awake()
     {
@@ -65,21 +73,22 @@ public class GameManager : MonoBehaviour
     }
     private void GanarJuego()
     {
+
         if (contadorJugador1 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
             textGanador.gameObject.SetActive(true);
             PanelGanador.SetActive(true);
-            textGanador.text = "Gano el juagdor 1";
+            textGanador.text = "Ganó el jugador 1";
             Time.timeScale = 0;
         }
-        else if (contadorJugador2 >= 3) 
+        else if (contadorJugador2 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
             textGanador.gameObject.SetActive(true);
-            textGanador.text = "Gano el juagdor 2";
+            textGanador.text = "Ganó el jugador 2";
             Time.timeScale = 0;
         }
         else
@@ -87,30 +96,52 @@ public class GameManager : MonoBehaviour
             LocalizarCarne();
             Iniciar();
         }
-
     }
+
     private void LocalizarCarne()
     {
-        int randomIndex = Random.Range(0,3);
-        //Debug.Log(randomIndex);
+        int randomIndex = Random.Range(0, spawnCarne.Length);
         carne.transform.localPosition = spawnCarne[randomIndex].transform.localPosition;
     }
+
 
     private void Iniciar()
     {
         refPlayer1.transform.localPosition = spawn1.transform.localPosition;
         refPlayer2.transform.localPosition = spawn2.transform.localPosition;
         cronometro = 0f;
+        PowerUP();
     }
     private void FixedUpdate()
     {
         cronometro = cronometro + Time.deltaTime;
         textCronometro.text = cronometro.ToString();
-        //Debug.Log(cronometro);
         if (cronometro >= 30)
         {
             EndForTime();
         }
     }
-    
+
+    private void PowerUP()
+    {
+        foreach (GameObject spawnPoint in spawnPowerUP)
+        {
+            int random = Random.Range(0, 3);
+            Debug.Log("entro");
+
+            switch (random)
+            {
+                case 0:
+                    Instantiate(tpUP, spawnPoint.transform.position, Quaternion.identity);
+                    break;
+                case 1:
+                    Instantiate(velUP, spawnPoint.transform.position, Quaternion.identity);
+                    break;
+                case 2:
+                    Instantiate(attUP, spawnPoint.transform.position, Quaternion.identity);
+                    break;
+            }
+        }
+    }
+
 }

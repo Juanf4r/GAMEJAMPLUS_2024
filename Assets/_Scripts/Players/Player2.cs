@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,7 +17,8 @@ public class Player2 : MonoBehaviour
     [SerializeField] private float speed = 1f;
     [SerializeField] private float groundDist;
     [SerializeField] private LayerMask terrainLayer;
-    
+    public float timeStu = 4;
+
     [Header("Animations")] 
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -125,6 +127,12 @@ public class Player2 : MonoBehaviour
             uIPlayer2_Vel.SetActive(true);
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("PowerUPAttack") && !tp && !moreVel)
+        {
+            moreAtt = true;
+            uIPlayer2_Att.SetActive(true);
+            Destroy(other.gameObject);
+        }
     }
 
     private void powerUP()
@@ -144,8 +152,9 @@ public class Player2 : MonoBehaviour
         }
         else if (moreAtt)
         {
-            //llamar funcion
-            //actualizar UI
+            timerPowerUP = 0f;
+            timeStu = 10f;
+            uIPlayer2_Att.SetActive(false);
             moreAtt = false;
         }
     }

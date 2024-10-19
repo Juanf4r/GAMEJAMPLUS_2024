@@ -17,6 +17,7 @@ public class Player1 : MonoBehaviour
     public float speed = 1f;
     [SerializeField] private float groundDist;
     [SerializeField] private LayerMask terrainLayer;
+    public float timeStu = 4;
     
     [Header("Animations")] 
     [SerializeField] private Animator playerAnimator;
@@ -96,6 +97,7 @@ public class Player1 : MonoBehaviour
         if (timerPowerUP >= 6)
         {
             speed = 2.5f;
+            timeStu = 4f;
         }
     }
 
@@ -134,6 +136,12 @@ public class Player1 : MonoBehaviour
             uIPlayer1_Vel.SetActive(true);
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("PowerUPAttack") && !tp && !moreVel)
+        {
+            moreAtt = true;
+            uIPlayer1_Att.SetActive(true);
+            Destroy(other.gameObject);
+        }
     }
 
     private void powerUP()
@@ -153,8 +161,9 @@ public class Player1 : MonoBehaviour
         }
         else if (moreAtt)
         {
-            //llamar funcion
-            //actualizar UI
+            timerPowerUP = 0f;
+            timeStu = 10f;
+            uIPlayer1_Att.SetActive(false);
             moreAtt = false;
         }
     }
