@@ -21,6 +21,15 @@ public class Player1 : MonoBehaviour
     [Header("Animations")] 
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [Header("Power UP")]
+    private bool tp = false;
+    [SerializeField] private GameObject uIPlayer1_TP;
+    private bool moreVel = false;
+    [SerializeField] private GameObject uIPlayer1_Vel;
+    private bool moreAtt = false;
+    [SerializeField] private GameObject uIPlayer1_Att;
+    private float timerPowerUP;
     #endregion
 
     private void Awake()
@@ -30,8 +39,11 @@ public class Player1 : MonoBehaviour
         _inputPlayers = new InputPlayers();
         _inputPlayers.Players.Movement1.Enable();
         _inputPlayers.Players.Punch1.Enable();
+        _inputPlayers.Players.PowerUp1.Enable();
 
         _inputPlayers.Players.Punch1.performed += Punch1;
+        _inputPlayers.Players.PowerUp1.performed += PowerUps;   
+
     }
     
     #region Enable & Disable
@@ -79,6 +91,8 @@ public class Player1 : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
+        timerPowerUP = timerPowerUP + Time.deltaTime;
     }
 
     private void Punch1(InputAction.CallbackContext context)
@@ -88,7 +102,14 @@ public class Player1 : MonoBehaviour
             Debug.Log("Golpeo el Jugador 1");
         }
     }
-    
+    private void PowerUps(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            powerUP();
+        }
+    }
+
     //private void Powe
 
     private void OnTriggerEnter(Collider other)
@@ -97,14 +118,47 @@ public class Player1 : MonoBehaviour
         {
             GameManager.Instance.GanarRondaJugador1();
         }
-        else if (other.CompareTag("RandomBox"))
-        {
-            
-        }
-
         else if (other.CompareTag("PowerUPTP"))
         {
+            tp = true;
+            uIPlayer1_TP.SetActive(true);
+            Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("PowerUPVelocity"))
+        {
+            moreVel = true;
+            uIPlayer1_Vel.SetActive(true);
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void powerUP()
+    {
+        if (tp)
+        {
             PU_TP.Instance.teleportP1();
+            uIPlayer1_TP.SetActive(false);
+            tp = false;
+        }
+        else if (moreVel)
+        {
+            timerPowerUP = 0f;
+            if (timerPowerUP <= 6f)
+            {
+                PU_Velocity.Instance.moreVelocity(speed);
+            }
+            else
+            {
+                speed = 1f;
+            }
+            uIPlayer1_Vel.SetActive(false);
+            moreVel = false;
+        }
+        else if (moreAtt)
+        {
+            //llamar funcion
+            //actualizar UI
+            moreAtt = false;
         }
     }
 }

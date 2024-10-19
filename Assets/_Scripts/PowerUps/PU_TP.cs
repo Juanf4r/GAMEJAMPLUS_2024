@@ -26,7 +26,7 @@ public class PU_TP : MonoBehaviour
         Vector3 tempPosition = refPlayer1.transform.localPosition;
         refPlayer1.transform.localPosition = refPlayer2.transform.localPosition;
         refPlayer2.transform.localPosition = tempPosition;
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     public void teleportP2()
@@ -34,7 +34,7 @@ public class PU_TP : MonoBehaviour
         Vector3 tempPosition = refPlayer2.transform.localPosition;
         refPlayer2.transform.localPosition = refPlayer1.transform.localPosition;
         refPlayer1.transform.localPosition = tempPosition;
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
 }

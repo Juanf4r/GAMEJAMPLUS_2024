@@ -20,6 +20,14 @@ public class Player2 : MonoBehaviour
     [Header("Animations")] 
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [Header("Power UP")]
+    private bool tp = false;
+    [SerializeField] private GameObject uIPlayer2_TP;
+    private bool moreVel = false;
+    [SerializeField] private GameObject uIPlayer2_Vel;
+    private bool moreAtt = false;
+    [SerializeField] private GameObject uIPlayer2_Att;
     #endregion
 
     private void Awake()
@@ -101,7 +109,30 @@ public class Player2 : MonoBehaviour
         }
         else if (other.CompareTag("PowerUPTP"))
         {
-            PU_TP.Instance.teleportP2();
+            tp = true;
+            uIPlayer2_TP.SetActive(true);
+        }
+    }
+
+    private void powerUP()
+    {
+        if (tp)
+        {
+            PU_TP.Instance.teleportP1();
+            uIPlayer2_TP.SetActive(false);
+            tp = false;
+        }
+        else if (moreVel)
+        {
+            //lamar funcion
+            //actualizar UI
+            moreVel = false;
+        }
+        else if (moreAtt)
+        {
+            //llamar funcion
+            //actualizar UI
+            moreAtt = false;
         }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - RandomBox
   - Meat
   - PowerUPTP
+  - PowerUPVelocity
   layers:
   - Default
   - TransparentFX
