@@ -355,7 +355,6 @@ GameObject:
   m_Component:
   - component: {fileID: 471535545}
   - component: {fileID: 471535544}
-  - component: {fileID: 471535543}
   - component: {fileID: 471535542}
   m_Layer: 0
   m_Name: SecondCamera
@@ -408,14 +407,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &471535543
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471535541}
-  m_Enabled: 1
 --- !u!20 &471535544
 Camera:
   m_ObjectHideFlags: 0
