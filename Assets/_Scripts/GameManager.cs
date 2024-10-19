@@ -1,7 +1,6 @@
-using System;
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,24 +16,24 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] spawnCarne;
     [SerializeField] private GameObject carne;
 
-    [Header("Comtador")]
+    [Header("Contador")]
     private int contadorJugador1 = 0;
     private int contadorJugador2 = 0;
     private float cronometro;
 
-    [Header("referencias")]
+    [Header("Referencias")]
     [SerializeField] private GameObject refPlayer1;
     [SerializeField] private GameObject refPlayer2;
     [SerializeField] private GameObject spawn1;
     [SerializeField] private GameObject spawn2;
 
     [Header("PowerUps")]
-    [SerializeField] private GameObject tpUP;   
-    [SerializeField] private GameObject velUP;  
+    [SerializeField] private GameObject tpUP;
+    [SerializeField] private GameObject velUP;
     [SerializeField] private GameObject attUP;
     [SerializeField] private GameObject[] spawnPowerUP;
-    [SerializeField] private GameObject[] objects;
-    [SerializeField] private GameObject vacio;
+
+    private List<GameObject> powerUpInstances = new List<GameObject>();
 
     private void Awake()
     {
@@ -47,7 +46,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-    
+
     private void Start()
     {
         Iniciar();
@@ -62,26 +61,30 @@ public class GameManager : MonoBehaviour
         textJugador1.text = contadorJugador1.ToString();
         GanarJuego();
     }
+
     public void GanarRondaJugador2()
     {
         contadorJugador2 += 1;
         textJugador2.text = contadorJugador2.ToString();
         GanarJuego();
     }
+
     private void EndForTime()
     {
         GanarJuego();
     }
+
     private void GanarJuego()
     {
 
+        LimpiarPowerUP();
         if (contadorJugador1 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
             textGanador.gameObject.SetActive(true);
             PanelGanador.SetActive(true);
-            textGanador.text = "Ganó el jugador 1";
+            textGanador.text = "Gano el jugador 1";
             Time.timeScale = 0;
         }
         else if (contadorJugador2 >= 3)
@@ -89,14 +92,14 @@ public class GameManager : MonoBehaviour
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
             textGanador.gameObject.SetActive(true);
-            textGanador.text = "Ganó el jugador 2";
+            textGanador.text = "Gano el jugador 2";
             Time.timeScale = 0;
         }
         else
         {
             LocalizarCarne();
             Iniciar();
-            
+
         }
     }
 
@@ -105,7 +108,6 @@ public class GameManager : MonoBehaviour
         int randomIndex = Random.Range(0, spawnCarne.Length);
         carne.transform.localPosition = spawnCarne[randomIndex].transform.localPosition;
     }
-
 
     private void Iniciar()
     {
@@ -116,10 +118,11 @@ public class GameManager : MonoBehaviour
         Player1.Instance.restart();
         Player2.Instance.restart();
     }
+
     private void FixedUpdate()
     {
-        cronometro = cronometro + Time.deltaTime;
-        textCronometro.text = cronometro.ToString();
+        cronometro += Time.deltaTime;
+        textCronometro.text = cronometro.ToString("F2"); 
         if (cronometro >= 30)
         {
             EndForTime();
@@ -132,19 +135,38 @@ public class GameManager : MonoBehaviour
         {
             int random = Random.Range(0, 3);
 
+            GameObject powerUpToSpawn = null;
+
             switch (random)
             {
                 case 0:
-                    Instantiate(tpUP, spawnPoint.transform.position, Quaternion.identity);
+                    powerUpToSpawn = tpUP;
                     break;
                 case 1:
-                    Instantiate(velUP, spawnPoint.transform.position, Quaternion.identity);
+                    powerUpToSpawn = velUP;
                     break;
                 case 2:
-                    Instantiate(attUP, spawnPoint.transform.position, Quaternion.identity);
+                    powerUpToSpawn = attUP;
                     break;
+            }
+
+            if (powerUpToSpawn != null)
+            {
+                GameObject powerUpInstance = Instantiate(powerUpToSpawn, spawnPoint.transform.position, Quaternion.identity);
+                powerUpInstances.Add(powerUpInstance); 
             }
         }
     }
 
+    private void LimpiarPowerUP()
+    {
+        foreach (GameObject powerUp in powerUpInstances)
+        {
+            if (powerUp != null)
+            {
+                Destroy(powerUp);
+            }
+        }
+        powerUpInstances.Clear();
+    }
 }
