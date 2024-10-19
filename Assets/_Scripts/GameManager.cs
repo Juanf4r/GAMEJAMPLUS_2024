@@ -1,34 +1,40 @@
 using TMPro;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [SerializeField] private TextMeshPro panelJugador1;
-    [SerializeField] private TextMeshPro panelJugador2;
-    [SerializeField] private TextMeshPro panelGanador;
-    [SerializeField] private TextMeshPro panelCronometro;
+
+    [SerializeField] private TextMeshProUGUI textJugador1;
+    [SerializeField] private TextMeshProUGUI textJugador2;
+    [SerializeField] private TextMeshProUGUI textCronometro;
+    [SerializeField] private TextMeshProUGUI textGanador;
+    [SerializeField] private GameObject PanelGanador;
+
     [SerializeField] private GameObject[] spawnCarne;
     [SerializeField] private GameObject carne;
-    public int contadorJugador1 = 0;
-    public int contadorJugador2 = 0;
+
+    private int contadorJugador1 = 0;
+    private int contadorJugador2 = 0;
     private float cronometro;
 
-    [SerializeField] private GameManager refPlayer1;
-    [SerializeField] private GameManager refPlayer2;
+    [SerializeField] private GameObject refPlayer1;
+    [SerializeField] private GameObject refPlayer2;
     [SerializeField] private GameObject spawn1;
     [SerializeField] private GameObject spawn2;
 
     public void GanarRondaJugador1()
     {
         contadorJugador1 += 1;
-        panelJugador1.text = contadorJugador1.ToString();
+        textJugador1.text = contadorJugador1.ToString();
         GanarJuego();
     }
     public void GanarJugador2()
     {
         contadorJugador2 += 1;
-        panelJugador2.text = contadorJugador2.ToString();
+        textJugador2.text = contadorJugador2.ToString();
         GanarJuego();
     }
     private void EndForTime()
@@ -39,16 +45,19 @@ public class GameManager : MonoBehaviour
     {
         if (contadorJugador1 >= 3)
         {
-            panelJugador1.gameObject.SetActive(false);
-            panelJugador2.gameObject.SetActive(false);
-            panelGanador.text = "Gano el juagdor 1";
+            textJugador1.gameObject.SetActive(false);
+            textJugador2.gameObject.SetActive(false);
+            textGanador.gameObject.SetActive(true);
+            PanelGanador.SetActive(true);
+            textGanador.text = "Gano el juagdor 1";
             Time.timeScale = 0;
         }
         else if (contadorJugador2 >= 3) 
         {
-            panelJugador1.gameObject.SetActive(false);
-            panelJugador2.gameObject.SetActive(false);
-            panelGanador.text = "Gano el juagdor 2";
+            textJugador1.gameObject.SetActive(false);
+            textJugador2.gameObject.SetActive(false);
+            textGanador.gameObject.SetActive(true);
+            textGanador.text = "Gano el juagdor 2";
             Time.timeScale = 0;
         }
         else
@@ -60,7 +69,8 @@ public class GameManager : MonoBehaviour
     }
     private void LocalizarCarne()
     {
-        int randomIndex = Random.Range(1,10);
+        int randomIndex = Random.Range(0,3);
+        //Debug.Log(randomIndex);
         carne.transform.localPosition = spawnCarne[randomIndex].transform.localPosition;
     }
 
@@ -73,12 +83,18 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         cronometro = cronometro + Time.deltaTime;
-        panelCronometro.text = cronometro.ToString();
+        textCronometro.text = cronometro.ToString();
         //Debug.Log(cronometro);
         if (cronometro >= 30)
         {
             EndForTime();
         }
     }
-
+    private void Start()
+    {
+        iniciar();
+        LocalizarCarne();
+        textGanador.gameObject.SetActive(false);
+        PanelGanador.SetActive(false);
+    }
 }
