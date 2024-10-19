@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +23,26 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject refPlayer2;
     [SerializeField] private GameObject spawn1;
     [SerializeField] private GameObject spawn2;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    
+    private void Start()
+    {
+        Iniciar();
+        LocalizarCarne();
+        textGanador.gameObject.SetActive(false);
+        PanelGanador.SetActive(false);
+    }
 
     public void GanarRondaJugador1()
     {
@@ -63,7 +82,7 @@ public class GameManager : MonoBehaviour
         else
         {
             LocalizarCarne();
-            iniciar();
+            Iniciar();
         }
 
     }
@@ -74,7 +93,7 @@ public class GameManager : MonoBehaviour
         carne.transform.localPosition = spawnCarne[randomIndex].transform.localPosition;
     }
 
-    private void iniciar()
+    private void Iniciar()
     {
         refPlayer1.transform.localPosition = spawn1.transform.localPosition;
         refPlayer2.transform.localPosition = spawn2.transform.localPosition;
@@ -90,11 +109,5 @@ public class GameManager : MonoBehaviour
             EndForTime();
         }
     }
-    private void Start()
-    {
-        iniciar();
-        LocalizarCarne();
-        textGanador.gameObject.SetActive(false);
-        PanelGanador.SetActive(false);
-    }
+    
 }
