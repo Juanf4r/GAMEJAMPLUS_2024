@@ -1,5 +1,5 @@
 {
-    "name": "Players",
+    "name": "InputPlayers",
     "maps": [
         {
             "name": "Players",
@@ -36,6 +36,24 @@
                     "name": "Punch2",
                     "type": "Button",
                     "id": "8097b1a1-6760-42ec-8ad9-103f47142c7e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PowerUp1",
+                    "type": "Button",
+                    "id": "02aa6f82-8c0a-452c-8c54-60ed2951379d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PowerUp2",
+                    "type": "Button",
+                    "id": "58bc782b-24cb-4a81-80b4-2d2ec7a7c3ba",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -172,6 +190,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Punch2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41a0941b-9848-4cf3-a1cc-2d33d0d24af2",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PowerUp1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "453af183-3368-4c99-a034-a940fce0c123",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PowerUp2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -62,6 +62,24 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PowerUp1"",
+                    ""type"": ""Button"",
+                    ""id"": ""02aa6f82-8c0a-452c-8c54-60ed2951379d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PowerUp2"",
+                    ""type"": ""Button"",
+                    ""id"": ""58bc782b-24cb-4a81-80b4-2d2ec7a7c3ba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +214,28 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
                     ""action"": ""Punch2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""41a0941b-9848-4cf3-a1cc-2d33d0d24af2"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PowerUp1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""453af183-3368-4c99-a034-a940fce0c123"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PowerUp2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -208,6 +248,8 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
         m_Players_Movement2 = m_Players.FindAction("Movement2", throwIfNotFound: true);
         m_Players_Punch1 = m_Players.FindAction("Punch1", throwIfNotFound: true);
         m_Players_Punch2 = m_Players.FindAction("Punch2", throwIfNotFound: true);
+        m_Players_PowerUp1 = m_Players.FindAction("PowerUp1", throwIfNotFound: true);
+        m_Players_PowerUp2 = m_Players.FindAction("PowerUp2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,6 +315,8 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
     private readonly InputAction m_Players_Movement2;
     private readonly InputAction m_Players_Punch1;
     private readonly InputAction m_Players_Punch2;
+    private readonly InputAction m_Players_PowerUp1;
+    private readonly InputAction m_Players_PowerUp2;
     public struct PlayersActions
     {
         private @InputPlayers m_Wrapper;
@@ -281,6 +325,8 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
         public InputAction @Movement2 => m_Wrapper.m_Players_Movement2;
         public InputAction @Punch1 => m_Wrapper.m_Players_Punch1;
         public InputAction @Punch2 => m_Wrapper.m_Players_Punch2;
+        public InputAction @PowerUp1 => m_Wrapper.m_Players_PowerUp1;
+        public InputAction @PowerUp2 => m_Wrapper.m_Players_PowerUp2;
         public InputActionMap Get() { return m_Wrapper.m_Players; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -302,6 +348,12 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
             @Punch2.started += instance.OnPunch2;
             @Punch2.performed += instance.OnPunch2;
             @Punch2.canceled += instance.OnPunch2;
+            @PowerUp1.started += instance.OnPowerUp1;
+            @PowerUp1.performed += instance.OnPowerUp1;
+            @PowerUp1.canceled += instance.OnPowerUp1;
+            @PowerUp2.started += instance.OnPowerUp2;
+            @PowerUp2.performed += instance.OnPowerUp2;
+            @PowerUp2.canceled += instance.OnPowerUp2;
         }
 
         private void UnregisterCallbacks(IPlayersActions instance)
@@ -318,6 +370,12 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
             @Punch2.started -= instance.OnPunch2;
             @Punch2.performed -= instance.OnPunch2;
             @Punch2.canceled -= instance.OnPunch2;
+            @PowerUp1.started -= instance.OnPowerUp1;
+            @PowerUp1.performed -= instance.OnPowerUp1;
+            @PowerUp1.canceled -= instance.OnPowerUp1;
+            @PowerUp2.started -= instance.OnPowerUp2;
+            @PowerUp2.performed -= instance.OnPowerUp2;
+            @PowerUp2.canceled -= instance.OnPowerUp2;
         }
 
         public void RemoveCallbacks(IPlayersActions instance)
@@ -341,5 +399,7 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
         void OnMovement2(InputAction.CallbackContext context);
         void OnPunch1(InputAction.CallbackContext context);
         void OnPunch2(InputAction.CallbackContext context);
+        void OnPowerUp1(InputAction.CallbackContext context);
+        void OnPowerUp2(InputAction.CallbackContext context);
     }
 }

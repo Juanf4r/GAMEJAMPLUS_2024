@@ -85,7 +85,7 @@ public class Player1 : MonoBehaviour
     {
         if (context.performed)
         {
-            //Accion de golpear
+            Debug.Log("Golpeo el Jugador 1");
         }
     }
 
