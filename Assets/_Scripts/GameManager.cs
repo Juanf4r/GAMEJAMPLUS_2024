@@ -5,20 +5,23 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI textJugador1;
     [SerializeField] private TextMeshProUGUI textJugador2;
     [SerializeField] private TextMeshProUGUI textCronometro;
     [SerializeField] private TextMeshProUGUI textGanador;
     [SerializeField] private GameObject PanelGanador;
 
+    [Header("Carnes")]
     [SerializeField] private GameObject[] spawnCarne;
     [SerializeField] private GameObject carne;
 
+    [Header("Comtador")]
     private int contadorJugador1 = 0;
     private int contadorJugador2 = 0;
     private float cronometro;
 
+    [Header("referencias")]
     [SerializeField] private GameObject refPlayer1;
     [SerializeField] private GameObject refPlayer2;
     [SerializeField] private GameObject spawn1;
@@ -50,7 +53,7 @@ public class GameManager : MonoBehaviour
         textJugador1.text = contadorJugador1.ToString();
         GanarJuego();
     }
-    public void GanarJugador2()
+    public void GanarRondaJugador2()
     {
         contadorJugador2 += 1;
         textJugador2.text = contadorJugador2.ToString();

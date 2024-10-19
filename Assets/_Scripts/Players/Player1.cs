@@ -93,15 +93,13 @@ public class Player1 : MonoBehaviour
     {
         if (other.CompareTag("Meat"))
         {
-
+            GameManager.Instance.GanarRondaJugador1();
         }
-        
-        if (other.CompareTag("Player2"))
+        else if (other.CompareTag("Player2"))
         {
             
         }
-        
-        if (other.CompareTag("RandomBox"))
+        else if (other.CompareTag("RandomBox"))
         {
             
         }
