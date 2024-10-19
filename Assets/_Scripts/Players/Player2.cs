@@ -99,10 +99,5 @@ public class Player2 : MonoBehaviour
         {
             
         }
-        
-        if (other.CompareTag("RandomBox"))
-        {
-            
-        }
     }
 }

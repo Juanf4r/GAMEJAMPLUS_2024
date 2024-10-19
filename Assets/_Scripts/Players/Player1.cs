@@ -88,6 +88,8 @@ public class Player1 : MonoBehaviour
             Debug.Log("Golpeo el Jugador 1");
         }
     }
+    
+    //private void Powe
 
     private void OnTriggerEnter(Collider other)
     {
@@ -102,6 +104,11 @@ public class Player1 : MonoBehaviour
         }
         
         if (other.CompareTag("RandomBox"))
+        {
+            
+        }
+
+        if (other.CompareTag("PowerUPTP"))
         {
             
         }
