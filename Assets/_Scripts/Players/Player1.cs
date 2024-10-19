@@ -93,7 +93,7 @@ public class Player1 : MonoBehaviour
     {
         if (other.CompareTag("Meat"))
         {
-            
+
         }
         
         if (other.CompareTag("Player2"))
