@@ -97,22 +97,14 @@ public class Player1 : MonoBehaviour
         {
             GameManager.Instance.GanarRondaJugador1();
         }
-        else if (other.CompareTag("Player2"))
-        {
-            
-        }
         else if (other.CompareTag("RandomBox"))
         {
             
         }
 
-        if (other.CompareTag("PowerUPTP"))
+        else if (other.CompareTag("PowerUPTP"))
         {
-            speed = 6;
-            
-            //Caundo pasen 5 segundos se acabe el powerUp
-            
-            
+            PU_TP.Instance.teleportP1();
         }
     }
 }

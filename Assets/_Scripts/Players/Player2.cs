@@ -95,14 +95,13 @@ public class Player2 : MonoBehaviour
             GameManager.Instance.GanarRondaJugador2();
         }
         
-        else if (other.CompareTag("Player1"))
-        {
-            
-        }
-        
         else if (other.CompareTag("RandomBox"))
         {
             
+        }
+        else if (other.CompareTag("PowerUPTP"))
+        {
+            PU_TP.Instance.teleportP2();
         }
     }
 }
