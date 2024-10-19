@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject velUP;  
     [SerializeField] private GameObject attUP;
     [SerializeField] private GameObject[] spawnPowerUP;
+    [SerializeField] private GameObject[] objects;
     [SerializeField] private GameObject vacio;
 
     private void Awake()
@@ -95,6 +96,7 @@ public class GameManager : MonoBehaviour
         {
             LocalizarCarne();
             Iniciar();
+            
         }
     }
 
@@ -111,6 +113,8 @@ public class GameManager : MonoBehaviour
         refPlayer2.transform.localPosition = spawn2.transform.localPosition;
         cronometro = 0f;
         PowerUP();
+        Player1.Instance.restart();
+        Player2.Instance.restart();
     }
     private void FixedUpdate()
     {
@@ -127,7 +131,6 @@ public class GameManager : MonoBehaviour
         foreach (GameObject spawnPoint in spawnPowerUP)
         {
             int random = Random.Range(0, 3);
-            Debug.Log("entro");
 
             switch (random)
             {

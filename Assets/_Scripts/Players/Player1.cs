@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Player1 : MonoBehaviour
 {
+    public static Player1 Instance;
     #region Variables
     
     [Header("Movement")]
@@ -43,8 +44,16 @@ public class Player1 : MonoBehaviour
         _inputPlayers.Players.PowerUp1.Enable();
 
         _inputPlayers.Players.Punch1.performed += Punch1;
-        _inputPlayers.Players.PowerUp1.performed += PowerUps;   
+        _inputPlayers.Players.PowerUp1.performed += PowerUps;
 
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
     
     #region Enable & Disable
@@ -166,5 +175,15 @@ public class Player1 : MonoBehaviour
             uIPlayer1_Att.SetActive(false);
             moreAtt = false;
         }
+    }
+    public void restart()
+    {
+        tp = false;
+        uIPlayer1_TP.SetActive(false);
+        moreAtt = false;
+        uIPlayer1_Vel.SetActive(false);
+        moreVel = false;
+        uIPlayer1_Att.SetActive(false);
+        timerPowerUP = timerPowerUP + 6;
     }
 }
