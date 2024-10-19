@@ -108,6 +108,10 @@ public class Player1 : MonoBehaviour
 
         if (other.CompareTag("PowerUPTP"))
         {
+            speed = 6;
+            
+            //Caundo pasen 5 segundos se acabe el powerUp
+            
             
         }
     }
