@@ -14,7 +14,7 @@ public class Player1 : MonoBehaviour
     private bool _movement = true;
     private bool _attack = true;
     
-    [SerializeField] private float speed = 1f;
+    public float speed = 1f;
     [SerializeField] private float groundDist;
     [SerializeField] private LayerMask terrainLayer;
     
@@ -93,6 +93,10 @@ public class Player1 : MonoBehaviour
         }
 
         timerPowerUP = timerPowerUP + Time.deltaTime;
+        if (timerPowerUP >= 6)
+        {
+            speed = 2.5f;
+        }
     }
 
     private void Punch1(InputAction.CallbackContext context)
@@ -118,13 +122,13 @@ public class Player1 : MonoBehaviour
         {
             GameManager.Instance.GanarRondaJugador1();
         }
-        else if (other.CompareTag("PowerUPTP"))
+        else if (other.CompareTag("PowerUPTP") && !moreVel && !moreAtt)
         {
             tp = true;
             uIPlayer1_TP.SetActive(true);
             Destroy(other.gameObject);
         }
-        else if (other.CompareTag("PowerUPVelocity"))
+        else if (other.CompareTag("PowerUPVelocity") && !tp && !moreAtt)
         {
             moreVel = true;
             uIPlayer1_Vel.SetActive(true);
@@ -143,14 +147,7 @@ public class Player1 : MonoBehaviour
         else if (moreVel)
         {
             timerPowerUP = 0f;
-            if (timerPowerUP <= 6f)
-            {
-                PU_Velocity.Instance.moreVelocity(speed);
-            }
-            else
-            {
-                speed = 1f;
-            }
+            speed = 10f;
             uIPlayer1_Vel.SetActive(false);
             moreVel = false;
         }

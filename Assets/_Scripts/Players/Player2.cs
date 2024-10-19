@@ -28,6 +28,7 @@ public class Player2 : MonoBehaviour
     [SerializeField] private GameObject uIPlayer2_Vel;
     private bool moreAtt = false;
     [SerializeField] private GameObject uIPlayer2_Att;
+    private float timerPowerUP;
     #endregion
 
     private void Awake()
@@ -37,8 +38,10 @@ public class Player2 : MonoBehaviour
         _inputPlayers = new InputPlayers();
         _inputPlayers.Players.Movement2.Enable();
         _inputPlayers.Players.Punch2.Enable();
+        _inputPlayers.Players.PowerUp2.Enable();
 
         _inputPlayers.Players.Punch2.performed += Punch2;
+        _inputPlayers.Players.PowerUp2.performed += PowerUps2;
     }
     
     #region Enable & Disable
@@ -95,22 +98,32 @@ public class Player2 : MonoBehaviour
             Debug.Log("Golpeo el Jugador 2");
         }
     }
-    
+    private void PowerUps2(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            powerUP();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Meat"))
         {
             GameManager.Instance.GanarRondaJugador2();
         }
-        
-        else if (other.CompareTag("RandomBox"))
-        {
-            
-        }
-        else if (other.CompareTag("PowerUPTP"))
+
+        else if (other.CompareTag("PowerUPTP") && !moreVel && !moreAtt)
         {
             tp = true;
             uIPlayer2_TP.SetActive(true);
+            Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("PowerUPVelocity") && !tp && !moreAtt)
+        {
+            moreVel = true;
+            uIPlayer2_Vel.SetActive(true);
+            Destroy(other.gameObject);
         }
     }
 
@@ -124,8 +137,9 @@ public class Player2 : MonoBehaviour
         }
         else if (moreVel)
         {
-            //lamar funcion
-            //actualizar UI
+            timerPowerUP = 0f;
+            speed = 10f;
+            uIPlayer2_Vel.SetActive(false);
             moreVel = false;
         }
         else if (moreAtt)
