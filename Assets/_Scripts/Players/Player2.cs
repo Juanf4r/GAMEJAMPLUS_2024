@@ -32,6 +32,8 @@ public class Player2 : MonoBehaviour
 
         _inputPlayers.Players.Punch2.performed += Punch2;
     }
+    
+    #region Enable & Disable
     private void OnEnable()
     {
         _inputPlayers.Enable();
@@ -43,6 +45,7 @@ public class Player2 : MonoBehaviour
         _inputPlayers.Disable();
         _inputPlayers.Players.Movement2.Disable();
     }
+    #endregion
 
     private void FixedUpdate()
     {
@@ -82,6 +85,24 @@ public class Player2 : MonoBehaviour
         if (context.performed)
         {
             //Accion de golpear
+        }
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Meat"))
+        {
+            
+        }
+        
+        if (other.CompareTag("Player1"))
+        {
+            
+        }
+        
+        if (other.CompareTag("RandomBox"))
+        {
+            
         }
     }
 }

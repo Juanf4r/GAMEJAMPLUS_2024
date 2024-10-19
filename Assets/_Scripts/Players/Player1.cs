@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -32,6 +33,8 @@ public class Player1 : MonoBehaviour
 
         _inputPlayers.Players.Punch1.performed += Punch1;
     }
+    
+    #region Enable & Disable
     private void OnEnable()
     {
         _inputPlayers.Enable();
@@ -43,6 +46,7 @@ public class Player1 : MonoBehaviour
         _inputPlayers.Disable();
         _inputPlayers.Players.Movement1.Disable();
     }
+    #endregion
 
     private void FixedUpdate()
     {
@@ -82,6 +86,24 @@ public class Player1 : MonoBehaviour
         if (context.performed)
         {
             //Accion de golpear
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Meat"))
+        {
+            
+        }
+        
+        if (other.CompareTag("Player2"))
+        {
+            
+        }
+        
+        if (other.CompareTag("RandomBox"))
+        {
+            
         }
     }
 }
