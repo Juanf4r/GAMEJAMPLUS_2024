@@ -41,8 +41,13 @@ public class Player2 : MonoBehaviour
 
     [Header("Sonidos")]
     [SerializeField] private AudioSource audios;
+    [SerializeField] private AudioSource pickUP;
     [SerializeField] private AudioClip sonidoPaso;
     [SerializeField] private AudioClip sonidoGolpe;
+    [SerializeField] private AudioClip sonidoGolpeFuerte;
+    [SerializeField] private AudioClip sonidoPickUP;
+    [SerializeField] private AudioClip sonidoVelocidad;
+    [SerializeField] private AudioClip sonidoTP;
     #endregion
 
     private void Awake()
@@ -119,26 +124,34 @@ public class Player2 : MonoBehaviour
         if (moveDir.magnitude > 1)
         {
             moveDir = moveDir.normalized;
+            audios.clip = sonidoPaso;
+            audios.Play();
         }
         _rb.velocity = moveDir * (speed);
 
         if (_inputVector.x == 0 && Mathf.Approximately(_inputVector.y, 1) || Mathf.Approximately(_inputVector.y, -1))
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.y);
-            audios.clip = sonidoPaso;
-            audios.Play();
+            
         }
         else
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.x);
-            audios.clip = sonidoPaso;
-            audios.Play();
         }
         if (_attack)
         {
-            
             playerAnimator.SetBool("Golpe", _attack);
             _attack = false;
+            if (moreAtt)
+            {
+                audios.clip = sonidoGolpeFuerte;
+                audios.Play();
+            }
+            else
+            {
+                audios.clip = sonidoGolpe;
+                audios.Play();
+            }
         }
 
         //_attack = false;
@@ -199,18 +212,27 @@ public class Player2 : MonoBehaviour
 
         else if (other.CompareTag("PowerUPTP") && !moreVel && !moreAtt)
         {
+            audios.clip = sonidoPickUP;
+            //audios.Play();
+            pickUP.Play();
             tp = true;
             uIPlayer2_TP.SetActive(true);
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("PowerUPVelocity") && !tp && !moreAtt)
         {
+            audios.clip = sonidoPickUP;
+            //audios.Play();
+            pickUP.Play();
             moreVel = true;
             uIPlayer2_Vel.SetActive(true);
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("PowerUPAttack") && !tp && !moreVel)
         {
+            audios.clip = sonidoPickUP;
+            //audios.Play();
+            pickUP.Play();
             moreAtt = true;
             uIPlayer2_Att.SetActive(true);
             Destroy(other.gameObject);
@@ -252,12 +274,16 @@ public class Player2 : MonoBehaviour
     {
         if (tp)
         {
+            audios.clip = sonidoTP;
+            audios.Play();
             PU_TP.Instance.teleportP1();
             uIPlayer2_TP.SetActive(false);
             tp = false;
         }
         else if (moreVel)
         {
+            audios.clip = sonidoVelocidad;
+            audios.Play();
             timerPowerUP = 0f;
             speed = 10f;
             

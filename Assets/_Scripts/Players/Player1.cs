@@ -40,8 +40,13 @@ public class Player1 : MonoBehaviour
 
     [Header("Sonidos")]
     [SerializeField] private AudioSource audios;
+    [SerializeField] private AudioSource prueba;
     [SerializeField] private AudioClip sonidoPaso;
     [SerializeField] private AudioClip sonidoGolpe;
+    [SerializeField] private AudioClip sonidoGolpeFuerte;
+    [SerializeField] private AudioClip sonidoPickUP;
+    [SerializeField] private AudioClip sonidoVelocidad;
+    [SerializeField] private AudioClip sonidoTP;
     #endregion
 
     private void Awake()
@@ -113,6 +118,8 @@ public class Player1 : MonoBehaviour
 
         if (moveDir.magnitude > 1)
         {
+            audios.clip = sonidoPaso;
+            audios.Play();
             moveDir = moveDir.normalized;
         }
         _rb.velocity = moveDir * (speed);
@@ -120,21 +127,27 @@ public class Player1 : MonoBehaviour
         if (_inputVector.x == 0 && Mathf.Approximately(_inputVector.y, 1) || Mathf.Approximately(_inputVector.y, -1))
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.y);
-            audios.clip = sonidoPaso;
-            audios.Play();
         }
         else
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.x);
-            audios.clip = sonidoPaso;
-            audios.Play();
         }
 
         if (_attack)
         {
             Debug.Log("Reproduciendo golpe de martillo");
-            audios.clip = sonidoGolpe;
-            audios.Play();
+            
+            
+            if (moreAtt)
+            {
+                audios.clip = sonidoGolpeFuerte;
+                audios.Play();
+            }
+            else
+            {
+                audios.clip = sonidoGolpe;
+                audios.Play();
+            }
         }
 
         _attack = false;
@@ -190,18 +203,27 @@ public class Player1 : MonoBehaviour
         }
         else if (other.CompareTag("PowerUPTP") && !moreVel && !moreAtt)
         {
+            audios.clip = sonidoPickUP;
+            //audios.Play();
+            prueba.Play();
             tp = true;
             uIPlayer1_TP.SetActive(true);
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("PowerUPVelocity") && !tp && !moreAtt)
         {
+            audios.clip = sonidoPickUP;
+            //audios.Play();
+            prueba.Play();
             moreVel = true;
             uIPlayer1_Vel.SetActive(true);
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("PowerUPAttack") && !tp && !moreVel)
         {
+            audios.clip = sonidoPickUP;
+            //audios.Play();
+            prueba.Play();
             moreAtt = true;
             uIPlayer1_Att.SetActive(true);
             Destroy(other.gameObject);
@@ -240,12 +262,16 @@ public class Player1 : MonoBehaviour
     {
         if (tp)
         {
+            audios.clip = sonidoTP;
+            audios.Play();
             PU_TP.Instance.teleportP1();
             uIPlayer1_TP.SetActive(false);
             tp = false;
         }
         else if (moreVel)
         {
+            audios.clip = sonidoVelocidad;
+            audios.Play();
             timerPowerUP = 0f;
             speed = 10f;
             
@@ -256,6 +282,7 @@ public class Player1 : MonoBehaviour
         }
         else if (moreAtt)
         {
+
             timerPowerUP = 0f;
             timeStu = 10f;
             uIPlayer1_Att.SetActive(false);
