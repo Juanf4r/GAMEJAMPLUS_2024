@@ -90,12 +90,27 @@ public class Player1 : MonoBehaviour
                 transform.position = movePos;
             }
         }
-        
+
         _inputVector = _inputPlayers.Players.Movement1.ReadValue<Vector2>();
         Vector3 moveDir = new Vector3(-_inputVector.x, 0, -_inputVector.y);
+
+        if (moveDir.magnitude > 1)
+        {
+            moveDir = moveDir.normalized;
+        }
         _rb.velocity = moveDir * (speed);
         
-        playerAnimator.SetFloat("Movimiento",_inputVector.x);
+        if (_inputVector.x == 0 && Mathf.Approximately(_inputVector.y, 1) || Mathf.Approximately(_inputVector.y, -1))
+        {
+            playerAnimator.SetFloat("Movimiento",_inputVector.y);
+        }
+        else
+        {
+            playerAnimator.SetFloat("Movimiento",_inputVector.x);
+        }
+
+        _attack = false;
+        playerAnimator.SetBool("Golpe",_attack);
         
         if(_inputVector.x != 0 && _inputVector.x < 0)
         {
@@ -119,7 +134,9 @@ public class Player1 : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Golpeo el Jugador 1");
+            _attack = true;
+            playerAnimator.SetBool("Golpe",true);
+            //Activar collider y funcion para que reciba el golpe el jugador 2
         }
     }
     private void PowerUps(InputAction.CallbackContext context)
@@ -163,7 +180,7 @@ public class Player1 : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
+    
     private void PowerUP()
     {
         if (tp)
@@ -187,6 +204,7 @@ public class Player1 : MonoBehaviour
             moreAtt = false;
         }
     }
+    
     public void restart()
     {
         tp = false;

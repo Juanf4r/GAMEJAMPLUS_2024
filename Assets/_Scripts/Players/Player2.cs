@@ -94,9 +94,24 @@ public class Player2 : MonoBehaviour
         
         _inputVector = _inputPlayers.Players.Movement2.ReadValue<Vector2>();
         Vector3 moveDir = new Vector3(-_inputVector.x, 0, -_inputVector.y);
+
+        if (moveDir.magnitude > 1)
+        {
+            moveDir = moveDir.normalized;
+        }
         _rb.velocity = moveDir * (speed);
         
-        playerAnimator.SetFloat("Movimiento",_inputVector.x);
+        if (_inputVector.x == 0 && Mathf.Approximately(_inputVector.y, 1) || Mathf.Approximately(_inputVector.y, -1))
+        {
+            playerAnimator.SetFloat("Movimiento",_inputVector.y);
+        }
+        else
+        {
+            playerAnimator.SetFloat("Movimiento",_inputVector.x);
+        }
+
+        _attack = false;
+        playerAnimator.SetBool("Golpe",_attack);
         
         if(_inputVector.x != 0 && _inputVector.x < 0)
         {
@@ -106,7 +121,7 @@ public class Player2 : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-        
+
         timerPowerUP = timerPowerUP + Time.deltaTime;
         
         if (timerPowerUP >= 6)
@@ -120,14 +135,16 @@ public class Player2 : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Golpeo el Jugador 2");
+            _attack = true;
+            playerAnimator.SetBool("Golpe",true);
+            //Activar collider y funcion para que reciba el golpe el jugador 1
         }
     }
     private void PowerUps2(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            powerUP();
+            PowerUp();
         }
     }
 
@@ -158,7 +175,12 @@ public class Player2 : MonoBehaviour
         }
     }
 
-    private void powerUP()
+    public void Stunt()
+    {
+        //Se queda quieto x cantidad de tiempo
+    }
+
+    private void PowerUp()
     {
         if (tp)
         {
