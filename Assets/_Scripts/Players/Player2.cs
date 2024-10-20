@@ -41,6 +41,7 @@ public class Player2 : MonoBehaviour
 
     [Header("Sonidos")]
     [SerializeField] private AudioSource audios;
+    [SerializeField] private AudioSource pickUP;
     [SerializeField] private AudioClip sonidoPaso;
     [SerializeField] private AudioClip sonidoGolpe;
     [SerializeField] private AudioClip sonidoGolpeFuerte;
@@ -212,7 +213,8 @@ public class Player2 : MonoBehaviour
         else if (other.CompareTag("PowerUPTP") && !moreVel && !moreAtt)
         {
             audios.clip = sonidoPickUP;
-            audios.Play();
+            //audios.Play();
+            pickUP.Play();
             tp = true;
             uIPlayer2_TP.SetActive(true);
             Destroy(other.gameObject);
@@ -220,7 +222,8 @@ public class Player2 : MonoBehaviour
         else if (other.CompareTag("PowerUPVelocity") && !tp && !moreAtt)
         {
             audios.clip = sonidoPickUP;
-            audios.Play();
+            //audios.Play();
+            pickUP.Play();
             moreVel = true;
             uIPlayer2_Vel.SetActive(true);
             Destroy(other.gameObject);
@@ -228,7 +231,8 @@ public class Player2 : MonoBehaviour
         else if (other.CompareTag("PowerUPAttack") && !tp && !moreVel)
         {
             audios.clip = sonidoPickUP;
-            audios.Play();
+            //audios.Play();
+            pickUP.Play();
             moreAtt = true;
             uIPlayer2_Att.SetActive(true);
             Destroy(other.gameObject);
