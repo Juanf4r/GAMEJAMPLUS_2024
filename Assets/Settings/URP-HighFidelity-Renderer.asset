@@ -109,7 +109,7 @@ MonoBehaviour:
   m_ShadowTransparentReceive: 1
   m_RenderingMode: 0
   m_DepthPrimingMode: 0
-  m_CopyDepthMode: 0
+  m_CopyDepthMode: 2
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
 --- !u!114 &1870595087315589941
@@ -125,8 +125,7 @@ MonoBehaviour:
   m_Name: FullScreenPassRendererFeature
   m_EditorClassIdentifier: 
   m_Active: 0
-  passMaterial: {fileID: -876546973899608171, guid: 1013d3e5d505c854d8d6471f5ddf1aef,
-    type: 3}
+  passMaterial: {fileID: 2100000, guid: a6ff2dad73d311348902678ee3e5f454, type: 2}
   injectionPoint: 600
   requirements: -1
   passIndex: 0
