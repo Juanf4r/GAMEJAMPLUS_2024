@@ -109,7 +109,8 @@ public class GameManager : MonoBehaviour
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
             textGanador.gameObject.SetActive(true);
-            
+            panelGanador.SetActive(true);
+
             Player2.Instance.WinAnimationP2();
             Player1.Instance.LostAnimationP1();
             
@@ -126,7 +127,7 @@ public class GameManager : MonoBehaviour
     private void LocalizarCarne()
     {
         int randomIndex = Random.Range(0, spawnCarne.Length);
-        carne.transform.localPosition = spawnCarne[randomIndex].transform.localPosition;
+        carne.transform.localPosition = spawnCarne[randomIndex].transform.position;
     }
 
     private void Iniciar()
