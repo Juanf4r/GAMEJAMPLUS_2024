@@ -1120,6 +1120,7 @@ GameObject:
   - component: {fileID: 471535545}
   - component: {fileID: 471535544}
   - component: {fileID: 471535542}
+  - component: {fileID: 471535546}
   m_Layer: 0
   m_Name: SecondCamera
   m_TagString: Untagged
@@ -1134,7 +1135,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471535541}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
@@ -1237,6 +1238,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1068761362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &471535546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471535541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f82c6eb5da40441b9c7bc9495465de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 2100000, guid: 07b5d1f0008dae54aac3691a1ba635a8, type: 2}
 --- !u!1 &554914004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,6 +2143,7 @@ GameObject:
   - component: {fileID: 1054113735}
   - component: {fileID: 1054113734}
   - component: {fileID: 1054113733}
+  - component: {fileID: 1054113737}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -2143,7 +2158,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054113732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
@@ -2254,6 +2269,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1548428487}
   m_LocalEulerAnglesHint: {x: 23.7, y: 180, z: 0}
+--- !u!114 &1054113737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054113732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f82c6eb5da40441b9c7bc9495465de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 2100000, guid: 07b5d1f0008dae54aac3691a1ba635a8, type: 2}
 --- !u!1 &1068761358
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,4 +34,5 @@ public class MainMenu : MonoBehaviour
         musicMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
+    
 }
