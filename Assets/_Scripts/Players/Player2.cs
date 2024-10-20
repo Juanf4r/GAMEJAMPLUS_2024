@@ -144,8 +144,10 @@ public class Player2 : MonoBehaviour
     {
         if (context.performed)
         {
+            Debug.Log("Hola");
+            
             _attack = true;
-            playerAnimator.SetBool("Golpe", true);
+            playerAnimator.SetBool("Golpe", _attack);
 
             if (canAttack)
             {
@@ -251,5 +253,15 @@ public class Player2 : MonoBehaviour
         moreVel = false;
         uIPlayer2_Att.SetActive(false);
         timerPowerUP = timerPowerUP + 6;
+    }
+    
+    public void WinAnimationP2()
+    {
+        playerAnimator.SetBool("Win", true);
+    }
+    
+    public void LostAnimationP2()
+    {
+        playerAnimator.SetBool("Lost", true);
     }
 }

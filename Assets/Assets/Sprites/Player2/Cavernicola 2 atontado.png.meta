@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7554c3f9cbf36ab4dbc7e080394b63df
+guid: 31f0ac78a19c25a41a69f20680fb27ad
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,9 +72,9 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cavernicola_2_idle_0
+      name: Cavernicola 2 atontado_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27210d028d101424c927e2bced5f7688
-      internalID: 765455136
+      spriteID: f1865be21d0ea8441add0f0cf06c2a3d
+      internalID: -1761614416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cavernicola_2_idle_1
+      name: Cavernicola 2 atontado_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9584485dc83d454083f0f6a8c6dc1d7
-      internalID: -310227839
+      spriteID: 49d3b4931f807d64db0a012966093052
+      internalID: 200876858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cavernicola_2_idle_2
+      name: Cavernicola 2 atontado_2
       rect:
         serializedVersion: 2
         x: 128
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8917199552089484b8d962652cfec22b
-      internalID: -652883320
+      spriteID: c146a8403b1d12b42a255efab55cf636
+      internalID: -1823371930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cavernicola_2_idle_3
+      name: Cavernicola 2 atontado_3
       rect:
         serializedVersion: 2
         x: 192
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b6b80a20e51bf64081f6d6202c71984
-      internalID: -565993425
+      spriteID: 46091b405bdb58b489e36d8121f328ff
+      internalID: -1210181597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cavernicola_2_idle_4
+      name: Cavernicola 2 atontado_4
       rect:
         serializedVersion: 2
         x: 0
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 501391c83d3a372419b26b692e3e3b4f
-      internalID: -14830499
+      spriteID: 6c48143f0e032084896cf7077f5e9881
+      internalID: 1883753409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cavernicola_2_idle_5
+      name: Cavernicola 2 atontado_5
       rect:
         serializedVersion: 2
         x: 64
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d82604074b0b03b4fb6b6d8765058356
-      internalID: -1223247144
+      spriteID: 3c5f1c70d0189514db033fe04d332392
+      internalID: 1412503559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cavernicola_2_idle_6
+      name: Cavernicola 2 atontado_6
       rect:
         serializedVersion: 2
         x: 128
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f08c8ebb490572541b5178485ff9b43c
-      internalID: 520449255
+      spriteID: 8f6ec8dc2718ed74ba4d5fa208331656
+      internalID: 591201717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cavernicola_2_idle_7
+      name: Cavernicola 2 atontado_7
       rect:
         serializedVersion: 2
         x: 192
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f06f48811a34de43a66394e8d1cd8df
-      internalID: -597714287
+      spriteID: f2a82c0669a27364e860821060eaae6c
+      internalID: -1170789259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cavernicola_2_idle_8
+      name: Cavernicola 2 atontado_8
       rect:
         serializedVersion: 2
         x: 0
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c8e0e56f5791d64f8eb5845d1352cac
-      internalID: -457168196
+      spriteID: 5c5c20f805849cd408846c0146735dfc
+      internalID: -1659130339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cavernicola_2_idle_9
+      name: Cavernicola 2 atontado_9
       rect:
         serializedVersion: 2
         x: 64
@@ -326,50 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4ce34a2a24a718478d948e4de926a0e
-      internalID: 1587919363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cavernicola_2_idle_10
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 4
-        width: 64
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cc1815cb1769234db9054649d16fb20
-      internalID: -1117549090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cavernicola_2_idle_11
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 4
-        width: 64
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27bdd36238ed2114581831a0f2d16d82
-      internalID: 25890527
+      spriteID: a5b0953bb5008d943a56ab6ea2b65f36
+      internalID: -2010712780
       vertices: []
       indices: 
       edges: []
@@ -377,7 +335,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d93f941dbc7fe6749b4a6f4baef64ec3
+    spriteID: b3d78e4d48d498b4b8ff61c2076573c5
     internalID: 0
     vertices: []
     indices: 
@@ -385,18 +343,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cavernicola_2_idle_0: 765455136
-      Cavernicola_2_idle_1: -310227839
-      Cavernicola_2_idle_10: -1117549090
-      Cavernicola_2_idle_11: 25890527
-      Cavernicola_2_idle_2: -652883320
-      Cavernicola_2_idle_3: -565993425
-      Cavernicola_2_idle_4: -14830499
-      Cavernicola_2_idle_5: -1223247144
-      Cavernicola_2_idle_6: 520449255
-      Cavernicola_2_idle_7: -597714287
-      Cavernicola_2_idle_8: -457168196
-      Cavernicola_2_idle_9: 1587919363
+      Cavernicola 2 atontado_0: -1761614416
+      Cavernicola 2 atontado_1: 200876858
+      Cavernicola 2 atontado_2: -1823371930
+      Cavernicola 2 atontado_3: -1210181597
+      Cavernicola 2 atontado_4: 1883753409
+      Cavernicola 2 atontado_5: 1412503559
+      Cavernicola 2 atontado_6: 591201717
+      Cavernicola 2 atontado_7: -1170789259
+      Cavernicola 2 atontado_8: -1659130339
+      Cavernicola 2 atontado_9: -2010712780
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

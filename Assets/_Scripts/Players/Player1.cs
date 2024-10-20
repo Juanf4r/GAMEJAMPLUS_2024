@@ -48,7 +48,6 @@ public class Player1 : MonoBehaviour
 
         _inputPlayers.Players.Punch1.performed += Punch1;
         _inputPlayers.Players.PowerUp1.performed += PowerUps;
-        _inputPlayers.Players.Pause.performed += PauseGame;
 
         if (Instance != null && Instance != this)
         {
@@ -67,7 +66,6 @@ public class Player1 : MonoBehaviour
         _inputPlayers.Players.Movement1.Enable();
         _inputPlayers.Players.PowerUp1.Enable();
         _inputPlayers.Players.Punch1.Enable();
-        _inputPlayers.Players.Pause.Enable();
     }
 
     private void OnDisable()
@@ -76,7 +74,6 @@ public class Player1 : MonoBehaviour
         _inputPlayers.Players.Movement1.Disable();
         _inputPlayers.Players.PowerUp1.Disable();
         _inputPlayers.Players.Punch1.Disable();
-        _inputPlayers.Players.Pause.Disable();
     }
     #endregion
 
@@ -109,14 +106,14 @@ public class Player1 : MonoBehaviour
             moveDir = moveDir.normalized;
         }
         _rb.velocity = moveDir * (speed);
-        
+
         if (_inputVector.x == 0 && Mathf.Approximately(_inputVector.y, 1) || Mathf.Approximately(_inputVector.y, -1))
         {
-            playerAnimator.SetFloat("Movimiento",_inputVector.y);
+            playerAnimator.SetFloat("Movimiento", _inputVector.y);
         }
         else
         {
-            playerAnimator.SetFloat("Movimiento",_inputVector.x);
+            playerAnimator.SetFloat("Movimiento", _inputVector.x);
         }
 
         _attack = false;
@@ -143,6 +140,7 @@ public class Player1 : MonoBehaviour
     {
         if (context.performed)
         {
+            
             _attack = true;
             playerAnimator.SetBool("Golpe", true);
 
@@ -160,14 +158,6 @@ public class Player1 : MonoBehaviour
         if (context.performed)
         {
             PowerUP();
-        }
-    }
-
-    private void PauseGame(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            //Pause();
         }
     }
     
@@ -198,7 +188,6 @@ public class Player1 : MonoBehaviour
         else if (other.CompareTag("Player2"))
         {
             canAttack = true;
-            //Debug.LogError(canAttack);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -206,7 +195,6 @@ public class Player1 : MonoBehaviour
         if (other.CompareTag("Player2"))
         {
             canAttack = false;
-            //Debug.LogError(canAttack);
         }
     }
     public void Stunt(float ts)
@@ -216,12 +204,15 @@ public class Player1 : MonoBehaviour
 
     public IEnumerator StuntCoroutine(float duration)
     {
+        playerAnimator.SetBool("Stunt", true);
         _movement = false;
         _rb.velocity = Vector3.zero;
 
         yield return new WaitForSeconds(duration);
 
         _movement = true;
+        
+        playerAnimator.SetBool("Stunt", false);
     }
 
     private void PowerUP()
@@ -257,5 +248,15 @@ public class Player1 : MonoBehaviour
         moreVel = false;
         uIPlayer1_Att.SetActive(false);
         timerPowerUP = timerPowerUP + 6;
+    }
+
+    public void WinAnimationP1()
+    {
+        playerAnimator.SetBool("Win", true);
+    }
+    
+    public void LostAnimationP1()
+    {
+        playerAnimator.SetBool("Lost", true);
     }
 }

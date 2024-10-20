@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
+        
         Iniciar();
         LocalizarCarne();
         textGanador.gameObject.SetActive(false);
@@ -96,16 +98,23 @@ public class GameManager : MonoBehaviour
             textGanador.gameObject.SetActive(true);
             panelGanador.SetActive(true);
             
+            Player1.Instance.WinAnimationP1();
+            Player2.Instance.LostAnimationP2();
+            
             textGanador.text = "Gano el jugador 1";
-            Time.timeScale = 0;
+
         }
         else if (contadorJugador2 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
             textGanador.gameObject.SetActive(true);
+            
+            Player2.Instance.WinAnimationP2();
+            Player1.Instance.LostAnimationP1();
+            
             textGanador.text = "Gano el jugador 2";
-            Time.timeScale = 0;
+            
         }
         else
         {
