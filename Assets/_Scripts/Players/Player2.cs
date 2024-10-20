@@ -86,7 +86,7 @@ public class Player2 : MonoBehaviour
             }
         }
         
-        _inputVector = _inputPlayers.Players.Movement1.ReadValue<Vector2>();
+        _inputVector = _inputPlayers.Players.Movement2.ReadValue<Vector2>();
         Vector3 moveDir = new Vector3(-_inputVector.x, 0, -_inputVector.y);
         _rb.velocity = moveDir * (speed);
         
