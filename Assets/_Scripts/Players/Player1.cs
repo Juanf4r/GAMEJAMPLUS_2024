@@ -8,7 +8,7 @@ public class Player1 : MonoBehaviour
     #region Variables
     
     [Header("Movement")]
-    private InputPlayers _inputPlayers;
+    public InputPlayers _inputPlayers;
     private Vector3 _inputVector;
     private Rigidbody _rb;
 

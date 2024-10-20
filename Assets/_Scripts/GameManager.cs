@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,6 +42,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject panelGameplay;
     [SerializeField] private GameObject panelMusica;
     private bool isPaused = false;
+
+    [Header("Contador de inicio")]
+    [SerializeField] private GameObject panelContador;
+    [SerializeField] private TextMeshProUGUI contadorInicio;
 
     private void Awake()
     {
@@ -138,6 +143,7 @@ public class GameManager : MonoBehaviour
         PowerUP();
         Player1.Instance.restart();
         Player2.Instance.restart();
+        StartCoroutine(CuentaRegresiva());
     }
 
     private void FixedUpdate()
@@ -210,5 +216,27 @@ public class GameManager : MonoBehaviour
             panelGameplay.SetActive(true);
             panelMusica.SetActive(false);
         }
+    }
+
+    private IEnumerator CuentaRegresiva()
+    {
+        Player1.Instance._inputPlayers.Disable();
+        Player2.Instance._inputPlayers.Disable();
+        panelGameplay.SetActive(false);
+        panelContador.gameObject.SetActive(true);
+
+        for (int i = 3; i > 0; i--)
+        {
+            contadorInicio.text = i.ToString(); 
+            yield return new WaitForSeconds(1f);
+        }
+
+        contadorInicio.text = "¡GO!";
+        yield return new WaitForSeconds(1f);
+        panelGameplay.SetActive(true);
+        panelContador.gameObject.SetActive(false);
+        _inputPlayers.Enable();
+        Player1.Instance._inputPlayers.Enable();
+        Player2.Instance._inputPlayers.Enable();
     }
 }
