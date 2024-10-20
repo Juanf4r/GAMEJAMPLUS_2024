@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     [Header("Pausa")]
     [SerializeField] private GameObject panelPausa;
     [SerializeField] private GameObject panelGameplay;
+    [SerializeField] private GameObject panelMusica;
+    private bool isPaused = false;
 
     private void Awake()
     {
@@ -181,8 +183,21 @@ public class GameManager : MonoBehaviour
 
     private void Pause(InputAction.CallbackContext context)
     {
-        Time.timeScale = 0;
-        panelPausa.SetActive(true);
-        panelGameplay.SetActive(false);
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+            panelPausa.SetActive(true);
+            panelGameplay.SetActive(false);
+            panelMusica.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            panelPausa.SetActive(false);
+            panelGameplay.SetActive(true);
+            panelMusica.SetActive(false);
+        }
     }
 }

@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         musicMenu.SetActive(false);
+        mainMenu.SetActive(true);
+        controles.SetActive(false);
     }
     public void iniciarjuego()
     {
