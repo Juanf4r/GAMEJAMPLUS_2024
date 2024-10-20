@@ -55199,6 +55199,7 @@ MonoBehaviour:
   sonidoGolpe: {fileID: 8300000, guid: 0cdc1a411b2160848b7c4b349663a6c9, type: 3}
   sonidoGolpeFuerte: {fileID: 8300000, guid: 7ae26720dd36a9346ab5bf7116ee25ad, type: 3}
   sonidoPickUP: {fileID: 8300000, guid: 03f085ba6c237ac40b63060158b1d798, type: 3}
+  sonidoVelocidad: {fileID: 8300000, guid: 9f5e4e9b5a2b28347bf95764b1b8a7e8, type: 3}
 --- !u!136 &1548428485
 CapsuleCollider:
   m_ObjectHideFlags: 0

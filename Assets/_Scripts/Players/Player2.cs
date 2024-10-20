@@ -45,6 +45,7 @@ public class Player2 : MonoBehaviour
     [SerializeField] private AudioClip sonidoGolpe;
     [SerializeField] private AudioClip sonidoGolpeFuerte;
     [SerializeField] private AudioClip sonidoPickUP;
+    [SerializeField] private AudioClip sonidoVelocidad;
     #endregion
 
     private void Awake()
@@ -274,6 +275,8 @@ public class Player2 : MonoBehaviour
         }
         else if (moreVel)
         {
+            audios.clip = sonidoVelocidad;
+            audios.Play();
             timerPowerUP = 0f;
             speed = 10f;
             

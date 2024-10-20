@@ -44,6 +44,8 @@ public class Player1 : MonoBehaviour
     [SerializeField] private AudioClip sonidoGolpe;
     [SerializeField] private AudioClip sonidoGolpeFuerte;
     [SerializeField] private AudioClip sonidoPickUP;
+    [SerializeField] private AudioClip sonidoVelocidad;
+    [SerializeField] private AudioClip sonidoTP;
     #endregion
 
     private void Awake()
@@ -256,12 +258,16 @@ public class Player1 : MonoBehaviour
     {
         if (tp)
         {
+            audios.clip = sonidoTP;
+            audios.Play();
             PU_TP.Instance.teleportP1();
             uIPlayer1_TP.SetActive(false);
             tp = false;
         }
         else if (moreVel)
         {
+            audios.clip = sonidoVelocidad;
+            audios.Play();
             timerPowerUP = 0f;
             speed = 10f;
             
