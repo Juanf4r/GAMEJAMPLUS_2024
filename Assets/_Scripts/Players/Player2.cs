@@ -15,6 +15,7 @@ public class Player2 : MonoBehaviour
 
     private bool _movement = true;
     private bool _attack = true;
+    private bool canAttack = false;
 
     public float speed = 4.2f;
     [SerializeField] private float groundDist;
@@ -34,6 +35,7 @@ public class Player2 : MonoBehaviour
     [SerializeField] private GameObject uIPlayer2_Att;
     private float timerPowerUP;
 
+    private GameObject refPlayer1;
     #endregion
 
     private void Awake()
@@ -144,7 +146,13 @@ public class Player2 : MonoBehaviour
         {
             _attack = true;
             playerAnimator.SetBool("Golpe", true);
-            // Activar collider y función para que reciba el golpe el jugador 1
+
+            if (canAttack)
+            {
+                refPlayer1 = GameObject.Find("Player1");
+                //Debug.LogError("Entro");
+                refPlayer1.GetComponent<Player1>().Stunt(timeStu);
+            }
         }
     }
 
@@ -181,8 +189,20 @@ public class Player2 : MonoBehaviour
             uIPlayer2_Att.SetActive(true);
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("Player1"))
+        {
+            canAttack = true;
+            //Debug.LogError(canAttack);
+        }
     }
-
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player2"))
+        {
+            canAttack = false;
+            //Debug.LogError(canAttack);
+        }
+    }
     public void Stunt(float ts)
     {
         StartCoroutine(StuntCoroutine(ts));

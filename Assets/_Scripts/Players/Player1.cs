@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,8 @@ public class Player1 : MonoBehaviour
     private InputPlayers _inputPlayers;
     private Vector3 _inputVector;
     private Rigidbody _rb;
-    
+
+    private bool _movement = true;
     private bool _attack = true;
     private bool canAttack = false;
     
@@ -80,6 +82,11 @@ public class Player1 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!_movement)
+        {
+            return;
+        }
+
         RaycastHit hit;
         Vector3 castPos = transform.position;
         castPos.y += 1;
@@ -142,7 +149,7 @@ public class Player1 : MonoBehaviour
             if (canAttack)
             {
                 refPlayer2 = GameObject.Find("Player2");
-                Debug.LogError("Entro");
+                //Debug.LogError("Entro");
                 refPlayer2.GetComponent<Player2>().Stunt(timeStu); 
             }
         }
@@ -201,6 +208,20 @@ public class Player1 : MonoBehaviour
             canAttack = false;
             //Debug.LogError(canAttack);
         }
+    }
+    public void Stunt(float ts)
+    {
+        StartCoroutine(StuntCoroutine(ts));
+    }
+
+    public IEnumerator StuntCoroutine(float duration)
+    {
+        _movement = false;
+        _rb.velocity = Vector3.zero;
+
+        yield return new WaitForSeconds(duration);
+
+        _movement = true;
     }
 
     private void PowerUP()
