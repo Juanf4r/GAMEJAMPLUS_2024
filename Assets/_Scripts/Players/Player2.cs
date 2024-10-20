@@ -1,26 +1,27 @@
-using System.Threading;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player2 : MonoBehaviour
 {
     public static Player2 Instance;
+
     #region Variables
-    
+
     [Header("Movement")]
     private InputPlayers _inputPlayers;
     private Vector3 _inputVector;
     private Rigidbody _rb;
-    
+
     private bool _movement = true;
     private bool _attack = true;
-    
-    [SerializeField] private float speed = 1f;
+
+    public float speed = 4.2f;
     [SerializeField] private float groundDist;
     [SerializeField] private LayerMask terrainLayer;
     public float timeStu = 4;
 
-    [Header("Animations")] 
+    [Header("Animations")]
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -32,12 +33,13 @@ public class Player2 : MonoBehaviour
     private bool moreAtt = false;
     [SerializeField] private GameObject uIPlayer2_Att;
     private float timerPowerUP;
+
     #endregion
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        
+
         _inputPlayers = new InputPlayers();
         _inputPlayers.Players.Movement2.Enable();
         _inputPlayers.Players.Punch2.Enable();
@@ -45,7 +47,7 @@ public class Player2 : MonoBehaviour
 
         _inputPlayers.Players.Punch2.performed += Punch2;
         _inputPlayers.Players.PowerUp2.performed += PowerUps2;
-        
+
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -55,7 +57,7 @@ public class Player2 : MonoBehaviour
             Instance = this;
         }
     }
-    
+
     #region Enable & Disable
     private void OnEnable()
     {
@@ -78,10 +80,15 @@ public class Player2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!_movement)
+        {
+            return;
+        }
+
         RaycastHit hit;
         Vector3 castPos = transform.position;
         castPos.y += 1;
-        
+
         if (Physics.Raycast(castPos, -transform.up, out hit, Mathf.Infinity, terrainLayer))
         {
             if (hit.collider != null)
@@ -91,7 +98,7 @@ public class Player2 : MonoBehaviour
                 transform.position = movePos;
             }
         }
-        
+
         _inputVector = _inputPlayers.Players.Movement2.ReadValue<Vector2>();
         Vector3 moveDir = new Vector3(-_inputVector.x, 0, -_inputVector.y);
 
@@ -100,20 +107,20 @@ public class Player2 : MonoBehaviour
             moveDir = moveDir.normalized;
         }
         _rb.velocity = moveDir * (speed);
-        
+
         if (_inputVector.x == 0 && Mathf.Approximately(_inputVector.y, 1) || Mathf.Approximately(_inputVector.y, -1))
         {
-            playerAnimator.SetFloat("Movimiento",_inputVector.y);
+            playerAnimator.SetFloat("Movimiento", _inputVector.y);
         }
         else
         {
-            playerAnimator.SetFloat("Movimiento",_inputVector.x);
+            playerAnimator.SetFloat("Movimiento", _inputVector.x);
         }
 
         _attack = false;
-        playerAnimator.SetBool("Golpe",_attack);
-        
-        if(_inputVector.x != 0 && _inputVector.x < 0)
+        playerAnimator.SetBool("Golpe", _attack);
+
+        if (_inputVector.x != 0 && _inputVector.x < 0)
         {
             spriteRenderer.flipX = true;
         }
@@ -123,7 +130,7 @@ public class Player2 : MonoBehaviour
         }
 
         timerPowerUP = timerPowerUP + Time.deltaTime;
-        
+
         if (timerPowerUP >= 6)
         {
             speed = 4.2f;
@@ -136,10 +143,11 @@ public class Player2 : MonoBehaviour
         if (context.performed)
         {
             _attack = true;
-            playerAnimator.SetBool("Golpe",true);
-            //Activar collider y funcion para que reciba el golpe el jugador 1
+            playerAnimator.SetBool("Golpe", true);
+            // Activar collider y función para que reciba el golpe el jugador 1
         }
     }
+
     private void PowerUps2(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -175,9 +183,19 @@ public class Player2 : MonoBehaviour
         }
     }
 
-    public void Stunt()
+    public void Stunt(float ts)
     {
-        //Se queda quieto x cantidad de tiempo
+        StartCoroutine(StuntCoroutine(ts));
+    }
+
+    public IEnumerator StuntCoroutine(float duration)
+    {
+        _movement = false; 
+        _rb.velocity = Vector3.zero; 
+
+        yield return new WaitForSeconds(duration);
+
+        _movement = true;
     }
 
     private void PowerUp()
@@ -203,6 +221,7 @@ public class Player2 : MonoBehaviour
             moreAtt = false;
         }
     }
+
     public void restart()
     {
         tp = false;
