@@ -11,7 +11,6 @@ public class Player1 : MonoBehaviour
     private Vector3 _inputVector;
     private Rigidbody _rb;
     
-    private bool _movement = true;
     private bool _attack = true;
     
     public float speed = 1f;
@@ -44,6 +43,7 @@ public class Player1 : MonoBehaviour
 
         _inputPlayers.Players.Punch1.performed += Punch1;
         _inputPlayers.Players.PowerUp1.performed += PowerUps;
+        _inputPlayers.Players.Pause.performed += PauseGame;
 
         if (Instance != null && Instance != this)
         {
@@ -60,12 +60,18 @@ public class Player1 : MonoBehaviour
     {
         _inputPlayers.Enable();
         _inputPlayers.Players.Movement1.Enable();
+        _inputPlayers.Players.PowerUp1.Enable();
+        _inputPlayers.Players.Punch1.Enable();
+        _inputPlayers.Players.Pause.Enable();
     }
 
     private void OnDisable()
     {
         _inputPlayers.Disable();
         _inputPlayers.Players.Movement1.Disable();
+        _inputPlayers.Players.PowerUp1.Disable();
+        _inputPlayers.Players.Punch1.Disable();
+        _inputPlayers.Players.Pause.Disable();
     }
     #endregion
 
@@ -104,7 +110,7 @@ public class Player1 : MonoBehaviour
         
         if (timerPowerUP >= 6)
         {
-            speed = 3.5f;
+            speed = 4.2f;
             timeStu = 4f;
         }
     }
@@ -120,12 +126,18 @@ public class Player1 : MonoBehaviour
     {
         if (context.performed)
         {
-            powerUP();
+            PowerUP();
         }
     }
 
-    //private void Powe
-
+    private void PauseGame(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Pause();
+        }
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Meat"))
@@ -152,7 +164,7 @@ public class Player1 : MonoBehaviour
         }
     }
 
-    private void powerUP()
+    private void PowerUP()
     {
         if (tp)
         {
@@ -184,5 +196,10 @@ public class Player1 : MonoBehaviour
         moreVel = false;
         uIPlayer1_Att.SetActive(false);
         timerPowerUP = timerPowerUP + 6;
+    }
+
+    private void Pause()
+    {
+        Debug.Log("pausa");
     }
 }

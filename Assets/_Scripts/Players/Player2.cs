@@ -45,6 +45,7 @@ public class Player2 : MonoBehaviour
 
         _inputPlayers.Players.Punch2.performed += Punch2;
         _inputPlayers.Players.PowerUp2.performed += PowerUps2;
+        
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -60,12 +61,18 @@ public class Player2 : MonoBehaviour
     {
         _inputPlayers.Enable();
         _inputPlayers.Players.Movement2.Enable();
+        _inputPlayers.Players.PowerUp2.Enable();
+        _inputPlayers.Players.Punch2.Enable();
+        _inputPlayers.Players.Pause.Enable();
     }
 
     private void OnDisable()
     {
         _inputPlayers.Disable();
         _inputPlayers.Players.Movement2.Disable();
+        _inputPlayers.Players.PowerUp2.Disable();
+        _inputPlayers.Players.Punch2.Disable();
+        _inputPlayers.Players.Pause.Disable();
     }
     #endregion
 
@@ -75,7 +82,6 @@ public class Player2 : MonoBehaviour
         Vector3 castPos = transform.position;
         castPos.y += 1;
         
-        //Checamos la altura del Mesh y le sumamos lo que tenga que subir
         if (Physics.Raycast(castPos, -transform.up, out hit, Mathf.Infinity, terrainLayer))
         {
             if (hit.collider != null)
@@ -99,6 +105,14 @@ public class Player2 : MonoBehaviour
         else if (_inputVector.x != 0 && _inputVector.x > 0)
         {
             spriteRenderer.flipX = true;
+        }
+        
+        timerPowerUP = timerPowerUP + Time.deltaTime;
+        
+        if (timerPowerUP >= 6)
+        {
+            speed = 4.2f;
+            timeStu = 4f;
         }
     }
 
