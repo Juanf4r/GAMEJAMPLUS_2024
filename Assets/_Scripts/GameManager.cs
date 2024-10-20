@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     [Header("Contador")]
     private int contadorJugador1 = 0;
     private int contadorJugador2 = 0;
-    private float cronometro;
+    private float cronometro = 150;
 
     [Header("Referencias")]
     [SerializeField] private GameObject refPlayer1;
@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
     {
         refPlayer1.transform.localPosition = spawn1.transform.localPosition;
         refPlayer2.transform.localPosition = spawn2.transform.localPosition;
-        cronometro = 0f;
+        cronometro = 150f;
         PowerUP();
         Player1.Instance.restart();
         Player2.Instance.restart();
@@ -141,9 +141,9 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        cronometro += Time.deltaTime;
-        textCronometro.text = cronometro.ToString("F2"); 
-        if (cronometro >= 30)
+        cronometro -= Time.deltaTime;
+        textCronometro.text = cronometro.ToString("000"); 
+        if (cronometro <= 0)
         {
             EndForTime();
         }
