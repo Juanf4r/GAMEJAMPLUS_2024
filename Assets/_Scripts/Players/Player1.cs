@@ -278,6 +278,7 @@ public class Player1 : MonoBehaviour
         }
         else if (moreAtt)
         {
+
             timerPowerUP = 0f;
             timeStu = 10f;
             uIPlayer1_Att.SetActive(false);
