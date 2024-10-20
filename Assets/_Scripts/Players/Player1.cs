@@ -12,8 +12,9 @@ public class Player1 : MonoBehaviour
     private Rigidbody _rb;
     
     private bool _attack = true;
+    private bool canAttack = false;
     
-    public float speed = 1f;
+    public float speed = 4.2f;
     [SerializeField] private float groundDist;
     [SerializeField] private LayerMask terrainLayer;
     public float timeStu = 4;
@@ -30,6 +31,8 @@ public class Player1 : MonoBehaviour
     private bool moreAtt = false;
     [SerializeField] private GameObject uIPlayer1_Att;
     private float timerPowerUP;
+
+    private GameObject refPlayer2;
     #endregion
 
     private void Awake()
@@ -134,10 +137,17 @@ public class Player1 : MonoBehaviour
         if (context.performed)
         {
             _attack = true;
-            playerAnimator.SetBool("Golpe",true);
-            //Activar collider y funcion para que reciba el golpe el jugador 2
+            playerAnimator.SetBool("Golpe", true);
+
+            if (canAttack)
+            {
+                refPlayer2 = GameObject.Find("Player2");
+                Debug.LogError("Entro");
+                refPlayer2.GetComponent<Player2>().Stunt(timeStu); 
+            }
         }
     }
+
     private void PowerUps(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -150,7 +160,7 @@ public class Player1 : MonoBehaviour
     {
         if (context.performed)
         {
-            Pause();
+            //Pause();
         }
     }
     
@@ -178,8 +188,21 @@ public class Player1 : MonoBehaviour
             uIPlayer1_Att.SetActive(true);
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("Player2"))
+        {
+            canAttack = true;
+            //Debug.LogError(canAttack);
+        }
     }
-    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player2"))
+        {
+            canAttack = false;
+            //Debug.LogError(canAttack);
+        }
+    }
+
     private void PowerUP()
     {
         if (tp)
@@ -213,10 +236,5 @@ public class Player1 : MonoBehaviour
         moreVel = false;
         uIPlayer1_Att.SetActive(false);
         timerPowerUP = timerPowerUP + 6;
-    }
-
-    private void Pause()
-    {
-        Debug.Log("pausa");
     }
 }
