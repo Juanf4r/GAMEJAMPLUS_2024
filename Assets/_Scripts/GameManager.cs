@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,6 +48,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject panelContador;
     [SerializeField] private TextMeshProUGUI contadorInicio;
 
+    [Header("Musica ganar")]
+    [SerializeField] private AudioSource audioGanar;
+    //[SerializeField] private AudioClip sonido;
+
     private void Awake()
     {
         _inputPlayers = new InputPlayers();
@@ -71,6 +76,7 @@ public class GameManager : MonoBehaviour
         LocalizarCarne();
         textGanador.gameObject.SetActive(false);
         panelGanador.SetActive(false);
+        audioGanar.Stop();
     }
 
     public void GanarRondaJugador1()
@@ -107,7 +113,7 @@ public class GameManager : MonoBehaviour
             Player2.Instance.LostAnimationP2();
             
             textGanador.text = "Gano el jugador 1";
-
+            audioGanar.Play();
         }
         else if (contadorJugador2 >= 3)
         {
@@ -120,7 +126,7 @@ public class GameManager : MonoBehaviour
             Player1.Instance.LostAnimationP1();
             
             textGanador.text = "Gano el jugador 2";
-            
+            audioGanar.Play();
         }
         else
         {
