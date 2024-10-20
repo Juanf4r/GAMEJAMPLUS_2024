@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6889762858864404015}
   - component: {fileID: 1229405810821518331}
   - component: {fileID: 842117202622425574}
+  - component: {fileID: 6568810357508281733}
   m_Layer: 0
   m_Name: PowerUP_TP
   m_TagString: PowerUPTP
@@ -121,10 +122,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e3279e8cc6194a93d684d9dd4f632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refPlayer1: {fileID: 792712756988402389, guid: 96e650fea7c4bf244990ec2a47791a16,
-    type: 3}
-  refPlayer2: {fileID: 604793150537873373, guid: 61aefb2b38cbc494187f3e50c3c544ce,
-    type: 3}
+--- !u!114 &6568810357508281733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163364380461894116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff2b5c2a63118f47987da45cde219e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upMovement: 0.5
+  duration: 3
 --- !u!1 &4448948329053094952
 GameObject:
   m_ObjectHideFlags: 0

@@ -115,11 +115,11 @@ public class Player2 : MonoBehaviour
         
         if(_inputVector.x != 0 && _inputVector.x < 0)
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
         else if (_inputVector.x != 0 && _inputVector.x > 0)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
 
         timerPowerUP = timerPowerUP + Time.deltaTime;

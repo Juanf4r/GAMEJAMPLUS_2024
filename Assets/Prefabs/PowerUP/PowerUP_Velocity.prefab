@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 2607180328583974503}
   - component: {fileID: 6966726595831208855}
   - component: {fileID: 2824529769288637739}
+  - component: {fileID: 6830310199831103245}
   m_Layer: 0
   m_Name: PowerUP_Velocity
   m_TagString: PowerUPVelocity
@@ -230,3 +231,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08277475468fc443a1d5a61213e8579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6830310199831103245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888201003201021549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff2b5c2a63118f47987da45cde219e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upMovement: 0.5
+  duration: 3
