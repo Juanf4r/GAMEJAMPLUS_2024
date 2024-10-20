@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    private InputPlayers _inputPlayers;
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI textJugador1;
     [SerializeField] private TextMeshProUGUI textJugador2;
@@ -32,11 +34,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject velUP;
     [SerializeField] private GameObject attUP;
     [SerializeField] private GameObject[] spawnPowerUP;
-
     private List<GameObject> powerUpInstances = new List<GameObject>();
+
+    [Header("Pausa")]
+    [SerializeField] private GameObject panelPausa;
+    [SerializeField] private GameObject panelGameplay;
+    [SerializeField] private GameObject panelMusica;
+    private bool isPaused = false;
 
     private void Awake()
     {
+        _inputPlayers = new InputPlayers();
+        _inputPlayers.Players.Pause.Enable();
+        _inputPlayers.Players.Pause.performed += Pause;
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -168,5 +178,25 @@ public class GameManager : MonoBehaviour
             }
         }
         powerUpInstances.Clear();
+    }
+
+    private void Pause(InputAction.CallbackContext context)
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+            panelPausa.SetActive(true);
+            panelGameplay.SetActive(false);
+            panelMusica.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            panelPausa.SetActive(false);
+            panelGameplay.SetActive(true);
+            panelMusica.SetActive(false);
+        }
     }
 }
