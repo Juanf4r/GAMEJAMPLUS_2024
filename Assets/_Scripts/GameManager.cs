@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         _inputPlayers = new InputPlayers();
         _inputPlayers.Players.Pause.Enable();
         _inputPlayers.Players.Pause.performed += Pause;
+        
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -182,6 +183,7 @@ public class GameManager : MonoBehaviour
 
     private void Pause(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
         isPaused = !isPaused;
 
         if (isPaused)
