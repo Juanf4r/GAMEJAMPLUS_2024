@@ -290,6 +290,8 @@ public class Player2 : MonoBehaviour
         }
         else if (moreAtt)
         {
+            audios.clip = sonidoGolpeFuerte;
+            audios.Play();
             timerPowerUP = 0f;
             timeStu = 10f;
             uIPlayer2_Att.SetActive(false);
