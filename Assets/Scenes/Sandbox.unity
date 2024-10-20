@@ -38884,6 +38884,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   timeStu: 4
+  dustEffect: {fileID: 1684609762}
   playerAnimator: {fileID: 1410911857}
   spriteRenderer: {fileID: 1410911855}
   uIPlayer2_TP: {fileID: 1645728251}
@@ -54889,6 +54890,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   timeStu: 4
+  dustEffect: {fileID: 1757435580}
   playerAnimator: {fileID: 1778914010}
   spriteRenderer: {fileID: 1778914009}
   uIPlayer1_TP: {fileID: 958769979}
@@ -57980,6 +57982,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2125422046338419191, guid: 0b004765206faf5429cf2bc352cd56ae, type: 3}
+--- !u!1 &1684609762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1049843463841446, guid: 2966910701d40974c87f0338bb5694e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1140610782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1685440261 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -838702318356969247, guid: 0b004765206faf5429cf2bc352cd56ae,
@@ -60034,6 +60042,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1757435580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1049843463841446, guid: 2966910701d40974c87f0338bb5694e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1788693078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1760404844 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8582905013564043344, guid: 0b004765206faf5429cf2bc352cd56ae,

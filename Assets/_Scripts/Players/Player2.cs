@@ -120,9 +120,14 @@ public class Player2 : MonoBehaviour
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.x);
         }
+        if (_attack)
+        {
+            playerAnimator.SetBool("Golpe", _attack);
+            _attack = false;
+        }
 
-        _attack = false;
-        playerAnimator.SetBool("Golpe", _attack);
+        //_attack = false;
+        //playerAnimator.SetBool("Golpe", _attack);
 
         if (_inputVector.x != 0 && _inputVector.x < 0)
         {
