@@ -37,6 +37,11 @@ public class Player1 : MonoBehaviour
     private float timerPowerUP;
 
     private GameObject refPlayer2;
+
+    [Header("Sonidos")]
+    [SerializeField] private AudioSource audios;
+    [SerializeField] private AudioClip sonidoPaso;
+    [SerializeField] private AudioClip sonidoGolpe;
     #endregion
 
     private void Awake()
@@ -60,7 +65,10 @@ public class Player1 : MonoBehaviour
             Instance = this;
         }
     }
-    
+    private void Start()
+    {
+    }
+
     #region Enable & Disable
     private void OnEnable()
     {
@@ -112,10 +120,21 @@ public class Player1 : MonoBehaviour
         if (_inputVector.x == 0 && Mathf.Approximately(_inputVector.y, 1) || Mathf.Approximately(_inputVector.y, -1))
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.y);
+            audios.clip = sonidoPaso;
+            audios.Play();
         }
         else
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.x);
+            audios.clip = sonidoPaso;
+            audios.Play();
+        }
+
+        if (_attack)
+        {
+            Debug.Log("Reproduciendo golpe de martillo");
+            audios.clip = sonidoGolpe;
+            audios.Play();
         }
 
         _attack = false;

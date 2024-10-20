@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textJugador1;
     [SerializeField] private TextMeshProUGUI textJugador2;
     [SerializeField] private TextMeshProUGUI textCronometro;
-    [SerializeField] private TextMeshProUGUI textGanador;
-    [SerializeField] private GameObject panelGanador;
+    [SerializeField] private GameObject panelGanador1;
+    [SerializeField] private GameObject panelGanador2;
 
     [Header("Carnes")]
     [SerializeField] private GameObject[] spawnCarne;
@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Musica ganar")]
     [SerializeField] private AudioSource audioGanar;
-    //[SerializeField] private AudioClip sonido;
 
     private void Awake()
     {
@@ -74,8 +73,8 @@ public class GameManager : MonoBehaviour
         
         Iniciar();
         LocalizarCarne();
-        textGanador.gameObject.SetActive(false);
-        panelGanador.SetActive(false);
+        panelGanador1.SetActive(false);
+        panelGanador2.SetActive(false);
         audioGanar.Stop();
     }
 
@@ -106,26 +105,22 @@ public class GameManager : MonoBehaviour
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
-            textGanador.gameObject.SetActive(true);
-            panelGanador.SetActive(true);
+            panelGanador1.SetActive(true);
             
             Player1.Instance.WinAnimationP1();
             Player2.Instance.LostAnimationP2();
             
-            textGanador.text = "Gano el jugador 1";
             audioGanar.Play();
         }
         else if (contadorJugador2 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
-            textGanador.gameObject.SetActive(true);
-            panelGanador.SetActive(true);
+            panelGanador2.SetActive(true);
 
             Player2.Instance.WinAnimationP2();
             Player1.Instance.LostAnimationP1();
             
-            textGanador.text = "Gano el jugador 2";
             audioGanar.Play();
         }
         else

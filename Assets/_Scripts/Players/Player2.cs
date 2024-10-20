@@ -38,6 +38,11 @@ public class Player2 : MonoBehaviour
     private float timerPowerUP;
 
     private GameObject refPlayer1;
+
+    [Header("Sonidos")]
+    [SerializeField] private AudioSource audios;
+    [SerializeField] private AudioClip sonidoPaso;
+    [SerializeField] private AudioClip sonidoGolpe;
     #endregion
 
     private void Awake()
@@ -120,10 +125,14 @@ public class Player2 : MonoBehaviour
         if (_inputVector.x == 0 && Mathf.Approximately(_inputVector.y, 1) || Mathf.Approximately(_inputVector.y, -1))
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.y);
+            audios.clip = sonidoPaso;
+            audios.Play();
         }
         else
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.x);
+            audios.clip = sonidoPaso;
+            audios.Play();
         }
         if (_attack)
         {
@@ -166,6 +175,9 @@ public class Player2 : MonoBehaviour
                 refPlayer1 = GameObject.Find("Player1");
 
                 refPlayer1.GetComponent<Player1>().Stunt(timeStu);
+
+                audios.clip = sonidoGolpe;
+                audios.Play();
             }
         }
     }
