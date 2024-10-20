@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textJugador2;
     [SerializeField] private TextMeshProUGUI textCronometro;
     [SerializeField] private TextMeshProUGUI textGanador;
-    [SerializeField] private GameObject PanelGanador;
+    [SerializeField] private GameObject panelGanador;
 
     [Header("Carnes")]
     [SerializeField] private GameObject[] spawnCarne;
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         Iniciar();
         LocalizarCarne();
         textGanador.gameObject.SetActive(false);
-        PanelGanador.SetActive(false);
+        panelGanador.SetActive(false);
     }
 
     public void GanarRondaJugador1()
@@ -83,7 +83,8 @@ public class GameManager : MonoBehaviour
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
             textGanador.gameObject.SetActive(true);
-            PanelGanador.SetActive(true);
+            panelGanador.SetActive(true);
+            
             textGanador.text = "Gano el jugador 1";
             Time.timeScale = 0;
         }
