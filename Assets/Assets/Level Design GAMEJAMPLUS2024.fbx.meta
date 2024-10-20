@@ -3,7 +3,27 @@ guid: 0b004765206faf5429cf2bc352cd56ae
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #27
+    second: {fileID: 2100000, guid: 4c70b518aea260747b175d8846c2ac93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #6
+    second: {fileID: 2100000, guid: 995a0bda8030e7344b6ae3035cf2bb5b, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LevelTexture_Ground
+    second: {fileID: 2800000, guid: b3b0b1ea2b969ff419823ec73a5038dd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Texuremeter
+    second: {fileID: 2800000, guid: 84cff898f3bb59848a2e7614f5dc37a4, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

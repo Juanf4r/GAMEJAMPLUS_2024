@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -76,7 +75,6 @@ public class Player1 : MonoBehaviour
         Vector3 castPos = transform.position;
         castPos.y += 1;
         
-        //Checamos la altura del Mesh y le sumamos lo que tenga que subir
         if (Physics.Raycast(castPos, -transform.up, out hit, Mathf.Infinity, terrainLayer))
         {
             if (hit.collider != null)
@@ -87,25 +85,26 @@ public class Player1 : MonoBehaviour
             }
         }
         
-        //Moviento con InputSystem del Jugador1
         _inputVector = _inputPlayers.Players.Movement1.ReadValue<Vector2>();
         Vector3 moveDir = new Vector3(-_inputVector.x, 0, -_inputVector.y);
         _rb.velocity = moveDir * (speed);
         
-        //Flipear Sprite
+        playerAnimator.SetFloat("Movimiento",_inputVector.x);
+        
         if(_inputVector.x != 0 && _inputVector.x < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else if (_inputVector.x != 0 && _inputVector.x > 0)
         {
             spriteRenderer.flipX = false;
         }
+        else if (_inputVector.x != 0 && _inputVector.x > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
 
         timerPowerUP = timerPowerUP + Time.deltaTime;
+        
         if (timerPowerUP >= 6)
         {
-            speed = 2.5f;
+            speed = 3.5f;
             timeStu = 4f;
         }
     }

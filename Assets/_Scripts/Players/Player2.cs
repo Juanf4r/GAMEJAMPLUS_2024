@@ -86,19 +86,19 @@ public class Player2 : MonoBehaviour
             }
         }
         
-        //Moviento con InputSystem del Jugador1
-        _inputVector = _inputPlayers.Players.Movement2.ReadValue<Vector2>();
+        _inputVector = _inputPlayers.Players.Movement1.ReadValue<Vector2>();
         Vector3 moveDir = new Vector3(-_inputVector.x, 0, -_inputVector.y);
         _rb.velocity = moveDir * (speed);
         
-        //Flipear Sprite
+        playerAnimator.SetFloat("Movimiento",_inputVector.x);
+        
         if(_inputVector.x != 0 && _inputVector.x < 0)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
         else if (_inputVector.x != 0 && _inputVector.x > 0)
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
     }
 
