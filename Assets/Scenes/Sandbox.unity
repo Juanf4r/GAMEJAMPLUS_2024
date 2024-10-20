@@ -448,9 +448,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: -0.5
-    width: 1
+    x: 0.5
+    y: 0
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -24442,6 +24442,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5154068712989128349, guid: 0b004765206faf5429cf2bc352cd56ae, type: 3}
+--- !u!1 &345813499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1049843463841446, guid: 2966910701d40974c87f0338bb5694e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1140610782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &347850452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1505286695001580757, guid: 0b004765206faf5429cf2bc352cd56ae,
@@ -38884,6 +38890,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   timeStu: 4
+  dustEffect: {fileID: 345813499}
   playerAnimator: {fileID: 1410911857}
   spriteRenderer: {fileID: 1410911855}
   uIPlayer2_TP: {fileID: 1645728251}
@@ -42592,8 +42599,8 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5
-    width: 1
+    y: 0
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -42610,7 +42617,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -54889,6 +54896,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   timeStu: 4
+  dustEffect: {fileID: 1772618810}
   playerAnimator: {fileID: 1778914010}
   spriteRenderer: {fileID: 1778914009}
   uIPlayer1_TP: {fileID: 958769979}
@@ -60622,6 +60630,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3062288535199644246, guid: 0b004765206faf5429cf2bc352cd56ae, type: 3}
+--- !u!1 &1772618810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1049843463841446, guid: 2966910701d40974c87f0338bb5694e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1788693078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1773603971 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4638926027461763238, guid: 0b004765206faf5429cf2bc352cd56ae,
