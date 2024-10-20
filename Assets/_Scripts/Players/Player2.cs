@@ -43,6 +43,7 @@ public class Player2 : MonoBehaviour
     [SerializeField] private AudioSource audios;
     [SerializeField] private AudioClip sonidoPaso;
     [SerializeField] private AudioClip sonidoGolpe;
+    [SerializeField] private AudioClip sonidoGolpeFuerte;
     #endregion
 
     private void Awake()
@@ -119,26 +120,34 @@ public class Player2 : MonoBehaviour
         if (moveDir.magnitude > 1)
         {
             moveDir = moveDir.normalized;
+            audios.clip = sonidoPaso;
+            audios.Play();
         }
         _rb.velocity = moveDir * (speed);
 
         if (_inputVector.x == 0 && Mathf.Approximately(_inputVector.y, 1) || Mathf.Approximately(_inputVector.y, -1))
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.y);
-            audios.clip = sonidoPaso;
-            audios.Play();
+            
         }
         else
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.x);
-            audios.clip = sonidoPaso;
-            audios.Play();
         }
         if (_attack)
         {
-            
             playerAnimator.SetBool("Golpe", _attack);
             _attack = false;
+            if (moreAtt)
+            {
+                audios.clip = sonidoGolpeFuerte;
+                audios.Play();
+            }
+            else
+            {
+                audios.clip = sonidoGolpe;
+                audios.Play();
+            }
         }
 
         //_attack = false;

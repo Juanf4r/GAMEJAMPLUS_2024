@@ -39083,6 +39083,7 @@ MonoBehaviour:
   audios: {fileID: 919910622}
   sonidoPaso: {fileID: 8300000, guid: 650a295e0f3c7c04cbcd0bbc918ea599, type: 3}
   sonidoGolpe: {fileID: 8300000, guid: 0cdc1a411b2160848b7c4b349663a6c9, type: 3}
+  sonidoGolpeFuerte: {fileID: 0}
 --- !u!136 &919910621
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -55195,6 +55196,7 @@ MonoBehaviour:
   audios: {fileID: 1548428489}
   sonidoPaso: {fileID: 8300000, guid: 650a295e0f3c7c04cbcd0bbc918ea599, type: 3}
   sonidoGolpe: {fileID: 8300000, guid: 0cdc1a411b2160848b7c4b349663a6c9, type: 3}
+  sonidoGolpeFuerte: {fileID: 8300000, guid: 7ae26720dd36a9346ab5bf7116ee25ad, type: 3}
 --- !u!136 &1548428485
 CapsuleCollider:
   m_ObjectHideFlags: 0
