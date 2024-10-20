@@ -44,6 +44,7 @@ public class Player2 : MonoBehaviour
     [SerializeField] private AudioClip sonidoPaso;
     [SerializeField] private AudioClip sonidoGolpe;
     [SerializeField] private AudioClip sonidoGolpeFuerte;
+    [SerializeField] private AudioClip sonidoPickUP;
     #endregion
 
     private void Awake()
@@ -208,18 +209,24 @@ public class Player2 : MonoBehaviour
 
         else if (other.CompareTag("PowerUPTP") && !moreVel && !moreAtt)
         {
+            audios.clip = sonidoPickUP;
+            audios.Play();
             tp = true;
             uIPlayer2_TP.SetActive(true);
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("PowerUPVelocity") && !tp && !moreAtt)
         {
+            audios.clip = sonidoPickUP;
+            audios.Play();
             moreVel = true;
             uIPlayer2_Vel.SetActive(true);
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("PowerUPAttack") && !tp && !moreVel)
         {
+            audios.clip = sonidoPickUP;
+            audios.Play();
             moreAtt = true;
             uIPlayer2_Att.SetActive(true);
             Destroy(other.gameObject);
