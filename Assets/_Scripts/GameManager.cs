@@ -231,8 +231,11 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        contadorInicio.text = "¡GO!";
-        yield return new WaitForSeconds(1f);
+        contadorInicio.text = "GO!!";
+        cronometro = 150f;
+        
+        yield return new WaitForSeconds(.5f);
+        
         panelGameplay.SetActive(true);
         panelContador.gameObject.SetActive(false);
         _inputPlayers.Enable();
