@@ -143,7 +143,6 @@ public class Player1 : MonoBehaviour
     {
         if (context.performed)
         {
-            
             _attack = true;
             playerAnimator.SetBool("Golpe", true);
 

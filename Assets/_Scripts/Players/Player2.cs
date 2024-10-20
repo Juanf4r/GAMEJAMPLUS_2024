@@ -14,7 +14,7 @@ public class Player2 : MonoBehaviour
     private Rigidbody _rb;
 
     private bool _movement = true;
-    private bool _attack = true;
+    private bool _attack = false;
     private bool canAttack = false;
 
     public float speed = 4.2f;
@@ -82,6 +82,11 @@ public class Player2 : MonoBehaviour
     }
     #endregion
 
+    private void Start()
+    {
+        playerAnimator.SetBool("Golpe", false);
+    }
+
     private void FixedUpdate()
     {
         if (!_movement)
@@ -122,6 +127,7 @@ public class Player2 : MonoBehaviour
         }
         if (_attack)
         {
+            
             playerAnimator.SetBool("Golpe", _attack);
             _attack = false;
         }
@@ -152,15 +158,13 @@ public class Player2 : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Hola");
-            
             _attack = true;
             playerAnimator.SetBool("Golpe", _attack);
 
             if (canAttack)
             {
                 refPlayer1 = GameObject.Find("Player1");
-                //Debug.LogError("Entro");
+
                 refPlayer1.GetComponent<Player1>().Stunt(timeStu);
             }
         }
@@ -220,12 +224,16 @@ public class Player2 : MonoBehaviour
 
     public IEnumerator StuntCoroutine(float duration)
     {
+        playerAnimator.SetBool("Stunt", true);
+        
         _movement = false; 
         _rb.velocity = Vector3.zero; 
 
         yield return new WaitForSeconds(duration);
 
         _movement = true;
+        
+        playerAnimator.SetBool("Stunt", false);
     }
 
     private void PowerUp()
