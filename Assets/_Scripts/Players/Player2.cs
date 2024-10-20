@@ -22,6 +22,8 @@ public class Player2 : MonoBehaviour
     [SerializeField] private LayerMask terrainLayer;
     public float timeStu = 4;
 
+    [SerializeField] private GameObject dustEffect;
+    
     [Header("Animations")]
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -137,6 +139,7 @@ public class Player2 : MonoBehaviour
         {
             speed = 4.2f;
             timeStu = 4f;
+            dustEffect.gameObject.SetActive(false);
         }
     }
 
@@ -232,6 +235,9 @@ public class Player2 : MonoBehaviour
         {
             timerPowerUP = 0f;
             speed = 10f;
+            
+            dustEffect.gameObject.SetActive(true);
+            
             uIPlayer2_Vel.SetActive(false);
             moreVel = false;
         }
