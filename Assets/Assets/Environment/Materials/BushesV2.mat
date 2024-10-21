@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BushesV2
-  m_Shader: {fileID: -6465566751694194690, guid: e39643fead1b0494a8fa615b3f399756,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: cfb35923151aeab46b87fa6f69ddbd46, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -25,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: d67474eae8c7f6a44b82e41f4f660a4f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture2D:
         m_Texture: {fileID: 2800000, guid: d67474eae8c7f6a44b82e41f4f660a4f, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -43,9 +46,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ColorMask: 15
+    - _Culling: 2
+    - _Offset: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _ReadMask: 255
+    - _Stencil: 0
+    - _StencilComp: 0
+    - _StencilFail: 0
+    - _StencilOp: 0
+    - _StencilZFail: 0
+    - _WriteMask: 255
+    - _ZTest: 4
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7576401065015399228
