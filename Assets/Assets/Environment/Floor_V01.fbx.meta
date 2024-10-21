@@ -48,7 +48,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    keepQuads: 0
+    keepQuads: 1
     weldVertices: 1
     bakeAxisConversion: 0
     preserveHierarchy: 0
@@ -88,7 +88,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.0095
+    globalScale: 0.95
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
