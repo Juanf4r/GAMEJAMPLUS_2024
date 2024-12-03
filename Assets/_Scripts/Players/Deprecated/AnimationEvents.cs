@@ -1,11 +1,15 @@
 using UnityEngine;
 
-public class AnimationEvents : MonoBehaviour
+namespace _Scripts.Players.Deprecated
 {
-    [SerializeField] private Animator playerAnimator;
-    
-    public void StopPunch()
+    public class AnimationEvents : MonoBehaviour
     {
-        playerAnimator.SetBool("Golpe", false);
+        [SerializeField] private Animator playerAnimator;
+        private static readonly int Golpe = Animator.StringToHash("Golpe");
+
+        public void StopPunch()
+        {
+            playerAnimator.SetBool(Golpe, false);
+        }
     }
 }

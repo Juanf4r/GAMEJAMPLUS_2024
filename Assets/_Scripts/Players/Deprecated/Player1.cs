@@ -134,7 +134,6 @@ public class Player1 : MonoBehaviour
         {
             Debug.Log("Reproduciendo golpe de martillo");
             
-            
             if (moreAtt)
             {
                 audios.clip = sonidoGolpeFuerte;

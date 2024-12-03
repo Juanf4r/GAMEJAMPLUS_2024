@@ -1,5 +1,6 @@
-using Unity.Collections;
+using _Scripts.Players.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Scripts.Players
 {
@@ -14,10 +15,11 @@ namespace _Scripts.Players
         public bool isAttacking;
 
         //Referencess
-        public PlayerConfig playerConfig;
         private PlayerLocomotion _playerLocomotion;
-        private Animator _animator;
-        private SpriteRenderer _spriteRenderer;
+        private PlayerActions _playerActions;
+        public Animator animator;
+        public SpriteRenderer spriteRenderer;
+        public PlayerConfig playerConfig;
 
         
         private static readonly int Movimiento = Animator.StringToHash("Movimiento");
@@ -25,7 +27,6 @@ namespace _Scripts.Players
                 
         //Variables
         public float moveVelocity;
-        public Vector2 lastInput;
         
         private void Awake()
         {
@@ -36,6 +37,7 @@ namespace _Scripts.Players
         {
             if (isPlayerOne)
             {
+                inputReaderSo.Initialize();
                 inputReaderSo.PlayerOneMoveEvent += HandleMovement;
                 inputReaderSo.PlayerOnePunchEvent += HandlePunch;
                 inputReaderSo.PlayerOnePowerUpEvent += HandlePowerUp;
@@ -86,19 +88,19 @@ namespace _Scripts.Players
 
         private void HandlePunch()
         {
-            
+            _playerActions.HandlePrimaryAttack();
         }
 
         private void HandleMovement(Vector2 input)
         {
             playerInput = input * -1f;
             if(input.x == 0) return;
-            _spriteRenderer.flipX = input.x < 0;
+            spriteRenderer.flipX = input.x < 0;
         }
 
         private void UpdateAnimator()
         {
-            _animator.SetFloat(id: Movimiento, (int)moveVelocity);
+            animator.SetFloat(id: Movimiento, (int)moveVelocity);
         }
         
         
@@ -106,8 +108,9 @@ namespace _Scripts.Players
         private void GetAllReferences()
         {
             _playerLocomotion = GetComponent<PlayerLocomotion>();
-            _animator = GetComponentInChildren<Animator>();
-            _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            _playerActions = GetComponent<PlayerActions>();
+            animator = GetComponentInChildren<Animator>();
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         }
     }
 }

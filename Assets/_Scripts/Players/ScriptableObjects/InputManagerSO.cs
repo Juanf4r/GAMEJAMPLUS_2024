@@ -2,12 +2,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-namespace _Scripts.Players
+namespace _Scripts.Players.ScriptableObjects
 {
     [CreateAssetMenu(menuName = "Input/Input Reader", fileName = "InputManager")]
     public class InputManagerSo : ScriptableObject, InputPlayers.IPlayersActions
     {
-        private InputPlayers _inputMap;
         
         public event UnityAction<Vector2> PlayerOneMoveEvent = delegate {};
         public event UnityAction<Vector2> PlayerTwoMoveEvent = delegate {};
@@ -16,6 +15,8 @@ namespace _Scripts.Players
         public event UnityAction PlayerOnePowerUpEvent = delegate {};
         public event UnityAction PlayerTwoPowerUpEvent = delegate {};
         public event UnityAction PauseEvent = delegate {};
+
+        private InputPlayers _inputMap;
 
         private void OnEnable()
         {
@@ -26,12 +27,12 @@ namespace _Scripts.Players
             }
             _inputMap.Enable();
         }
-
+        
         private void OnDisable()
         {
             _inputMap.Disable();
         }
-
+        
         public void OnMovement1(InputAction.CallbackContext context)
         {
             PlayerOneMoveEvent?.Invoke(context.ReadValue<Vector2>());
@@ -45,7 +46,6 @@ namespace _Scripts.Players
         public void OnPunch1(InputAction.CallbackContext context)
         {
             if (context.performed) PlayerOnePunchEvent?.Invoke();
-            
         }
 
         public void OnPunch2(InputAction.CallbackContext context)
@@ -66,6 +66,11 @@ namespace _Scripts.Players
         public void OnPause(InputAction.CallbackContext context)
         {
             PauseEvent?.Invoke();
+        }
+        
+        public void Initialize()
+        {
+            OnEnable();
         }
     }
 }
