@@ -45,6 +45,7 @@ namespace _Scripts.Players
         public void OnPunch1(InputAction.CallbackContext context)
         {
             if (context.performed) PlayerOnePunchEvent?.Invoke();
+            
         }
 
         public void OnPunch2(InputAction.CallbackContext context)

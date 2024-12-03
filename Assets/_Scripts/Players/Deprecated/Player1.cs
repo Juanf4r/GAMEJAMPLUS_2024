@@ -14,7 +14,7 @@ public class Player1 : MonoBehaviour
 
     private bool _movement = true;
     private bool _attack = true;
-    private bool canAttack = false;
+    private bool _canAttack = false;
     
     public float speed = 4.2f;
     [SerializeField] private float groundDist;
@@ -94,13 +94,10 @@ public class Player1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_movement)
-        {
-            return;
-        }
+        if (!_movement) return;
 
         RaycastHit hit;
-        Vector3 castPos = transform.position;
+        var castPos = transform.position;
         castPos.y += 1;
         
         if (Physics.Raycast(castPos, -transform.up, out hit, Mathf.Infinity, terrainLayer))
@@ -115,7 +112,7 @@ public class Player1 : MonoBehaviour
 
         _inputVector = _inputPlayers.Players.Movement1.ReadValue<Vector2>();
         Vector3 moveDir = new Vector3(-_inputVector.x, 0, -_inputVector.y);
-
+        
         if (moveDir.magnitude > 1)
         {
             audios.clip = sonidoPaso;
@@ -178,7 +175,7 @@ public class Player1 : MonoBehaviour
             _attack = true;
             playerAnimator.SetBool("Golpe", true);
 
-            if (canAttack)
+            if (_canAttack)
             {
                 refPlayer2 = GameObject.Find("Player2");
                 //Debug.LogError("Entro");
@@ -230,14 +227,14 @@ public class Player1 : MonoBehaviour
         }
         else if (other.CompareTag("Player2"))
         {
-            canAttack = true;
+            _canAttack = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player2"))
         {
-            canAttack = false;
+            _canAttack = false;
         }
     }
     public void Stunt(float ts)

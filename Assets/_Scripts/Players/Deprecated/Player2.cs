@@ -128,7 +128,6 @@ public class Player2 : MonoBehaviour
             audios.Play();
         }
         _rb.velocity = moveDir * (speed);
-
         if (_inputVector.x == 0 && Mathf.Approximately(_inputVector.y, 1) || Mathf.Approximately(_inputVector.y, -1))
         {
             playerAnimator.SetFloat("Movimiento", _inputVector.y);
