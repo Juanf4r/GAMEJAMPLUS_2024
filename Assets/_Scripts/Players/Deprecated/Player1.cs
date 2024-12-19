@@ -260,7 +260,7 @@ public class Player1 : MonoBehaviour
         {
             audios.clip = sonidoTP;
             audios.Play();
-            PU_TP.Instance.teleportP1();
+            PU_TP.Instance.TeleportP1();
             uIPlayer1_TP.SetActive(false);
             tp = false;
         }

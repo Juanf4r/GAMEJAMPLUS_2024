@@ -1,3 +1,4 @@
+using _ScriptableObjects.Scripts;
 using UnityEngine;
 
 namespace _Scripts.Players
@@ -16,6 +17,11 @@ namespace _Scripts.Players
         public void HandlePrimaryAttack()
         {
             _playerManager.animator.SetBool(Golpe, true);
+        }
+
+        public void HandlePowerUp(PowerUpSo powerUp)
+        {
+            Debug.Log(powerUp.buffType);
         }
     }
 }

@@ -3,7 +3,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -132,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     private void LocalizarCarne()
     {
-        int randomIndex = Random.Range(0, spawnCarne.Length);
+        var randomIndex = Random.Range(0, spawnCarne.Length);
         carne.transform.localPosition = spawnCarne[randomIndex].transform.position;
     }
 
@@ -142,7 +141,7 @@ public class GameManager : MonoBehaviour
         refPlayer2.transform.localPosition = spawn2.transform.localPosition;
         cronometro = 150f;
         PowerUP();
-        Player1.Instance.restart();
+        //Player1.Instance.restart();
         Player2.Instance.restart();
         StartCoroutine(CuentaRegresiva());
     }
@@ -221,7 +220,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CuentaRegresiva()
     {
-        Player1.Instance._inputPlayers.Disable();
+        //Player1.Instance._inputPlayers.Disable();
         Player2.Instance._inputPlayers.Disable();
         panelGameplay.SetActive(false);
         panelContador.gameObject.SetActive(true);
@@ -240,7 +239,7 @@ public class GameManager : MonoBehaviour
         panelGameplay.SetActive(true);
         panelContador.gameObject.SetActive(false);
         _inputPlayers.Enable();
-        Player1.Instance._inputPlayers.Enable();
+        //Player1.Instance._inputPlayers.Enable();
         Player2.Instance._inputPlayers.Enable();
     }
 }

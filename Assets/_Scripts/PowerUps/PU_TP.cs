@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PU_TP : MonoBehaviour
@@ -20,8 +18,8 @@ public class PU_TP : MonoBehaviour
             Instance = this;
         }
 
-        refPlayer1 = GameObject.Find("Player1");
-        refPlayer2 = GameObject.Find("Player2");
+        refPlayer1 = GameObject.FindGameObjectWithTag("Player");
+        refPlayer2 = GameObject.FindGameObjectWithTag("Player2");
 
         if (refPlayer1 == null || refPlayer2 == null)
         {
@@ -29,24 +27,20 @@ public class PU_TP : MonoBehaviour
         }
     }
 
-    public void teleportP1()
+    public void TeleportP1()
     {
-        if (refPlayer1 != null && refPlayer2 != null)
-        {
-            Vector3 tempPosition = refPlayer1.transform.localPosition;
-            refPlayer1.transform.localPosition = refPlayer2.transform.localPosition;
-            refPlayer2.transform.localPosition = tempPosition;
-        }
+        if (refPlayer1 == null || refPlayer2 == null) return;
+        var tempPosition = refPlayer1.transform.localPosition;
+        refPlayer1.transform.localPosition = refPlayer2.transform.localPosition;
+        refPlayer2.transform.localPosition = tempPosition;
     }
 
     public void teleportP2()
     {
-        if (refPlayer1 != null && refPlayer2 != null)
-        {
-            Vector3 tempPosition = refPlayer2.transform.localPosition;
-            refPlayer2.transform.localPosition = refPlayer1.transform.localPosition;
-            refPlayer1.transform.localPosition = tempPosition;
-        }
+        if (refPlayer1 == null || refPlayer2 == null) return;
+        var tempPosition = refPlayer2.transform.localPosition;
+        refPlayer2.transform.localPosition = refPlayer1.transform.localPosition;
+        refPlayer1.transform.localPosition = tempPosition;
     }
 
 }
