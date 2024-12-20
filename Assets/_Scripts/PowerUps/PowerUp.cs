@@ -7,10 +7,10 @@ namespace _Scripts.PowerUps
 {
     public class PowerUp : MonoBehaviour
     {
-        [SerializeField] private PowerUpSo powerUpType;
+        [SerializeField] public PowerUpSo powerUpType;
         private static readonly int AlphaTex = Shader.PropertyToID("_AlphaTex");
 
-        private void Start()
+        private void OnEnable()
         {
             var spriteRenderer = GetComponent<SpriteRenderer>();
             if (spriteRenderer == null) return;

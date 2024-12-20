@@ -3,6 +3,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
+using _ScriptableObjects.Scripts;
+using _Scripts.PowerUps;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,10 +33,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject spawn1;
     [SerializeField] private GameObject spawn2;
 
+    [FormerlySerializedAs("tpUP")]
     [Header("PowerUps")]
-    [SerializeField] private GameObject tpUP;
-    [SerializeField] private GameObject velUP;
-    [SerializeField] private GameObject attUP;
+    [SerializeField] private GameObject powerUpPrefab;
+
+    [SerializeField] private PowerUpSo teleportPu, speedPu, strengthPu;
     [SerializeField] private GameObject[] spawnPowerUP;
     private List<GameObject> powerUpInstances = new List<GameObject>();
 
@@ -99,7 +103,7 @@ public class GameManager : MonoBehaviour
     private void GanarJuego()
     {
 
-        LimpiarPowerUP();
+        LimpiarPowerUp();
         if (contadorJugador1 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
@@ -140,7 +144,7 @@ public class GameManager : MonoBehaviour
         refPlayer1.transform.localPosition = spawn1.transform.localPosition;
         refPlayer2.transform.localPosition = spawn2.transform.localPosition;
         cronometro = 150f;
-        PowerUP();
+        PowerUp();
         //Player1.Instance.restart();
         Player2.Instance.restart();
         StartCoroutine(CuentaRegresiva());
@@ -156,40 +160,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void PowerUP()
+    private void PowerUp()
     {
-        foreach (GameObject spawnPoint in spawnPowerUP)
+        foreach (var spawnPoint in spawnPowerUP)
         {
-            int random = Random.Range(0, 3);
-
-            GameObject powerUpToSpawn = null;
-
-            switch (random)
+            var random = Random.Range(0, 3);
+            var powerUpInstance = Instantiate(powerUpPrefab, spawnPoint.transform.position, Quaternion.identity);
+            powerUpInstance.SetActive(false);
+            powerUpInstance.GetComponent<PowerUp>().powerUpType = random switch
             {
-                case 0:
-                    powerUpToSpawn = tpUP;
-                    break;
-                case 1:
-                    powerUpToSpawn = velUP;
-                    break;
-                case 2:
-                    powerUpToSpawn = attUP;
-                    break;
-            }
-
-            if (powerUpToSpawn != null)
-            {
-                GameObject powerUpInstance = Instantiate(powerUpToSpawn, spawnPoint.transform.position, Quaternion.identity);
-                powerUpInstances.Add(powerUpInstance); 
-            }
+                0 => teleportPu,
+                1 => speedPu,
+                2 => strengthPu,
+                _ => powerUpInstance.GetComponent<PowerUp>().powerUpType
+            };
+            powerUpInstance.SetActive(true);
+            powerUpInstances.Add(powerUpInstance);
         }
     }
 
-    private void LimpiarPowerUP()
+    private void LimpiarPowerUp()
     {
-        foreach (GameObject powerUp in powerUpInstances)
+        foreach (var powerUp in powerUpInstances)
         {
-            if (powerUp != null)
+            if (powerUp)
             {
                 Destroy(powerUp);
             }

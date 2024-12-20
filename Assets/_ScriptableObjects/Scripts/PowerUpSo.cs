@@ -10,9 +10,9 @@ namespace _ScriptableObjects.Scripts
         public Sprite alphaTexture;
         
         [Header("Buff Stats")]
-        public float speed;
-        public float duration;
-        public float strength;
+        public float speed; 
+        public float duration; 
+        [Tooltip("Fuerza")] public float strength; 
     }
 
     public enum PowerUpType
@@ -20,5 +20,6 @@ namespace _ScriptableObjects.Scripts
         Teleport, 
         Movement, 
         Strength,
+        Shield,
     }
 }

@@ -30,9 +30,7 @@ public class PU_TP : MonoBehaviour
     public void TeleportP1()
     {
         if (refPlayer1 == null || refPlayer2 == null) return;
-        var tempPosition = refPlayer1.transform.localPosition;
-        refPlayer1.transform.localPosition = refPlayer2.transform.localPosition;
-        refPlayer2.transform.localPosition = tempPosition;
+        (refPlayer1.transform.localPosition, refPlayer2.transform.localPosition) = (refPlayer2.transform.localPosition, refPlayer1.transform.localPosition);
     }
 
     public void teleportP2()

@@ -23,5 +23,10 @@ namespace _Scripts.Players
         {
             Debug.Log(powerUp.buffType);
         }
+
+        public void OnDamageTake(float duration)
+        {
+            
+        }
     }
 }
