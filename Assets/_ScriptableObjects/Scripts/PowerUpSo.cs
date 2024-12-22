@@ -12,7 +12,7 @@ namespace _ScriptableObjects.Scripts
         [Header("Buff Stats")]
         public float speed; 
         public float duration; 
-        [Tooltip("Fuerza")] public float strength; 
+        public float strength; 
     }
 
     public enum PowerUpType
@@ -20,6 +20,5 @@ namespace _ScriptableObjects.Scripts
         Teleport, 
         Movement, 
         Strength,
-        Shield,
     }
 }

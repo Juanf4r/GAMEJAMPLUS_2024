@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 namespace _Scripts.Players
@@ -5,12 +8,66 @@ namespace _Scripts.Players
     [CreateAssetMenu(menuName = "Player/Player Config", fileName = "DefaultConfig")]
     public class PlayerConfig : ScriptableObject
     {
-        [Header("Locomotion Settings")]
-        public float speed;
-        public float accelerationTime; 
+        private Dictionary<string, float> _originalStats;
 
-        [Header("Misc Settings")]
-        public float stunnedTime;
+        [Header("Locomotion Settings")] 
+        public float accelerationTime;
+
+        [Header("Player Stats")] 
+        public float speed;
+        public float strength;
+
+        [Header("Misc Settings")] 
         public LayerMask terrainLayer;
+
+
+        public void OnStart()
+        {
+            _originalStats = new Dictionary<string, float>
+            {
+                { nameof(speed), speed },
+                { nameof(strength), strength },
+            };
+        }
+
+        public void ApplyBuff(string statToBuff, float newValue)
+        {
+            var fieldInfo = GetType().GetField(statToBuff, BindingFlags.Instance | BindingFlags.Public | BindingFlags
+                .NonPublic);
+            if (fieldInfo == null)
+            {
+                Debug.LogWarning($"Stat '{statToBuff}' does not exist in PlayerConfig.");
+                return;
+            }
+
+            if (fieldInfo.FieldType != typeof(float))
+            {
+                Debug.LogWarning($"Stat '{statToBuff}' is not a float field.");
+                return;
+            }
+
+            if (!_originalStats.ContainsKey(statToBuff))
+            {
+                _originalStats[statToBuff] = (float)fieldInfo.GetValue(this);
+            }
+
+            fieldInfo.SetValue(this, newValue);
+            Debug.Log($"Stat '{statToBuff}' updated to {newValue}");
+        }
+
+        public void RevertBuff()
+        {
+            foreach (var stat in _originalStats)
+            {
+                var fieldInfo = GetType().GetField(stat.Key, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+
+                if (fieldInfo == null || fieldInfo.FieldType != typeof(float)) continue;
+                fieldInfo.SetValue(this, stat.Value);
+                Debug.Log($"Stat '{stat.Key}' reverted to {stat.Value}");
+            }
+            _originalStats.Clear(); 
+            Debug.Log("All buffs reverted.");
+        }
+
     }
 }

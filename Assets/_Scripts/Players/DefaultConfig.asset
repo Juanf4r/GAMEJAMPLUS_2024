@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f12e8d21e7a8b749af092ae76c646c4, type: 3}
   m_Name: DefaultConfig
   m_EditorClassIdentifier: 
-  speed: 4.2
   accelerationTime: 0.15
-  stunnedTime: 4
+  speed: 4.2
+  strength: 1
   terrainLayer:
     serializedVersion: 2
     m_Bits: 64

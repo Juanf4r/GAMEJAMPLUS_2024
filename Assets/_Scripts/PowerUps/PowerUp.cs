@@ -24,8 +24,8 @@ namespace _Scripts.PowerUps
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player")) return;
-            var actions = other.GetComponent<PlayerActions>();
-            actions.HandlePowerUp(powerUpType);
+            var component = other.GetComponent<PlayerManager>();
+            component.UpdateStoredPowerUp(powerUpType);
             
             gameObject.SetActive(false);
         }

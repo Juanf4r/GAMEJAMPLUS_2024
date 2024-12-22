@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 6950854659717240544}
   m_Layer: 0
   m_Name: Players
-  m_TagString: Player1
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,6 +229,8 @@ MonoBehaviour:
   playerInput: {x: 0, y: 0}
   canMove: 1
   isAttacking: 0
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   playerConfig: {fileID: 11400000, guid: 11479f9e1a4e5a34f979b4788cb0a154, type: 2}
   moveVelocity: 0
 --- !u!114 &1242623319788148789

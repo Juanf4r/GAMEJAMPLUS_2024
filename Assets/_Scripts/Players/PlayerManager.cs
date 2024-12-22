@@ -1,6 +1,7 @@
+using _ScriptableObjects.Scripts;
 using _Scripts.Players.ScriptableObjects;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Scripts.Players
 {
@@ -17,10 +18,10 @@ namespace _Scripts.Players
         //Referencess
         private PlayerLocomotion _playerLocomotion;
         private PlayerActions _playerActions;
+        private PowerUpSo _storedPowerUp;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
         public PlayerConfig playerConfig;
-
         
         private static readonly int Movimiento = Animator.StringToHash("Movimiento");
 
@@ -48,6 +49,7 @@ namespace _Scripts.Players
                 inputReaderSo.PlayerTwoPunchEvent += HandlePunch;
                 inputReaderSo.PlayerTwoPowerUpEvent += HandlePowerUp;
             }
+            playerConfig.OnStart();
         }
         
         private void OnDisable()
@@ -83,7 +85,9 @@ namespace _Scripts.Players
 
         private void HandlePowerUp()
         {
-            
+            if(!_storedPowerUp) return;
+            _playerActions.ActivatePowerUp(_storedPowerUp);
+            _storedPowerUp = null;
         }
 
         private void HandlePunch()
@@ -103,6 +107,11 @@ namespace _Scripts.Players
             animator.SetFloat(id: Movimiento, (int)moveVelocity);
         }
         
+        //Public methods
+        public void UpdateStoredPowerUp(PowerUpSo newPowerUp)
+        {
+            _storedPowerUp = newPowerUp;
+        }
         
         //Get All References
         private void GetAllReferences()
