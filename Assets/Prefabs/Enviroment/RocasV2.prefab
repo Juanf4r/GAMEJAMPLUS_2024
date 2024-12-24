@@ -63,6 +63,16 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: f5c3020dcdd92a94d9ce97765a5ff41b, type: 2}
+    - target: {fileID: -5488048780995765707, guid: fa958b2e5988fb94c85c6fd5e1423f18,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2979578725554317515, guid: fa958b2e5988fb94c85c6fd5e1423f18,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -2869580647390483849, guid: fa958b2e5988fb94c85c6fd5e1423f18,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -78,6 +88,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocasV2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fa958b2e5988fb94c85c6fd5e1423f18,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2140039038068033813, guid: fa958b2e5988fb94c85c6fd5e1423f18,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -88,6 +103,16 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: b686962ef0e3d9b4faad17a31140d5b4, type: 2}
+    - target: {fileID: 5957067706222693021, guid: fa958b2e5988fb94c85c6fd5e1423f18,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554974903238700942, guid: fa958b2e5988fb94c85c6fd5e1423f18,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2942109822348240703}
   - component: {fileID: 4953601002366668751}
   - component: {fileID: 4792016404705576503}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 6966726595831208855}
   - component: {fileID: 2824529769288637739}
   - component: {fileID: 6830310199831103245}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PowerUP_Velocity
   m_TagString: PowerUPVelocity
   m_Icon: {fileID: 0}

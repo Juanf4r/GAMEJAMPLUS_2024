@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8557644583966529126}
   - component: {fileID: 8634946010747464300}
   - component: {fileID: 8720873991507070992}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 2962008095625177484}
   - component: {fileID: 8717517644813804445}
   - component: {fileID: 7857517210417254083}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PowerUP_Attack
   m_TagString: PowerUPAttack
   m_Icon: {fileID: 0}

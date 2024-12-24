@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1229405810821518331}
   - component: {fileID: 842117202622425574}
   - component: {fileID: 6568810357508281733}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PowerUP_TP
   m_TagString: PowerUPTP
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 9003855637130889630}
   - component: {fileID: 1102368559458895320}
   - component: {fileID: 7116996938459765757}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

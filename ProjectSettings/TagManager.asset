@@ -19,14 +19,14 @@ TagManager:
   - Character
   - Water
   - UI
-  - Terrain
+  - Ground
   - P1 Cam
   - P2 Cam
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Forest
+  - Rocks
+  - RockWalls
+  - PowerUps
+  - Enemies
   - 
   - 
   - 
