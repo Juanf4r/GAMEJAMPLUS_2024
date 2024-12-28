@@ -65,7 +65,7 @@ namespace _Scripts.Players
         
         public void OnDamageTake(float duration)
         {
-
+            Debug.Log($"Stunned for {duration}");
         }
     }
 }
