@@ -22,7 +22,7 @@ namespace _Scripts.Players
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player") || other.gameObject == _owner) return;
-            other.GetComponent<PlayerActions>().OnDamageTake(_playerManager.playerConfig.strength);
+            other.GetComponent<PlayerActions>().OnHit(_playerManager.playerConfig.strength);
         }
     }
 }

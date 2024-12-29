@@ -35448,6 +35448,12 @@ PrefabInstance:
       propertyPath: isPlayerOne
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2420976232866454604, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: playerConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: d7195a84cd8510a42b9963db495734af,
+        type: 2}
     - target: {fileID: 2446224993149516498, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_Name
@@ -35456,7 +35462,7 @@ PrefabInstance:
     - target: {fileID: 2446224993149516498, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_TagString
-      value: Player2
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4083039630482837777, guid: 416c1530179178f45875375d66258b80,
         type: 3}

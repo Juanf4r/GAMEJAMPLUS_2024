@@ -12,7 +12,8 @@ namespace _Scripts.Players
         private PlayerConfig _playerConfig;
         
         private static readonly int Golpe = Animator.StringToHash("Golpe");
-
+        private static readonly int Stunt = Animator.StringToHash("Stunt");
+        
         private void Awake()
         {
             _playerManager = GetComponent<PlayerManager>();
@@ -50,7 +51,19 @@ namespace _Scripts.Players
 
             StartCoroutine(PowerUpTimer(powerUp.duration));
         }
-
+        
+        private void HandleTeleport()
+        {
+            
+        }
+        
+        public void OnHit(float duration)
+        {
+            Debug.Log($"Stunned for {duration}");
+            if(!_playerManager.canMove) return;
+            StartCoroutine(StunnedForSeconds(duration));
+        }
+        
         private IEnumerator PowerUpTimer(float timer)
         {
             yield return new WaitForSeconds(timer);
@@ -58,14 +71,14 @@ namespace _Scripts.Players
             _playerConfig.RevertBuff();
         }
 
-        private void HandleTeleport()
+        private IEnumerator StunnedForSeconds(float duration)
         {
-            
-        }
-        
-        public void OnDamageTake(float duration)
-        {
-            Debug.Log($"Stunned for {duration}");
+            _playerManager.canMove = false;
+            _playerManager.animator.SetBool(Stunt, true);
+            yield return new WaitForSeconds(duration);
+            _playerManager.animator.SetBool(Stunt, false);
+            _playerManager.canMove = true;
         }
     }
 }
+ 
