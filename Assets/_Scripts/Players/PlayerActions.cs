@@ -15,6 +15,8 @@ namespace _Scripts.Players
         private static readonly int Golpe = Animator.StringToHash("Golpe");
         private static readonly int Stunt = Animator.StringToHash("Stunt");
         
+        public static event Action<int> OnPowerUpOut;
+
         private void Awake()
         {
             _playerManager = GetComponent<PlayerManager>();
@@ -32,7 +34,7 @@ namespace _Scripts.Players
             if (!_playerConfig) return;
 
             Debug.Log($"Activating PowerUp: {powerUp.buffType.ToString()}");
-            
+            OnPowerUpOut?.Invoke(_playerManager.isPlayerOne ? 1 : 2);
             switch (powerUp.buffType)
             {
                 case PowerUpType.Teleport:

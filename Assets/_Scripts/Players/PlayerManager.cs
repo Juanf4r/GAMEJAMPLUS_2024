@@ -1,3 +1,4 @@
+using System;
 using _ScriptableObjects.Scripts;
 using _Scripts.Players.ScriptableObjects;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace _Scripts.Players
         public bool canMove;
         public bool isAttacking;
         
+        //Events
+        public static event Action<PowerUpSo, int> OnPowerUpUpdated;
         
         //Referencess
         private PlayerLocomotion _playerLocomotion;
@@ -23,6 +26,7 @@ namespace _Scripts.Players
         public Animator animator;
         public SpriteRenderer spriteRenderer;
         public PlayerConfig playerConfig;
+        
         
         private static readonly int Movimiento = Animator.StringToHash("Movimiento");
 
@@ -116,6 +120,7 @@ namespace _Scripts.Players
         //Public methods
         public void UpdateStoredPowerUp(PowerUpSo newPowerUp)
         {
+            OnPowerUpUpdated?.Invoke(newPowerUp, isPlayerOne ? 1 : 2);
             _storedPowerUp = newPowerUp;
         }
         
