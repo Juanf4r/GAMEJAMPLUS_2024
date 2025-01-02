@@ -7,6 +7,8 @@ using _ScriptableObjects.Scripts;
 using _Scripts.Players;
 using _Scripts.PowerUps;
 using UnityEngine.Serialization;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
@@ -254,4 +256,30 @@ public class GameManager : MonoBehaviour
         _player1.canMove = true;
         _player2.canMove = true;
     }
+
+    public Vector3 GetTeleportLocation(int playerIndex)
+    {
+        var position = playerIndex switch
+        {
+            1 => _player1.transform.position,
+            2 => _player2.transform.position,
+            _ => Vector3.zero
+        };
+
+        var randomX = Random.Range(-5f, 5f); // Adjust range as needed
+        var randomZ = Random.Range(-3f, 3f); // Adjust range as needed
+
+        var modifyX = Random.value > 0.5f; // 50% chance to pick x or y
+        if (modifyX)
+        {
+            position.x += randomX;
+        }
+        else
+        {
+            position.z += randomZ;
+        }
+
+        return position;
+    }
+
 }

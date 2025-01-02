@@ -23,7 +23,7 @@ namespace _Scripts.Players
         public Animator animator;
         public SpriteRenderer spriteRenderer;
         public PlayerConfig playerConfig;
-
+        
         private static readonly int Movimiento = Animator.StringToHash("Movimiento");
 
                 

@@ -10,6 +10,7 @@ namespace _Scripts.Players
     {
         private PlayerManager _playerManager;
         private PlayerConfig _playerConfig;
+        private GameManager _gameManager;
         
         private static readonly int Golpe = Animator.StringToHash("Golpe");
         private static readonly int Stunt = Animator.StringToHash("Stunt");
@@ -18,6 +19,7 @@ namespace _Scripts.Players
         {
             _playerManager = GetComponent<PlayerManager>();
             _playerConfig = _playerManager.playerConfig;
+            _gameManager = FindAnyObjectByType<GameManager>();
         }
         
         public void HandlePrimaryAttack()
@@ -54,7 +56,7 @@ namespace _Scripts.Players
         
         private void HandleTeleport()
         {
-            
+            StartCoroutine(TeleportToEnemy());
         }
         
         public void OnHit(float duration)
@@ -69,6 +71,17 @@ namespace _Scripts.Players
             yield return new WaitForSeconds(timer);
             Debug.Log($"PowerUp has expired");
             _playerConfig.RevertBuff();
+        }
+
+        private IEnumerator TeleportToEnemy()
+        {
+            var teleportPosition = _gameManager.GetTeleportLocation(_playerManager.isPlayerOne ? 2 : 1);
+            _playerManager.canMove = false;
+            yield return new WaitForSeconds(.5f);
+            transform.position = teleportPosition;
+            yield return new WaitForSeconds(.25f);
+            _playerManager.canMove = true;
+
         }
 
         private IEnumerator StunnedForSeconds(float duration)
