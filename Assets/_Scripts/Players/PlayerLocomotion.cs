@@ -24,7 +24,11 @@ namespace _Scripts.Players
 
         private void HandleMovement()
         {
-            if (!_playerManager.canMove) return;
+            if (!_playerManager.canMove)
+            {
+                _playerManager.moveVelocity = 0;
+                return;
+            }
             var targetVelocity = new Vector3(_playerManager.playerInput.x, 0f, _playerManager.playerInput.y).normalized * _playerManager.playerConfig.speed;
             _currentVelocity = Vector3.Lerp(_currentVelocity, targetVelocity, Time.deltaTime / _playerManager.playerConfig.accelerationTime);
             if (_characterController.isGrounded)

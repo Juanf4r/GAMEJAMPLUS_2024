@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HammerController : MonoBehaviour
+namespace _Scripts.Players
 {
-    // Start is called before the first frame update
-    void Start()
+    public class HammerController : MonoBehaviour
     {
-        
-    }
+        private GameObject _owner;
+        private PlayerManager _playerManager;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private void Awake()
+        {
+            _playerManager = GetComponentInParent<PlayerManager>();
+            _owner = _playerManager.gameObject;
+        }
+
+        public void FlipCollider(float direction)
+        {
+            transform.localScale = new Vector3(direction, 1, 1);
+        }
         
+        
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.CompareTag("Player") || other.gameObject == _owner) return;
+            other.GetComponent<PlayerActions>().OnHit(_playerManager.playerConfig.strength);
+        }
     }
 }

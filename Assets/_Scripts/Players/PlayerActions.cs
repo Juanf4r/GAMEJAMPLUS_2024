@@ -10,13 +10,18 @@ namespace _Scripts.Players
     {
         private PlayerManager _playerManager;
         private PlayerConfig _playerConfig;
+        private GameManager _gameManager;
         
         private static readonly int Golpe = Animator.StringToHash("Golpe");
+        private static readonly int Stunt = Animator.StringToHash("Stunt");
+        
+        public static event Action<int> OnPowerUpOut;
 
         private void Awake()
         {
             _playerManager = GetComponent<PlayerManager>();
             _playerConfig = _playerManager.playerConfig;
+            _gameManager = FindAnyObjectByType<GameManager>();
         }
         
         public void HandlePrimaryAttack()
@@ -29,7 +34,7 @@ namespace _Scripts.Players
             if (!_playerConfig) return;
 
             Debug.Log($"Activating PowerUp: {powerUp.buffType.ToString()}");
-            
+            OnPowerUpOut?.Invoke(_playerManager.isPlayerOne ? 1 : 2);
             switch (powerUp.buffType)
             {
                 case PowerUpType.Teleport:
@@ -50,7 +55,19 @@ namespace _Scripts.Players
 
             StartCoroutine(PowerUpTimer(powerUp.duration));
         }
-
+        
+        private void HandleTeleport()
+        {
+            StartCoroutine(TeleportToEnemy());
+        }
+        
+        public void OnHit(float duration)
+        {
+            Debug.Log($"Stunned for {duration}");
+            if(!_playerManager.canMove) return;
+            StartCoroutine(StunnedForSeconds(duration));
+        }
+        
         private IEnumerator PowerUpTimer(float timer)
         {
             yield return new WaitForSeconds(timer);
@@ -58,14 +75,25 @@ namespace _Scripts.Players
             _playerConfig.RevertBuff();
         }
 
-        private void HandleTeleport()
+        private IEnumerator TeleportToEnemy()
         {
-            
-        }
-        
-        public void OnDamageTake(float duration)
-        {
+            var teleportPosition = _gameManager.GetTeleportLocation(_playerManager.isPlayerOne ? 2 : 1);
+            _playerManager.canMove = false;
+            yield return new WaitForSeconds(.5f);
+            transform.position = teleportPosition;
+            yield return new WaitForSeconds(.25f);
+            _playerManager.canMove = true;
 
+        }
+
+        private IEnumerator StunnedForSeconds(float duration)
+        {
+            _playerManager.canMove = false;
+            _playerManager.animator.SetBool(Stunt, true);
+            yield return new WaitForSeconds(duration);
+            _playerManager.animator.SetBool(Stunt, false);
+            _playerManager.canMove = true;
         }
     }
 }
+ 

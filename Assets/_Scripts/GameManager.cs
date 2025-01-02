@@ -4,8 +4,11 @@ using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
 using _ScriptableObjects.Scripts;
+using _Scripts.Players;
 using _Scripts.PowerUps;
 using UnityEngine.Serialization;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +33,10 @@ public class GameManager : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private GameObject refPlayer1;
     [SerializeField] private GameObject refPlayer2;
+    
+    private PlayerManager _player1;
+    private PlayerManager _player2;
+
     [SerializeField] private GameObject spawn1;
     [SerializeField] private GameObject spawn2;
 
@@ -59,6 +66,19 @@ public class GameManager : MonoBehaviour
         _inputPlayers = new InputPlayers();
         _inputPlayers.Players.Pause.Enable();
         _inputPlayers.Players.Pause.performed += Pause;
+        var players = FindObjectsByType<PlayerManager>(FindObjectsSortMode.None);
+
+        foreach (var player in players)
+        {
+            if (player.isPlayerOne)
+            {
+                _player1 = player;
+            }
+            else
+            {
+                _player2 = player;
+            }
+        }        
         
         if (Instance != null && Instance != this)
         {
@@ -146,7 +166,7 @@ public class GameManager : MonoBehaviour
         cronometro = 150f;
         PowerUp();
         //Player1.Instance.restart();
-        Player2.Instance.restart();
+        //Player2.Instance.restart();
         StartCoroutine(CuentaRegresiva());
     }
 
@@ -215,7 +235,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator CuentaRegresiva()
     {
         //Player1.Instance._inputPlayers.Disable();
-        Player2.Instance._inputPlayers.Disable();
+        //Player2.Instance._inputPlayers.Disable();
         panelGameplay.SetActive(false);
         panelContador.gameObject.SetActive(true);
 
@@ -233,7 +253,33 @@ public class GameManager : MonoBehaviour
         panelGameplay.SetActive(true);
         panelContador.gameObject.SetActive(false);
         _inputPlayers.Enable();
-        //Player1.Instance._inputPlayers.Enable();
-        Player2.Instance._inputPlayers.Enable();
+        _player1.canMove = true;
+        _player2.canMove = true;
     }
+
+    public Vector3 GetTeleportLocation(int playerIndex)
+    {
+        var position = playerIndex switch
+        {
+            1 => _player1.transform.position,
+            2 => _player2.transform.position,
+            _ => Vector3.zero
+        };
+
+        var randomX = Random.Range(-5f, 5f); // Adjust range as needed
+        var randomZ = Random.Range(-3f, 3f); // Adjust range as needed
+
+        var modifyX = Random.value > 0.5f; // 50% chance to pick x or y
+        if (modifyX)
+        {
+            position.x += randomX;
+        }
+        else
+        {
+            position.z += randomZ;
+        }
+
+        return position;
+    }
+
 }

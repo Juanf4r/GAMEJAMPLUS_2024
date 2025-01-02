@@ -52,7 +52,6 @@ namespace _Scripts.Players
             }
 
             fieldInfo.SetValue(this, newValue);
-            Debug.Log($"Stat '{statToBuff}' updated to {newValue}");
         }
 
         public void RevertBuff()
@@ -63,10 +62,8 @@ namespace _Scripts.Players
 
                 if (fieldInfo == null || fieldInfo.FieldType != typeof(float)) continue;
                 fieldInfo.SetValue(this, stat.Value);
-                Debug.Log($"Stat '{stat.Key}' reverted to {stat.Value}");
             }
             _originalStats.Clear(); 
-            Debug.Log("All buffs reverted.");
         }
 
     }

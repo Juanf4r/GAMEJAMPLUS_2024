@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f12e8d21e7a8b749af092ae76c646c4, type: 3}
-  m_Name: DefaultConfig
+  m_Name: DefaultConfig2
   m_EditorClassIdentifier: 
   accelerationTime: 0.15
   speed: 4.2
