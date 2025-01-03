@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private InputPlayers _inputPlayers;
+
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI textJugador1;
     [SerializeField] private TextMeshProUGUI textJugador2;
@@ -122,8 +123,8 @@ public class GameManager : MonoBehaviour
 
     private void GanarJuego()
     {
-
         LimpiarPowerUp();
+
         if (contadorJugador1 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
