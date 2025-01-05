@@ -16,6 +16,7 @@ namespace _Scripts.Players
         [Header("Player Stats")] 
         public float speed;
         public float strength;
+        public float invincibilityTime;
 
         [Header("Misc Settings")] 
         public LayerMask terrainLayer;

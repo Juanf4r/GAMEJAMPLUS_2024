@@ -15,6 +15,7 @@ MonoBehaviour:
   accelerationTime: 0.15
   speed: 4.2
   strength: 2
+  invincibilityTime: 2
   terrainLayer:
     serializedVersion: 2
     m_Bits: 64

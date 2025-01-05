@@ -14,7 +14,8 @@ namespace _Scripts.Players
         
         private static readonly int Golpe = Animator.StringToHash("Golpe");
         private static readonly int Stunt = Animator.StringToHash("Stunt");
-        
+
+        private bool _isInvulnerable;
         public static event Action<int> OnPowerUpOut;
 
         private void Awake()
@@ -63,6 +64,7 @@ namespace _Scripts.Players
         
         public void OnHit(float duration)
         {
+            if (_isInvulnerable) return;
             Debug.Log($"Stunned for {duration}");
             if(!_playerManager.canMove) return;
             StartCoroutine(StunnedForSeconds(duration));
@@ -88,12 +90,66 @@ namespace _Scripts.Players
 
         private IEnumerator StunnedForSeconds(float duration)
         {
+            _isInvulnerable = true;
             _playerManager.canMove = false;
             _playerManager.animator.SetBool(Stunt, true);
             yield return new WaitForSeconds(duration);
             _playerManager.animator.SetBool(Stunt, false);
             _playerManager.canMove = true;
+            StartCoroutine(InvincibilityDuration(_playerConfig.invincibilityTime));
         }
+
+       /* private IEnumerator InvincibilityDuration(float duration)
+        {
+            var spriteRenderer = _playerManager.GetComponentInChildren<SpriteRenderer>();
+            if (!spriteRenderer)
+            {
+                Debug.LogWarning("SpriteRenderer not found on player.");
+                yield break;
+            }
+
+            var originalColor = spriteRenderer.color; 
+            var elapsed = 0f;
+            var isWhite = false;
+
+            while (elapsed < duration)
+            {
+                isWhite = !isWhite;
+                spriteRenderer.color = isWhite ? Color.red : originalColor;
+
+                yield return new WaitForSeconds(0.3f); 
+                elapsed += 0.3f;
+            }
+
+            spriteRenderer.color = originalColor;
+            _isInvulnerable = false;
+        }
+        */
+        private IEnumerator InvincibilityDuration(float duration)
+        {
+            var spriteRenderer = _playerManager.GetComponentInChildren<SpriteRenderer>();
+            if (!spriteRenderer)
+            {
+                Debug.LogWarning("SpriteRenderer not found on player.");
+                yield break;
+            }
+
+            var elapsed = 0f;
+            var isVisible = true;
+
+            while (elapsed < duration)
+            {
+                isVisible = !isVisible;
+                spriteRenderer.enabled = isVisible;
+
+                yield return new WaitForSeconds(0.15f); 
+                elapsed += 0.15f;
+            }
+
+            spriteRenderer.enabled = true;
+            _isInvulnerable = false;
+        }
+
     }
 }
  
