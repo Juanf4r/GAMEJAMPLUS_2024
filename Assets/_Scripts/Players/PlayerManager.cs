@@ -33,7 +33,9 @@ namespace _Scripts.Players
                 
         //Variables
         public float moveVelocity;
-        
+        private static readonly int Win = Animator.StringToHash("Win");
+        private static readonly int Lost = Animator.StringToHash("Lost");
+
         private void Awake()
         {
             GetAllReferences();
@@ -41,6 +43,7 @@ namespace _Scripts.Players
 
         private void OnEnable()
         {
+            animator.runtimeAnimatorController = playerConfig.playerAnimator;
             canMove = false;
             if (isPlayerOne)
             {
@@ -108,10 +111,10 @@ namespace _Scripts.Players
             playerInput = input * -1f;
             if(input.x == 0) return;
             spriteRenderer.flipX = input.x < 0;
-            _hammerController.FlipCollider(input.x);
-            
-        }
+            _hammerController.FlipCollider(isPlayerOne ? input.x: input.x *-1);
 
+        }
+        
         private void UpdateAnimator()
         {
             animator.SetFloat(id: Movimiento, (int)moveVelocity);
@@ -122,6 +125,18 @@ namespace _Scripts.Players
         {
             OnPowerUpUpdated?.Invoke(newPowerUp, isPlayerOne ? 1 : 2);
             _storedPowerUp = newPowerUp;
+        }
+        
+        public void OnWin()
+        {
+            canMove = false;
+            animator.SetBool(Win, true);
+        }
+    
+        public void OnLose()
+        {
+            canMove = false;
+            animator.SetBool(Lost, true);
         }
         
         //Get All References
