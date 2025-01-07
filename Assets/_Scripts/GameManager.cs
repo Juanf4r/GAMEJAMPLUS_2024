@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private InputPlayers _inputPlayers;
-
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI textJugador1;
     [SerializeField] private TextMeshProUGUI textJugador2;
@@ -123,27 +122,31 @@ public class GameManager : MonoBehaviour
 
     private void GanarJuego()
     {
-        LimpiarPowerUp();
 
-        if (contadorJugador1 >= 3)
+        LimpiarPowerUp();
+        if (contadorJugador1 >= 1)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
             panelGanador1.SetActive(true);
             
-            Player1.Instance.WinAnimationP1();
-            Player2.Instance.LostAnimationP2();
+            _player1.OnWin();
+            _player2.OnLose();
+            //Player1.Instance.WinAnimationP1();
+            //Player2.Instance.LostAnimationP2();
             
             audioGanar.Play();
         }
-        else if (contadorJugador2 >= 3)
+        else if (contadorJugador2 >= 1)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
             panelGanador2.SetActive(true);
-
-            Player2.Instance.WinAnimationP2();
-            Player1.Instance.LostAnimationP1();
+            
+            _player2.OnWin();
+            _player1.OnLose();
+            //Player2.Instance.WinAnimationP2();
+            //Player1.Instance.LostAnimationP1();
             
             audioGanar.Play();
         }
@@ -267,8 +270,8 @@ public class GameManager : MonoBehaviour
             _ => Vector3.zero
         };
 
-        var randomX = Random.Range(-5f, 5f); // Adjust range as needed
-        var randomZ = Random.Range(-3f, 3f); // Adjust range as needed
+        var randomX = Random.Range(-1f, 2f); // Adjust range as needed
+        var randomZ = Random.Range(-1f, 2f); // Adjust range as needed
 
         var modifyX = Random.value > 0.5f; // 50% chance to pick x or y
         if (modifyX)
