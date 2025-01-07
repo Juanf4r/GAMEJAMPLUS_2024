@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: DefaultConfig2
   m_EditorClassIdentifier: 
   accelerationTime: 0.15
-  speed: 4.2
-  strength: 2
+  speed: 5
+  strength: 4
+  invincibilityTime: 2
+  playerAnimator: {fileID: 9100000, guid: 06059cfd101705449b451da4da6f49c7, type: 2}
   terrainLayer:
     serializedVersion: 2
     m_Bits: 64

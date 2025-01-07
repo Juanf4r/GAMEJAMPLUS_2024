@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace _Scripts.Players
@@ -16,9 +17,12 @@ namespace _Scripts.Players
         [Header("Player Stats")] 
         public float speed;
         public float strength;
+        public float invincibilityTime;
 
         [Header("Misc Settings")] 
+        public RuntimeAnimatorController playerAnimator; 
         public LayerMask terrainLayer;
+        
 
 
         public void OnStart()
