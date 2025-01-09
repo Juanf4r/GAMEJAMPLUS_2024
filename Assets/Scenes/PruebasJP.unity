@@ -26260,12 +26260,14 @@ MonoBehaviour:
   panelGanador1: {fileID: 1691031373}
   panelGanador2: {fileID: 208876573}
   spawnCarne:
-  - {fileID: 1860698814}
-  - {fileID: 150961728}
-  - {fileID: 497770041}
-  - {fileID: 365059866}
-  - {fileID: 1102261193}
+  - {fileID: 1860698815}
+  - {fileID: 150961729}
+  - {fileID: 497770042}
+  - {fileID: 365059867}
+  - {fileID: 1102261194}
   carne: {fileID: 929977373}
+  contadorJugador1: 0
+  contadorJugador2: 0
   refPlayer1: {fileID: 749334751}
   refPlayer2: {fileID: 26851720}
   spawn1: {fileID: 1919766160}

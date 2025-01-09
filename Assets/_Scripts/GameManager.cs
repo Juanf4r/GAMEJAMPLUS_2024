@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject panelGanador2;
 
     [Header("Carnes")]
-    [SerializeField] private GameObject[] spawnCarne;
+    [SerializeField] private List<Transform> spawnCarne;
     [SerializeField] private GameObject carne;
 
     [Header("Contador")]
@@ -167,8 +167,13 @@ public class GameManager : MonoBehaviour
 
     public void LocalizarCarne()
     {
-        var randomIndex = Random.Range(0, spawnCarne.Length);
-        carne.transform.localPosition = spawnCarne[randomIndex].transform.position;
+        if (spawnCarne.Count > 0)
+        {
+            var randomIndex = Random.Range(0, spawnCarne.Count);
+            carne.transform.localPosition = spawnCarne[randomIndex].position;
+            Destroy(spawnCarne[randomIndex].gameObject);
+            spawnCarne.RemoveAt(randomIndex); 
+        }
     }
 
     private void Iniciar()
