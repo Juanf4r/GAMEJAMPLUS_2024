@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
     [Header("Contador")]
     public int contadorJugador1 = 0;
     public int contadorJugador2 = 0;
-    private float cronometro = 150;
+    private float cronometro = 150f;
+    public bool timeOver = false;
 
     [Header("Referencias")]
     [SerializeField] private GameObject refPlayer1;
@@ -93,6 +94,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        timeOver = false;
         
         Iniciar();
         LocalizarCarne();
@@ -103,8 +105,17 @@ public class GameManager : MonoBehaviour
 
     public void GanarRondaJugador1()
     {
-        contadorJugador1 += 1;
-        Debug.Log("jugador 1:" + contadorJugador1);
+        
+        if (timeOver)
+        {
+            contadorJugador1 += 3;
+        }
+        else
+        {
+            contadorJugador1++;
+        }
+
+        //Debug.Log("jugador 1:" + contadorJugador1);
         textJugador1.text = contadorJugador1.ToString();
         if (contadorJugador1 >= 3)
         {
@@ -114,8 +125,15 @@ public class GameManager : MonoBehaviour
 
     public void GanarRondaJugador2()
     {
-        contadorJugador2 += 1;
-        Debug.Log("juagdor 2:" + contadorJugador2);
+        if (timeOver)
+        {
+            contadorJugador2 += 3;
+        }
+        else
+        {
+            contadorJugador2++;
+        }
+        //Debug.Log("juagdor 2:" + contadorJugador2);
         textJugador2.text = contadorJugador2.ToString();
         if (contadorJugador2 >= 3) 
         {
@@ -125,7 +143,16 @@ public class GameManager : MonoBehaviour
 
     private void EndForTime()
     {
-        GanarJuego();
+        if ( contadorJugador1 == contadorJugador2)
+        {
+            timeOver = true;
+            //Debug.Log("gol de oro");
+        }
+        else
+        {
+            GanarJuego();
+        }
+        //Debug.Log("Se acabo el tiempo");
     }
 
     private void GanarJuego()
