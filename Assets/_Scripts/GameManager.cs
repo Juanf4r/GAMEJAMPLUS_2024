@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Carnes")]
     [SerializeField] private List<Transform> spawnCarne;
+    [SerializeField] private List<Transform> usedSpawns = new List<Transform>();
     [SerializeField] private GameObject carne;
 
     [Header("Contador")]
@@ -198,8 +199,14 @@ public class GameManager : MonoBehaviour
         {
             var randomIndex = Random.Range(0, spawnCarne.Count);
             carne.transform.localPosition = spawnCarne[randomIndex].position;
-            Destroy(spawnCarne[randomIndex].gameObject);
-            spawnCarne.RemoveAt(randomIndex); 
+            usedSpawns.Add(spawnCarne[randomIndex]);
+            spawnCarne.RemoveAt(randomIndex);
+
+            if (usedSpawns.Count > 1)
+            {
+                spawnCarne.Add(usedSpawns[usedSpawns.Count - 2]);
+                usedSpawns.RemoveAt(usedSpawns.Count - 2);
+            }
         }
     }
 
