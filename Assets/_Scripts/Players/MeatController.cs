@@ -15,6 +15,7 @@ namespace _Scripts.Players
             {
                 GameManager.Instance.GanarRondaJugador2();
             }
+            GameManager.Instance.LocalizarCarne();
         }
     }
 }

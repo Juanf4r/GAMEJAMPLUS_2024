@@ -22,13 +22,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject panelGanador2;
 
     [Header("Carnes")]
-    [SerializeField] private GameObject[] spawnCarne;
+    [SerializeField] private List<Transform> spawnCarne;
+    [SerializeField] private List<Transform> usedSpawns = new List<Transform>();
     [SerializeField] private GameObject carne;
 
     [Header("Contador")]
-    private int contadorJugador1 = 0;
-    private int contadorJugador2 = 0;
-    private float cronometro = 150;
+    public int contadorJugador1 = 0;
+    public int contadorJugador2 = 0;
+    private float cronometro = 150f;
+    public bool timeOver = false;
 
     [Header("Referencias")]
     [SerializeField] private GameObject refPlayer1;
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        timeOver = false;
         
         Iniciar();
         LocalizarCarne();
@@ -103,28 +106,61 @@ public class GameManager : MonoBehaviour
 
     public void GanarRondaJugador1()
     {
-        contadorJugador1 += 1;
+        
+        if (timeOver)
+        {
+            contadorJugador1 += 3;
+        }
+        else
+        {
+            contadorJugador1++;
+        }
+
+        //Debug.Log("jugador 1:" + contadorJugador1);
         textJugador1.text = contadorJugador1.ToString();
-        GanarJuego();
+        if (contadorJugador1 >= 3)
+        {
+            GanarJuego();
+        }
     }
 
     public void GanarRondaJugador2()
     {
-        contadorJugador2 += 1;
+        if (timeOver)
+        {
+            contadorJugador2 += 3;
+        }
+        else
+        {
+            contadorJugador2++;
+        }
+        //Debug.Log("juagdor 2:" + contadorJugador2);
         textJugador2.text = contadorJugador2.ToString();
-        GanarJuego();
+        if (contadorJugador2 >= 3) 
+        {
+            GanarJuego();
+        }
     }
 
     private void EndForTime()
     {
-        GanarJuego();
+        if ( contadorJugador1 == contadorJugador2)
+        {
+            timeOver = true;
+            //Debug.Log("gol de oro");
+        }
+        else
+        {
+            GanarJuego();
+        }
+        //Debug.Log("Se acabo el tiempo");
     }
 
     private void GanarJuego()
     {
 
         LimpiarPowerUp();
-        if (contadorJugador1 >= 1)
+        if (contadorJugador1 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
@@ -137,7 +173,7 @@ public class GameManager : MonoBehaviour
             
             audioGanar.Play();
         }
-        else if (contadorJugador2 >= 1)
+        else if (contadorJugador2 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
@@ -157,10 +193,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void LocalizarCarne()
+    public void LocalizarCarne()
     {
-        var randomIndex = Random.Range(0, spawnCarne.Length);
-        carne.transform.localPosition = spawnCarne[randomIndex].transform.position;
+        if (spawnCarne.Count > 0)
+        {
+            var randomIndex = Random.Range(0, spawnCarne.Count);
+            carne.transform.localPosition = spawnCarne[randomIndex].position;
+            usedSpawns.Add(spawnCarne[randomIndex]);
+            spawnCarne.RemoveAt(randomIndex);
+
+            if (usedSpawns.Count > 1)
+            {
+                spawnCarne.Add(usedSpawns[usedSpawns.Count - 2]);
+                usedSpawns.RemoveAt(usedSpawns.Count - 2);
+            }
+        }
     }
 
     private void Iniciar()
