@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject carne;
 
     [Header("Contador")]
-    private int contadorJugador1 = 0;
-    private int contadorJugador2 = 0;
+    public int contadorJugador1 = 0;
+    public int contadorJugador2 = 0;
     private float cronometro = 150;
 
     [Header("Referencias")]
@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
     {
 
         LimpiarPowerUp();
-        if (contadorJugador1 >= 1)
+        if (contadorJugador1 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
             
             audioGanar.Play();
         }
-        else if (contadorJugador2 >= 1)
+        else if (contadorJugador2 >= 3)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void LocalizarCarne()
+    public void LocalizarCarne()
     {
         var randomIndex = Random.Range(0, spawnCarne.Length);
         carne.transform.localPosition = spawnCarne[randomIndex].transform.position;
