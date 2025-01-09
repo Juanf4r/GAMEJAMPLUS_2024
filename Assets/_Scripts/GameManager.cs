@@ -104,15 +104,23 @@ public class GameManager : MonoBehaviour
     public void GanarRondaJugador1()
     {
         contadorJugador1 += 1;
+        Debug.Log("jugador 1:" + contadorJugador1);
         textJugador1.text = contadorJugador1.ToString();
-        GanarJuego();
+        if (contadorJugador1 >= 3)
+        {
+            GanarJuego();
+        }
     }
 
     public void GanarRondaJugador2()
     {
         contadorJugador2 += 1;
+        Debug.Log("juagdor 2:" + contadorJugador2);
         textJugador2.text = contadorJugador2.ToString();
-        GanarJuego();
+        if (contadorJugador2 >= 3) 
+        {
+            GanarJuego();
+        }
     }
 
     private void EndForTime()
