@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     [Header("Contador")]
     public int contadorJugador1 = 0;
     public int contadorJugador2 = 0;
-    private float cronometro = 150f;
+    private float cronometro = 10f;
     public bool timeOver = false;
 
     [Header("Referencias")]
@@ -214,7 +214,7 @@ public class GameManager : MonoBehaviour
     {
         refPlayer1.transform.localPosition = spawn1.transform.localPosition;
         refPlayer2.transform.localPosition = spawn2.transform.localPosition;
-        cronometro = 150f;
+
         PowerUp();
         //Player1.Instance.restart();
         //Player2.Instance.restart();
@@ -297,7 +297,7 @@ public class GameManager : MonoBehaviour
         }
 
         contadorInicio.text = "GO!!";
-        cronometro = 150f;
+        cronometro = 10f;
         
         yield return new WaitForSeconds(.5f);
         
