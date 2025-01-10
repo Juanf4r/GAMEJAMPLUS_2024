@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-wide-split
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a2307d848e92e34489f1236824baaf40,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

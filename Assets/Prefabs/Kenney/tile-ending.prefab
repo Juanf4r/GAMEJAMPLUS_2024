@@ -81,7 +81,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ccaaabe4b3e233248ad7d7838324edf6,
         type: 3}
       propertyPath: m_Name
-      value: tile-end
+      value: tile-ending
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ccaaabe4b3e233248ad7d7838324edf6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-end-round
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a10da208108a1cd46a6433e101e14ef2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

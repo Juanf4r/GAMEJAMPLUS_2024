@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-hill
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5c9dcdf7b85ee446b354b9151c1d73e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
