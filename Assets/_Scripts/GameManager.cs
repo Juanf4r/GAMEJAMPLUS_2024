@@ -9,6 +9,7 @@ using _Scripts.PowerUps;
 using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -147,6 +148,7 @@ public class GameManager : MonoBehaviour
         if ( contadorJugador1 == contadorJugador2)
         {
             timeOver = true;
+            textCronometro.text = "";
             //Debug.Log("gol de oro");
         }
         else
@@ -191,6 +193,7 @@ public class GameManager : MonoBehaviour
             LocalizarCarne();
             Iniciar();
         }
+        StartCoroutine(backMenu(5f));
     }
 
     public void LocalizarCarne()
@@ -332,5 +335,9 @@ public class GameManager : MonoBehaviour
 
         return position;
     }
-
+    private IEnumerator backMenu(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(0);
+    }
 }
