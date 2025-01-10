@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour
     {
 
         LimpiarPowerUp();
-        if (contadorJugador1 >= 3)
+        if (contadorJugador1 >= 1)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
             
             audioGanar.Play();
         }
-        else if (contadorJugador2 >= 3)
+        else if (contadorJugador2 >= 1)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
@@ -300,7 +300,7 @@ public class GameManager : MonoBehaviour
         }
 
         contadorInicio.text = "GO!!";
-        cronometro = 150f;
+        cronometro = 10f;
         
         yield return new WaitForSeconds(.5f);
         
