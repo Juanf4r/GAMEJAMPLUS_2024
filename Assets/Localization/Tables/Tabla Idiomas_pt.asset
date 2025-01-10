@@ -22,6 +22,102 @@ MonoBehaviour:
     m_Localized: Jogar
     m_Metadata:
       m_Items: []
+  - m_Id: 2
+    m_Localized: "Cr\xE9ditos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Sair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Configura\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Jogador 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Jogador 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Movimento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Pode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Bang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Retornar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "CONFIGURA\xC7\xD5ES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: PAUSA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Tempo restante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Carne Obtida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Jogador 1 vence!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Jogador 2 vence!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: "CR\xC9DITOS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: 'Projeto do jogo:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "Programa\xE7\xE3o:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: 'Arte:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

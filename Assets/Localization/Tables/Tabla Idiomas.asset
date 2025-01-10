@@ -32,7 +32,7 @@ MonoBehaviour:
         - rid: 3918160428974473243
         - rid: 3918160428974473244
         - rid: 3918160428974473245
-        m_ConnectedFile: C:/Users/juanf/Downloads/Primal Race - Hoja 1.csv
+        m_ConnectedFile: C:/Users/juanf/Downloads/Primal Race - Hoja 1 (3).csv
     - rid: 3918160428974473242
       type: {class: KeyIdColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns,
         asm: Unity.Localization.Editor}
