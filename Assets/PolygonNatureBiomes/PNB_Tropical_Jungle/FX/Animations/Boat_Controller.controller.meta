@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f79d0e7c65b595d4388dd974a1eb6648
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 234253
+  packageName: POLYGON Tropical Jungle - Nature Biomes - Low Poly 3D Art by Synty
+  packageVersion: 1.9.0
+  assetPath: Assets/PolygonNatureBiomes/PNB_Tropical_Jungle/FX/Animations/Boat_Controller.controller
+  uploadId: 703403
