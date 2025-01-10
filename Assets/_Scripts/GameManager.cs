@@ -300,7 +300,7 @@ public class GameManager : MonoBehaviour
         }
 
         contadorInicio.text = "GO!!";
-        cronometro = 150f;
+        cronometro = 20f;
         
         yield return new WaitForSeconds(.5f);
         
