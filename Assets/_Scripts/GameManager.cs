@@ -99,7 +99,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         timeOver = false;
-        
+        textJugador1.text = " 0 / 3";
+        textJugador2.text = " 0 / 3";   
         Iniciar();
         LocalizarCarne();
         panelGanador1.SetActive(false);
@@ -120,7 +121,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Debug.Log("jugador 1:" + contadorJugador1);
-        textJugador1.text = contadorJugador1.ToString();
+        textJugador1.text = contadorJugador1.ToString() + " / 3";
         if (contadorJugador1 >= 3)
         {
             GanarJuego();
@@ -138,7 +139,7 @@ public class GameManager : MonoBehaviour
             contadorJugador2++;
         }
         //Debug.Log("juagdor 2:" + contadorJugador2);
-        textJugador2.text = contadorJugador2.ToString();
+        textJugador2.text = contadorJugador2.ToString() + " / 3";
         if (contadorJugador2 >= 3) 
         {
             GanarJuego();
@@ -147,14 +148,14 @@ public class GameManager : MonoBehaviour
 
     private void EndForTime()
     {
+        LimpiarPowerUp();
         if ( contadorJugador1 == contadorJugador2)
         {
+            PowerUp();
             timeOver = true;
             textCronometro.text = "";
-            refPlayer1.transform.localPosition = spawn1.transform.localPosition;
-            refPlayer2.transform.localPosition = spawn2.transform.localPosition;
+            Iniciar();
             timerCenter.SetActive(false);
-            PowerUp();
             carne.transform.localPosition = meatGold.transform.position;
             cronometro += 10000;
             //Debug.Log("gol de oro");
