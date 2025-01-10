@@ -4674,7 +4674,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 106233767}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 72f1184f545044046831aa80573d3f5b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2055777072}
   m_SourcePrefab: {fileID: 100100000, guid: 72f1184f545044046831aa80573d3f5b, type: 3}
 --- !u!4 &120494315 stripped
 Transform:
@@ -13175,6 +13179,37 @@ Transform:
   - {fileID: 585485621}
   m_Father: {fileID: 1574631155}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!1 &370322667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 370322668}
+  m_Layer: 0
+  m_Name: GoldMeatSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &370322668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370322667}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.5, y: 0.5, z: 11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &373815325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26259,6 +26294,7 @@ MonoBehaviour:
   textCronometro: {fileID: 1925197000}
   panelGanador1: {fileID: 1691031373}
   panelGanador2: {fileID: 208876573}
+  timerCenter: {fileID: 224568817}
   spawnCarne:
   - {fileID: 1860698815}
   - {fileID: 150961729}
@@ -26266,8 +26302,10 @@ MonoBehaviour:
   - {fileID: 365059867}
   - {fileID: 1102261194}
   carne: {fileID: 929977373}
+  meatGold: {fileID: 370322667}
   contadorJugador1: 0
   contadorJugador2: 0
+  timeOver: 0
   refPlayer1: {fileID: 749334751}
   refPlayer2: {fileID: 26851720}
   spawn1: {fileID: 1919766160}
@@ -73140,6 +73178,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 265473720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2055777069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 72f1184f545044046831aa80573d3f5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 120494314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2055777072
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055777069}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4164624499741299792, guid: 72f1184f545044046831aa80573d3f5b, type: 3}
 --- !u!1001 &2059462091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75886,3 +75952,4 @@ SceneRoots:
   - {fileID: 1757092125}
   - {fileID: 2018369267}
   - {fileID: 1233913209}
+  - {fileID: 370322668}
