@@ -148,9 +148,9 @@ public class GameManager : MonoBehaviour
 
     private void EndForTime()
     {
+        LimpiarPowerUp();
         if ( contadorJugador1 == contadorJugador2)
         {
-            LimpiarPowerUp();
             PowerUp();
             timeOver = true;
             textCronometro.text = "";
