@@ -21,11 +21,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textCronometro;
     [SerializeField] private GameObject panelGanador1;
     [SerializeField] private GameObject panelGanador2;
+    [SerializeField] private GameObject timerCenter;
 
     [Header("Carnes")]
     [SerializeField] private List<Transform> spawnCarne;
-    [SerializeField] private List<Transform> usedSpawns = new List<Transform>();
+    private List<Transform> usedSpawns = new List<Transform>();
     [SerializeField] private GameObject carne;
+    [SerializeField] private GameObject meatGold;
 
     [Header("Contador")]
     public int contadorJugador1 = 0;
@@ -149,6 +151,12 @@ public class GameManager : MonoBehaviour
         {
             timeOver = true;
             textCronometro.text = "";
+            refPlayer1.transform.localPosition = spawn1.transform.localPosition;
+            refPlayer2.transform.localPosition = spawn2.transform.localPosition;
+            timerCenter.SetActive(false);
+            PowerUp();
+            carne.transform.localPosition = meatGold.transform.position;
+            cronometro += 10000;
             //Debug.Log("gol de oro");
         }
         else
@@ -162,7 +170,7 @@ public class GameManager : MonoBehaviour
     {
 
         LimpiarPowerUp();
-        if (contadorJugador1 >= 3)
+        if (contadorJugador1 >= 1)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
@@ -175,7 +183,7 @@ public class GameManager : MonoBehaviour
             
             audioGanar.Play();
         }
-        else if (contadorJugador2 >= 3)
+        else if (contadorJugador2 >= 1)
         {
             textJugador1.gameObject.SetActive(false);
             textJugador2.gameObject.SetActive(false);
@@ -193,6 +201,7 @@ public class GameManager : MonoBehaviour
             LocalizarCarne();
             Iniciar();
         }
+        timerCenter.SetActive(false);
         StartCoroutine(backMenu(5f));
     }
 
@@ -300,7 +309,7 @@ public class GameManager : MonoBehaviour
         }
 
         contadorInicio.text = "GO!!";
-        cronometro = 20f;
+        cronometro = 10f;
         
         yield return new WaitForSeconds(.5f);
         
