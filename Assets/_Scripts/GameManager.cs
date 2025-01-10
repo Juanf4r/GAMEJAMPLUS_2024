@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         timeOver = false;
         textJugador1.text = " 0 / 3";
-        textJugador2.text = " 0 / 3";
+        textJugador2.text = " 0 / 3";   
         Iniciar();
         LocalizarCarne();
         panelGanador1.SetActive(false);
@@ -150,13 +150,12 @@ public class GameManager : MonoBehaviour
     {
         if ( contadorJugador1 == contadorJugador2)
         {
+            LimpiarPowerUp();
+            PowerUp();
             timeOver = true;
             textCronometro.text = "";
             Iniciar();
             timerCenter.SetActive(false);
-            LimpiarPowerUp();
-            PowerUp();
-            
             carne.transform.localPosition = meatGold.transform.position;
             cronometro += 10000;
             //Debug.Log("gol de oro");
