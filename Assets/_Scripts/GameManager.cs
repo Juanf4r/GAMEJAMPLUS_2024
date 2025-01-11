@@ -149,22 +149,26 @@ public class GameManager : MonoBehaviour
     private void EndForTime()
     {
         LimpiarPowerUp();
-        if ( contadorJugador1 == contadorJugador2)
+        if (contadorJugador1 == contadorJugador2)
         {
-            PowerUp();
             timeOver = true;
             textCronometro.text = "";
+            _player1.canMove = false;
+            _player2.canMove = false;
+            _inputPlayers.Disable();
             Iniciar();
+            cronometro += 100;
             timerCenter.SetActive(false);
             carne.transform.localPosition = meatGold.transform.position;
-            cronometro += 10000;
-            //Debug.Log("gol de oro");
+            if(cronometro >= 5f)
+            {
+                StartCoroutine(newCronometro());
+            }
         }
         else
         {
             GanarJuego();
         }
-        //Debug.Log("Se acabo el tiempo");
     }
 
     private void GanarJuego()
@@ -173,8 +177,8 @@ public class GameManager : MonoBehaviour
         LimpiarPowerUp();
         if (contadorJugador1 >= 1)
         {
-            textJugador1.gameObject.SetActive(false);
-            textJugador2.gameObject.SetActive(false);
+            //textJugador1.gameObject.SetActive(false);
+            //textJugador2.gameObject.SetActive(false);
             panelGanador1.SetActive(true);
             
             _player1.OnWin();
@@ -186,8 +190,8 @@ public class GameManager : MonoBehaviour
         }
         else if (contadorJugador2 >= 1)
         {
-            textJugador1.gameObject.SetActive(false);
-            textJugador2.gameObject.SetActive(false);
+            //textJugador1.gameObject.SetActive(false);
+            //textJugador2.gameObject.SetActive(false);
             panelGanador2.SetActive(true);
             
             _player2.OnWin();
@@ -242,6 +246,11 @@ public class GameManager : MonoBehaviour
         {
             EndForTime();
         }
+        else if (timeOver && cronometro <= 5)
+        {
+            StartCoroutine(newCronometro());
+        }
+        //Debug.Log(cronometro);
     }
 
     private void PowerUp()
@@ -310,7 +319,7 @@ public class GameManager : MonoBehaviour
         }
 
         contadorInicio.text = "GO!!";
-        cronometro = 90f;
+        cronometro = 10f;
         
         yield return new WaitForSeconds(.5f);
         
@@ -349,5 +358,11 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(0);
+    }
+
+    private IEnumerator newCronometro()
+    {
+        yield return new WaitForSeconds(4);
+        cronometro += 10000f;
     }
 }
