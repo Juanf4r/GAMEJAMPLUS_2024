@@ -99,7 +99,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         timeOver = false;
-        
+        textJugador1.text = " 0 / 3";
+        textJugador2.text = " 0 / 3";   
         Iniciar();
         LocalizarCarne();
         panelGanador1.SetActive(false);
@@ -120,7 +121,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Debug.Log("jugador 1:" + contadorJugador1);
-        textJugador1.text = contadorJugador1.ToString();
+        textJugador1.text = contadorJugador1.ToString() + " / 3";
         if (contadorJugador1 >= 3)
         {
             GanarJuego();
@@ -138,7 +139,7 @@ public class GameManager : MonoBehaviour
             contadorJugador2++;
         }
         //Debug.Log("juagdor 2:" + contadorJugador2);
-        textJugador2.text = contadorJugador2.ToString();
+        textJugador2.text = contadorJugador2.ToString() + " / 3";
         if (contadorJugador2 >= 3) 
         {
             GanarJuego();
@@ -147,23 +148,27 @@ public class GameManager : MonoBehaviour
 
     private void EndForTime()
     {
-        if ( contadorJugador1 == contadorJugador2)
+        LimpiarPowerUp();
+        if (contadorJugador1 == contadorJugador2)
         {
             timeOver = true;
             textCronometro.text = "";
-            refPlayer1.transform.localPosition = spawn1.transform.localPosition;
-            refPlayer2.transform.localPosition = spawn2.transform.localPosition;
+            _player1.canMove = false;
+            _player2.canMove = false;
+            _inputPlayers.Disable();
+            Iniciar();
+            cronometro += 100;
             timerCenter.SetActive(false);
-            PowerUp();
             carne.transform.localPosition = meatGold.transform.position;
-            cronometro += 10000;
-            //Debug.Log("gol de oro");
+            if(cronometro >= 5f)
+            {
+                StartCoroutine(newCronometro());
+            }
         }
         else
         {
             GanarJuego();
         }
-        //Debug.Log("Se acabo el tiempo");
     }
 
     private void GanarJuego()
@@ -172,8 +177,8 @@ public class GameManager : MonoBehaviour
         LimpiarPowerUp();
         if (contadorJugador1 >= 1)
         {
-            textJugador1.gameObject.SetActive(false);
-            textJugador2.gameObject.SetActive(false);
+            //textJugador1.gameObject.SetActive(false);
+            //textJugador2.gameObject.SetActive(false);
             panelGanador1.SetActive(true);
             
             _player1.OnWin();
@@ -185,8 +190,8 @@ public class GameManager : MonoBehaviour
         }
         else if (contadorJugador2 >= 1)
         {
-            textJugador1.gameObject.SetActive(false);
-            textJugador2.gameObject.SetActive(false);
+            //textJugador1.gameObject.SetActive(false);
+            //textJugador2.gameObject.SetActive(false);
             panelGanador2.SetActive(true);
             
             _player2.OnWin();
@@ -241,6 +246,11 @@ public class GameManager : MonoBehaviour
         {
             EndForTime();
         }
+        else if (timeOver && cronometro <= 5)
+        {
+            StartCoroutine(newCronometro());
+        }
+        //Debug.Log(cronometro);
     }
 
     private void PowerUp()
@@ -348,5 +358,11 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(0);
+    }
+
+    private IEnumerator newCronometro()
+    {
+        yield return new WaitForSeconds(4);
+        cronometro += 10000f;
     }
 }
