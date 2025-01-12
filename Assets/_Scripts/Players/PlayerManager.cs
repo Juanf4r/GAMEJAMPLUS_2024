@@ -11,9 +11,6 @@ namespace _Scripts.Players
         [SerializeField] public Vector2 playerInput;
         public bool isPlayerOne;
         
-        [Header("Sounds")]
-        public AudioClip[] footstepClips; 
-
         [Header("Flags")] 
         public bool canMove;
         public bool isAttacking;

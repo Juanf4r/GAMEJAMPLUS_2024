@@ -20,8 +20,8 @@ namespace _Scripts
         }
         public AudioSource soundObject;
 
-        private const float VolumeChangeMultiplier = 0.15f;
-        private const float PitchChangeMultiplier = 0.1f;
+        private const float VolumeChangeMultiplier = 0.1f;
+        private const float PitchChangeMultiplier = 0.25f;
 
         public static void PlaySoundFxClip(AudioClip clip, Vector3 soundPosition, float volume)
         {

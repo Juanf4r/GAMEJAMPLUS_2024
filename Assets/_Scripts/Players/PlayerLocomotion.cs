@@ -11,11 +11,6 @@ namespace _Scripts.Players
         private float _verticalVelocity; 
         private const float Gravity = -9.81f; 
         
-
-        [SerializeField] private float footstepInterval = 0.5f;
-        
-        private float footstepTimer;
-
         private void Awake()
         {
             _characterController = GetComponent<CharacterController>();
@@ -25,7 +20,6 @@ namespace _Scripts.Players
         public void HandleAllLocomotion()
         {
             HandleMovement();
-            HandleFootsteps();
         }
 
         private void HandleMovement()
@@ -48,28 +42,6 @@ namespace _Scripts.Players
             var movement = _currentVelocity + Vector3.up * _verticalVelocity;
             _characterController.Move(movement * Time.deltaTime);
             _playerManager.moveVelocity = _characterController.velocity.magnitude;
-        }
-        
-        private void HandleFootsteps()
-        {
-            if ( _currentVelocity.magnitude > 0.1f)
-            {
-                footstepTimer -= Time.deltaTime;
-                var adjustedInterval = footstepInterval / (_playerManager.playerConfig.speed / 5f);
-                if (!(footstepTimer <= 0f)) return;
-                PlayFootstepSound();
-                footstepTimer = adjustedInterval;
-            }
-            else
-            {
-                footstepTimer = Mathf.Max(footstepTimer, footstepInterval);
-            }
-        }
-
-        
-        private void PlayFootstepSound()
-        {
-            SoundFXChannel.PlaySoundFxClip(_playerManager.footstepClips, transform.position, 1f);
         }
     }
 }
