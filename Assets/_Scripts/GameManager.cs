@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     [Header("Contador")]
     public int contadorJugador1 = 0;
     public int contadorJugador2 = 0;
-    private float cronometro = 10f;
+    private float cronometro;
     public bool timeOver = false;
 
     [Header("Referencias")]
@@ -319,7 +319,7 @@ public class GameManager : MonoBehaviour
         }
 
         contadorInicio.text = "GO!!";
-        cronometro = 10f;
+        cronometro = 90f;
         
         yield return new WaitForSeconds(.5f);
         

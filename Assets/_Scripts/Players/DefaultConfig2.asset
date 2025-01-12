@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f12e8d21e7a8b749af092ae76c646c4, type: 3}
   m_Name: DefaultConfig2
   m_EditorClassIdentifier: 
-  accelerationTime: 0.15
-  speed: 5
+  accelerationTime: 0.12
+  speed: 4.75
   strength: 4
   invincibilityTime: 2
   playerAnimator: {fileID: 9100000, guid: 06059cfd101705449b451da4da6f49c7, type: 2}
