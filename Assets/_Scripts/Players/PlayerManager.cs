@@ -11,6 +11,9 @@ namespace _Scripts.Players
         [SerializeField] public Vector2 playerInput;
         public bool isPlayerOne;
         
+        [Header("Sounds")]
+        public AudioClip[] footstepClips; 
+
         [Header("Flags")] 
         public bool canMove;
         public bool isAttacking;
@@ -19,10 +22,10 @@ namespace _Scripts.Players
         public static event Action<PowerUpSo, int> OnPowerUpUpdated;
         
         //Referencess
-        private PlayerLocomotion _playerLocomotion;
-        private PlayerActions _playerActions;
-        private PowerUpSo _storedPowerUp;
-        private HammerController _hammerController;
+        private PlayerLocomotion playerLocomotion;
+        private PlayerActions playerActions;
+        private PowerUpSo storedPowerUp;
+        private HammerController hammerController;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
         public PlayerConfig playerConfig;
@@ -79,7 +82,7 @@ namespace _Scripts.Players
 
         private void FixedUpdate()
         {
-            _playerLocomotion.HandleAllLocomotion();
+            playerLocomotion.HandleAllLocomotion();
         }
         
         private void Update()
@@ -94,15 +97,15 @@ namespace _Scripts.Players
 
         private void HandlePowerUp()
         {
-            if(!_storedPowerUp || !canMove) return;
-            _playerActions.ActivatePowerUp(_storedPowerUp);
-            _storedPowerUp = null;
+            if(!storedPowerUp || !canMove) return;
+            playerActions.ActivatePowerUp(storedPowerUp);
+            storedPowerUp = null;
         }
 
         private void HandlePunch()
         {
             if (!canMove) return;
-            _playerActions.HandlePrimaryAttack();
+            playerActions.HandlePrimaryAttack();
         }
 
         private void HandleMovement(Vector2 input)
@@ -111,7 +114,7 @@ namespace _Scripts.Players
             playerInput = input * -1f;
             if(input.x == 0) return;
             spriteRenderer.flipX = input.x < 0;
-            _hammerController.FlipCollider(isPlayerOne ? input.x: input.x *-1);
+            hammerController.FlipCollider(isPlayerOne ? input.x: input.x *-1);
 
         }
         
@@ -124,7 +127,7 @@ namespace _Scripts.Players
         public void UpdateStoredPowerUp(PowerUpSo newPowerUp)
         {
             OnPowerUpUpdated?.Invoke(newPowerUp, isPlayerOne ? 1 : 2);
-            _storedPowerUp = newPowerUp;
+            storedPowerUp = newPowerUp;
         }
         
         public void OnWin()
@@ -142,11 +145,11 @@ namespace _Scripts.Players
         //Get All References
         private void GetAllReferences()
         {
-            _playerLocomotion = GetComponent<PlayerLocomotion>();
-            _playerActions = GetComponent<PlayerActions>();
+            playerLocomotion = GetComponent<PlayerLocomotion>();
+            playerActions = GetComponent<PlayerActions>();
             animator = GetComponentInChildren<Animator>();
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            _hammerController = GetComponentInChildren<HammerController>();
+            hammerController = GetComponentInChildren<HammerController>();
         }
     }
 }
