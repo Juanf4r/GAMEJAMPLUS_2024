@@ -20281,6 +20281,7 @@ MonoBehaviour:
   panelContador: {fileID: 423836824}
   contadorInicio: {fileID: 2079742768}
   audioGanar: {fileID: 715520848}
+  derrota: {fileID: 0}
 --- !u!4 &715520847
 Transform:
   m_ObjectHideFlags: 0

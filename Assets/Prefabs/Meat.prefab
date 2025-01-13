@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8546861647248525613}
   - component: {fileID: 5484770957719343422}
+  - component: {fileID: 4916197004050742652}
   m_Layer: 0
   m_Name: Meat
   m_TagString: Meat
@@ -56,6 +57,20 @@ CapsuleCollider:
   m_Height: 0.35
   m_Direction: 1
   m_Center: {x: -0.00083871686, y: -0.0017216405, z: 0}
+--- !u!114 &4916197004050742652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447921644614680567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f28fae49e0cd149b57a1f229368a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatClips:
+  - {fileID: 8300000, guid: 0c66954d1e60d674a976cc561ff4ba40, type: 3}
 --- !u!1 &8441962840603048767
 GameObject:
   m_ObjectHideFlags: 0

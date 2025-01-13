@@ -206,6 +206,7 @@ MonoBehaviour:
   isPlayerOne: 1
   canMove: 1
   isAttacking: 0
+  playerSoundManager: {fileID: 0}
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
   playerConfig: {fileID: 11400000, guid: 11479f9e1a4e5a34f979b4788cb0a154, type: 2}
@@ -254,6 +255,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c49635b0577e5134d95fe8739923271b, type: 3}
   - {fileID: 8300000, guid: 1f3f986fc75f0fe449664a4f1f8124fc, type: 3}
   - {fileID: 8300000, guid: 6a6d088e9712cdd46aef2b713322f18b, type: 3}
+  pickupClips:
+  - {fileID: 8300000, guid: 6d1e1f661d1af6b4fbc675b65b05b497, type: 3}
+  powerUpClips:
+  - {fileID: 8300000, guid: 1f03601ebd1c3f644a0762c864ac3f86, type: 3}
+  - {fileID: 8300000, guid: 18c1c1b4fd4c3fa41be6b98987e716b6, type: 3}
+  - {fileID: 8300000, guid: 4c9f1478617a6844bbff6b7327633b9d, type: 3}
+  attackClips:
+  - {fileID: 8300000, guid: 7cb5b1071259338448898991e09b83bd, type: 3}
+  onDamagedClips:
+  - {fileID: 8300000, guid: 919f5401824757b44a86dca7cfdfb3ba, type: 3}
+  - {fileID: 8300000, guid: 9d5a4bc7726ff3042bf8fa200be49da5, type: 3}
 --- !u!1 &3760079013879367749
 GameObject:
   m_ObjectHideFlags: 0
