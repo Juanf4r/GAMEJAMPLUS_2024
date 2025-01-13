@@ -121,18 +121,330 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdcb807b25034fb4fb56740dc25a1647
+      internalID: 1190446374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1faa1c0c03dfbbd46a601382eb3fac63
+      internalID: 1433107197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba3db3f46cd6d740829971e59675bd8
+      internalID: 1353891976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2af30ae1c3715548b895ec4c89fbfc2
+      internalID: 245317243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5633c9f35bd909647b98a453e66efa8d
+      internalID: 1731987449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30856f976a51a6a4c8745ce03c4d2b3b
+      internalID: 416090702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc26da57120acfa499c860e617d72c8c
+      internalID: 1966728716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c97e240b06dee41a325c07f5254a85
+      internalID: 676114593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9adacb502b8a84d8e342ae131f42d9
+      internalID: 702121810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404a7f449b0040343b789d95118590cb
+      internalID: -891171005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ab1e03dbf61df49aa7195a95a27919
+      internalID: -551081963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_31
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c99385803ed67d469dba7ec9c3495f3
+      internalID: -1201160798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco piedra_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec75f1d0d668afa479b1c98eca72cbf4
+      internalID: 1413837316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 04aff93116e39c54ab949e85f6954f7a
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cavernicola 1 lleno coco piedra_0: 283413259
+      Cavernicola 1 lleno coco piedra_1: 1190446374
+      Cavernicola 1 lleno coco piedra_10: -257977107
+      Cavernicola 1 lleno coco piedra_11: 553399445
+      Cavernicola 1 lleno coco piedra_12: 1731987449
+      Cavernicola 1 lleno coco piedra_13: 416090702
+      Cavernicola 1 lleno coco piedra_14: 1966728716
+      Cavernicola 1 lleno coco piedra_15: 642201266
+      Cavernicola 1 lleno coco piedra_16: 676114593
+      Cavernicola 1 lleno coco piedra_17: 1854263641
+      Cavernicola 1 lleno coco piedra_18: 1248166533
+      Cavernicola 1 lleno coco piedra_19: -837859307
+      Cavernicola 1 lleno coco piedra_2: -1962296787
+      Cavernicola 1 lleno coco piedra_20: 1599467882
+      Cavernicola 1 lleno coco piedra_21: 810419639
+      Cavernicola 1 lleno coco piedra_22: -1501795462
+      Cavernicola 1 lleno coco piedra_23: -1862382912
+      Cavernicola 1 lleno coco piedra_24: 702121810
+      Cavernicola 1 lleno coco piedra_25: -946920978
+      Cavernicola 1 lleno coco piedra_26: -891171005
+      Cavernicola 1 lleno coco piedra_27: -915131790
+      Cavernicola 1 lleno coco piedra_28: -551081963
+      Cavernicola 1 lleno coco piedra_29: 134513261
+      Cavernicola 1 lleno coco piedra_3: 1433107197
+      Cavernicola 1 lleno coco piedra_30: 863251154
+      Cavernicola 1 lleno coco piedra_31: -1201160798
+      Cavernicola 1 lleno coco piedra_32: -1288135675
+      Cavernicola 1 lleno coco piedra_33: 259583859
+      Cavernicola 1 lleno coco piedra_34: -375800013
+      Cavernicola 1 lleno coco piedra_35: 1143517186
+      Cavernicola 1 lleno coco piedra_36: -852972746
+      Cavernicola 1 lleno coco piedra_37: 1413837316
+      Cavernicola 1 lleno coco piedra_38: 907803739
+      Cavernicola 1 lleno coco piedra_4: 1059339088
+      Cavernicola 1 lleno coco piedra_5: 1353891976
+      Cavernicola 1 lleno coco piedra_6: 1022687098
+      Cavernicola 1 lleno coco piedra_7: 245317243
+      Cavernicola 1 lleno coco piedra_8: -712988520
+      Cavernicola 1 lleno coco piedra_9: 964961569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
