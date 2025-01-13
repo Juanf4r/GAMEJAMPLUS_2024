@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8546861647248525613}
   - component: {fileID: 5484770957719343422}
-  - component: {fileID: 7556636624847567662}
+  - component: {fileID: 4916197004050742652}
   m_Layer: 0
   m_Name: Meat
   m_TagString: Meat
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 2447921644614680567}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.76, y: 0.2, z: 31.47}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0.341, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4836718578502116567}
@@ -53,11 +53,11 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.28
+  m_Radius: 0.32
   m_Height: 0.35
   m_Direction: 1
   m_Center: {x: -0.00083871686, y: -0.0017216405, z: 0}
---- !u!114 &7556636624847567662
+--- !u!114 &4916197004050742652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,6 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f28fae49e0cd149b57a1f229368a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eatClips:
+  - {fileID: 8300000, guid: 0c66954d1e60d674a976cc561ff4ba40, type: 3}
 --- !u!1 &8441962840603048767
 GameObject:
   m_ObjectHideFlags: 0

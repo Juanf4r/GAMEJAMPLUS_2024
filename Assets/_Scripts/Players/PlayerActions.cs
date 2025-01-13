@@ -11,7 +11,7 @@ namespace _Scripts.Players
         private PlayerManager _playerManager;
         private PlayerConfig _playerConfig;
         private GameManager _gameManager;
-
+        
         private static readonly int Golpe = Animator.StringToHash("Golpe");
         private static readonly int Stunt = Animator.StringToHash("Stunt");
 
@@ -24,7 +24,7 @@ namespace _Scripts.Players
             _playerConfig = _playerManager.playerConfig;
             _gameManager = FindAnyObjectByType<GameManager>();
         }
-
+        
         public void HandlePrimaryAttack()
         {
             _playerManager.animator.SetBool(Golpe, true);
@@ -56,20 +56,19 @@ namespace _Scripts.Players
 
             StartCoroutine(PowerUpTimer(powerUp.duration));
         }
-
+        
         private void HandleTeleport()
         {
             StartCoroutine(TeleportToEnemy());
         }
-
+        
         public void OnHit(float duration)
         {
             if (_isInvulnerable) return;
-            Debug.Log($"Stunned for {duration}");
-            if (!_playerManager.canMove) return;
+            if(!_playerManager.canMove) return;
             StartCoroutine(StunnedForSeconds(duration));
         }
-
+        
         private IEnumerator PowerUpTimer(float timer)
         {
             yield return new WaitForSeconds(timer);
@@ -90,6 +89,7 @@ namespace _Scripts.Players
 
         private IEnumerator StunnedForSeconds(float duration)
         {
+            _playerManager.playerSoundManager.PlayOnHit(duration > 4);
             _isInvulnerable = true;
             _playerManager.canMove = false;
             _playerManager.animator.SetBool(Stunt, true);
@@ -99,32 +99,32 @@ namespace _Scripts.Players
             StartCoroutine(InvincibilityDuration(_playerConfig.invincibilityTime));
         }
 
-        /* private IEnumerator InvincibilityDuration(float duration)
-         {
-             var spriteRenderer = _playerManager.GetComponentInChildren<SpriteRenderer>();
-             if (!spriteRenderer)
-             {
-                 Debug.LogWarning("SpriteRenderer not found on player.");
-                 yield break;
-             }
+       /* private IEnumerator InvincibilityDuration(float duration)
+        {
+            var spriteRenderer = _playerManager.GetComponentInChildren<SpriteRenderer>();
+            if (!spriteRenderer)
+            {
+                Debug.LogWarning("SpriteRenderer not found on player.");
+                yield break;
+            }
 
-             var originalColor = spriteRenderer.color; 
-             var elapsed = 0f;
-             var isWhite = false;
+            var originalColor = spriteRenderer.color; 
+            var elapsed = 0f;
+            var isWhite = false;
 
-             while (elapsed < duration)
-             {
-                 isWhite = !isWhite;
-                 spriteRenderer.color = isWhite ? Color.red : originalColor;
+            while (elapsed < duration)
+            {
+                isWhite = !isWhite;
+                spriteRenderer.color = isWhite ? Color.red : originalColor;
 
-                 yield return new WaitForSeconds(0.3f); 
-                 elapsed += 0.3f;
-             }
+                yield return new WaitForSeconds(0.3f); 
+                elapsed += 0.3f;
+            }
 
-             spriteRenderer.color = originalColor;
-             _isInvulnerable = false;
-         }
-         */
+            spriteRenderer.color = originalColor;
+            _isInvulnerable = false;
+        }
+        */
         private IEnumerator InvincibilityDuration(float duration)
         {
             var spriteRenderer = _playerManager.GetComponentInChildren<SpriteRenderer>();
@@ -142,22 +142,14 @@ namespace _Scripts.Players
                 isVisible = !isVisible;
                 spriteRenderer.enabled = isVisible;
 
-                yield return new WaitForSeconds(0.15f);
+                yield return new WaitForSeconds(0.15f); 
                 elapsed += 0.15f;
             }
 
             spriteRenderer.enabled = true;
             _isInvulnerable = false;
         }
-        //public PowerUpSo storedPowerUp;
-        public void ResetPowerUpsForBothPlayers()
-        {
-            OnPowerUpOut?.Invoke(1);
-            OnPowerUpOut?.Invoke(2);
-            _playerManager.storedPowerUp = null;
-            //Debug.Log("PowerUps deshabilitados para ambos jugadores");
-            _playerConfig.RevertBuff();
-        }
 
     }
 }
+ 

@@ -4,6 +4,8 @@ namespace _Scripts.Players
 {
     public class MeatController : MonoBehaviour
     {
+        public AudioClip[] eatClips;
+
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player")) return;
@@ -15,7 +17,8 @@ namespace _Scripts.Players
             {
                 GameManager.Instance.GanarRondaJugador2();
             }
+            SoundFXChannel.PlaySoundFxClip(eatClips, transform.position, .5f);
             GameManager.Instance.LocalizarCarne();
         }
-    }
+    }   
 }

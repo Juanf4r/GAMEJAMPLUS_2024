@@ -23,6 +23,7 @@ namespace _Scripts.Players
         private PlayerActions playerActions;
         public PowerUpSo storedPowerUp;
         private HammerController hammerController;
+        public PlayerSoundManager playerSoundManager;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
         public PlayerConfig playerConfig;
@@ -95,6 +96,7 @@ namespace _Scripts.Players
         private void HandlePowerUp()
         {
             if(!storedPowerUp || !canMove) return;
+            playerSoundManager.PlayPowerUp(storedPowerUp);
             playerActions.ActivatePowerUp(storedPowerUp);
             storedPowerUp = null;
         }
@@ -103,6 +105,7 @@ namespace _Scripts.Players
         {
             if (!canMove) return;
             playerActions.HandlePrimaryAttack();
+            playerSoundManager.PlayPunch();
         }
 
         private void HandleMovement(Vector2 input)
@@ -124,6 +127,7 @@ namespace _Scripts.Players
         public void UpdateStoredPowerUp(PowerUpSo newPowerUp)
         {
             OnPowerUpUpdated?.Invoke(newPowerUp, isPlayerOne ? 1 : 2);
+            playerSoundManager.PlayPickup();
             storedPowerUp = newPowerUp;
         }
         
@@ -147,6 +151,7 @@ namespace _Scripts.Players
             animator = GetComponentInChildren<Animator>();
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             hammerController = GetComponentInChildren<HammerController>();
+            playerSoundManager = GetComponent<PlayerSoundManager>();
         }
     }
 }
