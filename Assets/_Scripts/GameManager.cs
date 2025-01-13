@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     [Header("Contador")]
     public int contadorJugador1 = 0;
     public int contadorJugador2 = 0;
-    private float cronometro = 20f;
+    private float cronometro = 90f;
     public bool timeOver = false;
 
     [Header("Referencias")]
@@ -99,8 +99,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         timeOver = false;
-        textJugador1.text = " 0 / 3";
-        textJugador2.text = " 0 / 3";   
+        textJugador1.text = "0 / 3";
+        textJugador2.text = "0 / 3";   
         Iniciar();
         LocalizarCarne();
         panelGanador1.SetActive(false);
@@ -120,7 +120,6 @@ public class GameManager : MonoBehaviour
             contadorJugador1++;
         }
 
-        //Debug.Log("jugador 1:" + contadorJugador1);
         textJugador1.text = contadorJugador1.ToString() + " / 3";
         if (contadorJugador1 >= 3)
         {
@@ -183,27 +182,19 @@ public class GameManager : MonoBehaviour
         LimpiarPowerUp();
         if (contadorJugador1 >= 1)
         {
-            //textJugador1.gameObject.SetActive(false);
-            //textJugador2.gameObject.SetActive(false);
             panelGanador1.SetActive(true);
             
             _player1.OnWin();
             _player2.OnLose();
-            //Player1.Instance.WinAnimationP1();
-            //Player2.Instance.LostAnimationP2();
             
             audioGanar.Play();
         }
         else if (contadorJugador2 >= 1)
         {
-            //textJugador1.gameObject.SetActive(false);
-            //textJugador2.gameObject.SetActive(false);
             panelGanador2.SetActive(true);
             
             _player2.OnWin();
             _player1.OnLose();
-            //Player2.Instance.WinAnimationP2();
-            //Player1.Instance.LostAnimationP1();
             
             audioGanar.Play();
         }
@@ -239,8 +230,7 @@ public class GameManager : MonoBehaviour
         refPlayer2.transform.localPosition = spawn2.transform.localPosition;
 
         PowerUp();
-        //Player1.Instance.restart();
-        //Player2.Instance.restart();
+
         StartCoroutine(CuentaRegresiva());
     }
 
@@ -256,7 +246,6 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(newCronometro());
         }
-        //Debug.Log(cronometro);
     }
 
     private void PowerUp()
@@ -313,8 +302,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CuentaRegresiva()
     {
-        //Player1.Instance._inputPlayers.Disable();
-        //Player2.Instance._inputPlayers.Disable();
         panelGameplay.SetActive(false);
         panelContador.gameObject.SetActive(true);
 
@@ -325,7 +312,7 @@ public class GameManager : MonoBehaviour
         }
 
         contadorInicio.text = "GO!!";
-        cronometro = 20f;
+        cronometro = 90f;
         
         yield return new WaitForSeconds(.5f);
         
