@@ -23,6 +23,7 @@ namespace _Scripts.Players
         private PlayerActions playerActions;
         private PowerUpSo storedPowerUp;
         private HammerController hammerController;
+        private PlayerSoundManager playerSoundManager;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
         public PlayerConfig playerConfig;
@@ -124,6 +125,7 @@ namespace _Scripts.Players
         public void UpdateStoredPowerUp(PowerUpSo newPowerUp)
         {
             OnPowerUpUpdated?.Invoke(newPowerUp, isPlayerOne ? 1 : 2);
+            playerSoundManager.PlayPickup();
             storedPowerUp = newPowerUp;
         }
         
@@ -147,6 +149,7 @@ namespace _Scripts.Players
             animator = GetComponentInChildren<Animator>();
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             hammerController = GetComponentInChildren<HammerController>();
+            playerSoundManager = GetComponent<PlayerSoundManager>();
         }
     }
 }

@@ -36475,11 +36475,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2447921644614680567, guid: a3c11f1efcff41645a4de76b4d6db810,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 929977376}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c11f1efcff41645a4de76b4d6db810, type: 3}
 --- !u!1 &929977373 stripped
 GameObject:
@@ -36487,18 +36483,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 929977372}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &929977376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929977373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f28fae49e0cd149b57a1f229368a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &932790861 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 966effc5afae9e34399a39469061d4ce,
@@ -82362,6 +82346,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerOne
       objectReference: {fileID: 0}
+    - target: {fileID: 3244584986374198669, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: pickupClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244584986374198669, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: 'pickupClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d1e1f661d1af6b4fbc675b65b05b497, type: 3}
     - target: {fileID: 3820201118158786088, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
