@@ -23,7 +23,7 @@ namespace _Scripts.Players
         private PlayerActions playerActions;
         private PowerUpSo storedPowerUp;
         private HammerController hammerController;
-        private PlayerSoundManager playerSoundManager;
+        public PlayerSoundManager playerSoundManager;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
         public PlayerConfig playerConfig;
@@ -105,6 +105,7 @@ namespace _Scripts.Players
         {
             if (!canMove) return;
             playerActions.HandlePrimaryAttack();
+            playerSoundManager.PlayPunch();
         }
 
         private void HandleMovement(Vector2 input)

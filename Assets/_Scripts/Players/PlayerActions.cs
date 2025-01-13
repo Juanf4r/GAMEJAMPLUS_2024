@@ -65,7 +65,6 @@ namespace _Scripts.Players
         public void OnHit(float duration)
         {
             if (_isInvulnerable) return;
-            Debug.Log($"Stunned for {duration}");
             if(!_playerManager.canMove) return;
             StartCoroutine(StunnedForSeconds(duration));
         }
@@ -90,6 +89,7 @@ namespace _Scripts.Players
 
         private IEnumerator StunnedForSeconds(float duration)
         {
+            _playerManager.playerSoundManager.PlayOnHit(duration > 4);
             _isInvulnerable = true;
             _playerManager.canMove = false;
             _playerManager.animator.SetBool(Stunt, true);

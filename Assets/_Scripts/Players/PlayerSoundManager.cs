@@ -9,7 +9,8 @@ namespace _Scripts.Players
         public AudioClip[] footstepClips;
         public AudioClip[] pickupClips;
         public AudioClip[] powerUpClips;
-        
+        public AudioClip[] attackClips;
+        public AudioClip[] onDamagedClips;
         public void PlayFootStep(){
             SoundFXChannel.PlaySoundFxClip(footstepClips,transform.position, .5f);
         }
@@ -30,6 +31,17 @@ namespace _Scripts.Players
             };
             
             SoundFXChannel.PlaySoundFxClip(sound, transform.position,.5f);
+        }
+
+        public void PlayPunch()
+        {
+            SoundFXChannel.PlaySoundFxClip(attackClips,transform.position,.5f);
+        }
+
+        public void PlayOnHit(bool strong)
+        {
+            var audioClip = strong ? onDamagedClips[1] : onDamagedClips[0];
+            SoundFXChannel.PlaySoundFxClip(audioClip,transform.position,.5f);
         }
     }
 }
