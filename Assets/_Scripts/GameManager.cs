@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
 using _ScriptableObjects.Scripts;
+using _Scripts;
 using _Scripts.Players;
 using _Scripts.PowerUps;
 using UnityEngine.Serialization;
@@ -66,6 +67,9 @@ public class GameManager : MonoBehaviour
     [Header("Musica ganar")]
     [SerializeField] private AudioSource audioGanar;
 
+    [Header("Sonidos")] 
+    [SerializeField] private AudioClip derrota;
+
     private void Awake()
     {
         _inputPlayers = new InputPlayers();
@@ -110,7 +114,8 @@ public class GameManager : MonoBehaviour
 
     public void GanarRondaJugador1()
     {
-        
+        SoundFXChannel.PlaySoundFxClip(derrota, _player2.transform.position, .5f, true);
+
         if (timeOver)
         {
             contadorJugador1 += 3;
@@ -130,6 +135,8 @@ public class GameManager : MonoBehaviour
 
     public void GanarRondaJugador2()
     {
+        SoundFXChannel.PlaySoundFxClip(derrota, _player1.transform.position, .5f,true);
+
         if (timeOver)
         {
             contadorJugador2 += 3;

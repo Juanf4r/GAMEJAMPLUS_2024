@@ -96,6 +96,7 @@ namespace _Scripts.Players
         private void HandlePowerUp()
         {
             if(!storedPowerUp || !canMove) return;
+            playerSoundManager.PlayPowerUp(storedPowerUp);
             playerActions.ActivatePowerUp(storedPowerUp);
             storedPowerUp = null;
         }

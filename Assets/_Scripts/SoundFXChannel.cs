@@ -23,7 +23,7 @@ namespace _Scripts
         private const float VolumeChangeMultiplier = 0.1f;
         private const float PitchChangeMultiplier = 0.25f;
 
-        public static void PlaySoundFxClip(AudioClip clip, Vector3 soundPosition, float volume)
+        public static void PlaySoundFxClip(AudioClip clip, Vector3 soundPosition, float volume, bool loop = false)
         {
             var randVolume = Random.Range(volume - VolumeChangeMultiplier,  volume + VolumeChangeMultiplier);
             var randPitch = Random.Range(volume - PitchChangeMultiplier,  volume + PitchChangeMultiplier);
@@ -32,10 +32,11 @@ namespace _Scripts
             audio.clip = clip;
             audio.volume = randVolume;
             audio.volume = randPitch;
+            if (loop) audio.loop = true;
             audio.Play();
         }
         
-        public static void PlaySoundFxClip(AudioClip[] clips, Vector3 soundPosition, float volume)
+        public static void PlaySoundFxClip(AudioClip[] clips, Vector3 soundPosition, float volume, bool loop = false)
         {
             var randClip = Random.Range(0, clips.Length);
             var randVolume = Random.Range(volume - VolumeChangeMultiplier,  volume + VolumeChangeMultiplier);
@@ -45,6 +46,7 @@ namespace _Scripts
             audio.clip = clips[randClip];
             audio.volume = randVolume;
             audio.volume = randPitch;
+            if (loop) audio.loop = true;
             audio.Play();
         }
     }

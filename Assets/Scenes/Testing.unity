@@ -28784,6 +28784,7 @@ MonoBehaviour:
   panelContador: {fileID: 423836824}
   contadorInicio: {fileID: 2079742768}
   audioGanar: {fileID: 715520848}
+  derrota: {fileID: 8300000, guid: 0169b56aa2a803546bec6870d8ee6586, type: 3}
 --- !u!4 &715520847
 Transform:
   m_ObjectHideFlags: 0
@@ -46103,6 +46104,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3244584986374198669, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: pickupClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244584986374198669, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: 'pickupClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d1e1f661d1af6b4fbc675b65b05b497, type: 3}
     - target: {fileID: 4083039630482837777, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -82346,16 +82357,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerOne
       objectReference: {fileID: 0}
-    - target: {fileID: 3244584986374198669, guid: 416c1530179178f45875375d66258b80,
-        type: 3}
-      propertyPath: pickupClips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244584986374198669, guid: 416c1530179178f45875375d66258b80,
-        type: 3}
-      propertyPath: 'pickupClips.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 6d1e1f661d1af6b4fbc675b65b05b497, type: 3}
     - target: {fileID: 3820201118158786088, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
