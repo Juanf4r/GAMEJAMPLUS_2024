@@ -21,7 +21,7 @@ namespace _Scripts.Players
         //Referencess
         private PlayerLocomotion playerLocomotion;
         private PlayerActions playerActions;
-        private PowerUpSo storedPowerUp;
+        public PowerUpSo storedPowerUp;
         private HammerController hammerController;
         public Animator animator;
         public SpriteRenderer spriteRenderer;

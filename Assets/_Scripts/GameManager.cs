@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     [Header("Contador")]
     public int contadorJugador1 = 0;
     public int contadorJugador2 = 0;
-    private float cronometro;
+    private float cronometro = 20f;
     public bool timeOver = false;
 
     [Header("Referencias")]
@@ -148,9 +148,15 @@ public class GameManager : MonoBehaviour
 
     private void EndForTime()
     {
+        var player1Actions = _player1.GetComponent<PlayerActions>();
+        var player2Actions = _player2.GetComponent<PlayerActions>();
+        player1Actions?.ResetPowerUpsForBothPlayers();
+        player2Actions?.ResetPowerUpsForBothPlayers();
         LimpiarPowerUp();
         if (contadorJugador1 == contadorJugador2)
         {
+            
+
             timeOver = true;
             textCronometro.text = "";
             _player1.canMove = false;
@@ -319,7 +325,7 @@ public class GameManager : MonoBehaviour
         }
 
         contadorInicio.text = "GO!!";
-        cronometro = 90f;
+        cronometro = 20f;
         
         yield return new WaitForSeconds(.5f);
         
