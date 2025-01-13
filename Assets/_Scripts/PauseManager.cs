@@ -1,36 +1,80 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
+using System.Collections;
 
 public class PauseManager : MonoBehaviour
 {
-    [SerializeField] private GameObject panelPausa;
-    [SerializeField] private GameObject panelGameplay;
-    [SerializeField] private GameObject panelMusic;
+    [SerializeField] private GameObject[] panels = new GameObject[3];
+    //0 panelGameplay
+    //1 panelPause
+    //2 panelSettings
 
-    public void continuar()
+    private bool _active = false;
+
+    private void Start() 
     {
-        Time.timeScale = 1;
-        panelPausa.SetActive(false);
-        panelGameplay.SetActive(true);
-        panelMusic.SetActive(false);
+        int ID = PlayerPrefs.GetInt("LocaleKey",0);
     }
 
-    public void salirGame()
+#region Settings
+
+    public void ChangeLocale(int localeID)
+    {
+        if(_active)
+        {
+            return;
+        }
+        StartCoroutine(SetLocale(localeID));
+    }
+
+    private IEnumerator SetLocale(int localeID)
+    {
+        _active = true;
+        yield return LocalizationSettings.InitializationOperation;
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localeID];
+        PlayerPrefs.SetInt("LocaleKey",localeID);
+        _active = false;
+    }
+
+#endregion
+
+    public void ContinueGame()
+    {
+        Time.timeScale = 1;
+
+        for (int i = 0; i < panels.Length; i++)
+        {
+            panels[i].SetActive(false);
+        }
+
+        panels[0].SetActive(true);
+    }
+
+    public void Settings()
+    {   
+        for (int i = 0; i < panels.Length; i++)
+        {
+            panels[i].SetActive(false);
+        }
+
+        panels[2].SetActive(true);
+    }
+
+    public void GoBack()
+    {
+        for (int i = 0; i < panels.Length; i++)
+        {
+            panels[i].SetActive(false);
+        }
+
+        panels[1].SetActive(true);
+    }
+
+    public void ExitGame()
     {
         SceneManager.LoadScene(0);
     }
-    
-    public void Musica()
-    {   
-        panelPausa.SetActive(false );
-        panelGameplay.SetActive(false);
-        panelMusic.SetActive(true);
-    }
 
-    public void backM()
-    {
-        panelGameplay.SetActive(false);
-        panelMusic.SetActive(false) ;
-        panelPausa.SetActive(true) ;
-    }
+
 }
