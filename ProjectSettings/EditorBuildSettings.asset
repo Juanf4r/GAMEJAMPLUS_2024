@@ -6,14 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/FinalProduct/MainMenu.unity
     guid: 0b5307d5f9d022b42a2feddff64e669a
   - enabled: 1
-    path: Assets/Scenes/Sandbox.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/CreditsMenu.unity
-    guid: 4b48e34c40816af4882fcf80b22718c5
+    path: Assets/Scenes/Nuevo_Nivel_Juanfer.unity
+    guid: 4a8a697faa4d42544aa537893c144b18
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: aeed652a62e6ac34b8dea9cac156ccac,
       type: 2}

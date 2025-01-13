@@ -1,24 +1,32 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject musicMenu;
-    [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject controles;
+    [SerializeField] private GameObject[] panels = new GameObject[5];
+    //MainPanel 0
+    //LevelSelectionPanel 1
+    //ControlsPanel 2
+    //SettingsPanel 3
+    //CreditsPanel 4
+
+    private int levelSelector = 0;
 
     private bool _active = false;
 
     private void Start()
     {
+        //Reproducir Cinematica mientras carga la escena y la UI traducida
+        //
+
+        UIMainMenu();
+
         int ID = PlayerPrefs.GetInt("LocaleKey",0);
         ChangeLocale(ID);
-
-        musicMenu.SetActive(false);
-        mainMenu.SetActive(true);
-        controles.SetActive(false);
     }
 
     public void ChangeLocale(int localeID)
@@ -39,40 +47,98 @@ public class MainMenu : MonoBehaviour
         _active = false;
     }
 
-
-    public void iniciarjuego()
+    public void StartGame()
     {
         SceneManager.LoadScene(1);
     }
 
-    public void salirDelJuego()
+#region ShowUI
+
+    public void LoadCinematic()
+    {
+        //Reproducir Cinematica
+    }
+
+    public void UIMainMenu()
+    {
+        for (int i = 0; i < panels.Length;i++)
+        {
+            panels[i].SetActive(false);
+        }
+
+        panels[0].SetActive(true);
+    }
+
+    public void UILevelSelection()
+    {
+        for (int i = 0; i < panels.Length;i++)
+        {
+            panels[i].SetActive(false);
+        }
+
+        panels[1].SetActive(true);
+    }
+
+    public void UIControls()
+    {
+        for (int i = 0; i < panels.Length;i++)
+        {
+            panels[i].SetActive(false);
+        }
+
+        panels[2].SetActive(true);
+    }
+
+    public void UISettings()
+    {
+        for (int i = 0; i < panels.Length;i++)
+        {
+            panels[i].SetActive(false);
+        }
+
+        panels[3].SetActive(true);
+    }
+
+    public void UICredits()
+    {
+        for (int i = 0; i < panels.Length;i++)
+        {
+            panels[i].SetActive(false);
+        }
+
+        panels[4].SetActive(true);
+    }
+
+#endregion
+
+    private void SelectLevel()
+    {
+        switch (levelSelector)
+        {
+            case 0: //No hace nada
+                break;
+
+            case 1: 
+                break;
+
+            case 2: 
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+
+            default: //Tampoco hace nada
+                break;
+        }
+    }
+
+    public void ExitGame()
     {
         Application.Quit();
     }
 
-    public void escenaCreditos()
-    {
-        SceneManager.LoadScene(2);
-    }
-
-    public void music()
-    {
-        musicMenu.SetActive(true);
-        mainMenu.SetActive(false);
-        controles.SetActive(false);
-    }
-
-    public void controller()
-    {
-        musicMenu.SetActive(false);
-        mainMenu.SetActive(false);
-        controles.SetActive(true);
-    }
-
-    public void back()
-    {
-        musicMenu.SetActive(false);
-        mainMenu.SetActive(true);
-        controles.SetActive(false);
-    }  
 }
+
