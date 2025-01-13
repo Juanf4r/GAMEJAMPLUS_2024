@@ -1657,11 +1657,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1589417301}
     m_Modifications:
-    - target: {fileID: -5815055074624896241, guid: 58b8754050878ba4e8643f2f5fc7abdd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5882747371451598854, guid: 58b8754050878ba4e8643f2f5fc7abdd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5444,21 +5439,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Spike_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148401707030607885, guid: 6db9d38d12e48ad4688827120cd9262d,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2475
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148401707030607885, guid: 6db9d38d12e48ad4688827120cd9262d,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.97837675
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148401707030607885, guid: 6db9d38d12e48ad4688827120cd9262d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2475
       objectReference: {fileID: 0}
     - target: {fileID: 4148401707030607885, guid: 6db9d38d12e48ad4688827120cd9262d,
         type: 3}

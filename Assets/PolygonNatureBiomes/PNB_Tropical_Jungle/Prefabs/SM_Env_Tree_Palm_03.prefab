@@ -350,7 +350,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5882747371451598854}
   - component: {fileID: 1727596897682784119}
-  - component: {fileID: -5815055074624896241}
   - component: {fileID: 1864530267221332684}
   m_Layer: 0
   m_Name: SM_Env_Tree_Palm_03
@@ -409,28 +408,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 517969351334888669}
   m_Enabled: 1
---- !u!64 &-5815055074624896241
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6550599167151706812}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2392889947669554091, guid: c4d96fbcd63bc53478f30d1dbbb69a79, type: 3}
 --- !u!64 &1864530267221332684
 MeshCollider:
   m_ObjectHideFlags: 0
