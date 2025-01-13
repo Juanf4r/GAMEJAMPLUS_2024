@@ -121,18 +121,330 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acb3095c1a4b56c41894220bbf26145e
+      internalID: 934994485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e285509104947468438eeb4ad65903
+      internalID: 1471367097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8244489c59ccec4fac3427419740cce
+      internalID: 1324081988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0acdb0a3060f3c74da6d6e83c500bda7
+      internalID: -422630187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560c329465be63642a570d124779b450
+      internalID: 1566649953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b81af37d2ab3c4086da1d90b938900
+      internalID: -985767747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b67749f10e54af4381814fb1284819d
+      internalID: -303473270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c809756988366d64a8ea4136433a0f86
+      internalID: 1305913730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b40c3c71e8f2547bf524ce6324edd6
+      internalID: 1089593377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0950bff727d70443b756d71701838cd
+      internalID: 1824600465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26baedef95c5cd4e803da205f4ff84f
+      internalID: -1136352465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_31
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e305f0fca0b128640813bfdee1c9828e
+      internalID: 902865298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno coco madera_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df155a60fdb6e32489958693a139f714
+      internalID: 1940054596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: edfbfa0df20cafb46bac05ef9b113696
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cavernicola 1 lleno coco madera_0: -1707787321
+      Cavernicola 1 lleno coco madera_1: 934994485
+      Cavernicola 1 lleno coco madera_10: 1644225377
+      Cavernicola 1 lleno coco madera_11: -443680987
+      Cavernicola 1 lleno coco madera_12: 1566649953
+      Cavernicola 1 lleno coco madera_13: -985767747
+      Cavernicola 1 lleno coco madera_14: -303473270
+      Cavernicola 1 lleno coco madera_15: 66290291
+      Cavernicola 1 lleno coco madera_16: 1305913730
+      Cavernicola 1 lleno coco madera_17: 1479182277
+      Cavernicola 1 lleno coco madera_18: -1135665626
+      Cavernicola 1 lleno coco madera_19: 90226361
+      Cavernicola 1 lleno coco madera_2: 1244881585
+      Cavernicola 1 lleno coco madera_20: 192875022
+      Cavernicola 1 lleno coco madera_21: 386722159
+      Cavernicola 1 lleno coco madera_22: 373607679
+      Cavernicola 1 lleno coco madera_23: 572112549
+      Cavernicola 1 lleno coco madera_24: 1089593377
+      Cavernicola 1 lleno coco madera_25: -1410371578
+      Cavernicola 1 lleno coco madera_26: 1824600465
+      Cavernicola 1 lleno coco madera_27: 395731399
+      Cavernicola 1 lleno coco madera_28: -1136352465
+      Cavernicola 1 lleno coco madera_29: -1361747067
+      Cavernicola 1 lleno coco madera_3: 1471367097
+      Cavernicola 1 lleno coco madera_30: 1013650253
+      Cavernicola 1 lleno coco madera_31: 902865298
+      Cavernicola 1 lleno coco madera_32: -1958752357
+      Cavernicola 1 lleno coco madera_33: 480150182
+      Cavernicola 1 lleno coco madera_34: 1631773487
+      Cavernicola 1 lleno coco madera_35: 1655989985
+      Cavernicola 1 lleno coco madera_36: 60895965
+      Cavernicola 1 lleno coco madera_37: 1940054596
+      Cavernicola 1 lleno coco madera_38: -338955489
+      Cavernicola 1 lleno coco madera_4: 437814969
+      Cavernicola 1 lleno coco madera_5: 1324081988
+      Cavernicola 1 lleno coco madera_6: -1747758102
+      Cavernicola 1 lleno coco madera_7: -422630187
+      Cavernicola 1 lleno coco madera_8: -732866210
+      Cavernicola 1 lleno coco madera_9: 461841452
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

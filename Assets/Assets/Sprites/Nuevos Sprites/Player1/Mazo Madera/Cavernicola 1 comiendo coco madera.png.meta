@@ -121,18 +121,480 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67043054987d2746a889756863e5eb8
+      internalID: 1807191981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 260
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20888c005ca6ad43a28d05e3c692748
+      internalID: 1203778157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 260
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6b9325f42d17e45ae3f2131f36c170
+      internalID: -1340942164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 260
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2b5d1fd8c5d6640ac76b23b2683837
+      internalID: 1102018408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 260
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc83201eccc8274b9c947731df45f9d
+      internalID: 1847118823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb473e24421679441b7560e522f6f698
+      internalID: 1915459143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ca7f189b2e5314aa374d5e8c1ac3c7
+      internalID: -776083395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce61f28eb6288242923cba7f820a685
+      internalID: 895128903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4716ac4912229334fa835b122cffc740
+      internalID: 548626836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a71b59561d068c41b5d3e34e13d8895
+      internalID: 2050683554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d48370ea3bf4c4ca4a1df12b14b95d
+      internalID: -573200546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258658ee4c2a7444c85dd09e4d786364
+      internalID: 550047238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7681d5246b9b4f45b78239d93bae9d5
+      internalID: 1449573718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61877f0c386931a42944c4f6aed8f909
+      internalID: 1003574917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b660ae62f9eaf6544a96d940eea41bf0
+      internalID: 617851114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f37b11411aaeaa449ec8fda82614183
+      internalID: 183233703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d16d9b891ce144cb573ac877da3bcc
+      internalID: -1236327646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb00f09a40aa444fada53e074e43524
+      internalID: -1672707301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf5b43611aa692489c7b963f3d75d03
+      internalID: -1040640489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8a423c9bb2d15a41b8906dcc5191c52
+      internalID: -121355106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 comiendo coco madera_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9450538d85b6dbd4ba7f8ad6ae8efbb5
+      internalID: 831973584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4c392db392c9fad4f9b00510c1d8aafb
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cavernicola 1 comiendo coco madera_0: 1807191981
+      Cavernicola 1 comiendo coco madera_1: 1203778157
+      Cavernicola 1 comiendo coco madera_10: -573200546
+      Cavernicola 1 comiendo coco madera_11: 550047238
+      Cavernicola 1 comiendo coco madera_12: 1449573718
+      Cavernicola 1 comiendo coco madera_13: 1003574917
+      Cavernicola 1 comiendo coco madera_14: 617851114
+      Cavernicola 1 comiendo coco madera_15: 183233703
+      Cavernicola 1 comiendo coco madera_16: -1236327646
+      Cavernicola 1 comiendo coco madera_17: -1672707301
+      Cavernicola 1 comiendo coco madera_18: -1040640489
+      Cavernicola 1 comiendo coco madera_19: -121355106
+      Cavernicola 1 comiendo coco madera_2: -1340942164
+      Cavernicola 1 comiendo coco madera_20: 831973584
+      Cavernicola 1 comiendo coco madera_3: 1102018408
+      Cavernicola 1 comiendo coco madera_4: 1847118823
+      Cavernicola 1 comiendo coco madera_5: 1915459143
+      Cavernicola 1 comiendo coco madera_6: -776083395
+      Cavernicola 1 comiendo coco madera_7: 895128903
+      Cavernicola 1 comiendo coco madera_8: 548626836
+      Cavernicola 1 comiendo coco madera_9: 2050683554
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
