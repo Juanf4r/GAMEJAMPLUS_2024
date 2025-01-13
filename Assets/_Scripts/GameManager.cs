@@ -114,7 +114,6 @@ public class GameManager : MonoBehaviour
 
     public void GanarRondaJugador1()
     {
-        SoundFXChannel.PlaySoundFxClip(derrota, _player2.transform.position, .5f, true);
 
         if (timeOver)
         {
@@ -129,12 +128,13 @@ public class GameManager : MonoBehaviour
         if (contadorJugador1 >= 3)
         {
             GanarJuego();
+            SoundFXChannel.PlaySoundFxClip(derrota, _player2.transform.position, .5f, true);
+
         }
     }
 
     public void GanarRondaJugador2()
     {
-        SoundFXChannel.PlaySoundFxClip(derrota, _player1.transform.position, .5f,true);
 
         if (timeOver)
         {
@@ -149,6 +149,8 @@ public class GameManager : MonoBehaviour
         if (contadorJugador2 >= 3) 
         {
             GanarJuego();
+            SoundFXChannel.PlaySoundFxClip(derrota, _player1.transform.position, .5f,true);
+
         }
     }
 
