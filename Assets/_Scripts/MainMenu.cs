@@ -130,6 +130,12 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    public void SelectRandomLevel()
+    {
+        int randomLevelSelected = Random.Range(1, 5);
+        SceneManager.LoadScene(randomLevelSelected);
+    }
+
     public void ExitGame()
     {
         Application.Quit();
