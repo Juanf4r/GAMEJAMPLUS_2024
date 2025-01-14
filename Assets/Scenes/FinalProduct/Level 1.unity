@@ -15274,7 +15274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1589417301
 Transform:
   m_ObjectHideFlags: 0
@@ -21576,16 +21576,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
         type: 3}
-      propertyPath: P1_Animator
-      value: 
-      objectReference: {fileID: 1071231344}
-    - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
-        type: 3}
-      propertyPath: P2_Animator
-      value: 
-      objectReference: {fileID: 1071231344}
-    - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
-        type: 3}
       propertyPath: P1_Animator_Wood
       value: 
       objectReference: {fileID: 9100000, guid: c9f3c494f80f39c46ac43085250d818c, type: 2}
@@ -21602,26 +21592,6 @@ PrefabInstance:
     - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: P2_Animator_Stone
-      value: 
-      objectReference: {fileID: 9100000, guid: 14c3c8a4a0156ed4695ae2565874b3d9, type: 2}
-    - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
-        type: 3}
-      propertyPath: P1_Wood_AnimatorController
-      value: 
-      objectReference: {fileID: 9100000, guid: c9f3c494f80f39c46ac43085250d818c, type: 2}
-    - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
-        type: 3}
-      propertyPath: P2_Wood_AnimatorController
-      value: 
-      objectReference: {fileID: 9100000, guid: 06059cfd101705449b451da4da6f49c7, type: 2}
-    - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
-        type: 3}
-      propertyPath: P1_Stone_AnimatorController
-      value: 
-      objectReference: {fileID: 9100000, guid: aed501d14ece5414b8a5e3e7429ba20b, type: 2}
-    - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
-        type: 3}
-      propertyPath: P2_Stone_AnimatorController
       value: 
       objectReference: {fileID: 9100000, guid: 14c3c8a4a0156ed4695ae2565874b3d9, type: 2}
     - target: {fileID: 8188759660382934932, guid: 416c1530179178f45875375d66258b80,

@@ -8765,8 +8765,8 @@ MonoBehaviour:
   timeOver: 0
   refPlayer1: {fileID: 749334751}
   refPlayer2: {fileID: 26851720}
-  player1_Animator: {fileID: 0}
-  player2_Animator: {fileID: 0}
+  player1_Animator: {fileID: 4239547814198931036}
+  player2_Animator: {fileID: 1197279123}
   spawn1: {fileID: 22556143}
   spawn2: {fileID: 689162270}
   powerUpPrefab: {fileID: 3691768875803626238, guid: b17ecdd8aa79c094fb0e73eff0e1d413,
@@ -14305,6 +14305,12 @@ PrefabInstance:
       addedObject: {fileID: 8591717}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 416c1530179178f45875375d66258b80, type: 3}
+--- !u!95 &1197279123 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8188759660382934932, guid: 416c1530179178f45875375d66258b80,
+    type: 3}
+  m_PrefabInstance: {fileID: 1197279122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1201788815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20750,7 +20756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1729423865
 Transform:
   m_ObjectHideFlags: 0
@@ -25810,6 +25816,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 416c1530179178f45875375d66258b80, type: 3}
+--- !u!95 &4239547814198931036 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8188759660382934932, guid: 416c1530179178f45875375d66258b80,
+    type: 3}
+  m_PrefabInstance: {fileID: 4239547814198931035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

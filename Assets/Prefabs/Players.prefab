@@ -236,6 +236,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3c8d6a5e3d89f4796f6ec6121e6eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  P1_Animator: {fileID: 8188759660382934932}
+  P2_Animator: {fileID: 8188759660382934932}
+  P1_Wood_AnimatorController: {fileID: 9100000, guid: c9f3c494f80f39c46ac43085250d818c,
+    type: 2}
+  P1_Stone_AnimatorController: {fileID: 9100000, guid: aed501d14ece5414b8a5e3e7429ba20b,
+    type: 2}
+  P2_Wood_AnimatorController: {fileID: 9100000, guid: 06059cfd101705449b451da4da6f49c7,
+    type: 2}
+  P2_Stone_AnimatorController: {fileID: 9100000, guid: 14c3c8a4a0156ed4695ae2565874b3d9,
+    type: 2}
 --- !u!114 &3244584986374198669
 MonoBehaviour:
   m_ObjectHideFlags: 0
