@@ -2,12 +2,23 @@ using System;
 using System.Collections;
 using _ScriptableObjects.Scripts;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace _Scripts.Players
 {
     public class PlayerActions : MonoBehaviour
     {
+        [SerializeField] private Animator P1_Animator;
+        [SerializeField] private Animator P2_Animator;
+        [Space][Space]
+        [SerializeField] private RuntimeAnimatorController  P1_Wood_AnimatorController;
+        [SerializeField] private RuntimeAnimatorController  P1_Stone_AnimatorController;
+        [Space][Space]
+        [SerializeField] private RuntimeAnimatorController  P2_Wood_AnimatorController;
+        [SerializeField] private RuntimeAnimatorController  P2_Stone_AnimatorController;
+
+
         private PlayerManager _playerManager;
         private PlayerConfig _playerConfig;
         private GameManager _gameManager;
@@ -56,6 +67,16 @@ namespace _Scripts.Players
                     particle.Play();
                     break;
                 case PowerUpType.Strength:
+                
+                    if(_playerManager.isPlayerOne)
+                    {
+                        P1_Animator.runtimeAnimatorController = P1_Stone_AnimatorController;
+                    }
+                    else if(!_playerManager.isPlayerOne)
+                    {
+                        P2_Animator.runtimeAnimatorController = P2_Stone_AnimatorController;
+                    }
+
                     _playerConfig.ApplyBuff("speed", powerUp.speed);
                     _playerConfig.ApplyBuff("strength", powerUp.strength);
                     break;
@@ -75,6 +96,7 @@ namespace _Scripts.Players
         {
             if (_isInvulnerable) return;
             if(!_playerManager.canMove) return;
+
             Debug.Log($"Stunned for {duration}");
             if (!_playerManager.canMove) return;
             StartCoroutine(StunnedForSeconds(duration));
@@ -99,7 +121,6 @@ namespace _Scripts.Players
             transform.position = teleportPosition;
             yield return new WaitForSeconds(.25f);
             _playerManager.canMove = true;
-
         }
 
         private IEnumerator StunnedForSeconds(float duration)
@@ -175,6 +196,28 @@ namespace _Scripts.Players
 
             //Debug.Log("PowerUps deshabilitados para ambos jugadores");
             _playerConfig.RevertBuff();
+        }
+
+        //Player 1
+        public void ChangeWeaponP1()
+        {
+            P1_Animator.runtimeAnimatorController = P1_Stone_AnimatorController;
+        }
+
+        public void ChangeWeaponBackP1()
+        {
+            P1_Animator.runtimeAnimatorController = P1_Wood_AnimatorController;
+        }
+
+        //Player 2
+        public void ChangeWeaponP2()
+        {
+            P2_Animator.runtimeAnimatorController = P2_Stone_AnimatorController;
+        }
+
+        public void ChangeWeaponBackP2()
+        {
+            P2_Animator.runtimeAnimatorController = P2_Wood_AnimatorController;
         }
 
     }

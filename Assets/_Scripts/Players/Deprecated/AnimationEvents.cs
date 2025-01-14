@@ -7,6 +7,7 @@ namespace _Scripts.Players.Deprecated
         private Animator playerAnimator;
         private PlayerSoundManager playerSoundManager;
         private static readonly int Golpe = Animator.StringToHash("Golpe");
+        private static readonly int Eating = Animator.StringToHash("Eating");
 
         private void Awake()
         {
@@ -21,6 +22,11 @@ namespace _Scripts.Players.Deprecated
         public void PlayFootstep()
         {
             playerSoundManager.PlayFootStep();
+        }
+
+        public void StopEating()
+        {
+            playerAnimator.SetBool(Eating, false);
         }
     }
 }

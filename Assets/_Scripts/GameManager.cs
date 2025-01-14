@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private GameObject refPlayer1;
     [SerializeField] private GameObject refPlayer2;
+
+    [SerializeField] private Animator player1_Animator;
+    [SerializeField] private Animator player2_Animator;
     
     private PlayerManager _player1;
     private PlayerManager _player2;
@@ -124,6 +127,7 @@ public class GameManager : MonoBehaviour
         else
         {
             contadorJugador1++;
+            player1_Animator.SetBool("Eating", true);
         }
 
         textJugador1.text = contadorJugador1.ToString() + " / 3";
@@ -145,6 +149,7 @@ public class GameManager : MonoBehaviour
         else
         {
             contadorJugador2++;
+            player2_Animator.SetBool("Eating", true);
         }
         //Debug.Log("juagdor 2:" + contadorJugador2);
         textJugador2.text = contadorJugador2.ToString() + " / 3";
