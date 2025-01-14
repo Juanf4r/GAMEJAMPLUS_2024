@@ -9663,12 +9663,15 @@ MonoBehaviour:
   - {fileID: 446112407}
   - {fileID: 43888214}
   carne: {fileID: 929977373}
+  meat: {fileID: 1600636814, guid: 4567e44ecbd861b4e94c947e5b8cf83d, type: 3}
   meatGold: {fileID: 429814138}
   contadorJugador1: 0
   contadorJugador2: 0
   timeOver: 0
   refPlayer1: {fileID: 749334751}
   refPlayer2: {fileID: 26851720}
+  player1_Animator: {fileID: 0}
+  player2_Animator: {fileID: 0}
   spawn1: {fileID: 2034385574}
   spawn2: {fileID: 776506367}
   powerUpPrefab: {fileID: 3691768875803626238, guid: b17ecdd8aa79c094fb0e73eff0e1d413,

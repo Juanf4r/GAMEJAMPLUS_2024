@@ -111,6 +111,15 @@ namespace _Scripts.Players
             particle.Stop();
 
             _playerConfig.RevertBuff();
+
+            if(_playerManager.isPlayerOne)
+            {
+                P1_Animator.runtimeAnimatorController = P1_Wood_AnimatorController;
+            }
+            else if(!_playerManager.isPlayerOne)
+            {
+                P2_Animator.runtimeAnimatorController = P2_Wood_AnimatorController;
+            }
         }
 
         private IEnumerator TeleportToEnemy()
@@ -206,28 +215,5 @@ namespace _Scripts.Players
             //Debug.Log("PowerUps deshabilitados para ambos jugadores");
             _playerConfig.RevertBuff();
         }
-
-        //Player 1
-        public void ChangeWeaponP1()
-        {
-            P1_Animator.runtimeAnimatorController = P1_Stone_AnimatorController;
-        }
-
-        public void ChangeWeaponBackP1()
-        {
-            P1_Animator.runtimeAnimatorController = P1_Wood_AnimatorController;
-        }
-
-        //Player 2
-        public void ChangeWeaponP2()
-        {
-            P2_Animator.runtimeAnimatorController = P2_Stone_AnimatorController;
-        }
-
-        public void ChangeWeaponBackP2()
-        {
-            P2_Animator.runtimeAnimatorController = P2_Wood_AnimatorController;
-        }
-
     }
 }
