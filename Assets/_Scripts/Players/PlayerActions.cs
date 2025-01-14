@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using _ScriptableObjects.Scripts;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace _Scripts.Players
