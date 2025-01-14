@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TeleportPU
   m_EditorClassIdentifier: 
   buffType: 0
-  buffSprite: {fileID: -689461617, guid: 6dfec7ed62f63734d9477df5543b5a23, type: 3}
-  alphaTexture: {fileID: 21300000, guid: e9b27b5ab3f413c45b5f0e2454b36f9b, type: 3}
+  buffSprite: {fileID: 21300000, guid: a7bd4e61be5a12c4c8d43c33bdec04d1, type: 3}
+  alphaTexture: {fileID: 21300000, guid: 0a778dccb18633d45bfce9e6a022c4d0, type: 3}
   speed: 5
   duration: 6
   strength: 4

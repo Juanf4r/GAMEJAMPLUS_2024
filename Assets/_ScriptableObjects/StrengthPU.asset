@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: StrengthPU
   m_EditorClassIdentifier: 
   buffType: 2
-  buffSprite: {fileID: -506015775, guid: be8d1feb71cd6be42b6ce0e0a517c4c1, type: 3}
-  alphaTexture: {fileID: 21300000, guid: 0359c8998497b3f4f9549148c6bc7747, type: 3}
+  buffSprite: {fileID: 21300000, guid: 2c8bfd9ad1985e845acaff26c4f067e6, type: 3}
+  alphaTexture: {fileID: 21300000, guid: 438e82baf12e55f4896998f88efbe92c, type: 3}
   speed: 5
   duration: 6
   strength: 10

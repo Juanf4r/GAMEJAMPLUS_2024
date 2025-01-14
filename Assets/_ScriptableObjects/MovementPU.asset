@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MovementPU
   m_EditorClassIdentifier: 
   buffType: 1
-  buffSprite: {fileID: -1631255204, guid: 0b6e9c80a9367374d87d676d6605a8ec, type: 3}
-  alphaTexture: {fileID: 21300000, guid: bf039b3b707156a47b138065f03e6ada, type: 3}
+  buffSprite: {fileID: 21300000, guid: 5dee483b70f7ce242bdfd7dce07e32ca, type: 3}
+  alphaTexture: {fileID: 21300000, guid: a18e92143348fbe40841468faf2aa541, type: 3}
   speed: 9
   duration: 6
   strength: 4
