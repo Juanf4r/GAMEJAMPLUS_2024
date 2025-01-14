@@ -191,6 +191,15 @@ namespace _Scripts.Players
             OnPowerUpOut?.Invoke(2);
             _playerManager.storedPowerUp = null;
 
+            if(_playerManager.isPlayerOne)
+            {
+                P1_Animator.runtimeAnimatorController = P1_Wood_AnimatorController;
+            }
+            else if(!_playerManager.isPlayerOne)
+            {
+                P2_Animator.runtimeAnimatorController = P2_Wood_AnimatorController;
+            }
+
             childObject.gameObject.SetActive(false);
             particle.Stop();
 
