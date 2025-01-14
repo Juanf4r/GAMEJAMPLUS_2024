@@ -6,6 +6,7 @@ namespace Assets.Minimap
 {
     public class MinimapController : MonoBehaviour
     {
+        public static MinimapController instance;
         [Header("Minimap Settings")]
         [SerializeField] private RectTransform minimapRect; 
         [SerializeField] private Sprite minimapImage;

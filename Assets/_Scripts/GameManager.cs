@@ -11,6 +11,7 @@ using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 using UnityEngine.SceneManagement;
+using Assets.Minimap;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Transform> spawnCarne;
     private List<Transform> usedSpawns = new List<Transform>();
     [SerializeField] private GameObject carne;
+    [SerializeField] private Sprite meat;
     [SerializeField] private GameObject meatGold;
 
     [Header("Contador")]
@@ -222,6 +224,7 @@ public class GameManager : MonoBehaviour
         {
             var randomIndex = Random.Range(0, spawnCarne.Count);
             carne.transform.localPosition = spawnCarne[randomIndex].position;
+            MinimapController.instance.AddMinimapElement(meat, carne.transform);
             usedSpawns.Add(spawnCarne[randomIndex]);
             spawnCarne.RemoveAt(randomIndex);
 
@@ -264,6 +267,7 @@ public class GameManager : MonoBehaviour
             var random = Random.Range(0, 3);
             var powerUpInstance = Instantiate(powerUpPrefab, spawnPoint.transform.position, Quaternion.identity);
             powerUpInstance.SetActive(false);
+            
             powerUpInstance.GetComponent<PowerUp>().powerUpType = random switch
             {
                 0 => teleportPu,
@@ -273,6 +277,7 @@ public class GameManager : MonoBehaviour
             };
             powerUpInstance.SetActive(true);
             powerUpInstances.Add(powerUpInstance);
+            MinimapController.instance.AddMinimapElement(powerUpInstance.GetComponent<SpriteRenderer>().sprite, powerUpInstance.transform);
         }
     }
 
