@@ -121,18 +121,330 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ce9c3a6b799b94cbc8d0e549865620
+      internalID: 964372784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b2a1a2db9aff04a8bc3146d15565f0
+      internalID: -1362873922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e98df9c56cbca3248b0d6ab89fb8dda6
+      internalID: -1002250527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a28959fe6326347b08e368ae7cb3bd
+      internalID: -1033698718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d833123a5c7202a4590035d2cc154f80
+      internalID: 990575513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2500c2c684de4d2419b0c41397b0df3c
+      internalID: -1095357290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d573ccfb4e7decf43860c8ffeda7ac5b
+      internalID: 481740588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3674901b4a916684bb23b9cbfdeb164f
+      internalID: 1219973395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64c2140221c11946ba2fa5062580a36
+      internalID: 1326589846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a60a8315c6b7d1478de48919d2b6092
+      internalID: -401183378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab39b3b826af6747af7352c614d21a7
+      internalID: 951311070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_31
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ed21403f57c4d49970d73d0e935b61
+      internalID: -303514150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno madera_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab78fe45947d3640a40fe0f195e7b18
+      internalID: -1817585150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 31916e2b40087bc44925405add59ebf2
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cavernicola 1 lleno madera_0: 942776951
+      Cavernicola 1 lleno madera_1: 964372784
+      Cavernicola 1 lleno madera_10: -1213159917
+      Cavernicola 1 lleno madera_11: 1157744533
+      Cavernicola 1 lleno madera_12: 990575513
+      Cavernicola 1 lleno madera_13: -1095357290
+      Cavernicola 1 lleno madera_14: 481740588
+      Cavernicola 1 lleno madera_15: 1884134833
+      Cavernicola 1 lleno madera_16: 1219973395
+      Cavernicola 1 lleno madera_17: 1251859198
+      Cavernicola 1 lleno madera_18: -863292541
+      Cavernicola 1 lleno madera_19: -1208826865
+      Cavernicola 1 lleno madera_2: -1443908783
+      Cavernicola 1 lleno madera_20: -1866650438
+      Cavernicola 1 lleno madera_21: -1719743758
+      Cavernicola 1 lleno madera_22: 1928280739
+      Cavernicola 1 lleno madera_23: -2082721217
+      Cavernicola 1 lleno madera_24: 1326589846
+      Cavernicola 1 lleno madera_25: -762278919
+      Cavernicola 1 lleno madera_26: -401183378
+      Cavernicola 1 lleno madera_27: 842713688
+      Cavernicola 1 lleno madera_28: 951311070
+      Cavernicola 1 lleno madera_29: -1090798783
+      Cavernicola 1 lleno madera_3: -1362873922
+      Cavernicola 1 lleno madera_30: -379533816
+      Cavernicola 1 lleno madera_31: -303514150
+      Cavernicola 1 lleno madera_32: -2112151335
+      Cavernicola 1 lleno madera_33: 1554318060
+      Cavernicola 1 lleno madera_34: 1924808340
+      Cavernicola 1 lleno madera_35: -2064122816
+      Cavernicola 1 lleno madera_36: 1755824650
+      Cavernicola 1 lleno madera_37: -1817585150
+      Cavernicola 1 lleno madera_38: -1198570521
+      Cavernicola 1 lleno madera_4: 1329047444
+      Cavernicola 1 lleno madera_5: -1002250527
+      Cavernicola 1 lleno madera_6: 2076059697
+      Cavernicola 1 lleno madera_7: -1033698718
+      Cavernicola 1 lleno madera_8: -1117906966
+      Cavernicola 1 lleno madera_9: -455436372
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

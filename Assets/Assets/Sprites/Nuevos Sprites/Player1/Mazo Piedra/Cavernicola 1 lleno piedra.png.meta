@@ -121,18 +121,330 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4551cf12efb46c4469b5bbc42d833eb4
+      internalID: -1380585402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85af744205953c54fb453ad8bfa1d6f1
+      internalID: 1793253936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbce36cdaf4d51458896dd86ef59a9d
+      internalID: -1619510664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 196
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4860630141d7277408195bbcd0920945
+      internalID: -1113547987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714f7fbc04edcb243a1dda219f82666d
+      internalID: 1582593189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4522857ef6e73d64494066763d16eac2
+      internalID: -1558154580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1fc7525ceb3a342ad7fa60ba84df58
+      internalID: 1072852436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 132
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b86d4b4e3da9b43ab4f1b42eeaca9b
+      internalID: -1623436899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6801abbf157376c408b6689b05bc07bd
+      internalID: -16030425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffeac9b16c709da4e8fcb81487b1d5e7
+      internalID: -383529525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7817da03801504a88fe7c31996b48e
+      internalID: -1336679196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_31
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 68
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63698380bf2d7154fb05626c3ba65a0d
+      internalID: -417347051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavernicola 1 lleno piedra_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853d502d87fe6384b94715958082ef01
+      internalID: -1752355753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 284d81f9d8184f7438989edc18605de9
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cavernicola 1 lleno piedra_0: 1279037998
+      Cavernicola 1 lleno piedra_1: -1380585402
+      Cavernicola 1 lleno piedra_10: -1579078788
+      Cavernicola 1 lleno piedra_11: -200377365
+      Cavernicola 1 lleno piedra_12: 1582593189
+      Cavernicola 1 lleno piedra_13: -1558154580
+      Cavernicola 1 lleno piedra_14: 1072852436
+      Cavernicola 1 lleno piedra_15: 362776368
+      Cavernicola 1 lleno piedra_16: -1623436899
+      Cavernicola 1 lleno piedra_17: 161675604
+      Cavernicola 1 lleno piedra_18: 802235613
+      Cavernicola 1 lleno piedra_19: -1050769851
+      Cavernicola 1 lleno piedra_2: 992224835
+      Cavernicola 1 lleno piedra_20: 592135103
+      Cavernicola 1 lleno piedra_21: -350697325
+      Cavernicola 1 lleno piedra_22: -1128141390
+      Cavernicola 1 lleno piedra_23: 1212076686
+      Cavernicola 1 lleno piedra_24: -16030425
+      Cavernicola 1 lleno piedra_25: -1575360160
+      Cavernicola 1 lleno piedra_26: -383529525
+      Cavernicola 1 lleno piedra_27: 1803154147
+      Cavernicola 1 lleno piedra_28: -1336679196
+      Cavernicola 1 lleno piedra_29: -4037035
+      Cavernicola 1 lleno piedra_3: 1793253936
+      Cavernicola 1 lleno piedra_30: -1592554259
+      Cavernicola 1 lleno piedra_31: -417347051
+      Cavernicola 1 lleno piedra_32: 798029811
+      Cavernicola 1 lleno piedra_33: -380111139
+      Cavernicola 1 lleno piedra_34: 740553299
+      Cavernicola 1 lleno piedra_35: 945305813
+      Cavernicola 1 lleno piedra_36: 229692572
+      Cavernicola 1 lleno piedra_37: -1752355753
+      Cavernicola 1 lleno piedra_38: 1545562399
+      Cavernicola 1 lleno piedra_4: 1693814867
+      Cavernicola 1 lleno piedra_5: -1619510664
+      Cavernicola 1 lleno piedra_6: -353641413
+      Cavernicola 1 lleno piedra_7: -1113547987
+      Cavernicola 1 lleno piedra_8: 1882484424
+      Cavernicola 1 lleno piedra_9: 706487638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
