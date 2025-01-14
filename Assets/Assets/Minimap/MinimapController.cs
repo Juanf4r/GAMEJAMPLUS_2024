@@ -6,6 +6,7 @@ namespace Assets.Minimap
 {
     public class MinimapController : MonoBehaviour
     {
+        public static MinimapController instance;
         [Header("Minimap Settings")]
         [SerializeField] private RectTransform minimapRect; 
         [SerializeField] private Sprite minimapImage;
@@ -17,8 +18,20 @@ namespace Assets.Minimap
         [SerializeField] private GameObject iconPrefab; 
 
         [Header("Minimap Elements")]
-        [SerializeField] private List<MinimapElementData> elements = new List<MinimapElementData>(); 
+        [SerializeField] private List<MinimapElementData> elements = new List<MinimapElementData>();
 
+
+        private void Awake()
+        {
+            if (instance != null && instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                instance = this;
+            }
+        }
         private void Start()
         {
             this.GetComponent<Image>().sprite = this.minimapImage;
