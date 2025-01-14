@@ -176,7 +176,8 @@ public class GameManager : MonoBehaviour
             cronometro += 100;
             timerCenter.SetActive(false);
             carne.transform.localPosition = meatGold.transform.position;
-            if(cronometro >= 5f)
+            MinimapController.instance.AddMinimapElement(meat, carne.transform);
+            if (cronometro >= 5f)
             {
                 StartCoroutine(newCronometro());
             }
@@ -266,6 +267,7 @@ public class GameManager : MonoBehaviour
         {
             var random = Random.Range(0, 3);
             var powerUpInstance = Instantiate(powerUpPrefab, spawnPoint.transform.position, Quaternion.identity);
+            MinimapController.instance.AddMinimapElement(powerUpInstance.GetComponent<SpriteRenderer>().sprite, powerUpInstance.transform);
             powerUpInstance.SetActive(false);
             
             powerUpInstance.GetComponent<PowerUp>().powerUpType = random switch
@@ -277,7 +279,7 @@ public class GameManager : MonoBehaviour
             };
             powerUpInstance.SetActive(true);
             powerUpInstances.Add(powerUpInstance);
-            MinimapController.instance.AddMinimapElement(powerUpInstance.GetComponent<SpriteRenderer>().sprite, powerUpInstance.transform);
+            
         }
     }
 
