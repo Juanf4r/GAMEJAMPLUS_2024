@@ -9,8 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/FinalProduct/MainMenu.unity
     guid: 0b5307d5f9d022b42a2feddff64e669a
   - enabled: 1
-    path: Assets/Scenes/Testing/Nivel1_Juanfer.unity
-    guid: 4a8a697faa4d42544aa537893c144b18
+    path: Assets/Scenes/FinalProduct/Level 1.unity
+    guid: 83e3404fa9fa8234595dd6d543e07fd8
+  - enabled: 1
+    path: Assets/Scenes/FinalProduct/Level 2.unity
+    guid: cb92bdaeca3a8894984f5654a15595f0
+  - enabled: 1
+    path: Assets/Scenes/FinalProduct/Level 3.unity
+    guid: 8588b99b6cf143245a01324f71e332c1
+  - enabled: 1
+    path: Assets/Scenes/FinalProduct/Level 4.unity
+    guid: 7351065728bd1cf4d9fcaea2614f6ef3
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: aeed652a62e6ac34b8dea9cac156ccac,
       type: 2}

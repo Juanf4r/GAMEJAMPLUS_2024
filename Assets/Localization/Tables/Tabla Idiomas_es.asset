@@ -118,6 +118,30 @@ MonoBehaviour:
     m_Localized: 'Arte:'
     m_Metadata:
       m_Items: []
+  - m_Id: 26
+    m_Localized: SELECCIONA UN NIVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: NIVEL 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: NIVEL 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: NIVEL 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: NIVEL 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: NIVEL ALEATORIO
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

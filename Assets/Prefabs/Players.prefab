@@ -206,6 +206,7 @@ MonoBehaviour:
   isPlayerOne: 1
   canMove: 1
   isAttacking: 0
+  storedPowerUp: {fileID: 0}
   playerSoundManager: {fileID: 0}
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -566,17 +567,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Trail_Dust_01
       objectReference: {fileID: 0}
-    - target: {fileID: 1049843463841446, guid: 2966910701d40974c87f0338bb5694e3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4885001493786356, guid: 2966910701d40974c87f0338bb5694e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4885001493786356, guid: 2966910701d40974c87f0338bb5694e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.355
       objectReference: {fileID: 0}
     - target: {fileID: 4885001493786356, guid: 2966910701d40974c87f0338bb5694e3, type: 3}
       propertyPath: m_LocalPosition.z

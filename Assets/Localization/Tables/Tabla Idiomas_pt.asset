@@ -118,6 +118,30 @@ MonoBehaviour:
     m_Localized: 'Arte:'
     m_Metadata:
       m_Items: []
+  - m_Id: 26
+    m_Localized: "SELECIONE UM N\xCDVEL"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: "N\xCDVEL 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "N\xCDVEL 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: "N\xCDVEL 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: "N\xCDVEL 4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: "N\xCDVEL ALEAT\xD3RIO"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

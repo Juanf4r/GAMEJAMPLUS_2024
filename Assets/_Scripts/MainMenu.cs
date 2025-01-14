@@ -21,8 +21,6 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         //Reproducir Cinematica mientras carga la escena y la UI traducida
-        //
-
         UIMainMenu();
 
         int ID = PlayerPrefs.GetInt("LocaleKey",0);
@@ -111,26 +109,23 @@ public class MainMenu : MonoBehaviour
 
 #endregion
 
-    private void SelectLevel()
+    public void SelectLevel(int levelSelected)
     {
-        switch (levelSelector)
+        switch (levelSelected)
         {
-            case 0: //No hace nada
+            case 1: SceneManager.LoadScene(levelSelected);
                 break;
 
-            case 1: 
+            case 2: SceneManager.LoadScene(levelSelected);
                 break;
 
-            case 2: 
+            case 3: SceneManager.LoadScene(levelSelected);
                 break;
 
-            case 3:
+            case 4: SceneManager.LoadScene(levelSelected);
                 break;
 
-            case 4:
-                break;
-
-            default: //Tampoco hace nada
+            default: Debug.LogWarning("This level do not exists: " + levelSelected);
                 break;
         }
     }
