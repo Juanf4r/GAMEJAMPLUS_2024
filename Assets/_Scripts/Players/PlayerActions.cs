@@ -18,8 +18,14 @@ namespace _Scripts.Players
         private bool _isInvulnerable;
         public static event Action<int> OnPowerUpOut;
 
+        private Transform childObject;
+        private ParticleSystem particle;
+
         private void Awake()
         {
+            childObject = this.transform.Find("FX_Trail_Dust_01");
+            particle = childObject.GetComponent<ParticleSystem>();
+
             _playerManager = GetComponent<PlayerManager>();
             _playerConfig = _playerManager.playerConfig;
             _gameManager = FindAnyObjectByType<GameManager>();
@@ -45,6 +51,9 @@ namespace _Scripts.Players
                     break;
                 case PowerUpType.Movement:
                     _playerConfig.ApplyBuff("speed", powerUp.speed);
+                    
+                    childObject.gameObject.SetActive(true);
+                    particle.Play();
                     break;
                 case PowerUpType.Strength:
                     _playerConfig.ApplyBuff("speed", powerUp.speed);
@@ -75,6 +84,10 @@ namespace _Scripts.Players
         {
             yield return new WaitForSeconds(timer);
             Debug.Log($"PowerUp has expired");
+
+            childObject.gameObject.SetActive(false);
+            particle.Stop();
+
             _playerConfig.RevertBuff();
         }
 
@@ -151,12 +164,15 @@ namespace _Scripts.Players
             spriteRenderer.enabled = true;
             _isInvulnerable = false;
         }
-        //public PowerUpSo storedPowerUp;
         public void ResetPowerUpsForBothPlayers()
         {
             OnPowerUpOut?.Invoke(1);
             OnPowerUpOut?.Invoke(2);
             _playerManager.storedPowerUp = null;
+
+            childObject.gameObject.SetActive(false);
+            particle.Stop();
+
             //Debug.Log("PowerUps deshabilitados para ambos jugadores");
             _playerConfig.RevertBuff();
         }
