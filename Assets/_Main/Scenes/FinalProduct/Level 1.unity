@@ -14764,6 +14764,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d7195a84cd8510a42b9963db495734af,
         type: 2}
+    - target: {fileID: 2420976232866454604, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1793642627}
     - target: {fileID: 2446224993149516498, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_Name
@@ -20544,7 +20549,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7122482658928198700, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7457359085893310522, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022328154968362360, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -22245,6 +22260,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 298806904833864055, guid: 5d96ecabf54805e4db5b59e5e89be469,
     type: 3}
   m_PrefabInstance: {fileID: 1787087690}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1793642627 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+    type: 3}
+  m_PrefabInstance: {fileID: 1197279122}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1800750062
 PrefabInstance:
