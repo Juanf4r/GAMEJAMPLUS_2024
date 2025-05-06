@@ -14849,11 +14849,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6098629026981925694, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6276520872637684248, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f43c89ba1cb2d224c85a397146cecac8, type: 2}
     - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: P1_Animator
@@ -20503,6 +20538,12 @@ PrefabInstance:
       propertyPath: mapWidth
       value: 33
       objectReference: {fileID: 0}
+    - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: iconPrefab
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 3c9415713af46c14d83c22c6e4e2b1f1,
+        type: 3}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: minimapImage
@@ -27831,7 +27872,7 @@ PrefabInstance:
     - target: {fileID: 4083039630482837777, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.26
+      value: 23.689
       objectReference: {fileID: 0}
     - target: {fileID: 4083039630482837777, guid: 416c1530179178f45875375d66258b80,
         type: 3}
@@ -27878,11 +27919,86 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4712449438728101283, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712449438728101283, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712449438728101283, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712449438728101283, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712449438728101283, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712449438728101283, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712449438728101283, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712449438728101283, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712449438728101283, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712449438728101283, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098629026981925694, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6276520872637684248, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910492379245011503, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f43c89ba1cb2d224c85a397146cecac8, type: 2}
     - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: P1_Animator_Wood
