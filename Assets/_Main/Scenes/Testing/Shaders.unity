@@ -7607,7 +7607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointRay: {fileID: 990654506}
-  transMainCam: {fileID: 4239547814198931037}
+  transMainCam: {fileID: 2133331230}
   materialTransparent: {fileID: 2100000, guid: 9f160cf2a67918a499e7609cb4281744, type: 2}
   currentlyTransparent: []
 --- !u!65 &749334759
@@ -29666,6 +29666,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2124745196}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2133331230 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1805420722767659248, guid: 416c1530179178f45875375d66258b80,
+    type: 3}
+  m_PrefabInstance: {fileID: 4239547814198931035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4239547814198931035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29920,12 +29926,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 749334760}
   m_SourcePrefab: {fileID: 100100000, guid: 416c1530179178f45875375d66258b80, type: 3}
---- !u!4 &4239547814198931037 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1805420722767659248, guid: 416c1530179178f45875375d66258b80,
-    type: 3}
-  m_PrefabInstance: {fileID: 4239547814198931035}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

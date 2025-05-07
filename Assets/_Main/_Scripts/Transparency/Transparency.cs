@@ -62,7 +62,7 @@ public class Transparency : MonoBehaviour
         List<Material> materials = new List<Material>();
         MeshRenderer[] renderers = obj.GetComponentsInChildren<MeshRenderer>();
 
-        Debug.Log($"Saving materials for: {obj.name} - Renderers found: {renderers.Length}");
+        //Debug.Log($"Saving materials for: {obj.name} - Renderers found: {renderers.Length}");
 
         foreach (MeshRenderer renderer in renderers)
         {
@@ -118,7 +118,7 @@ public class Transparency : MonoBehaviour
     {
         if (other.CompareTag("Transparent"))
         {
-            Debug.Log("Trigger Enter: " + other.gameObject.name);
+            //Debug.Log("Trigger Enter: " + other.gameObject.name);
 
             MakeTransparent(other.gameObject);
         }
