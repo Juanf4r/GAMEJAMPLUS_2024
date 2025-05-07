@@ -220,6 +220,7 @@ Material:
     - _FrostingFalloff: 1
     - _FrostingHeight: 1
     - _FrostingSwitch: 0
+    - _FrostingWorldObjectSwitch2: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -316,3 +317,4 @@ Material:
     - _TrunkTint: {r: 0.07843138, g: 0.02015968, b: 0, a: 0}
     - _vertColourEmit: {r: 0.047317233, g: 0.21698111, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

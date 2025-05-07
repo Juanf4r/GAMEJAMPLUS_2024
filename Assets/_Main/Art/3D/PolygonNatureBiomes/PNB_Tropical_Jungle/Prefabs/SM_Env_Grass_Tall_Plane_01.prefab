@@ -73,6 +73,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Grass_Tall_Plane_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2503b712ddf01ff4081b54e0609580c0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Transparent
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

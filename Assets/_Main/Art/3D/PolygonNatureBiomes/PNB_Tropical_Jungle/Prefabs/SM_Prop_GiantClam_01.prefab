@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 8729972356909559287}
   m_Layer: 0
   m_Name: SM_Prop_GiantClam_01
-  m_TagString: Untagged
+  m_TagString: Transparent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
