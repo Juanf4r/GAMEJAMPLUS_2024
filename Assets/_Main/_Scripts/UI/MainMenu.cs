@@ -14,13 +14,10 @@ public class MainMenu : MonoBehaviour
     //SettingsPanel 3
     //CreditsPanel 4
 
-    private int levelSelector = 0;
-
     private bool _active = false;
 
     private void Start()
     {
-        //Reproducir Cinematica mientras carga la escena y la UI traducida
         UIMainMenu();
 
         int ID = PlayerPrefs.GetInt("LocaleKey",0);

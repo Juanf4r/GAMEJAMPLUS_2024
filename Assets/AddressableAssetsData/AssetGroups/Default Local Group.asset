@@ -16,32 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 5c8211f8e3a7e0a49b6128710b0585d3
-  m_SerializeEntries:
-  - m_GUID: 83e3404fa9fa8234595dd6d543e07fd8
-    m_Address: Assets/_Main/Scenes/FinalProduct/Level 1.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cb92bdaeca3a8894984f5654a15595f0
-    m_Address: Assets/_Main/Scenes/FinalProduct/Level 2.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8588b99b6cf143245a01324f71e332c1
-    m_Address: Assets/_Main/Scenes/FinalProduct/Level 3.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7351065728bd1cf4d9fcaea2614f6ef3
-    m_Address: Assets/_Main/Scenes/FinalProduct/Level 4.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0b5307d5f9d022b42a2feddff64e669a
-    m_Address: Assets/_Main/Scenes/FinalProduct/MainMenu.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1812ceaddd3e2974d8c2c6a5f550ff06, type: 2}
   m_SchemaSet:

@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 2078898811}
   - component: {fileID: 2078898812}
   m_Layer: 0
-  m_Name: Bootstrap
+  m_Name: BootstrapManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -648,7 +648,7 @@ PrefabInstance:
     - target: {fileID: 2981540795583568783, guid: 39bf1149bbb481d4d89408c666320989,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 7
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 3047194891987410583, guid: 39bf1149bbb481d4d89408c666320989,
         type: 3}
