@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4d04be37a3bf6ab4caf9390fadf2013c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 223436
+  packageName: Adaptive Split Screen
+  packageVersion: 1.3.1
+  assetPath: Packages/com.projectdawn.splitscreen/Samples/Tanks/Scripts/Managers/TankSelectionManager.cs
+  uploadId: 725943

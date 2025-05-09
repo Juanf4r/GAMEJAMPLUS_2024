@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1e29b3b7548098549b37bae48b050205
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 223436
+  packageName: Adaptive Split Screen
+  packageVersion: 1.3.1
+  assetPath: Packages/com.projectdawn.splitscreen/ProjectDawn.SplitScreen/PropertyAttributes/MinMaxRange.cs
+  uploadId: 725943

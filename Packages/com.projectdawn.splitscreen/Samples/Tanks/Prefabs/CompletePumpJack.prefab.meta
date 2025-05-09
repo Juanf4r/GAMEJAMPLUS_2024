@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b42de3640c54277468750ca555af9b52
+timeCreated: 1431512214
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 223436
+  packageName: Adaptive Split Screen
+  packageVersion: 1.3.1
+  assetPath: Packages/com.projectdawn.splitscreen/Samples/Tanks/Prefabs/CompletePumpJack.prefab
+  uploadId: 725943

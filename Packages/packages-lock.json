@@ -1,5 +1,15 @@
 {
   "dependencies": {
+    "com.projectdawn.splitscreen": {
+      "version": "file:com.projectdawn.splitscreen",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.5",
+        "com.unity.collections": "0.9.0-preview.6",
+        "com.unity.burst": "1.3.0-preview.12"
+      }
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
