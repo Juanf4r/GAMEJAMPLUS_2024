@@ -73,6 +73,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Creeper_Vine_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5d9041f0de1c97c4789f2b9939996b0a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Transparent
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

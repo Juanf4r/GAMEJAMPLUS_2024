@@ -104,7 +104,7 @@ namespace Assets.Minimap
             var minimapY = normalizedZ * minimapRect.sizeDelta.y;
 
             // Update the icon position on the minimap
-            ((RectTransform)transform).anchoredPosition = new Vector2(minimapX, minimapY);
+            //((RectTransform)transform).anchoredPosition = new Vector2(minimapX, minimapY);
         }
     }
 }

@@ -119,27 +119,27 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 26
-    m_Localized: SELECT A LEVEL
+    m_Localized: SELECT A MAP
     m_Metadata:
       m_Items: []
   - m_Id: 27
-    m_Localized: LEVEL 1
+    m_Localized: MAP 1
     m_Metadata:
       m_Items: []
   - m_Id: 28
-    m_Localized: LEVEL 2
+    m_Localized: MAP 2
     m_Metadata:
       m_Items: []
   - m_Id: 29
-    m_Localized: LEVEL 3
+    m_Localized: MAP 3
     m_Metadata:
       m_Items: []
   - m_Id: 30
-    m_Localized: LEVEL 4
+    m_Localized: MAP 4
     m_Metadata:
       m_Items: []
   - m_Id: 31
-    m_Localized: RANDOM LEVEL
+    m_Localized: RANDOM MAP
     m_Metadata:
       m_Items: []
   references:

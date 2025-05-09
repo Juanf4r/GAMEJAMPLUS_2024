@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6808845319947331720}
   m_Layer: 0
   m_Name: SM_Env_Tree_Pohutukawa_04
-  m_TagString: Untagged
+  m_TagString: Transparent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
