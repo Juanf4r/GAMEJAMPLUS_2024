@@ -102,8 +102,12 @@ namespace Core
 
         private void OnEnable()
         {
-            startGameAction += InGameUIManager.Instance.HidePlayersPanels;
+            if (InGameUIManager.Instance != null)
+            {
+                startGameAction += InGameUIManager.Instance.HidePlayersPanels;
+            }
         }
+
 
         void OnDisable()
         {
