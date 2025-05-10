@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Core;
 
 public class Player2 : MonoBehaviour
 {
@@ -206,7 +207,7 @@ public class Player2 : MonoBehaviour
     {
         if (other.CompareTag("Meat"))
         {
-            GameManager.Instance.GanarRondaJugador2();
+            GameManager.Instance.Player1Win();
         }
 
         else if (other.CompareTag("PowerUPTP") && !moreVel && !moreAtt)

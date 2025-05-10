@@ -1,4 +1,5 @@
 using UnityEngine;
+using Core;
 
 namespace _Scripts.Players
 {
@@ -11,14 +12,14 @@ namespace _Scripts.Players
             if (!other.CompareTag("Player")) return;
             if (other.gameObject.GetComponent<PlayerManager>().isPlayerOne)
             {
-                GameManager.Instance.GanarRondaJugador1();
+                GameManager.Instance.Player1Win();
             }
             else
             {
-                GameManager.Instance.GanarRondaJugador2();
+                GameManager.Instance.Player2Win();
             }
-            SoundFXChannel.PlaySoundFxClip(eatClips, transform.position, .5f);
-            GameManager.Instance.LocalizarCarne();
+            SoundFXChannel.PlaySoundFxClip(eatClips, transform.position, .6f);
+            GameManager.Instance.LocateMeat();
         }
     }   
 }
