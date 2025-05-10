@@ -72,8 +72,11 @@ namespace UI
 
         public void HidePlayersPanels()
         {
-            panelWinnerPlayer1.SetActive(false);
-            panelWinnerPlayer2.SetActive(false);
+            if (panelWinnerPlayer1 != null && panelWinnerPlayer2 != null)
+            {
+                panelWinnerPlayer1.SetActive(false);
+                panelWinnerPlayer2.SetActive(false);
+            }
         }
 
         public void RestartMeatsTexts()
