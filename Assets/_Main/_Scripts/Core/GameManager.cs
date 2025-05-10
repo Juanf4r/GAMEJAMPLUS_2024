@@ -183,34 +183,27 @@ namespace Core
         private void WinGame()
         {
             CleanPowerUp();
-
-            if (meatsOfPlayer1 >= 1)
+            
+            if (meatsOfPlayer1 > meatsOfPlayer2)
             {
                 InGameUIManager.Instance.panelWinnerPlayer1.SetActive(true);
                 
                 _player1.OnWin();
                 _player2.OnLose();
-                
-                winAudioSource.Play();
             }
-            else if (meatsOfPlayer2 >= 1)
+            else if (meatsOfPlayer2 > meatsOfPlayer1)
             {
                 InGameUIManager.Instance.panelWinnerPlayer2.SetActive(true);
                 
                 _player2.OnWin();
                 _player1.OnLose();
-                
-                winAudioSource.Play();
-            }
-            else
-            {
-                LocateMeat();
-                StartGame();
             }
 
+            winAudioSource.Play();
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
             StartCoroutine(BackToMenu(5f));
         }
+
 
         private void EndForTime()
         {
