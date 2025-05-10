@@ -12,18 +12,17 @@ using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 using UnityEngine.SceneManagement;
 using Assets.Minimap;
+using System;
+using UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance {get; private set;}
+
+    public Action startGameAction;
+    public Action gameOverAction;
+
     private InputPlayers _inputPlayers;
-    [Header("UI")]
-    [SerializeField] private TextMeshProUGUI textJugador1;
-    [SerializeField] private TextMeshProUGUI textJugador2;
-    [SerializeField] private TextMeshProUGUI textCronometro;
-    [SerializeField] private GameObject panelGanador1;
-    [SerializeField] private GameObject panelGanador2;
-    [SerializeField] private GameObject timerCenter;
 
     [Header("Carnes")]
     [SerializeField] private List<Transform> spawnCarne;
@@ -32,22 +31,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite meat;
     [SerializeField] private GameObject meatGold;
 
-    [Header("Contador")]
-    public int contadorJugador1 = 0;
-    public int contadorJugador2 = 0;
-    private float cronometro = 91f;
+    [Header("Meats and Timer")]
+    public int meatsOfPlayer1 = 0;
+    public int meatsOfPlayer2 = 0;
+    private float gameSeconds = 91f;
     public bool timeOver = false;
 
-    [Header("Referencias")]
+    [Header("References")]
     [SerializeField] private GameObject refPlayer1;
     [SerializeField] private GameObject refPlayer2;
 
     [SerializeField] private Animator player1_Animator;
     [SerializeField] private Animator player2_Animator;
     
-    private PlayerManager _player1;
-    private PlayerManager _player2;
-
     [SerializeField] private GameObject spawn1;
     [SerializeField] private GameObject spawn2;
 
@@ -59,14 +55,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] spawnPowerUP;
     private List<GameObject> powerUpInstances = new List<GameObject>();
 
-    [Header("Pausa")]
+    [Header("Pause")]
     [SerializeField] private GameObject panelPausa;
     [SerializeField] private GameObject panelGameplay;
     [SerializeField] private GameObject panelMusica;
+
+    private PlayerManager _player1;
+    private PlayerManager _player2;
+
     private bool isPaused = false;
 
-    [Header("Contador de inicio")]
-    [SerializeField] private GameObject panelContador;
+    [Header("Start Timer")]
     [SerializeField] private TextMeshProUGUI contadorInicio;
 
     [Header("Musica ganar")]
@@ -94,6 +93,7 @@ public class GameManager : MonoBehaviour
             }
         }        
         
+        //Singleton
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -104,17 +104,44 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        startGameAction += InGameUIManager.Instance.HidePlayersPanels;
+    }
+
+    void OnDisable()
+    {
+        startGameAction -= InGameUIManager.Instance.HidePlayersPanels;
+    }
+
     private void Start()
     {
         Time.timeScale = 1;
+        
         timeOver = false;
-        textJugador1.text = "0 / 3";
-        textJugador2.text = "0 / 3";   
-        Iniciar();
-        LocalizarCarne();
-        panelGanador1.SetActive(false);
-        panelGanador2.SetActive(false);
+
+        StartGame();
+        LocateMeat();
+
+        InGameUIManager.Instance.textJugador1.text = "0 / 3";
+        InGameUIManager.Instance.textJugador2.text = "0 / 3"; 
+
+        startGameAction?.Invoke();
         audioGanar.Stop();
+    }
+
+    private void FixedUpdate()
+    {
+        gameSeconds -= Time.deltaTime;
+        InGameUIManager.Instance.textCronometro.text = gameSeconds.ToString("000"); 
+        if (gameSeconds <= 0)
+        {
+            EndForTime();
+        }
+        else if (timeOver && gameSeconds <= 5)
+        {
+            StartCoroutine(AddGameSeconds());
+        }
     }
 
     public void GanarRondaJugador1()
@@ -122,16 +149,16 @@ public class GameManager : MonoBehaviour
 
         if (timeOver)
         {
-            contadorJugador1 += 3;
+            meatsOfPlayer1 += 3;
         }
         else
         {
-            contadorJugador1++;
+            meatsOfPlayer1++;
             player1_Animator.SetBool("Eating", true);
         }
 
-        textJugador1.text = contadorJugador1.ToString() + " / 3";
-        if (contadorJugador1 >= 3)
+        InGameUIManager.Instance.textJugador1.text = meatsOfPlayer1.ToString() + " / 3";
+        if (meatsOfPlayer1 >= 3)
         {
             GanarJuego();
             SoundFXChannel.PlaySoundFxClip(derrota, _player2.transform.position, .5f, true);
@@ -141,23 +168,22 @@ public class GameManager : MonoBehaviour
 
     public void GanarRondaJugador2()
     {
-
         if (timeOver)
         {
-            contadorJugador2 += 3;
+            meatsOfPlayer2 += 3;
         }
         else
         {
-            contadorJugador2++;
+            meatsOfPlayer2++;
             player2_Animator.SetBool("Eating", true);
         }
-        //Debug.Log("juagdor 2:" + contadorJugador2);
-        textJugador2.text = contadorJugador2.ToString() + " / 3";
-        if (contadorJugador2 >= 3) 
+    
+        InGameUIManager.Instance.textJugador2.text = meatsOfPlayer2.ToString() + " / 3";
+
+        if (meatsOfPlayer2 >= 3) 
         {
             GanarJuego();
             SoundFXChannel.PlaySoundFxClip(derrota, _player1.transform.position, .5f,true);
-
         }
     }
 
@@ -167,24 +193,25 @@ public class GameManager : MonoBehaviour
         var player2Actions = _player2.GetComponent<PlayerActions>();
         player1Actions?.ResetPowerUpsForBothPlayers();
         player2Actions?.ResetPowerUpsForBothPlayers();
-        LimpiarPowerUp();
-        if (contadorJugador1 == contadorJugador2)
+        CleanPowerUp();
+        if (meatsOfPlayer1 == meatsOfPlayer2)
         {
-            
-
-            timeOver = true;
-            textCronometro.text = "";
             _player1.canMove = false;
             _player2.canMove = false;
             _inputPlayers.Disable();
-            Iniciar();
-            cronometro += 100;
-            timerCenter.SetActive(false);
+
+            timeOver = true;
+
+            InGameUIManager.Instance.textCronometro.text = "";
+            
+            StartGame();
+            gameSeconds += 100;
+            InGameUIManager.Instance.timerCenter.SetActive(false);
             carne.transform.localPosition = meatGold.transform.position;
             MinimapController.instance.AddMinimapElement(meat, carne.transform);
-            if (cronometro >= 5f)
+            if (gameSeconds >= 5f)
             {
-                StartCoroutine(newCronometro());
+                StartCoroutine(AddGameSeconds());
             }
         }
         else
@@ -196,19 +223,19 @@ public class GameManager : MonoBehaviour
     private void GanarJuego()
     {
 
-        LimpiarPowerUp();
-        if (contadorJugador1 >= 1)
+        CleanPowerUp();
+        if (meatsOfPlayer1 >= 1)
         {
-            panelGanador1.SetActive(true);
+            InGameUIManager.Instance.panelGanador1.SetActive(true);
             
             _player1.OnWin();
             _player2.OnLose();
             
             audioGanar.Play();
         }
-        else if (contadorJugador2 >= 1)
+        else if (meatsOfPlayer2 >= 1)
         {
-            panelGanador2.SetActive(true);
+            InGameUIManager.Instance.panelGanador2.SetActive(true);
             
             _player2.OnWin();
             _player1.OnLose();
@@ -217,18 +244,18 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            LocalizarCarne();
-            Iniciar();
+            LocateMeat();
+            StartGame();
         }
-        timerCenter.SetActive(false);
-        StartCoroutine(backMenu(5f));
+        InGameUIManager.Instance.timerCenter.SetActive(false);
+        StartCoroutine(BackToMenu(5f));
     }
 
-    public void LocalizarCarne()
+    public void LocateMeat()
     {
         if (spawnCarne.Count > 0)
         {
-            var randomIndex = Random.Range(0, spawnCarne.Count);
+            var randomIndex = UnityEngine.Random.Range(0, spawnCarne.Count);
             carne.transform.localPosition = spawnCarne[randomIndex].position;
             MinimapController.instance.AddMinimapElement(meat, carne.transform);
             usedSpawns.Add(spawnCarne[randomIndex]);
@@ -242,35 +269,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Iniciar()
+    private void StartGame()
     {
         refPlayer1.transform.localPosition = spawn1.transform.localPosition;
         refPlayer2.transform.localPosition = spawn2.transform.localPosition;
 
         PowerUp();
-
-        StartCoroutine(CuentaRegresiva());
+        StartCoroutine(Countdown());
     }
 
-    private void FixedUpdate()
-    {
-        cronometro -= Time.deltaTime;
-        textCronometro.text = cronometro.ToString("000"); 
-        if (cronometro <= 0)
-        {
-            EndForTime();
-        }
-        else if (timeOver && cronometro <= 5)
-        {
-            StartCoroutine(newCronometro());
-        }
-    }
+
 
     private void PowerUp()
     {
         foreach (var spawnPoint in spawnPowerUP)
         {
-            var random = Random.Range(0, 3);
+            var random = UnityEngine.Random.Range(0, 3);
             var powerUpInstance = Instantiate(powerUpPrefab, spawnPoint.transform.position, Quaternion.identity);
             MinimapController.instance.AddMinimapElement(powerUpInstance.GetComponent<SpriteRenderer>().sprite, powerUpInstance.transform);
             powerUpInstance.SetActive(false);
@@ -288,7 +302,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void LimpiarPowerUp()
+    private void CleanPowerUp()
     {
         foreach (var powerUp in powerUpInstances)
         {
@@ -321,10 +335,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator CuentaRegresiva()
+    private IEnumerator Countdown()
     {
         panelGameplay.SetActive(false);
-        panelContador.gameObject.SetActive(true);
+        InGameUIManager.Instance.panelContador.gameObject.SetActive(true);
 
         for (int i = 3; i > 0; i--)
         {
@@ -333,12 +347,12 @@ public class GameManager : MonoBehaviour
         }
 
         contadorInicio.text = "GO!!";
-        cronometro = 91f;
+        gameSeconds = 91f;
         
         yield return new WaitForSeconds(.5f);
         
         panelGameplay.SetActive(true);
-        panelContador.gameObject.SetActive(false);
+        InGameUIManager.Instance.panelContador.gameObject.SetActive(false);
         _inputPlayers.Enable();
         _player1.canMove = true;
         _player2.canMove = true;
@@ -353,10 +367,10 @@ public class GameManager : MonoBehaviour
             _ => Vector3.zero
         };
 
-        var randomX = Random.Range(-1f, 2f); // Adjust range as needed
-        var randomZ = Random.Range(-1f, 2f); // Adjust range as needed
+        var randomX = UnityEngine.Random.Range(-1f, 2f); // Adjust range as needed
+        var randomZ = UnityEngine.Random.Range(-1f, 2f); // Adjust range as needed
 
-        var modifyX = Random.value > 0.5f; // 50% chance to pick x or y
+        var modifyX = UnityEngine.Random.value > 0.5f; // 50% chance to pick x or y
         if (modifyX)
         {
             position.x += randomX;
@@ -368,15 +382,15 @@ public class GameManager : MonoBehaviour
 
         return position;
     }
-    private IEnumerator backMenu(float time)
+    private IEnumerator BackToMenu(float time)
     {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(0);
     }
 
-    private IEnumerator newCronometro()
+    private IEnumerator AddGameSeconds()
     {
         yield return new WaitForSeconds(4);
-        cronometro += 10000f;
+        gameSeconds += 10000f;
     }
 }
