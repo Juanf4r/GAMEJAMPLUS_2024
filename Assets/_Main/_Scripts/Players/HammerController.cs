@@ -18,7 +18,6 @@ namespace _Scripts.Players
             transform.localScale = new Vector3(direction, 1, 1);
         }
         
-        
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player") || other.gameObject == _owner) return;

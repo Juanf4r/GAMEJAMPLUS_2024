@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using _ScriptableObjects.Scripts;
 using UnityEngine;
+using Core;
 
 namespace _Scripts.Players
 {

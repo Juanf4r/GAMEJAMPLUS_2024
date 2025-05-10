@@ -16,6 +16,11 @@ namespace UI
 
         private bool _active = false;
 
+        void Awake()
+        {
+            Application.targetFrameRate = 60;
+        }
+
         private void Start()
         {
             //Reproducir Cinematica mientras carga la escena y la UI traducida
