@@ -34,6 +34,10 @@ namespace UI
         //1 pausePanel
         //2 settingsPanel
 
+        [SerializeField] private GameObject goldenMeatP1;
+        [SerializeField] private GameObject goldenMeatP2;
+
+
         private bool _active = false;
 
         private void Awake()
@@ -68,6 +72,8 @@ namespace UI
             {
                 image.gameObject.SetActive(false);
             }
+            goldenMeatP1.SetActive(false);
+            goldenMeatP2.SetActive(false);
         }
 
         public void HidePlayersPanels()
@@ -83,6 +89,13 @@ namespace UI
         {
             player1MeatsText.text = "0 / 3";
             player2MeatsText.text = "0 / 3";  
+        }
+
+        public void ChangeTextForImageMeat(){
+            player1MeatsText.gameObject.SetActive(false);
+            player2MeatsText.gameObject.SetActive(false);
+            goldenMeatP1.SetActive(true);
+            goldenMeatP2.SetActive(true);
         }
 
         #region PauseLogic
