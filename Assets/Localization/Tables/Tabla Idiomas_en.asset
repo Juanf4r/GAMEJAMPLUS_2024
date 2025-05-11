@@ -99,11 +99,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21
-    m_Localized: MUSIC VOLUME
+    m_Localized: MUSIC
     m_Metadata:
       m_Items: []
   - m_Id: 22
-    m_Localized: SOUND VOLUME
+    m_Localized: SOUND
     m_Metadata:
       m_Items: []
   - m_Id: 23
@@ -160,6 +160,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 36
     m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: BACK TO MENU
     m_Metadata:
       m_Items: []
   references:
