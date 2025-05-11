@@ -177,6 +177,8 @@ namespace UI
             ChangeLocale(config.settings.localeID);
             sfxSlider.value = config.settings.sfxvolume;
             musicSlider.value = config.settings.musicvolume;
+            MusicManager.Instance.PlayMainMenuMusic();
+
         }
 
         public void ExitGame()
@@ -193,6 +195,7 @@ namespace UI
         private void UpdateMusic(float value)
         {
             config.settings.musicvolume = value;
+            MusicManager.UpdateMusicVolume();
             ConfigManager.SaveConfig(config);
         }
         #region UILogic
@@ -319,6 +322,7 @@ namespace UI
                 default: Debug.LogWarning("This level do not exists: " + levelSelected);
                     break;
             }
+            MusicManager.Instance.StopMusic();
         }
 
         public void SelectRandomLevel()

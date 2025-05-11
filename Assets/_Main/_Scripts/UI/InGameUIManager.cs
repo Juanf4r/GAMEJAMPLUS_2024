@@ -191,6 +191,7 @@ namespace UI
         private void UpdateMusic(float value)
         {
             config.settings.musicvolume = value;
+            MusicManager.UpdateMusicVolume();
             ConfigManager.SaveConfig(config);
         }
         
