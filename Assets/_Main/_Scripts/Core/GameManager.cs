@@ -170,7 +170,6 @@ namespace Core
             }
 
             meatGameObject.gameObject.SetActive(true);
-            Debug.LogWarning("The meat has appeared");
         }
 
         private void StartGame()
