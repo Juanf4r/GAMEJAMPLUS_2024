@@ -398,7 +398,7 @@ namespace Core
             }
 
             InGameUIManager.Instance.countdownText.text = "GO!!";
-            _gameSeconds = 11f;
+            _gameSeconds = 91f;
             
             yield return new WaitForSeconds(.5f);
             
