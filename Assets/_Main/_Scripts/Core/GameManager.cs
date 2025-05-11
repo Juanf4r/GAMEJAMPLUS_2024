@@ -158,7 +158,16 @@ namespace Core
             {
                 var randomIndex = UnityEngine.Random.Range(0, spawnMeats.Count);
                 meatGameObject.transform.localPosition = spawnMeats[randomIndex].position;
-                MinimapController.instance.AddMinimapElement(meat, meatGameObject.transform);
+                MinimapElementData meatIconData = new MinimapElementData()
+                {
+                    TargetTransform = meatGameObject.transform,
+                    IconSprite = meat, 
+                    BaseSize = new Vector2(30, 30),
+                    ScaleWithMap = false,
+                    PreserveAspect = true
+                };
+                
+                MinimapController.instance.AddMinimapElement(meatIconData);
                 usedSpawns.Add(spawnMeats[randomIndex]);
                 spawnMeats.RemoveAt(randomIndex);
 
@@ -272,11 +281,16 @@ namespace Core
                 //Start ExtraRound
                 timeOver = true;
                 InGameUIManager.Instance.timeLeftText.text = "";
+<<<<<<< HEAD
                 
                 refPlayer1.transform.localPosition = spawn1.transform.localPosition;
                 refPlayer2.transform.localPosition = spawn2.transform.localPosition;
                 PowerUp();
                 StartCoroutine(CountdownExtraRound());
+=======
+        
+                StartGame();
+>>>>>>> dev_floware
                 _gameSeconds += 100;
 
                 InGameUIManager.Instance.containerTimeLeft.SetActive(false);
@@ -301,11 +315,30 @@ namespace Core
                 }
                 meatGameObject.transform.localPosition = meatGoldSpawn.transform.position;
 
+<<<<<<< HEAD
                 //Change UI to Gold meat
                 InGameUIManager.Instance.StartGoldMeatUI();
                 InGameUIManager.Instance.extraRoundPanel.SetActive(true);
                 //Reset map
                 MinimapController.instance.AddMinimapElement(meat, meatGameObject.transform);
+=======
+                meatGameObject.transform.localPosition = meatGold.transform.position;
+
+                InGameUIManager.Instance.PlayGoldMeatUI();
+
+                // Create proper minimap element data
+                MinimapElementData goldMeatIcon = new MinimapElementData()
+                {
+                    TargetTransform = meatGold.transform,
+                    IconSprite = meat, // Add this reference to your class
+                    BaseSize = new Vector2(40, 40), // Larger size for gold meat
+                    ScaleWithMap = false,
+                    PreserveAspect = true,
+                    // Add any special visual effects if needed
+                };
+
+                MinimapController.instance.AddMinimapElement(goldMeatIcon);
+>>>>>>> dev_floware
 
                 
 
@@ -323,16 +356,28 @@ namespace Core
         #endregion
 
         #region PowerUps
-
         private void PowerUp()
         {
             foreach (var spawnPoint in spawnPowerUP)
             {
                 var random = UnityEngine.Random.Range(0, 3);
                 var powerUpInstance = Instantiate(powerUpPrefab, spawnPoint.transform.position, Quaternion.identity);
-                MinimapController.instance.AddMinimapElement(powerUpInstance.GetComponent<SpriteRenderer>().sprite, powerUpInstance.transform);
+        
+                // Create minimap element data for the power-up
+                MinimapElementData powerUpIcon = new MinimapElementData()
+                {
+                    TargetTransform = powerUpInstance.transform,
+                    IconSprite = powerUpInstance.GetComponent<SpriteRenderer>().sprite,
+                    BaseSize = new Vector2(15, 15), // Smaller size for power-ups
+                    ScaleWithMap = false,
+                    PreserveAspect = true
+                };
+        
+                // Add to minimap
+                MinimapController.instance.AddMinimapElement(powerUpIcon);
+        
                 powerUpInstance.SetActive(false);
-                
+        
                 powerUpInstance.GetComponent<PowerUp>().powerUpType = random switch
                 {
                     0 => teleportPu,
@@ -340,9 +385,9 @@ namespace Core
                     2 => strengthPu,
                     _ => powerUpInstance.GetComponent<PowerUp>().powerUpType
                 };
+        
                 powerUpInstance.SetActive(true);
                 powerUpInstances.Add(powerUpInstance);
-                
             }
         }
 
