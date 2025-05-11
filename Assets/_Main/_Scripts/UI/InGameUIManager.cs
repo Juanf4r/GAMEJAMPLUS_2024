@@ -31,6 +31,7 @@ namespace UI
         public GameObject panelWinnerPlayer1;
         public GameObject panelWinnerPlayer2;
         public GameObject containerTimeLeft;
+        public GameObject extraRoundPanel;
 
         [Space]
 
@@ -112,6 +113,7 @@ namespace UI
             }
             sfxSlider.value = config.settings.sfxvolume;
             musicSlider.value = config.settings.musicvolume;
+            extraRoundPanel.SetActive(false);
         }
 
         public void AddListenerOnButtons()
@@ -127,8 +129,8 @@ namespace UI
 
             //SettingsButtons
             backSettingsButton.onClick.AddListener(ShowPause);
-            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
-            englishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
+            englishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
+            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
             sfxSlider.onValueChanged.AddListener(UpdateSFX);
             musicSlider.onValueChanged.AddListener( UpdateMusic);
@@ -148,8 +150,8 @@ namespace UI
 
             //SettingsButton
             backSettingsButton.onClick.RemoveListener(ShowPause);
-            spanishLanguageButton.onClick.RemoveListener(() => ChangeLocale(0));
-            englishLanguageButton.onClick.RemoveListener(() => ChangeLocale(1));
+            englishLanguageButton.onClick.RemoveListener(() => ChangeLocale(0));
+            spanishLanguageButton.onClick.RemoveListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2));
             sfxSlider.onValueChanged.RemoveListener(UpdateSFX);
             musicSlider.onValueChanged.RemoveListener(UpdateMusic);
