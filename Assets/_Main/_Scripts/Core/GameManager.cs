@@ -187,6 +187,7 @@ namespace Core
             if (timeOver)
             {
                 meatsOfPlayer1 += 3;
+                InGameUIManager.Instance.TakeGoldMeatUI(1);
             }
             else
             {
@@ -196,7 +197,8 @@ namespace Core
             }
 
             if (meatsOfPlayer1 >= 3)
-            {
+            {   
+                
                 CheckPlayerWin();
                 SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player2.transform.position, .5f, true);
             }
@@ -206,6 +208,7 @@ namespace Core
             if (timeOver)
             {
                 meatsOfPlayer2 += 3;
+                InGameUIManager.Instance.TakeGoldMeatUI(2);
             }
             else
             {
@@ -300,7 +303,7 @@ namespace Core
                 meatGameObject.transform.localPosition = meatGoldSpawn.transform.position;
 
                 //Change UI to Gold meat
-                InGameUIManager.Instance.PlayGoldMeatUI();
+                InGameUIManager.Instance.StartGoldMeatUI();
                 InGameUIManager.Instance.extraRoundPanel.SetActive(true);
                 //Reset map
                 MinimapController.instance.AddMinimapElement(meat, meatGameObject.transform);

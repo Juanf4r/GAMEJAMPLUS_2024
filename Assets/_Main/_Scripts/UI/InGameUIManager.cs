@@ -68,6 +68,7 @@ namespace UI
         [Header("UI Meats")]
         [SerializeField] private Image CountImageMeattP1;
         [SerializeField] private Image CountImageMeattP2;
+        [SerializeField] private Sprite goldenMeatVoid;
         [SerializeField] private Sprite goldenMeat;
         [SerializeField] private List<Sprite> meatsPlayers = new List<Sprite>();
 
@@ -172,9 +173,20 @@ namespace UI
             CountImageMeattP2.sprite = meatsPlayers[0];
         }
 
-        public void PlayGoldMeatUI(){
-            CountImageMeattP1.sprite = goldenMeat;
-            CountImageMeattP2.sprite = goldenMeat;
+        public void StartGoldMeatUI(){
+            CountImageMeattP1.sprite = goldenMeatVoid;
+            CountImageMeattP2.sprite = goldenMeatVoid;
+        }
+        public void TakeGoldMeatUI(int player)
+        {
+            if (player == 1)
+            {
+                CountImageMeattP1.sprite = goldenMeat;
+            }
+            else if (player == 2)
+            {
+                CountImageMeattP2.sprite = goldenMeat;
+            }
         }
 
         public void ModUIMeats(int player, int count)
