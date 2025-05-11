@@ -411,6 +411,18 @@ Transform:
   - {fileID: 992104050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &420596573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2117268409378812603, guid: eef45459772e20e4880cece9752e6e9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4620166693417686476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &476663084
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +861,74 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1748402273
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6345242504709585812, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478701975747337703, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 475.6454
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478701975747337703, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 245.60742
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478701975747337703, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 275.1546
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478701975747337703, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478701975747337703, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478701975747337703, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478701975747337703, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478701975747337703, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478701975747337703, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478701975747337703, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bbee4f7138f2404195ea37d5971ba6c, type: 3}
 --- !u!1 &1756605688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1231,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818615261}
   m_CullTransparentMesh: 1
+--- !u!114 &2004865946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1835228814491369013, guid: eef45459772e20e4880cece9752e6e9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4620166693417686476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4620166693417686476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1215,6 +1307,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3824163765748909830, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_Name
+      value: SFXSlider
+      objectReference: {fileID: 0}
     - target: {fileID: 3935787136720923385, guid: eef45459772e20e4880cece9752e6e9d,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1274,6 +1371,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649629050078189150, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_Name
+      value: MusicSlider
       objectReference: {fileID: 0}
     - target: {fileID: 6718199805030113570, guid: eef45459772e20e4880cece9752e6e9d,
         type: 3}
@@ -1327,6 +1429,16 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6862857327522911904, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: sfxSlider
+      value: 
+      objectReference: {fileID: 420596573}
+    - target: {fileID: 6862857327522911904, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 2004865946}
     - target: {fileID: 6862857327522911904, guid: eef45459772e20e4880cece9752e6e9d,
         type: 3}
       propertyPath: backExitButton
@@ -1512,6 +1624,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9055584403890142783, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 230
+      objectReference: {fileID: 0}
     - target: {fileID: 9152543823337924727, guid: eef45459772e20e4880cece9752e6e9d,
         type: 3}
       propertyPath: m_IsActive
@@ -1552,3 +1669,4 @@ SceneRoots:
   - {fileID: 873390273}
   - {fileID: 476663085}
   - {fileID: 4620166693417686476}
+  - {fileID: 1748402273}

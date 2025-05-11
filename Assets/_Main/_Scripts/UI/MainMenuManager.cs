@@ -58,6 +58,8 @@ namespace UI
         [SerializeField] private Button englishLanguageButton;
         [SerializeField] private Button spanishLanguageButton;
         [SerializeField] private Button portugueseLanguageButton;
+        [SerializeField] private Slider sfxSlider;
+        [SerializeField] private Slider musicSlider;
 
         [Space]
 
@@ -116,6 +118,8 @@ namespace UI
             spanishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
             englishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
+            sfxSlider.onValueChanged.AddListener(UpdateSFX);
+            musicSlider.onValueChanged.AddListener( UpdateMusic);
 
             //CreditsButtons
             backCreditsButton.onClick.AddListener(UIMainMenu);
@@ -157,6 +161,8 @@ namespace UI
             spanishLanguageButton.onClick.RemoveListener(() => ChangeLocale(0));
             englishLanguageButton.onClick.RemoveListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2));
+            sfxSlider.onValueChanged.RemoveListener(UpdateSFX);
+            musicSlider.onValueChanged.RemoveListener(UpdateMusic);
 
             //CreditsButtons
             backCreditsButton.onClick.RemoveListener(UIMainMenu);
@@ -169,6 +175,10 @@ namespace UI
         {
             UIMainMenu();
             ChangeLocale(config.settings.localeID);
+            sfxSlider.value = config.settings.sfxvolume;
+            musicSlider.value = config.settings.musicvolume;
+            MusicManager.Instance.PlayMainMenuMusic();
+
         }
 
         public void ExitGame()
@@ -176,6 +186,18 @@ namespace UI
             Application.Quit();
         }
 
+        private void UpdateSFX(float value)
+        {
+            config.settings.sfxvolume = value;
+            ConfigManager.SaveConfig(config);
+        }
+
+        private void UpdateMusic(float value)
+        {
+            config.settings.musicvolume = value;
+            MusicManager.UpdateMusicVolume();
+            ConfigManager.SaveConfig(config);
+        }
         #region UILogic
 
         public void UIMainMenu()
@@ -300,6 +322,7 @@ namespace UI
                 default: Debug.LogWarning("This level do not exists: " + levelSelected);
                     break;
             }
+            MusicManager.Instance.StopMusic();
         }
 
         public void SelectRandomLevel()
