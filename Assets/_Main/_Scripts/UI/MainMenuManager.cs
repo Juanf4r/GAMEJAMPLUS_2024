@@ -68,6 +68,9 @@ namespace UI
         [SerializeField] private Button creditsButton;
         [SerializeField] private Button exitButton;*/
 
+        [Header("ExitBUttons")]
+        [SerializeField] private Button backExitButton;
+        [SerializeField] private Button exitGameButton;
         private bool _active = false;
 
         void Awake()
@@ -111,6 +114,9 @@ namespace UI
 
             //CreditsButtons
             backCreditsButton.onClick.AddListener(UIMainMenu);
+
+            backExitButton.onClick.AddListener(UIMainMenu);
+            exitButton.onClick.AddListener(UIExit);
         }
 
         private void OnDisable()
@@ -149,6 +155,9 @@ namespace UI
 
             //CreditsButtons
             backCreditsButton.onClick.RemoveListener(UIMainMenu);
+
+            backExitButton.onClick.RemoveListener(UIMainMenu);
+            exitButton.onClick.RemoveListener(UIExit);
         }
 
         private void Start()
