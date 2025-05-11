@@ -1506,6 +1506,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5284627815118467906, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 20480
+      objectReference: {fileID: 0}
     - target: {fileID: 6276520872637684248, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1521,6 +1526,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 06059cfd101705449b451da4da6f49c7, type: 2}
+    - target: {fileID: 8918030985522200748, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 20480
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1609684651944484907, guid: 416c1530179178f45875375d66258b80, type: 3}
     m_RemovedGameObjects:
@@ -2097,6 +2107,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5284627815118467906, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 20480
+      objectReference: {fileID: 0}
     - target: {fileID: 6276520872637684248, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_IsTrigger
@@ -2112,6 +2127,11 @@ PrefabInstance:
       propertyPath: P2_Animator
       value: 
       objectReference: {fileID: 1439265726}
+    - target: {fileID: 8918030985522200748, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 20480
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1609684651944484907, guid: 416c1530179178f45875375d66258b80, type: 3}
     m_RemovedGameObjects: []

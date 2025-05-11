@@ -87,11 +87,6 @@ namespace _Scripts.Players
         {
             UpdateAnimator();
         }
-        
-        private void LateUpdate()
-        {
-             
-        }
 
         private void HandlePowerUp()
         {
@@ -115,7 +110,6 @@ namespace _Scripts.Players
             if(input.x == 0) return;
             spriteRenderer.flipX = input.x < 0;
             hammerController.FlipCollider(isPlayerOne ? input.x: input.x *-1);
-
         }
         
         private void UpdateAnimator()
