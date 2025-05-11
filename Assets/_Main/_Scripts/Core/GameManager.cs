@@ -241,6 +241,7 @@ namespace Core
                 meatGameObject.SetActive(false);
             }
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
+            MusicManager.Instance.PlayInGameMusicGameOver();
             StartCoroutine(BackToMenu(6f));
         }
 
@@ -397,7 +398,7 @@ namespace Core
             }
 
             InGameUIManager.Instance.countdownText.text = "GO!!";
-            _gameSeconds = 91f;
+            _gameSeconds = 11f;
             
             yield return new WaitForSeconds(.5f);
             
@@ -425,7 +426,7 @@ namespace Core
             }
 
             InGameUIManager.Instance.countdownText.text = "GO!! \n Meat Gold timeee!!";
-            _gameSeconds = 11f;
+            _gameSeconds = 91f;
             
             yield return new WaitForSeconds(1f);
             
