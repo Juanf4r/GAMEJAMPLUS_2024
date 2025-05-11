@@ -31,6 +31,7 @@ namespace UI
         public GameObject panelWinnerPlayer1;
         public GameObject panelWinnerPlayer2;
         public GameObject containerTimeLeft;
+        public GameObject extraRoundPanel;
 
         [Space]
 
@@ -67,6 +68,7 @@ namespace UI
         [Header("UI Meats")]
         [SerializeField] private Image CountImageMeattP1;
         [SerializeField] private Image CountImageMeattP2;
+        [SerializeField] private Sprite goldenMeatVoid;
         [SerializeField] private Sprite goldenMeat;
         [SerializeField] private List<Sprite> meatsPlayers = new List<Sprite>();
 
@@ -112,6 +114,7 @@ namespace UI
             }
             sfxSlider.value = config.settings.sfxvolume;
             musicSlider.value = config.settings.musicvolume;
+            extraRoundPanel.SetActive(false);
         }
 
         public void AddListenerOnButtons()
@@ -127,8 +130,8 @@ namespace UI
 
             //SettingsButtons
             backSettingsButton.onClick.AddListener(ShowPause);
-            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
-            englishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
+            englishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
+            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
             sfxSlider.onValueChanged.AddListener(UpdateSFX);
             musicSlider.onValueChanged.AddListener( UpdateMusic);
@@ -148,8 +151,8 @@ namespace UI
 
             //SettingsButton
             backSettingsButton.onClick.RemoveListener(ShowPause);
-            spanishLanguageButton.onClick.RemoveListener(() => ChangeLocale(0));
-            englishLanguageButton.onClick.RemoveListener(() => ChangeLocale(1));
+            englishLanguageButton.onClick.RemoveListener(() => ChangeLocale(0));
+            spanishLanguageButton.onClick.RemoveListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2));
             sfxSlider.onValueChanged.RemoveListener(UpdateSFX);
             musicSlider.onValueChanged.RemoveListener(UpdateMusic);
@@ -170,9 +173,20 @@ namespace UI
             CountImageMeattP2.sprite = meatsPlayers[0];
         }
 
-        public void PlayGoldMeatUI(){
-            CountImageMeattP1.sprite = goldenMeat;
-            CountImageMeattP2.sprite = goldenMeat;
+        public void StartGoldMeatUI(){
+            CountImageMeattP1.sprite = goldenMeatVoid;
+            CountImageMeattP2.sprite = goldenMeatVoid;
+        }
+        public void TakeGoldMeatUI(int player)
+        {
+            if (player == 1)
+            {
+                CountImageMeattP1.sprite = goldenMeat;
+            }
+            else if (player == 2)
+            {
+                CountImageMeattP2.sprite = goldenMeat;
+            }
         }
 
         public void ModUIMeats(int player, int count)

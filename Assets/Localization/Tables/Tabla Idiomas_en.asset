@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6
-    m_Localized: SELECT A CHARACTER
+    m_Localized: CHARACTERS
     m_Metadata:
       m_Items: []
   - m_Id: 7
@@ -164,6 +164,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 37
     m_Localized: BACK TO MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: GOLDEAN MEAT ROUND
     m_Metadata:
       m_Items: []
   references:

@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6
-    m_Localized: SELECCIONA UN PERSONAJE
+    m_Localized: PERSONAJES
     m_Metadata:
       m_Items: []
   - m_Id: 7
@@ -164,6 +164,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 37
     m_Localized: VOLVER AL MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: EXTRA RONDA DE ORO
     m_Metadata:
       m_Items: []
   references:

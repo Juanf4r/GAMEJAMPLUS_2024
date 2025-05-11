@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6
-    m_Localized: SELECIONE UM PERSONAGEM
+    m_Localized: PERSONAGENS
     m_Metadata:
       m_Items: []
   - m_Id: 7
@@ -164,6 +164,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 37
     m_Localized: "VOLVER AL MEN\xDA\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: RODADA EXTRA DE OURO
     m_Metadata:
       m_Items: []
   references:
