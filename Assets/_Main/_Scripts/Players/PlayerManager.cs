@@ -106,10 +106,23 @@ namespace _Scripts.Players
         private void HandleMovement(Vector2 input)
         {
             if (!canMove) return;
+    
             playerInput = input * -1f;
+    
             if(input.x == 0) return;
+    
+            // Flip sprite
             spriteRenderer.flipX = input.x < 0;
-            hammerController.FlipCollider(isPlayerOne ? input.x: input.x *-1);
+    
+            // Debug before flip
+            Debug.Log($"{gameObject.name} input.x: {input.x}, isPlayerOne: {isPlayerOne}");
+    
+            // Only flip the direction if player one
+            float hammerDirection = isPlayerOne ? input.x : input.x;
+            hammerController.FlipCollider(hammerDirection);
+    
+            // Debug after flip
+            Debug.Log($"{gameObject.name} final hammer direction: {hammerDirection}");
         }
         
         private void UpdateAnimator()
