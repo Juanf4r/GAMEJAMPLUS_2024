@@ -1388,6 +1388,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2732079257783644026, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2844250114486396696, guid: eef45459772e20e4880cece9752e6e9d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1889,6 +1894,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6425387957172546376, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6654518110640779265, guid: eef45459772e20e4880cece9752e6e9d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1903,6 +1913,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950598417647552569, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7247878836521906765, guid: eef45459772e20e4880cece9752e6e9d,
         type: 3}
@@ -2105,6 +2120,11 @@ PrefabInstance:
     - target: {fileID: 8198406438199530038, guid: eef45459772e20e4880cece9752e6e9d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706822523999988254, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8998484956124156714, guid: eef45459772e20e4880cece9752e6e9d,

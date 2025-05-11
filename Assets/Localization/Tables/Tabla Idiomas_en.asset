@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6
-    m_Localized: SELECT A CHARACTER
+    m_Localized: CHARACTERS
     m_Metadata:
       m_Items: []
   - m_Id: 7
