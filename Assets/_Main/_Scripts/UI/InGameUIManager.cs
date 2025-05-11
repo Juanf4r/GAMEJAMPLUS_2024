@@ -6,6 +6,7 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
+using Settings;
 using TMPro;
 
 namespace UI
@@ -67,6 +68,7 @@ namespace UI
 
         private bool _active = false;
         [HideInInspector] public bool isPaused = false;
+        public Config config;
 
         private void Awake()
         {
@@ -78,6 +80,8 @@ namespace UI
             {
                 Instance = this;
             }
+            config = ConfigManager.LoadConfig();
+
         }
 
         private void OnEnable()
@@ -98,8 +102,6 @@ namespace UI
 
         private void Start()
         {
-            int ID = PlayerPrefs.GetInt("LocaleKey",0);
-
             foreach (var image in powerUpListImages)
             {
                 image.gameObject.SetActive(false);
@@ -277,7 +279,8 @@ namespace UI
             _active = true;
             yield return LocalizationSettings.InitializationOperation;
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localeID];
-            PlayerPrefs.SetInt("LocaleKey",localeID);
+            config.settings.localeID = localeID;
+            ConfigManager.SaveConfig(config);
             _active = false;
         }
 

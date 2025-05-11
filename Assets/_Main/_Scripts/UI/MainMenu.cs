@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
+using Settings;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
@@ -15,13 +16,14 @@ public class MainMenu : MonoBehaviour
     //CreditsPanel 4
 
     private bool _active = false;
+    public Config config;
+
 
     private void Start()
     {
+        config = ConfigManager.LoadConfig();
         UIMainMenu();
-
-        int ID = PlayerPrefs.GetInt("LocaleKey",0);
-        ChangeLocale(ID);
+        ChangeLocale(config.settings.localeID);
     }
 
     public void ChangeLocale(int localeID)
@@ -38,7 +40,8 @@ public class MainMenu : MonoBehaviour
         _active = true;
         yield return LocalizationSettings.InitializationOperation;
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localeID];
-        PlayerPrefs.SetInt("LocaleKey",localeID);
+        config.settings.localeID = localeID;
+        ConfigManager.SaveConfig(config);
         _active = false;
     }
 
