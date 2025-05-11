@@ -127,6 +127,8 @@ namespace Core
 
             startGameAction?.Invoke();
             winAudioSource.Stop();
+            MusicManager.Instance.PlayInGameMusic();
+
         }
 
         private void FixedUpdate()

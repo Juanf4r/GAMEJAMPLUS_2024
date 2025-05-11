@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections;
 using Settings;
 using TMPro;
+using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -57,7 +58,10 @@ namespace UI
         [SerializeField] private Button englishLanguageButton;
         [SerializeField] private Button spanishLanguageButton;
         [SerializeField] private Button portugueseLanguageButton;
-
+        [SerializeField] private Slider sfxSlider;
+        [SerializeField] private Slider musicSlider;
+        
+        
         [Space]
 
         [Header("UI Meats")]
@@ -106,6 +110,8 @@ namespace UI
             {
                 image.gameObject.SetActive(false);
             }
+            sfxSlider.value = config.settings.sfxvolume;
+            musicSlider.value = config.settings.musicvolume;
         }
 
         public void AddListenerOnButtons()
@@ -124,6 +130,9 @@ namespace UI
             spanishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
             englishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
+            sfxSlider.onValueChanged.AddListener(UpdateSFX);
+            musicSlider.onValueChanged.AddListener( UpdateMusic);
+
         }
 
         public void RemoveListenerOnButtons()
@@ -142,6 +151,8 @@ namespace UI
             spanishLanguageButton.onClick.RemoveListener(() => ChangeLocale(0));
             englishLanguageButton.onClick.RemoveListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2));
+            sfxSlider.onValueChanged.RemoveListener(UpdateSFX);
+            musicSlider.onValueChanged.RemoveListener(UpdateMusic);
         }
 
         public void HidePlayersPanels()
@@ -171,6 +182,19 @@ namespace UI
             targetImage.sprite = meatsPlayers[count];
         }
 
+        private void UpdateSFX(float value)
+        {
+            config.settings.sfxvolume = value;
+            ConfigManager.SaveConfig(config);
+        }
+
+        private void UpdateMusic(float value)
+        {
+            config.settings.musicvolume = value;
+            MusicManager.UpdateMusicVolume();
+            ConfigManager.SaveConfig(config);
+        }
+        
         #region PauseLogic
 
         public void PauseGame(bool pauseState)
