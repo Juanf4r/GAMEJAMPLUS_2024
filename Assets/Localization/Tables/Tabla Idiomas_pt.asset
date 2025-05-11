@@ -166,6 +166,10 @@ MonoBehaviour:
     m_Localized: "VOLVER AL MEN\xDA\n"
     m_Metadata:
       m_Items: []
+  - m_Id: 38
+    m_Localized: RODADA EXTRA DE OURO
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
