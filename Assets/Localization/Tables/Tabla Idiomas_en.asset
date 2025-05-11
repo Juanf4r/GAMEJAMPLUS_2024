@@ -19,127 +19,151 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1
-    m_Localized: Start
+    m_Localized: PLAY
     m_Metadata:
       m_Items: []
   - m_Id: 2
-    m_Localized: Credits
+    m_Localized: CONTROLS
     m_Metadata:
       m_Items: []
   - m_Id: 3
-    m_Localized: Exit
-    m_Metadata:
-      m_Items: []
-  - m_Id: 4
-    m_Localized: Controls
-    m_Metadata:
-      m_Items: []
-  - m_Id: 5
-    m_Localized: Settings
-    m_Metadata:
-      m_Items: []
-  - m_Id: 6
-    m_Localized: Player 1
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7
-    m_Localized: Player 2
-    m_Metadata:
-      m_Items: []
-  - m_Id: 8
-    m_Localized: Movement
-    m_Metadata:
-      m_Items: []
-  - m_Id: 9
-    m_Localized: Power Up
-    m_Metadata:
-      m_Items: []
-  - m_Id: 10
-    m_Localized: Punch
-    m_Metadata:
-      m_Items: []
-  - m_Id: 11
-    m_Localized: Pause
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12
-    m_Localized: Go Back
-    m_Metadata:
-      m_Items: []
-  - m_Id: 13
     m_Localized: SETTINGS
     m_Metadata:
       m_Items: []
-  - m_Id: 14
-    m_Localized: PAUSE
-    m_Metadata:
-      m_Items: []
-  - m_Id: 15
-    m_Localized: Continue
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16
-    m_Localized: Volume
-    m_Metadata:
-      m_Items: []
-  - m_Id: 17
-    m_Localized: Music
-    m_Metadata:
-      m_Items: []
-  - m_Id: 18
-    m_Localized: Time Left
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19
-    m_Localized: Meat Collected
-    m_Metadata:
-      m_Items: []
-  - m_Id: 20
-    m_Localized: Player 1 Wins!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 21
-    m_Localized: Player 2 Wins!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 22
+  - m_Id: 4
     m_Localized: CREDITS
     m_Metadata:
       m_Items: []
-  - m_Id: 23
-    m_Localized: 'Game Design:'
+  - m_Id: 5
+    m_Localized: EXIT
     m_Metadata:
       m_Items: []
-  - m_Id: 24
-    m_Localized: 'Programming:'
+  - m_Id: 6
+    m_Localized: SELECT A CHARACTER
     m_Metadata:
       m_Items: []
-  - m_Id: 25
-    m_Localized: 'Art:'
+  - m_Id: 7
+    m_Localized: PLAYER 1
     m_Metadata:
       m_Items: []
-  - m_Id: 26
+  - m_Id: 8
+    m_Localized: PLAYER 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: NEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
     m_Localized: SELECT A MAP
     m_Metadata:
       m_Items: []
-  - m_Id: 27
+  - m_Id: 12
     m_Localized: MAP 1
     m_Metadata:
       m_Items: []
-  - m_Id: 28
+  - m_Id: 13
     m_Localized: MAP 2
     m_Metadata:
       m_Items: []
-  - m_Id: 29
+  - m_Id: 14
     m_Localized: MAP 3
     m_Metadata:
       m_Items: []
-  - m_Id: 30
+  - m_Id: 15
     m_Localized: MAP 4
     m_Metadata:
       m_Items: []
+  - m_Id: 16
+    m_Localized: PICK RANDOM MAP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: PAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: MOVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: PUNCH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: POWER UP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: MUSIC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: SOUND
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: ENGLISH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: SPANISH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: PORTUGUESE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: GAME DESIGN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: PROGRAMMING
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: OLD ART
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: ART
+    m_Metadata:
+      m_Items: []
   - m_Id: 31
-    m_Localized: RANDOM MAP
+    m_Localized: "\xBFARE YOU SURE?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: TIME LEFT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: WINNER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: LOSER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: GO!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: BACK TO MENU
     m_Metadata:
       m_Items: []
   references:

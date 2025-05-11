@@ -10,6 +10,8 @@ public class MusicManager : MonoBehaviour
     [Header("Music Clips")]
     [SerializeField] private AudioClip _mainMenuMusic;
     [SerializeField] private List<AudioClip> _inGameMusicClips = new List<AudioClip>();
+    [SerializeField] private AudioClip extraRoundMusic;
+    [SerializeField] private AudioClip gameOverMusic;
 
     private int _currentInGameTrackIndex = 0;
     private bool _isInGameMusic = false;
@@ -67,6 +69,7 @@ public class MusicManager : MonoBehaviour
         _audioSource.clip = _mainMenuMusic;
         _audioSource.Play();
     }
+    
 
     public void PlayInGameMusic(bool shuffle = false)
     {
@@ -85,6 +88,32 @@ public class MusicManager : MonoBehaviour
         }
 
         _audioSource.clip = _inGameMusicClips[_currentInGameTrackIndex];
+        _audioSource.Play();
+    }
+
+    public void PlayInGameMusicExtraRound()
+    {
+        if (gameOverMusic == null)
+        {
+            Debug.LogWarning("No in-game music clips assigned!");
+            return;
+        }
+        Debug.Log("PLAYING EXTRA ROUND MUSIC");
+        
+        _audioSource.clip = extraRoundMusic;
+        _audioSource.Play();
+    }
+
+    public void PlayInGameMusicGameOver()
+    {
+        if (gameOverMusic == null)
+        {
+            Debug.LogWarning("No in-game music clips assigned!");
+            return;
+        }
+        Debug.Log("PLAYING GAME OVER MUSIC");
+        
+        _audioSource.clip = gameOverMusic;
         _audioSource.Play();
     }
 
