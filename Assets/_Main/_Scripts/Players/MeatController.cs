@@ -12,11 +12,11 @@ namespace _Scripts.Players
             if (!other.CompareTag("Player")) return;
             if (other.gameObject.GetComponent<PlayerManager>().isPlayerOne)
             {
-                GameManager.Instance.Player1Win();
+                GameManager.Instance.CheckPlayer1Meat();
             }
             else
             {
-                GameManager.Instance.Player2Win();
+                GameManager.Instance.CheckPlayer2Meat();
             }
             SoundFXChannel.PlaySoundFxClip(eatClips, transform.position, .6f);
             GameManager.Instance.LocateMeat();
