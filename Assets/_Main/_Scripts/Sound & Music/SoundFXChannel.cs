@@ -1,3 +1,4 @@
+using Settings;
 using UnityEngine;
 
 namespace _Scripts
@@ -22,13 +23,23 @@ namespace _Scripts
 
         private const float PitchChangeMultiplier = 0.2f;
 
+        private float GlobalSFXVolume
+        {
+            get
+            {
+                var config = ConfigManager.LoadConfig();
+                return config.settings.sfxvolume;
+            }
+        }
+
         public static void PlaySoundFxClip(AudioClip clip, Vector3 soundPosition, float volume, bool loop = false)
         {
-            var randPitch = Random.Range(volume,  volume + PitchChangeMultiplier);
+            var randPitch = Random.Range(volume, volume + PitchChangeMultiplier);
+            var finalVolume = randPitch * Instance.GlobalSFXVolume; // Apply global volume multiplier
 
             var audio = Instantiate(Instance.soundObject, soundPosition, Quaternion.identity);
             audio.clip = clip;
-            audio.volume = randPitch;
+            audio.volume = finalVolume;
             if (loop) audio.loop = true;
             audio.Play();
         }
@@ -36,11 +47,12 @@ namespace _Scripts
         public static void PlaySoundFxClip(AudioClip[] clips, Vector3 soundPosition, float volume, bool loop = false)
         {
             var randClip = Random.Range(0, clips.Length);
-            var randPitch = Random.Range(volume,  volume + PitchChangeMultiplier);
+            var randPitch = Random.Range(volume, volume + PitchChangeMultiplier);
+            var finalVolume = randPitch * Instance.GlobalSFXVolume; // Apply global volume multiplier
 
             var audio = Instantiate(Instance.soundObject, soundPosition, Quaternion.identity);
             audio.clip = clips[randClip];
-            audio.volume = randPitch;
+            audio.volume = finalVolume;
             if (loop) audio.loop = true;
             audio.Play();
         }
