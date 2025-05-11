@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
 using _ScriptableObjects.Scripts;
@@ -36,6 +35,7 @@ namespace Core
         [Header("Meats and Timer")]
         [HideInInspector] public int meatsOfPlayer1 = 0;
         [HideInInspector] public int meatsOfPlayer2 = 0;
+
         [HideInInspector] public bool timeOver = false;
         private float _gameSeconds = 91f;
 
@@ -191,7 +191,7 @@ namespace Core
             {
                 meatsOfPlayer1++;
                 player1_Animator.SetBool("Eating", true);
-                InGameUIManager.Instance.player1MeatsText.text = meatsOfPlayer1.ToString() + " / 3";
+                InGameUIManager.Instance.ModUIMeats(1, meatsOfPlayer1);
             }
 
             
@@ -212,7 +212,7 @@ namespace Core
             {
                 meatsOfPlayer2++;
                 player2_Animator.SetBool("Eating", true);
-                InGameUIManager.Instance.player2MeatsText.text = meatsOfPlayer2.ToString() + " / 3";
+                InGameUIManager.Instance.ModUIMeats(2, meatsOfPlayer2);
             }
             if (meatsOfPlayer2 >= 3) 
             {
@@ -272,7 +272,7 @@ namespace Core
 
                 meatGameObject.transform.localPosition = meatGold.transform.position;
 
-                InGameUIManager.Instance.ChangeTextForImageMeat();
+                InGameUIManager.Instance.PlayGoldMeatUI();
 
                 MinimapController.instance.AddMinimapElement(meat, meatGameObject.transform);
 

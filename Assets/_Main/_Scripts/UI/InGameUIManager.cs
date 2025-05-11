@@ -17,8 +17,6 @@ namespace UI
         [SerializeField] private List<Image> powerUpListImages = new();
 
         [Header("Texts")]
-        public TextMeshProUGUI player1MeatsText;
-        public TextMeshProUGUI player2MeatsText;
         public TextMeshProUGUI timeLeftText;
         public TextMeshProUGUI countdownText;
 
@@ -33,9 +31,11 @@ namespace UI
         //0 gameplayPanel
         //1 pausePanel
         //2 settingsPanel
-
-        [SerializeField] private GameObject goldenMeatP1;
-        [SerializeField] private GameObject goldenMeatP2;
+        [Header("UI Meats")]
+        [SerializeField] private Image CountImageMeattP1;
+        [SerializeField] private Image CountImageMeattP2;
+        [SerializeField] private Sprite goldenMeat;
+        [SerializeField] private List<Sprite> meatsPlayers = new List<Sprite>();
 
 
         private bool _active = false;
@@ -72,8 +72,6 @@ namespace UI
             {
                 image.gameObject.SetActive(false);
             }
-            goldenMeatP1.SetActive(false);
-            goldenMeatP2.SetActive(false);
         }
 
         public void HidePlayersPanels()
@@ -87,16 +85,22 @@ namespace UI
 
         public void RestartMeatsTexts()
         {
-            player1MeatsText.text = "0 / 3";
-            player2MeatsText.text = "0 / 3";  
+            CountImageMeattP1.sprite = meatsPlayers[0];
+            CountImageMeattP2.sprite = meatsPlayers[0];
         }
 
-        public void ChangeTextForImageMeat(){
-            player1MeatsText.gameObject.SetActive(false);
-            player2MeatsText.gameObject.SetActive(false);
-            goldenMeatP1.SetActive(true);
-            goldenMeatP2.SetActive(true);
+        public void PlayGoldMeatUI(){
+            CountImageMeattP1.sprite = goldenMeat;
+            CountImageMeattP2.sprite = goldenMeat;
         }
+
+        public void ModUIMeats(int player, int count)
+        {
+            if (count < 0 || count >= meatsPlayers.Count) return;
+            Image targetImage = player == 1 ? CountImageMeattP1 : CountImageMeattP2;
+            targetImage.sprite = meatsPlayers[count];
+        }
+
 
         #region PauseLogic
 
