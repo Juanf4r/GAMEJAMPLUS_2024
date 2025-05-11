@@ -407,7 +407,11 @@ namespace Core
         {
             InGameUIManager.Instance.panels[0].SetActive(false);
             InGameUIManager.Instance.panelCountdown.gameObject.SetActive(true);
-
+            Color goldColor;
+            if (ColorUtility.TryParseHtmlString("#FFD700", out goldColor))
+            {
+                InGameUIManager.Instance.countdownText.color = goldColor;
+            }
             for (int i = 3; i > 0; i--)
             {
                 
