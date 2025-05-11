@@ -549,6 +549,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1383604048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &659071390 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8532059631565369601, guid: 416c1530179178f45875375d66258b80,
+    type: 3}
+  m_PrefabInstance: {fileID: 1197279122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &749334751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2446224993149516498, guid: 416c1530179178f45875375d66258b80,
@@ -1184,6 +1190,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f43c89ba1cb2d224c85a397146cecac8, type: 2}
     - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
         type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 659071390}
+    - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
       propertyPath: P1_Animator
       value: 
       objectReference: {fileID: 1071231344}
@@ -1220,7 +1231,7 @@ PrefabInstance:
     - target: {fileID: 8420471120972756861, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8511044262104416577, guid: 416c1530179178f45875375d66258b80,
         type: 3}
@@ -1976,6 +1987,12 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!198 &2093115254 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8532059631565369601, guid: 416c1530179178f45875375d66258b80,
+    type: 3}
+  m_PrefabInstance: {fileID: 4239547814198931035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1106275385533046433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2393,6 +2410,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f43c89ba1cb2d224c85a397146cecac8, type: 2}
     - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
         type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 2093115254}
+    - target: {fileID: 6950854659717240544, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
       propertyPath: P1_Animator
       value: 
       objectReference: {fileID: 1071231344}
@@ -2434,7 +2456,7 @@ PrefabInstance:
     - target: {fileID: 8420471120972756861, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8511044262104416577, guid: 416c1530179178f45875375d66258b80,
         type: 3}
