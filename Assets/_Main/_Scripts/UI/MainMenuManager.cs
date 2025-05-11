@@ -9,16 +9,28 @@ namespace UI
     {
         [SerializeField] private GameObject[] panels = new GameObject[5];
         //MainPanel 0
-        //LevelSelectionPanel 1
-        //ControlsPanel 2
-        //SettingsPanel 3
-        //CreditsPanel 4
+        //SelectCharacterPanel 1
+        //LevelSelectionPanel 2
+        //ControlsPanel 3
+        //SettingsPanel 4
+        //CreditsPanel 5
+        //ConfirmExitPanel 6
 
         private bool _active = false;
 
         void Awake()
         {
             Application.targetFrameRate = 60;
+        }
+
+        private void OnEnable() 
+        {
+            
+        }
+
+        private void OnDisable()
+        {
+
         }
 
         private void Start()

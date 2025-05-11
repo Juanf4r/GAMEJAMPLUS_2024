@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8a8515db6d78b1a41ae6a270f226b0b3
+guid: db7ba3504fa0a16428b3be996be5c001
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -134,18 +134,1064 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BoxButton_0
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 1888
+        width: 124
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697b4ee3f4d7b4449a7b1f03579865c5
+      internalID: -635582127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoxButton_1
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1768
+        width: 124
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14f6a08e974b1944867cf5985561821
+      internalID: 1875167467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoxButton_2
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1639
+        width: 124
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af0cfa404999ae4281915b5d1c49f5c
+      internalID: 238921447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoxButton_3
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 1503
+        width: 124
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935a0ee93c0d64c43865c8eaf8dea27d
+      internalID: -2081455610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HandleSlideBar
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 1404
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ab5eb814951c3429e0c0ec1b207d92
+      internalID: -1585760982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftArrow
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 1306
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311de4c0fb5d9d141b5f439f5fabd291
+      internalID: 857117616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightArrow
+      rect:
+        serializedVersion: 2
+        x: 1923
+        y: 1306
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72b21e54fa16c34a8d1ab52419f4208
+      internalID: 446418110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VelocityIcon
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 1216
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4528abfb794deb24abdc7001b6b647ca
+      internalID: 1219395522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PowerIcon
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 1166
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbba7bc619c371741bdeb1d340a28825
+      internalID: -720887425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RectangleButton_0
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 1844
+        width: 512
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb19ec80f0e49f546addf62d0b60fe13
+      internalID: 1066283709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RectangleButton_1
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1670
+        width: 512
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04407a9be0ffb1b48a06cac7797f2026
+      internalID: -381073839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RectangleButton_2
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1483
+        width: 512
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27e69e9e8659684d9608b1aa4e121e2
+      internalID: 418287492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RectangleButton_3
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1293
+        width: 512
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480afbd686eb14541ac94da1927d38d7
+      internalID: -73582976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RectangleButton_4
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 1095
+        width: 512
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33ad48c67d4a37438448283819eaff4
+      internalID: -1505558856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRectangle_0
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 913
+        width: 324
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d593202318954f242b3282bdd72f2ebb
+      internalID: 1688268447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRectangle_1
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 912
+        width: 324
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f77706e770fa7499b06d2b0a7096fb
+      internalID: 782284992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider_0
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 653
+        width: 256
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de2d5db0575c15459b0825087a31b73
+      internalID: -788645373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider_1
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 681
+        width: 256
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe3b84fcf086c341a4d350e47f7266a
+      internalID: -1337776326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider_2
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 709
+        width: 256
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf296c00bda423f40afdea8b15347102
+      internalID: -1156150539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider_3
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 737
+        width: 256
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e27744f0ebfe6478057a10d54c85e0
+      internalID: -360942429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider_4
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 765
+        width: 256
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3dd6b368e5a12419696e40918bdd5c
+      internalID: 470161640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider_5
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 793
+        width: 256
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a40a680dfbd99438b94a85dab77eee
+      internalID: 1750439164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider_6
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 821
+        width: 256
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09b0592c0b228f45b77e1eb00e5404c
+      internalID: -1764686870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider_7
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 849
+        width: 256
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f1b3d3f95d89148a9f09bcdf40ed33
+      internalID: 350377474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider_8
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 877
+        width: 256
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5304b75ff932b545a3e051f2e4e77fd
+      internalID: 889391203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeatsContainer_3
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 49
+        width: 205
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a2be2eef1af5a45bf5d1bb5dec0bc0
+      internalID: 1073988195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeatsContainer_2
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 49
+        width: 205
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217ab89497db1c840ab17ba2dcba9e36
+      internalID: 1558564902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeatsContainer_1
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 49
+        width: 205
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4ca0a682d269e4495e0c398aa82b54
+      internalID: 143213027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MeatsContainer_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 49
+        width: 205
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040d9f30b0b37814b944acf6e30fe9e1
+      internalID: 2103619834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeaderUI
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 160
+        width: 1920
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f2086ec80694f479ea93ee56395a01
+      internalID: -1897542249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Podium_0
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 564
+        width: 460
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34fdf5c4411ead142a2916b8e79732c1
+      internalID: 2113441551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Podium_1
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 564
+        width: 460
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb3ec4b4d96a3a48b6120e32bbf5dc9
+      internalID: 1282012821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleContainer_3
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 975
+        width: 470
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab928df2055ba0142ad178ab1b1e0b89
+      internalID: 47733641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleContainer_2
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1243
+        width: 470
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952365212d5803044aba7fbda87cb370
+      internalID: 135629193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleContainer_1
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1507
+        width: 470
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48becbe56bf400489633279c81acec4
+      internalID: 50607102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleContainer_0
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1774
+        width: 470
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7e0dd2294c643418998e1caef6009a
+      internalID: -116999713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleMediumContainer_2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 639
+        width: 384
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0777d6812581e7545ad79a962b500c73
+      internalID: -1648917151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleMediumContainer_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 802
+        width: 384
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8bc68bd9d4c8d4fbc570bb6cb1beb1
+      internalID: -995971402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleMediumContainer_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 966
+        width: 384
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3568ae481357bbf47815a841b7660db9
+      internalID: 1310712398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleMediumContainer_3
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 965
+        width: 384
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9426ad21f18ce4a449f09dad7db0f46c
+      internalID: 670891753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopOfPodium
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1130
+        width: 640
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a93299b17383643803e390b50889a7
+      internalID: -83794791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PowerUpBoxContainer
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1431
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5834909a3811e4b8ff6950caed441b
+      internalID: 1667131981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PowerUpRectangleContainer
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1635
+        width: 256
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03211983e14508d47aee86d425d1b6a9
+      internalID: 1169048239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleGame_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1564
+        width: 310
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e79ed5e184618c429402b0d3f2b537d
+      internalID: 1588255744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleGame_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1731
+        width: 620
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b34c92530207f4bbd66ba7ed10b47b
+      internalID: 1665084126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plants_0
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1332
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0899426c476a68429e7584143b7cf52
+      internalID: 360655764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plants_1
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1345
+        width: 210
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e645fed835fff479044023b677f35f
+      internalID: -998513379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d6d1ea76a43b6a347ab8a10df13d356b
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BoxButton_0: -635582127
+      BoxButton_1: 1875167467
+      BoxButton_2: 238921447
+      BoxButton_3: -2081455610
+      HandleSlideBar: -1585760982
+      HeaderUI: -1897542249
+      LeftArrow: 857117616
+      MeatsContainer_0: 2103619834
+      MeatsContainer_1: 143213027
+      MeatsContainer_2: 1558564902
+      MeatsContainer_3: 1073988195
+      MediumRectangle_0: 1688268447
+      MediumRectangle_1: 782284992
+      Plants_0: 360655764
+      Plants_1: -998513379
+      Podium_0: 2113441551
+      Podium_1: 1282012821
+      PowerIcon: -720887425
+      PowerUpBoxContainer: 1667131981
+      PowerUpRectangleContainer: 1169048239
+      RectangleButton_0: 1066283709
+      RectangleButton_1: -381073839
+      RectangleButton_2: 418287492
+      RectangleButton_3: -73582976
+      RectangleButton_4: -1505558856
+      RightArrow: 446418110
+      Slider_0: -788645373
+      Slider_1: -1337776326
+      Slider_2: -1156150539
+      Slider_3: -360942429
+      Slider_4: 470161640
+      Slider_5: 1750439164
+      Slider_6: -1764686870
+      Slider_7: 350377474
+      Slider_8: 889391203
+      SpeedAnimationFrame_0: 1900002812
+      SpeedAnimationFrame_1: 1538618039
+      SpeedAnimationFrame_2: -66920989
+      SpeedAnimationFrame_3: -2126077281
+      SpeedAnimationFrame_4: 430600619
+      SpeedAnimationFrame_5: -1886396732
+      TitleContainer_0: -116999713
+      TitleContainer_1: 50607102
+      TitleContainer_2: 135629193
+      TitleContainer_3: 47733641
+      TitleGame_0: 1665084126
+      TitleGame_1: 1588255744
+      TitleMediumContainer_0: 1310712398
+      TitleMediumContainer_1: -995971402
+      TitleMediumContainer_2: -1648917151
+      TitleMediumContainer_3: 670891753
+      TopOfPodium: -83794791
+      TpAnimationFrame_0: 1743257939
+      TpAnimationFrame_1: 1147913655
+      TpAnimationFrame_2: 1707771360
+      TpAnimationFrame_3: -870937217
+      TpAnimationFrame_4: 1704410101
+      TpAnimationFrame_5: -724904315
+      VelocityIcon: 1219395522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
