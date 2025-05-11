@@ -31,6 +31,7 @@ namespace Settings
             {
                 Debug.LogWarning("No config file found at " + ConfigPath + " - Creating new config with default ally levels");
                 var defaultConfig = new Config();
+                SaveConfig(defaultConfig);
                 return defaultConfig;
             }
             

@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections;
+using Settings;
 using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UI
@@ -73,9 +75,12 @@ namespace UI
         [SerializeField] private Button exitGameButton;
         private bool _active = false;
 
+        public Config config;
+
         void Awake()
         {
             Application.targetFrameRate = 60;
+            config = ConfigManager.LoadConfig();
         }
 
         private void OnEnable() 
@@ -163,9 +168,7 @@ namespace UI
         private void Start()
         {
             UIMainMenu();
-
-            int ID = PlayerPrefs.GetInt("LocaleKey",0);
-            ChangeLocale(ID);
+            ChangeLocale(config.settings.localeID);
         }
 
         public void ExitGame()
@@ -323,7 +326,8 @@ namespace UI
             _active = true;
             yield return LocalizationSettings.InitializationOperation;
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localeID];
-            PlayerPrefs.SetInt("LocaleKey",localeID);
+            config.settings.localeID = localeID;
+            ConfigManager.SaveConfig(config);
             _active = false;
         }
 
