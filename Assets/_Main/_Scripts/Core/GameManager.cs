@@ -107,8 +107,6 @@ namespace Core
                 startGameAction += InGameUIManager.Instance.HidePlayersPanels;
             }
         }
-
-
         void OnDisable()
         {
             startGameAction -= InGameUIManager.Instance.HidePlayersPanels;
@@ -119,9 +117,11 @@ namespace Core
             Time.timeScale = 1;
             
             timeOver = false;
-
+            meatsOfPlayer1 = 0;
+            meatsOfPlayer2 = 0;
             StartGame();
             LocateMeat();
+            
 
             InGameUIManager.Instance.RestartMeatsTexts();
 
@@ -180,37 +180,71 @@ namespace Core
             StartCoroutine(Countdown());
         }
 
-        private void WinGame()
+        public void CheckPlayer1Meat()
+        {
+            if (timeOver)
+            {
+                meatsOfPlayer1 += 3;
+                
+            }
+            else
+            {
+                meatsOfPlayer1++;
+                player1_Animator.SetBool("Eating", true);
+                InGameUIManager.Instance.player1MeatsText.text = meatsOfPlayer1.ToString() + " / 3";
+            }
+
+            
+
+            if (meatsOfPlayer1 >= 3)
+            {
+                CheckPlayerWin();
+                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player2.transform.position, .5f, true);
+            }
+        }
+        public void CheckPlayer2Meat()
+        {
+            if (timeOver)
+            {
+                meatsOfPlayer2 += 3;
+            }
+            else
+            {
+                meatsOfPlayer2++;
+                player2_Animator.SetBool("Eating", true);
+                InGameUIManager.Instance.player2MeatsText.text = meatsOfPlayer2.ToString() + " / 3";
+            }
+            if (meatsOfPlayer2 >= 3) 
+            {
+                CheckPlayerWin();
+                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player1.transform.position, .5f,true);
+            }
+        }
+
+        private void CheckPlayerWin()
         {
             CleanPowerUp();
-
-            if (meatsOfPlayer1 >= 1)
+            
+            if (meatsOfPlayer1 > meatsOfPlayer2)
             {
                 InGameUIManager.Instance.panelWinnerPlayer1.SetActive(true);
                 
                 _player1.OnWin();
                 _player2.OnLose();
-                
-                winAudioSource.Play();
             }
-            else if (meatsOfPlayer2 >= 1)
+            else if (meatsOfPlayer2 > meatsOfPlayer1)
             {
                 InGameUIManager.Instance.panelWinnerPlayer2.SetActive(true);
                 
                 _player2.OnWin();
                 _player1.OnLose();
-                
-                winAudioSource.Play();
-            }
-            else
-            {
-                LocateMeat();
-                StartGame();
             }
 
+            winAudioSource.Play();
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
             StartCoroutine(BackToMenu(5f));
         }
+
 
         private void EndForTime()
         {
@@ -237,6 +271,9 @@ namespace Core
                 InGameUIManager.Instance.containerTimeLeft.SetActive(false);
 
                 meatGameObject.transform.localPosition = meatGold.transform.position;
+
+                InGameUIManager.Instance.ChangeTextForImageMeat();
+
                 MinimapController.instance.AddMinimapElement(meat, meatGameObject.transform);
 
                 if (_gameSeconds >= 5f)
@@ -246,51 +283,12 @@ namespace Core
             }
             else
             {
-                WinGame();
+                CheckPlayerWin();
             }
         }
-
-        public void Player1Win()
-        {
-            if (timeOver)
-            {
-                meatsOfPlayer1 += 3;
-            }
-            else
-            {
-                meatsOfPlayer1++;
-                player1_Animator.SetBool("Eating", true);
-            }
-
-            InGameUIManager.Instance.player1MeatsText.text = meatsOfPlayer1.ToString() + " / 3";
-
-            if (meatsOfPlayer1 >= 3)
-            {
-                WinGame();
-                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player2.transform.position, .5f, true);
-            }
-        }
-
-        public void Player2Win()
-        {
-            if (timeOver)
-            {
-                meatsOfPlayer2 += 3;
-            }
-            else
-            {
-                meatsOfPlayer2++;
-                player2_Animator.SetBool("Eating", true);
-            }
         
-            InGameUIManager.Instance.player2MeatsText.text = meatsOfPlayer2.ToString() + " / 3";
 
-            if (meatsOfPlayer2 >= 3) 
-            {
-                WinGame();
-                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player1.transform.position, .5f,true);
-            }
-        }
+        
 
         #endregion
 

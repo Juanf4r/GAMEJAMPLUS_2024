@@ -1764,6 +1764,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3135593778658638545, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998874368230390380, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.329326
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037889730800346874, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6386682737755215013, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: m_Name
@@ -1779,10 +1794,15 @@ PrefabInstance:
       propertyPath: elements.Array.data[1].TargetTransform
       value: 
       objectReference: {fileID: 26851725}
-    - target: {fileID: 8222801343488655707, guid: 90e4a522428d28a49ba6e5a0637e6239,
+    - target: {fileID: 7920458428545603569, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 31
+      propertyPath: m_SizeDelta.y
+      value: 65.044
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920458428545603569, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.4361653
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

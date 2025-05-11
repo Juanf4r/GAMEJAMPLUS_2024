@@ -207,7 +207,7 @@ public class Player2 : MonoBehaviour
     {
         if (other.CompareTag("Meat"))
         {
-            GameManager.Instance.Player1Win();
+            GameManager.Instance.CheckPlayer1Meat();
         }
 
         else if (other.CompareTag("PowerUPTP") && !moreVel && !moreAtt)
