@@ -1021,12 +1021,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!82 &1007242340 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4129466686698144826, guid: b9b7d8e25312d9a42aba637fb36d3148,
-    type: 3}
-  m_PrefabInstance: {fileID: 1383571462}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1071231344 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8188759660382934932, guid: 416c1530179178f45875375d66258b80,
@@ -1561,11 +1555,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
         type: 3}
-      propertyPath: carne
-      value: 
-      objectReference: {fileID: 1264204066}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
       propertyPath: spawn1
       value: 
       objectReference: {fileID: 1846638926}
@@ -1574,17 +1563,6 @@ PrefabInstance:
       propertyPath: spawn2
       value: 
       objectReference: {fileID: 146626703}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: audioWin
-      value: 
-      objectReference: {fileID: 1007242340}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: meatGold
-      value: 
-      objectReference: {fileID: 1628390597, guid: 47bc9b13b0501534281f942b065e8a95,
-        type: 3}
     - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
         type: 3}
       propertyPath: refPlayer1
@@ -1607,16 +1585,6 @@ PrefabInstance:
       objectReference: {fileID: 1264204066}
     - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
         type: 3}
-      propertyPath: winAudioSource
-      value: 
-      objectReference: {fileID: 1007242340}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: cryingAudioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0169b56aa2a803546bec6870d8ee6586, type: 3}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
       propertyPath: player1_Animator
       value: 
       objectReference: {fileID: 1071231344}
@@ -1625,56 +1593,6 @@ PrefabInstance:
       propertyPath: player2_Animator
       value: 
       objectReference: {fileID: 878482656}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: meatSpawns.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: spawnCarne.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: spawnMeats.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: spawnPowerUP.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: 'meatSpawns.Array.data[0]'
-      value: 
-      objectReference: {fileID: 621559197}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: 'meatSpawns.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1085470670}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: 'meatSpawns.Array.data[2]'
-      value: 
-      objectReference: {fileID: 573155880}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: 'spawnCarne.Array.data[0]'
-      value: 
-      objectReference: {fileID: 621559197}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: 'spawnCarne.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1085470670}
-    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
-        type: 3}
-      propertyPath: 'spawnCarne.Array.data[2]'
-      value: 
-      objectReference: {fileID: 573155880}
     - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
         type: 3}
       propertyPath: 'spawnMeats.Array.data[0]'

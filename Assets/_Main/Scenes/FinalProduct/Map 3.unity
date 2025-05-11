@@ -582,7 +582,8 @@ PrefabInstance:
         type: 3}
       propertyPath: meatGold
       value: 
-      objectReference: {fileID: 548294268}
+      objectReference: {fileID: 1628390597, guid: 47bc9b13b0501534281f942b065e8a95,
+        type: 3}
     - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
         type: 3}
       propertyPath: refPlayer1
@@ -595,6 +596,11 @@ PrefabInstance:
       objectReference: {fileID: 26851720}
     - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
         type: 3}
+      propertyPath: meatGoldSpawn
+      value: 
+      objectReference: {fileID: 548294268}
+    - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
+        type: 3}
       propertyPath: meatGameObject
       value: 
       objectReference: {fileID: 929977373}
@@ -602,7 +608,7 @@ PrefabInstance:
         type: 3}
       propertyPath: winAudioSource
       value: 
-      objectReference: {fileID: 669881066}
+      objectReference: {fileID: 0}
     - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
         type: 3}
       propertyPath: cryingAudioClip
@@ -688,12 +694,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9b7d8e25312d9a42aba637fb36d3148, type: 3}
---- !u!82 &669881066 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4129466686698144826, guid: b9b7d8e25312d9a42aba637fb36d3148,
-    type: 3}
-  m_PrefabInstance: {fileID: 669881065}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &749334751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2446224993149516498, guid: 416c1530179178f45875375d66258b80,
@@ -1238,6 +1238,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 06059cfd101705449b451da4da6f49c7, type: 2}
+    - target: {fileID: 8511044262104416577, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 067789acee8e0024d83e6c3cec4adb20, type: 2}
     - target: {fileID: 8918030985522200748, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
@@ -2274,6 +2279,11 @@ PrefabInstance:
       propertyPath: P2_Animator
       value: 
       objectReference: {fileID: 1197279123}
+    - target: {fileID: 8511044262104416577, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 067789acee8e0024d83e6c3cec4adb20, type: 2}
     - target: {fileID: 8918030985522200748, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
