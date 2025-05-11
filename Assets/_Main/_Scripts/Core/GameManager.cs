@@ -263,6 +263,9 @@ namespace Core
                 _player2.canMove = false;
                 _inputPlayers.Disable();
 
+                //Change music
+                MusicManager.Instance.PlayInGameMusicExtraRound();
+
                 //Start ExtraRound
                 timeOver = true;
                 InGameUIManager.Instance.timeLeftText.text = "";
@@ -300,6 +303,8 @@ namespace Core
                 InGameUIManager.Instance.extraRoundPanel.SetActive(true);
                 //Reset map
                 MinimapController.instance.AddMinimapElement(meat, meatGameObject.transform);
+
+                
 
                 if (_gameSeconds >= 5f)
                 {
@@ -420,7 +425,7 @@ namespace Core
             }
 
             InGameUIManager.Instance.countdownText.text = "GO!! \n Meat Gold timeee!!";
-            _gameSeconds = 91f;
+            _gameSeconds = 11f;
             
             yield return new WaitForSeconds(1f);
             

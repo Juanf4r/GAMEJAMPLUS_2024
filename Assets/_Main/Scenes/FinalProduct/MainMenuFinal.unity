@@ -874,6 +874,11 @@ PrefabInstance:
       propertyPath: gameOverMusic
       value: 
       objectReference: {fileID: 8300000, guid: 3356df2d5ef3893499d7b6bca05c3598, type: 3}
+    - target: {fileID: 2121291697193533601, guid: 5bbee4f7138f2404195ea37d5971ba6c,
+        type: 3}
+      propertyPath: extraRoundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 46d16d5088b0d574f84d4aaca9e0febd, type: 3}
     - target: {fileID: 6345242504709585812, guid: 5bbee4f7138f2404195ea37d5971ba6c,
         type: 3}
       propertyPath: m_Name

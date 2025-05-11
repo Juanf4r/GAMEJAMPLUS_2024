@@ -1119,6 +1119,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 06059cfd101705449b451da4da6f49c7, type: 2}
+    - target: {fileID: 8511044262104416577, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 067789acee8e0024d83e6c3cec4adb20, type: 2}
     - target: {fileID: 8918030985522200748, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
@@ -2362,6 +2367,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c9f3c494f80f39c46ac43085250d818c, type: 2}
+    - target: {fileID: 8511044262104416577, guid: 416c1530179178f45875375d66258b80,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 067789acee8e0024d83e6c3cec4adb20, type: 2}
     - target: {fileID: 8918030985522200748, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_Enabled
