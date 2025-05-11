@@ -146,9 +146,9 @@ namespace Core
         private void Pause(InputAction.CallbackContext context)
         {
             if (!context.performed) return;
-            isPaused = !isPaused;
+            InGameUIManager.Instance.isPaused = !InGameUIManager.Instance.isPaused;
 
-            InGameUIManager.Instance.PauseGame(isPaused);
+            InGameUIManager.Instance.PauseGame(InGameUIManager.Instance.isPaused);
         }
 
         #region GameLogic
@@ -169,6 +169,9 @@ namespace Core
                     usedSpawns.RemoveAt(usedSpawns.Count - 2);
                 }
             }
+
+            meatGameObject.gameObject.SetActive(true);
+            Debug.LogWarning("The meat has appeared");
         }
 
         private void StartGame()
@@ -185,7 +188,6 @@ namespace Core
             if (timeOver)
             {
                 meatsOfPlayer1 += 3;
-                
             }
             else
             {
@@ -193,8 +195,6 @@ namespace Core
                 player1_Animator.SetBool("Eating", true);
                 InGameUIManager.Instance.ModUIMeats(1, meatsOfPlayer1);
             }
-
-            
 
             if (meatsOfPlayer1 >= 3)
             {
@@ -231,6 +231,7 @@ namespace Core
                 
                 _player1.OnWin();
                 _player2.OnLose();
+                meatGameObject.SetActive(false);
             }
             else if (meatsOfPlayer2 > meatsOfPlayer1)
             {
@@ -238,11 +239,12 @@ namespace Core
                 
                 _player2.OnWin();
                 _player1.OnLose();
+                meatGameObject.SetActive(false);
             }
 
             winAudioSource.Play();
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
-            StartCoroutine(BackToMenu(5f));
+            StartCoroutine(BackToMenu(6f));
         }
 
 
@@ -286,10 +288,7 @@ namespace Core
                 CheckPlayerWin();
             }
         }
-        
-
-        
-
+    
         #endregion
 
         #region PowerUps

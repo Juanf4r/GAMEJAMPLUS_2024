@@ -20,17 +20,14 @@ namespace _Scripts
         }
         public AudioSource soundObject;
 
-        private const float VolumeChangeMultiplier = 0.1f;
-        private const float PitchChangeMultiplier = 0.25f;
+        private const float PitchChangeMultiplier = 0.2f;
 
         public static void PlaySoundFxClip(AudioClip clip, Vector3 soundPosition, float volume, bool loop = false)
         {
-            var randVolume = Random.Range(volume - VolumeChangeMultiplier,  volume + VolumeChangeMultiplier);
-            var randPitch = Random.Range(volume - PitchChangeMultiplier,  volume + PitchChangeMultiplier);
+            var randPitch = Random.Range(volume,  volume + PitchChangeMultiplier);
 
             var audio = Instantiate(Instance.soundObject, soundPosition, Quaternion.identity);
             audio.clip = clip;
-            audio.volume = randVolume;
             audio.volume = randPitch;
             if (loop) audio.loop = true;
             audio.Play();
@@ -39,12 +36,10 @@ namespace _Scripts
         public static void PlaySoundFxClip(AudioClip[] clips, Vector3 soundPosition, float volume, bool loop = false)
         {
             var randClip = Random.Range(0, clips.Length);
-            var randVolume = Random.Range(volume - VolumeChangeMultiplier,  volume + VolumeChangeMultiplier);
-            var randPitch = Random.Range(volume - PitchChangeMultiplier,  volume + PitchChangeMultiplier);
+            var randPitch = Random.Range(volume,  volume + PitchChangeMultiplier);
 
             var audio = Instantiate(Instance.soundObject, soundPosition, Quaternion.identity);
             audio.clip = clips[randClip];
-            audio.volume = randVolume;
             audio.volume = randPitch;
             if (loop) audio.loop = true;
             audio.Play();

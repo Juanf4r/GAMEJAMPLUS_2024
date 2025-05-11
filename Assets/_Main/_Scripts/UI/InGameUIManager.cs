@@ -16,9 +16,13 @@ namespace UI
 
         [SerializeField] private List<Image> powerUpListImages = new();
 
+        [Space]
+
         [Header("Texts")]
         public TextMeshProUGUI timeLeftText;
         public TextMeshProUGUI countdownText;
+
+        [Space]
 
         [Header("Gameplay Panels")]
         public GameObject panelCountdown;
@@ -26,19 +30,43 @@ namespace UI
         public GameObject panelWinnerPlayer2;
         public GameObject containerTimeLeft;
 
+        [Space]
+
         [Header("Pause Panels")]
-        public GameObject[] panels = new GameObject[3];
+        public GameObject[] panels = new GameObject[4];
         //0 gameplayPanel
         //1 pausePanel
-        //2 settingsPanel
+        //2 controlsPanel
+        //3 settingsPanel
+        [Header("PauseButtons")]
+        [SerializeField] private Button pauseButton;
+        [SerializeField] private Button controlsButton;
+        [SerializeField] private Button settingsButton;
+        [SerializeField] private Button exitButton;
+
+        [Space]
+
+        [Header("ControlsButtons")]
+        [SerializeField] private Button backControlsButton;
+
+        [Space]
+
+        [Header("SettingsButtons")]
+        [SerializeField] private Button backSettingsButton;
+        [SerializeField] private Button englishLanguageButton;
+        [SerializeField] private Button spanishLanguageButton;
+        [SerializeField] private Button portugueseLanguageButton;
+
+        [Space]
+
         [Header("UI Meats")]
         [SerializeField] private Image CountImageMeattP1;
         [SerializeField] private Image CountImageMeattP2;
         [SerializeField] private Sprite goldenMeat;
         [SerializeField] private List<Sprite> meatsPlayers = new List<Sprite>();
 
-
         private bool _active = false;
+        [HideInInspector] public bool isPaused = false;
 
         private void Awake()
         {
@@ -54,12 +82,16 @@ namespace UI
 
         private void OnEnable()
         {
+            AddListenerOnButtons();
+
             PlayerManager.OnPowerUpUpdated += UpdateImage;
             PlayerActions.OnPowerUpOut += DisablePowerUp;
         }
 
         private void OnDisable()
-        {
+        {         
+            RemoveListenerOnButtons();
+
             PlayerManager.OnPowerUpUpdated -= UpdateImage;
             PlayerActions.OnPowerUpOut -= DisablePowerUp;
         }
@@ -72,6 +104,42 @@ namespace UI
             {
                 image.gameObject.SetActive(false);
             }
+        }
+
+        public void AddListenerOnButtons()
+        {
+            //pauseButtons   
+            pauseButton.onClick.AddListener(ContinueGame);
+            controlsButton.onClick.AddListener(ShowControls);
+            settingsButton.onClick.AddListener(ShowSettings);
+            exitButton.onClick.AddListener(ExitGame);
+
+            //controlsButtons
+            backControlsButton.onClick.AddListener(ShowPause);
+
+            //SettingsButtons
+            backSettingsButton.onClick.AddListener(ShowPause);
+            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
+            englishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
+            portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
+        }
+
+        public void RemoveListenerOnButtons()
+        {
+            //pauseButtons   
+            pauseButton.onClick.RemoveListener(ContinueGame);
+            controlsButton.onClick.RemoveListener(ShowControls);
+            settingsButton.onClick.RemoveListener(ShowSettings);
+            exitButton.onClick.RemoveListener(ExitGame);
+
+            //controlsButtons
+            backControlsButton.onClick.RemoveListener(ShowPause);
+
+            //SettingsButton
+            backSettingsButton.onClick.RemoveListener(ShowPause);
+            spanishLanguageButton.onClick.RemoveListener(() => ChangeLocale(0));
+            englishLanguageButton.onClick.RemoveListener(() => ChangeLocale(1));
+            portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2));
         }
 
         public void HidePlayersPanels()
@@ -101,11 +169,12 @@ namespace UI
             targetImage.sprite = meatsPlayers[count];
         }
 
-
         #region PauseLogic
 
         public void PauseGame(bool pauseState)
         {
+            pauseState = !pauseState;
+
             if (pauseState)
             {
                 Time.timeScale = 0;
@@ -120,7 +189,16 @@ namespace UI
             }
         }
 
-        public void HidePause()
+        private void ContinueGame()
+        {
+            isPaused = !isPaused;
+
+            Time.timeScale = 1;
+
+            HidePause();
+        }
+
+        private void HidePause()
         {
             for (int i = 0; i < panels.Length; i++)
                 {
@@ -130,7 +208,7 @@ namespace UI
                 panels[0].SetActive(true);
         }
 
-        public void ShowPause()
+        private void ShowPause()
         {
             for (int i = 0; i < panels.Length; i++)
             {
@@ -140,7 +218,7 @@ namespace UI
             panels[1].SetActive(true);
         }
 
-        public void ShowSettings()
+        private void ShowControls()
         {   
             for (int i = 0; i < panels.Length; i++)
             {
@@ -150,10 +228,20 @@ namespace UI
             panels[2].SetActive(true);
         }
 
-        public void ExitGame()
+        private void ShowSettings()
+        {   
+            for (int i = 0; i < panels.Length; i++)
             {
-                SceneManager.LoadScene(0);
+                panels[i].SetActive(false);
             }
+
+            panels[3].SetActive(true);
+        }
+
+        private void ExitGame()
+        {
+            SceneManager.LoadScene(0);
+        }
 
         #endregion
 
