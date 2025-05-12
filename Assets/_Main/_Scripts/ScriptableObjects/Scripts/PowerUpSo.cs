@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace _ScriptableObjects.Scripts
@@ -8,6 +9,7 @@ namespace _ScriptableObjects.Scripts
         public PowerUpType buffType;
         public Sprite buffSprite;
         public Sprite alphaTexture;
+        public AnimatorController powerUpAnimator;
         
         [Header("Buff Stats")]
         public float speed; 

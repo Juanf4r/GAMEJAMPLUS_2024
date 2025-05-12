@@ -9,6 +9,7 @@ namespace _Scripts.PowerUps
     public class PowerUp : MonoBehaviour
     {
         [SerializeField] public PowerUpSo powerUpType;
+        [SerializeField] private Animator powerUpAnimator;
         private static readonly int AlphaTex = Shader.PropertyToID("_AlphaTex");
 
         private void OnEnable()
@@ -21,6 +22,11 @@ namespace _Scripts.PowerUps
             spriteRenderer.material.mainTexture = mainTexture;
             if (powerUpType.alphaTexture == null) return;
             spriteRenderer.material.SetTexture(AlphaTex, powerUpType.alphaTexture.texture);
+            if (powerUpType.powerUpAnimator != null && powerUpAnimator != null)
+            {
+                powerUpAnimator.runtimeAnimatorController = powerUpType.powerUpAnimator;
+                powerUpAnimator.Play(0);
+            }
         }
         private void OnTriggerEnter(Collider other)
         {
