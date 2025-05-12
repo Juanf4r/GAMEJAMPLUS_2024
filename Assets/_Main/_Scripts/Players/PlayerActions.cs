@@ -140,7 +140,11 @@ namespace _Scripts.Players
             {
                 P2_Animator.runtimeAnimatorController = P2_Wood_AnimatorController;
             }
-            CamaraPositionBackToNormal();
+            if (playerOneCamera.transform.localPosition != originalCameraPositionP1 || 
+                playerTwoCamera.transform.localPosition != originalCameraPositionP2)
+            {
+                CamaraPositionBackToNormal();
+            }
         }
 
         private IEnumerator TeleportToEnemy()
