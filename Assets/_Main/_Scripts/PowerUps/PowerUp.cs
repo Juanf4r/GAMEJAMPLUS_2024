@@ -1,6 +1,7 @@
 using System;
 using _ScriptableObjects.Scripts;
 using _Scripts.Players;
+using Assets.Minimap;
 using UnityEngine;
 
 namespace _Scripts.PowerUps
@@ -26,7 +27,7 @@ namespace _Scripts.PowerUps
             if (!other.CompareTag("Player")) return;
             var component = other.GetComponent<PlayerManager>();
             component.UpdateStoredPowerUp(powerUpType);
-            
+            MinimapController.instance.RemoveElementAtRuntime(this.transform);
             gameObject.SetActive(false);
         }
     }
