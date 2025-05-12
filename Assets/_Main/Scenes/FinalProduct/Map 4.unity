@@ -722,6 +722,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 975327935189146058, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975327935189146058, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a276e8a22d8dbd40b33856fb4184d2f,
+        type: 3}
     - target: {fileID: 1793825845568567795, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: m_Pivot.x
@@ -832,6 +843,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameplayCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: iconPrefab
+      value: 
+      objectReference: {fileID: 1466292070918080622, guid: 1cfc4da63d9df0f4b8275dbd9f62708f,
+        type: 3}
+    - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: minimapImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a276e8a22d8dbd40b33856fb4184d2f,
+        type: 3}
     - target: {fileID: 7122482658928198700, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: m_IsActive

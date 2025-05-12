@@ -1370,6 +1370,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 975327935189146058, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975327935189146058, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b9f9064a8aa8d654b8a548620734ba8c,
+        type: 3}
     - target: {fileID: 1793825845568567795, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1475,6 +1486,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameplayCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: minimapImage
+      value: 
+      objectReference: {fileID: 21300000, guid: b9f9064a8aa8d654b8a548620734ba8c,
+        type: 3}
     - target: {fileID: 8222801343488655707, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag

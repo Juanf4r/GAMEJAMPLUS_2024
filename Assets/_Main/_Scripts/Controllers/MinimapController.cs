@@ -134,8 +134,9 @@ namespace Assets.Minimap
             var normalizedX = (worldPos.x - mapOffset.x) / mapWidth;
             var normalizedZ = (worldPos.z - mapOffset.y) / mapDepth;
 
-            var minimapX = normalizedX * minimapRect.sizeDelta.x;
-            var minimapY = normalizedZ * minimapRect.sizeDelta.y;
+            // Invertir ambos ejes (rotación de 180°)
+            var minimapX = (1 - normalizedX) * minimapRect.sizeDelta.x;
+            var minimapY = (1 - normalizedZ) * minimapRect.sizeDelta.y;
 
             rectTransform.anchoredPosition = new Vector2(minimapX, minimapY);
         }
