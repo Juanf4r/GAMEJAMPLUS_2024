@@ -37,6 +37,9 @@ namespace UI
         [SerializeField] private Button map2Button;
         [SerializeField] private Button map3Button;
         [SerializeField] private Button map4Button;
+        [SerializeField] private Button map5Button;
+        [SerializeField] private Button map6Button;
+        [SerializeField] private Button map7Button;
         [SerializeField] private Button randomMapButton;
 
         [Space]
@@ -118,6 +121,9 @@ namespace UI
             map2Button.onClick.AddListener(() => SelectLevel(2));
             map3Button.onClick.AddListener(() => SelectLevel(3));
             map4Button.onClick.AddListener(() => SelectLevel(4));
+            map5Button.onClick.AddListener(() => SelectLevel(5));
+            map6Button.onClick.AddListener(() => SelectLevel(6));
+            map7Button.onClick.AddListener(() => SelectLevel(7));
             randomMapButton.onClick.AddListener(SelectRandomLevel);
 
             //ControlsButton
@@ -162,6 +168,9 @@ namespace UI
             map2Button.onClick.RemoveListener(() => SelectLevel(2));
             map3Button.onClick.RemoveListener(() => SelectLevel(3));
             map4Button.onClick.RemoveListener(() => SelectLevel(4));
+            map5Button.onClick.RemoveListener(() => SelectLevel(5));
+            map6Button.onClick.RemoveListener(() => SelectLevel(6));
+            map7Button.onClick.RemoveListener(() => SelectLevel(7));
             randomMapButton.onClick.RemoveListener(SelectRandomLevel);
 
             //ControlsButton

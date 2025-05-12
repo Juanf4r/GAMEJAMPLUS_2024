@@ -71,6 +71,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eatClips:
   - {fileID: 8300000, guid: 0c66954d1e60d674a976cc561ff4ba40, type: 3}
+  meatAnimatorController: {fileID: 9100000, guid: 94423b3c022c6164b80356b6f6acdc5f,
+    type: 2}
+  meatGoldAnimatorController: {fileID: 9100000, guid: ebe7eea29eab57d4fb9833b0d049306a,
+    type: 2}
+  meatAnimator: {fileID: 6097986478084419643}
 --- !u!1 &8441962840603048767
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +131,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fba0edde8de6e7645aebec0956480147, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

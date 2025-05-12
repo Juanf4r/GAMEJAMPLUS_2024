@@ -308,6 +308,7 @@ namespace Core
                 {
                     Debug.LogError("meatGameObject no está asignado.");
                 }
+                MeatController.Instance.SetAnimatorController(true);
                 meatGameObject.transform.localPosition = meatGoldSpawn.transform.position;
 
                 //Change UI to Gold meat

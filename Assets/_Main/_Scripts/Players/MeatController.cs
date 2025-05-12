@@ -1,11 +1,35 @@
 using UnityEngine;
 using Core;
+using UnityEditor.Animations;
 
 namespace _Scripts.Players
 {
     public class MeatController : MonoBehaviour
     {
+        #region Singleton
+        public static MeatController Instance;
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+        #endregion
         public AudioClip[] eatClips;
+        [SerializeField] private AnimatorController meatAnimatorController;
+        public AnimatorController meatGoldAnimatorController;
+        [SerializeField] private Animator meatAnimator;
+
+        void OnEnable()
+        {
+            SetAnimatorController(false);
+
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -21,5 +45,18 @@ namespace _Scripts.Players
             SoundFXChannel.PlaySoundFxClip(eatClips, transform.position, .6f);
             GameManager.Instance.LocateMeat();
         }
-    }   
+        public void SetAnimatorController(bool isGold)
+        {
+            if (isGold)
+            {
+                meatAnimator.runtimeAnimatorController = meatGoldAnimatorController;
+                meatAnimator.Play(0);
+            }
+            else
+            {
+                meatAnimator.runtimeAnimatorController = meatAnimatorController;
+                meatAnimator.Play(0);
+            }
+        }
+    }
 }

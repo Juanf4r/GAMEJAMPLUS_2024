@@ -1770,7 +1770,7 @@ PrefabInstance:
     - target: {fileID: 5284627815118467906, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 20480
+      value: 86016
       objectReference: {fileID: 0}
     - target: {fileID: 6276520872637684248, guid: 416c1530179178f45875375d66258b80,
         type: 3}
@@ -1810,7 +1810,7 @@ PrefabInstance:
     - target: {fileID: 8918030985522200748, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 20480
+      value: 86016
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1609684651944484907, guid: 416c1530179178f45875375d66258b80, type: 3}
@@ -2507,7 +2507,7 @@ PrefabInstance:
     - target: {fileID: 5284627815118467906, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 20480
+      value: 86016
       objectReference: {fileID: 0}
     - target: {fileID: 6276520872637684248, guid: 416c1530179178f45875375d66258b80,
         type: 3}
@@ -2547,7 +2547,7 @@ PrefabInstance:
     - target: {fileID: 8918030985522200748, guid: 416c1530179178f45875375d66258b80,
         type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 20480
+      value: 86016
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1609684651944484907, guid: 416c1530179178f45875375d66258b80, type: 3}
