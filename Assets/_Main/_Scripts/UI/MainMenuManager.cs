@@ -9,15 +9,8 @@ using UnityEngine.UI;
 namespace UI
 {
     public class MainMenuManager : MonoBehaviour
-    {
-        [SerializeField] private GameObject[] panels = new GameObject[7];
-        //MainPanel 0
-        //SelectCharacterPanel 1
-        //LevelSelectionPanel 2
-        //ControlsPanel 3
-        //SettingsPanel 4
-        //CreditsPanel 5
-        //ConfirmExitPanel 6
+    {   
+        [SerializeField] private Animator mainMenuAnimator;
 
         [Header("MainMenu Buttons")]
         [SerializeField] private Button playButton;
@@ -87,6 +80,23 @@ namespace UI
 
         private void OnEnable() 
         {
+            AddListenerOnButtons();
+        }
+
+        private void OnDisable()
+        {
+            RemoveListenerOnButtons();
+        }
+
+        private void Start()
+        {
+            GetConfigValues();
+            ChangeLocale(config.settings.localeID, false);
+            MusicManager.Instance.PlayMainMenuMusic();
+        }
+
+        private void AddListenerOnButtons()
+        {
             //MainMenuButtons
             playButton.onClick.AddListener(UICharacterSelection);
             controlsButton.onClick.AddListener(UIControls);
@@ -115,9 +125,9 @@ namespace UI
 
             //SettingsButton
             backSettingsButton.onClick.AddListener(UIMainMenu);
-            englishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
-            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
-            portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
+            englishLanguageButton.onClick.AddListener(() => ChangeLocale(0, true));
+            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1, true));
+            portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2, true));
             sfxSlider.onValueChanged.AddListener(UpdateSFX);
             musicSlider.onValueChanged.AddListener( UpdateMusic);
 
@@ -126,9 +136,10 @@ namespace UI
 
             backExitButton.onClick.AddListener(UIMainMenu);
             exitButton.onClick.AddListener(UIExit);
+            exitGameButton.onClick.AddListener(ExitGame);
         }
 
-        private void OnDisable()
+        private void RemoveListenerOnButtons() 
         {
             //MainMenuButtons
             playButton.onClick.AddListener(UICharacterSelection);
@@ -158,9 +169,9 @@ namespace UI
 
             //SettingsButton
             backSettingsButton.onClick.RemoveListener(UIMainMenu);
-            englishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
-            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
-            portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2));
+            englishLanguageButton.onClick.AddListener(() => ChangeLocale(0, true));
+            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1, true));
+            portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2, true));
             sfxSlider.onValueChanged.RemoveListener(UpdateSFX);
             musicSlider.onValueChanged.RemoveListener(UpdateMusic);
 
@@ -169,21 +180,18 @@ namespace UI
 
             backExitButton.onClick.RemoveListener(UIMainMenu);
             exitButton.onClick.RemoveListener(UIExit);
+            exitGameButton.onClick.RemoveListener(ExitGame);
         }
 
-        private void Start()
-        {
-            UIMainMenu();
-            ChangeLocale(config.settings.localeID);
-            sfxSlider.value = config.settings.sfxvolume;
-            musicSlider.value = config.settings.musicvolume;
-            MusicManager.Instance.PlayMainMenuMusic();
-
-        }
-
-        public void ExitGame()
+        private void ExitGame()
         {
             Application.Quit();
+        }
+
+        private void GetConfigValues()
+        {
+            sfxSlider.value = config.settings.sfxvolume;
+            musicSlider.value = config.settings.musicvolume;
         }
 
         private void UpdateSFX(float value)
@@ -198,26 +206,42 @@ namespace UI
             MusicManager.UpdateMusicVolume();
             ConfigManager.SaveConfig(config);
         }
+        
         #region UILogic
 
         public void UIMainMenu()
         {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[0].SetActive(true);
+            mainMenuAnimator.SetTrigger("MainMenu");
         }
 
         private void UICharacterSelection()
         {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
+            mainMenuAnimator.SetTrigger("SelectCharacter");
+        }
 
-            panels[1].SetActive(true);
+        private void UILevelSelection()
+        {
+            mainMenuAnimator.SetTrigger("SelectMap");
+        }
+
+        private void UIControls()
+        {
+            mainMenuAnimator.SetTrigger("Controls");
+        }
+
+        private void UISettings()
+        {   
+            mainMenuAnimator.SetTrigger("Settings");
+        }
+
+        private void UICredits()
+        {
+            mainMenuAnimator.SetTrigger("Credits");
+        }
+
+        private void UIExit()
+        {
+            mainMenuAnimator.SetTrigger("Exit");
         }
 
         public void ChangeCharacterLeft(bool isPlayerOne)
@@ -247,56 +271,6 @@ namespace UI
         public void UpdateSliders()
         {
             //Logica de actualizar UI de Sliders con los config de los characters
-        }
-
-        private void UILevelSelection()
-        {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[2].SetActive(true);
-        }
-
-        private void UIControls()
-        {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[3].SetActive(true);
-        }
-
-        private void UISettings()
-        {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[4].SetActive(true);
-        }
-
-        private void UICredits()
-        {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[5].SetActive(true);
-        }
-
-        private void UIExit()
-        {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[6].SetActive(true);
         }
 
         #endregion
@@ -335,17 +309,30 @@ namespace UI
 
         #region Localization
 
-        public void ChangeLocale(int localeID)
+        public void ChangeLocale(int localeID, bool isAnimation)
         {
             if(_active)
             {
                 return;
             }
-            StartCoroutine(SetLocale(localeID));
+            StartCoroutine(SetLocale(localeID,isAnimation));
         }
 
-        private IEnumerator SetLocale(int localeID)
+        private IEnumerator SetLocale(int localeID, bool isAnimation)
         {
+            if(isAnimation)
+            {
+                switch(localeID)
+                {
+                    case 0: mainMenuAnimator.SetTrigger("English");
+                        break;
+                    case 1: mainMenuAnimator.SetTrigger("Spanish");
+                        break;
+                    case 2: mainMenuAnimator.SetTrigger("Portuguese");
+                        break;
+                }
+            }
+
             _active = true;
             yield return LocalizationSettings.InitializationOperation;
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localeID];
