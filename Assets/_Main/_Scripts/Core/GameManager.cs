@@ -353,17 +353,9 @@ namespace Core
                 var powerUpInstance = Instantiate(powerUpPrefab, spawnPoint.transform.position, Quaternion.identity);
         
                 // Create minimap element data for the power-up
-                MinimapElementData powerUpIcon = new MinimapElementData()
-                {
-                    TargetTransform = powerUpInstance.transform,
-                    IconSprite = powerUpInstance.GetComponent<SpriteRenderer>().sprite,
-                    BaseSize = new Vector2(15, 15), // Smaller size for power-ups
-                    ScaleWithMap = false,
-                    PreserveAspect = true
-                };
+
         
                 // Add to minimap
-                MinimapController.instance.AddMinimapElement(powerUpIcon);
         
                 powerUpInstance.SetActive(false);
         
@@ -374,7 +366,17 @@ namespace Core
                     2 => strengthPu,
                     _ => powerUpInstance.GetComponent<PowerUp>().powerUpType
                 };
-        
+                
+                MinimapElementData powerUpIcon = new MinimapElementData()
+                {
+                    TargetTransform = powerUpInstance.transform,
+                    IconSprite = powerUpInstance.GetComponent<PowerUp>().powerUpType.buffSprite,
+                    BaseSize = new Vector2(15, 15), // Smaller size for power-ups
+                    ScaleWithMap = false,
+                    PreserveAspect = true
+                };
+                MinimapController.instance.AddMinimapElement(powerUpIcon);
+                Debug.Log($"PowerUp {powerUpInstance.name}, icon: {powerUpIcon.IconSprite}");
                 powerUpInstance.SetActive(true);
                 powerUpInstances.Add(powerUpInstance);
             }

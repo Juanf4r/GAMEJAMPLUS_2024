@@ -295,7 +295,6 @@ namespace UI
 
                 case 2: SceneManager.LoadScene(levelSelected);
                     break;
-
                 case 3: SceneManager.LoadScene(levelSelected);
                     break;
                 case 4: SceneManager.LoadScene(levelSelected);
@@ -315,7 +314,7 @@ namespace UI
 
         public void SelectRandomLevel()
         {
-            int randomLevelSelected = Random.Range(1, 5);
+            int randomLevelSelected = Random.Range(1, 8);
             SceneManager.LoadScene(randomLevelSelected);
         }
 
