@@ -20,7 +20,7 @@ namespace Assets.Minimap
         [Header("Minimap Elements")]
         [SerializeField] private List<MinimapElementData> elements = new List<MinimapElementData>();
 
-
+        
         private void Awake()
         {
             if (instance != null && instance != this)
@@ -42,6 +42,24 @@ namespace Assets.Minimap
                     AddMinimapElement(element);
                 }
             }
+        }
+        public void RemoveMinimapElement(Transform targetTransform)
+        {
+            elements.RemoveAll(e => e.TargetTransform == targetTransform);
+            foreach (Transform child in minimapRect)
+            {
+                var element = child.GetComponent<MinimapElement>();
+                if (element != null && element.GetTargetTransform() == targetTransform)
+                {
+                    Destroy(child.gameObject);
+                    return; 
+                }
+            }
+        }
+
+        public void RemoveElementAtRuntime(Transform targetTransform)
+        {
+            RemoveMinimapElement(targetTransform);
         }
         
         public void AddMinimapElement(MinimapElementData elementData)
@@ -114,7 +132,8 @@ namespace Assets.Minimap
         private float mapWidth;
         private float mapDepth;
         private Vector2 mapOffset;
-    
+        public Transform GetTargetTransform() => targetTransform;
+
         public void Initialize(Transform target, RectTransform minimap, float width, float depth, Vector2 offset)
         {
             targetTransform = target;
