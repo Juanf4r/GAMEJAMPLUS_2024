@@ -39,49 +39,82 @@ namespace Assets.Minimap
             {
                 if (element.TargetTransform != null && element.IconSprite != null)
                 {
-                    AddMinimapElement(element.IconSprite, element.TargetTransform);
+                    AddMinimapElement(element);
                 }
             }
         }
         
-        public void AddMinimapElement(Sprite icon, Transform targetTransform)
+        public void AddMinimapElement(MinimapElementData elementData)
         {
+            if (elementData.TargetTransform == null || elementData.IconSprite == null) 
+                return;
+
             var iconInstance = Instantiate(iconPrefab, minimapRect);
             var iconImage = iconInstance.GetComponent<Image>();
-            if (iconImage != null)
+            iconImage.sprite = elementData.IconSprite;
+            iconImage.preserveAspect = elementData.PreserveAspect;
+
+            RectTransform iconRect = iconInstance.GetComponent<RectTransform>();
+    
+            Vector2 finalSize = elementData.BaseSize;
+    
+            if (elementData.ScaleWithMap)
             {
-                iconImage.sprite = icon;
+                float mapScale = Mathf.Min(mapWidth, mapDepth) * elementData.ScaleFactor;
+                finalSize = new Vector2(mapScale, mapScale);
             }
+    
+            if (elementData.PreserveAspect && elementData.IconSprite != null)
+            {
+                float aspect = elementData.IconSprite.rect.height / elementData.IconSprite.rect.width;
+                finalSize.y = finalSize.x * aspect;
+            }
+    
+            iconRect.sizeDelta = finalSize;
 
             var minimapElement = iconInstance.AddComponent<MinimapElement>();
-            minimapElement.Initialize(targetTransform, minimapRect, mapWidth, mapDepth, mapOffset);
+            minimapElement.Initialize(elementData.TargetTransform, minimapRect, mapWidth, mapDepth, mapOffset);
         }
         
         public void AddElementAtRuntime(MinimapElementData elementData)
         {
-            if (elementData.TargetTransform != null && elementData.IconSprite != null)
-            {
-                elements.Add(elementData);
-                AddMinimapElement(elementData.IconSprite, elementData.TargetTransform);
-            }
+            elements.Add(elementData);
+            AddMinimapElement(elementData);
         }
     }
     
     [System.Serializable]
     public class MinimapElementData
     {
-        public Transform TargetTransform; 
-        public Sprite IconSprite; 
+        public Transform TargetTransform;
+        public Sprite IconSprite;
+    
+        [Header("Icon Settings")]
+        [Tooltip("Base size in pixels")]
+        public Vector2 BaseSize = new Vector2(20, 20);
+    
+        [Tooltip("If true, size will scale with map dimensions")]
+        public bool ScaleWithMap = false;
+    
+        [Tooltip("Size multiplier when scaling with map"), Range(0.01f, 0.2f)]
+        public float ScaleFactor = 0.05f;
+    
+        [Tooltip("Maintain sprite aspect ratio")]
+        public bool PreserveAspect = true;
+        
+        
+        
     }
 
     public class MinimapElement : MonoBehaviour
     {
-        private Transform targetTransform; 
-        private RectTransform minimapRect; 
-        private float mapWidth; 
-        private float mapDepth; 
-        private Vector2 mapOffset; 
-        
+        private Transform targetTransform;
+        private RectTransform minimapRect;
+        private RectTransform rectTransform; 
+        private float mapWidth;
+        private float mapDepth;
+        private Vector2 mapOffset;
+    
         public void Initialize(Transform target, RectTransform minimap, float width, float depth, Vector2 offset)
         {
             targetTransform = target;
@@ -89,13 +122,14 @@ namespace Assets.Minimap
             mapWidth = width;
             mapDepth = depth;
             mapOffset = offset;
+            rectTransform = GetComponent<RectTransform>(); 
+
         }
 
         private void Update()
         {
             if (targetTransform == null) return;
 
-            // Convert world position to minimap position
             var worldPos = targetTransform.position;
             var normalizedX = (worldPos.x - mapOffset.x) / mapWidth;
             var normalizedZ = (worldPos.z - mapOffset.y) / mapDepth;
@@ -103,8 +137,7 @@ namespace Assets.Minimap
             var minimapX = normalizedX * minimapRect.sizeDelta.x;
             var minimapY = normalizedZ * minimapRect.sizeDelta.y;
 
-            // Update the icon position on the minimap
-            //((RectTransform)transform).anchoredPosition = new Vector2(minimapX, minimapY);
+            rectTransform.anchoredPosition = new Vector2(minimapX, minimapY);
         }
     }
 }
