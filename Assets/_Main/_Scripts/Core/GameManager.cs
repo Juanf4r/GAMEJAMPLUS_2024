@@ -108,6 +108,7 @@ namespace Core
         }
         void OnDisable()
         {
+            _inputPlayers.Players.Pause.performed -= Pause;
             startGameAction -= InGameUIManager.Instance.HidePlayersPanels;
         }
 
@@ -120,13 +121,11 @@ namespace Core
             meatsOfPlayer2 = 0;
             StartGame();
             LocateMeat();
-            
 
             InGameUIManager.Instance.RestartMeatsTexts();
 
             startGameAction?.Invoke();
             MusicManager.Instance.PlayInGameMusic();
-
         }
 
         private void FixedUpdate()
@@ -146,9 +145,11 @@ namespace Core
         private void Pause(InputAction.CallbackContext context)
         {
             if (!context.performed) return;
-            InGameUIManager.Instance.isPaused = !InGameUIManager.Instance.isPaused;
 
-            InGameUIManager.Instance.PauseGame(InGameUIManager.Instance.isPaused);
+            Debug.Log("Entre");
+
+            InGameUIManager.Instance.isPaused = !InGameUIManager.Instance.isPaused;
+            InGameUIManager.Instance.PauseGame(InGameUIManager.Instance.isPaused, false);
         }
 
         #region GameLogic
@@ -180,7 +181,6 @@ namespace Core
             }
 
             meatGameObject.gameObject.SetActive(true);
-            Debug.LogWarning("The meat has appeared");
         }
 
         private void StartGame()
@@ -256,7 +256,6 @@ namespace Core
             MusicManager.Instance.PlayInGameMusicGameOver();
             StartCoroutine(BackToMenu(6f));
         }
-
 
         private void EndForTime()
         {
@@ -426,7 +425,6 @@ namespace Core
 
             for (int i = 3; i > 0; i--)
             {
-                
                 InGameUIManager.Instance.countdownText.text = i.ToString(); 
                 yield return new WaitForSeconds(1f);
             }
@@ -463,7 +461,6 @@ namespace Core
             }
             for (int i = 3; i > 0; i--)
             {
-                
                 InGameUIManager.Instance.countdownText.text = i.ToString(); 
                 yield return new WaitForSeconds(1f);
             }

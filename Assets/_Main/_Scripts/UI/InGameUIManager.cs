@@ -122,16 +122,16 @@ namespace UI
         public void AddListenerOnButtons()
         {
             //pauseButtons   
-            pauseButton.onClick.AddListener(ContinueGame);
+            pauseButton.onClick.AddListener(() => PauseGame(isPaused, true));
             controlsButton.onClick.AddListener(ShowControls);
             settingsButton.onClick.AddListener(ShowSettings);
             exitButton.onClick.AddListener(ExitGame);
 
             //controlsButtons
-            backControlsButton.onClick.AddListener(ShowPause);
+            backControlsButton.onClick.AddListener(() => ShowPause(true));
 
             //SettingsButtons
-            backSettingsButton.onClick.AddListener(ShowPause);
+            backSettingsButton.onClick.AddListener(() => ShowPause(true));
             englishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
             spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
@@ -143,16 +143,16 @@ namespace UI
         public void RemoveListenerOnButtons()
         {
             //pauseButtons   
-            pauseButton.onClick.RemoveListener(ContinueGame);
+            pauseButton.onClick.RemoveListener(() => PauseGame(isPaused, true));
             controlsButton.onClick.RemoveListener(ShowControls);
             settingsButton.onClick.RemoveListener(ShowSettings);
             exitButton.onClick.RemoveListener(ExitGame);
 
             //controlsButtons
-            backControlsButton.onClick.RemoveListener(ShowPause);
+            backControlsButton.onClick.AddListener(() => ShowPause(true));
 
             //SettingsButton
-            backSettingsButton.onClick.RemoveListener(ShowPause);
+            backSettingsButton.onClick.AddListener(() => ShowPause(true));
             englishLanguageButton.onClick.RemoveListener(() => ChangeLocale(0));
             spanishLanguageButton.onClick.RemoveListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2));
@@ -214,15 +214,20 @@ namespace UI
         
         #region PauseLogic
 
-        public void PauseGame(bool pauseState)
+        public void PauseGame(bool pauseState, bool UIPressed)
         {
-            pauseState = !pauseState;
+            if(UIPressed)
+            {
+                pauseState = false;
+                isPaused = pauseState;
+                gameplayCanvasAnimator.SetTrigger("Gameplay");
+            }
 
             if (pauseState)
             {
                 //Time.timeScale = 0;
 
-                ShowPause();
+                ShowPause(false);
             }
             else
             {
@@ -232,25 +237,27 @@ namespace UI
             }
         }
 
-        private void ContinueGame()
-        {
-            isPaused = !isPaused;
-
-            //Time.timeScale = 1;
-
-            HidePause();
-        }
-
         private void HidePause()
         {
-            gameplayCanvasAnimator.SetTrigger("Gameplay");
-            panels[1].SetActive(false);
+            for(int i = 0; i < panels.Length; i++)
+            {
+                panels[i].SetActive(false);
+            }
+
+            panels[0].SetActive(true);
         }
 
-        private void ShowPause()
+        private void ShowPause(bool isBackButton)
         {
-            panels[1].SetActive(true);
-            gameplayCanvasAnimator.SetTrigger("Pause");
+            if(isBackButton)
+            {
+                gameplayCanvasAnimator.SetTrigger("Pause");
+            }
+
+            for(int i = 0; i < panels.Length; i++)
+            {
+                panels[i].SetActive(true);
+            }
         }
 
         private void ShowControls()
