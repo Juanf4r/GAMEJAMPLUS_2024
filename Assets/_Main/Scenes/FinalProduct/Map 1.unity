@@ -1763,34 +1763,34 @@ PrefabInstance:
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: elements.Array.data[0].BaseSize.x
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: elements.Array.data[0].BaseSize.y
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: elements.Array.data[0].IconSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2c8bfd9ad1985e845acaff26c4f067e6,
+      objectReference: {fileID: 21300000, guid: eee47cae948c7a44c88f9880abd1c52b,
         type: 3}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: elements.Array.data[1].BaseSize.x
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: elements.Array.data[1].BaseSize.y
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: elements.Array.data[1].IconSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2c8bfd9ad1985e845acaff26c4f067e6,
+      objectReference: {fileID: 21300000, guid: 494e94edc9d54b347848f215c2138236,
         type: 3}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
