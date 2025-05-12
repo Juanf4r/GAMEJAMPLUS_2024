@@ -59,10 +59,11 @@ namespace Core
 
         private List<GameObject> powerUpInstances = new List<GameObject>();
 
-        private PlayerManager _player1;
-        private PlayerManager _player2;
+        [HideInInspector] public PlayerManager _player1;
+        [HideInInspector] public PlayerManager _player2;
 
         private bool isPaused = false;
+        private bool canChangeVelocity = true;
 
         [Header("Sonidos")] 
         [SerializeField] private AudioClip cryingAudioClip;
@@ -121,6 +122,7 @@ namespace Core
             meatsOfPlayer2 = 0;
             StartGame();
             LocateMeat();
+            canChangeVelocity = true;
 
             InGameUIManager.Instance.RestartMeatsTexts();
 
@@ -132,6 +134,11 @@ namespace Core
         {
             _gameSeconds -= Time.deltaTime;
             InGameUIManager.Instance.timeLeftText.text = _gameSeconds.ToString("000"); 
+            if (_gameSeconds <= 20f && canChangeVelocity)
+            {
+                MusicManager.Instance.SetVelocity(1.2f);
+                canChangeVelocity = false;
+            }
             if (_gameSeconds <= 0)
             {
                 EndForTime();
@@ -255,6 +262,9 @@ namespace Core
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
             MusicManager.Instance.PlayInGameMusicGameOver();
             StartCoroutine(BackToMenu(6f));
+            _player1.canMove = false;
+            _player2.canMove = false;
+            _inputPlayers.Disable();
         }
 
         private void EndForTime()
@@ -277,6 +287,7 @@ namespace Core
 
                 //Change music
                 MusicManager.Instance.PlayInGameMusicExtraRound();
+                MusicManager.Instance.SetVelocity(1f);  
 
                 //Start ExtraRound
                 timeOver = true;
