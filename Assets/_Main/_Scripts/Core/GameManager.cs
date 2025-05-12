@@ -136,7 +136,7 @@ namespace Core
             InGameUIManager.Instance.timeLeftText.text = _gameSeconds.ToString("000"); 
             if (_gameSeconds <= 20f && canChangeVelocity)
             {
-                MusicManager.Instance.SetVelocity(1.5f);
+                MusicManager.Instance.SetVelocity(1.2f);
                 canChangeVelocity = false;
             }
             if (_gameSeconds <= 0)
