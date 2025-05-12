@@ -930,12 +930,12 @@ PrefabInstance:
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: mapDepth
-      value: 33
+      value: 35.5
       objectReference: {fileID: 0}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: mapWidth
-      value: 51
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
@@ -946,18 +946,44 @@ PrefabInstance:
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: mapOffset.x
-      value: -28.5
+      value: -25.5
       objectReference: {fileID: 0}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: mapOffset.y
-      value: -17
+      value: -18.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: elements.Array.data[0].BaseSize.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: elements.Array.data[0].BaseSize.y
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: elements.Array.data[0].IconSprite
       value: 
-      objectReference: {fileID: 1618652347, guid: b7f6a27a1fe59b34b8987b465e5c0ed4,
+      objectReference: {fileID: 21300000, guid: eee47cae948c7a44c88f9880abd1c52b,
+        type: 3}
+    - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: elements.Array.data[1].BaseSize.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: elements.Array.data[1].BaseSize.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: elements.Array.data[1].IconSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 494e94edc9d54b347848f215c2138236,
         type: 3}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
@@ -2079,7 +2105,7 @@ Transform:
   m_GameObject: {fileID: 1739233637}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.8, y: 0.2, z: 13.55}
+  m_LocalPosition: {x: 36.8, y: 0.2, z: 14.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
