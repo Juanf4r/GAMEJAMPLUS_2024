@@ -9,15 +9,8 @@ using UnityEngine.UI;
 namespace UI
 {
     public class MainMenuManager : MonoBehaviour
-    {
-        [SerializeField] private GameObject[] panels = new GameObject[7];
-        //MainPanel 0
-        //SelectCharacterPanel 1
-        //LevelSelectionPanel 2
-        //ControlsPanel 3
-        //SettingsPanel 4
-        //CreditsPanel 5
-        //ConfirmExitPanel 6
+    {   
+        [SerializeField] private Animator mainMenuAnimator;
 
         [Header("MainMenu Buttons")]
         [SerializeField] private Button playButton;
@@ -97,7 +90,7 @@ namespace UI
 
         private void Start()
         {
-            UIMainMenu();
+            //UIMainMenu();
             GetConfigValues();
             ChangeLocale(config.settings.localeID);
             MusicManager.Instance.PlayMainMenuMusic();
@@ -219,22 +212,37 @@ namespace UI
 
         public void UIMainMenu()
         {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[0].SetActive(true);
+            mainMenuAnimator.SetTrigger("MainMenu");
         }
 
         private void UICharacterSelection()
         {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
+            mainMenuAnimator.SetTrigger("SelectCharacter");
+        }
 
-            panels[1].SetActive(true);
+        private void UILevelSelection()
+        {
+            mainMenuAnimator.SetTrigger("SelectMap");
+        }
+
+        private void UIControls()
+        {
+            mainMenuAnimator.SetTrigger("Controls");
+        }
+
+        private void UISettings()
+        {   
+            mainMenuAnimator.SetTrigger("Settings");
+        }
+
+        private void UICredits()
+        {
+            mainMenuAnimator.SetTrigger("Credits");
+        }
+
+        private void UIExit()
+        {
+            mainMenuAnimator.SetTrigger("Exit");
         }
 
         public void ChangeCharacterLeft(bool isPlayerOne)
@@ -264,56 +272,6 @@ namespace UI
         public void UpdateSliders()
         {
             //Logica de actualizar UI de Sliders con los config de los characters
-        }
-
-        private void UILevelSelection()
-        {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[2].SetActive(true);
-        }
-
-        private void UIControls()
-        {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[3].SetActive(true);
-        }
-
-        private void UISettings()
-        {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[4].SetActive(true);
-        }
-
-        private void UICredits()
-        {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[5].SetActive(true);
-        }
-
-        private void UIExit()
-        {
-            for (int i = 0; i < panels.Length;i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[6].SetActive(true);
         }
 
         #endregion
