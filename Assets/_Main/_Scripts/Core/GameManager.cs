@@ -59,8 +59,8 @@ namespace Core
 
         private List<GameObject> powerUpInstances = new List<GameObject>();
 
-        private PlayerManager _player1;
-        private PlayerManager _player2;
+        [HideInInspector] public PlayerManager _player1;
+        [HideInInspector] public PlayerManager _player2;
 
         private bool isPaused = false;
 
@@ -255,6 +255,9 @@ namespace Core
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
             MusicManager.Instance.PlayInGameMusicGameOver();
             StartCoroutine(BackToMenu(6f));
+            _player1.canMove = false;
+            _player2.canMove = false;
+            _inputPlayers.Disable();
         }
 
         private void EndForTime()
