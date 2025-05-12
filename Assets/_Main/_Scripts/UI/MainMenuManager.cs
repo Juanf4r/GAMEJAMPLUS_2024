@@ -90,9 +90,8 @@ namespace UI
 
         private void Start()
         {
-            //UIMainMenu();
             GetConfigValues();
-            ChangeLocale(config.settings.localeID);
+            ChangeLocale(config.settings.localeID, false);
             MusicManager.Instance.PlayMainMenuMusic();
         }
 
@@ -126,9 +125,9 @@ namespace UI
 
             //SettingsButton
             backSettingsButton.onClick.AddListener(UIMainMenu);
-            englishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
-            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
-            portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
+            englishLanguageButton.onClick.AddListener(() => ChangeLocale(0, true));
+            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1, true));
+            portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2, true));
             sfxSlider.onValueChanged.AddListener(UpdateSFX);
             musicSlider.onValueChanged.AddListener( UpdateMusic);
 
@@ -170,9 +169,9 @@ namespace UI
 
             //SettingsButton
             backSettingsButton.onClick.RemoveListener(UIMainMenu);
-            englishLanguageButton.onClick.AddListener(() => ChangeLocale(0));
-            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
-            portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2));
+            englishLanguageButton.onClick.AddListener(() => ChangeLocale(0, true));
+            spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1, true));
+            portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2, true));
             sfxSlider.onValueChanged.RemoveListener(UpdateSFX);
             musicSlider.onValueChanged.RemoveListener(UpdateMusic);
 
@@ -310,17 +309,30 @@ namespace UI
 
         #region Localization
 
-        public void ChangeLocale(int localeID)
+        public void ChangeLocale(int localeID, bool isAnimation)
         {
             if(_active)
             {
                 return;
             }
-            StartCoroutine(SetLocale(localeID));
+            StartCoroutine(SetLocale(localeID,isAnimation));
         }
 
-        private IEnumerator SetLocale(int localeID)
+        private IEnumerator SetLocale(int localeID, bool isAnimation)
         {
+            if(isAnimation)
+            {
+                switch(localeID)
+                {
+                    case 0: mainMenuAnimator.SetTrigger("English");
+                        break;
+                    case 1: mainMenuAnimator.SetTrigger("Spanish");
+                        break;
+                    case 2: mainMenuAnimator.SetTrigger("Portuguese");
+                        break;
+                }
+            }
+
             _active = true;
             yield return LocalizationSettings.InitializationOperation;
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localeID];
