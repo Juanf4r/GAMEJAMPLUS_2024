@@ -13,6 +13,7 @@ using UnityEngine.SceneManagement;
 using Assets.Minimap;
 using System;
 using UI;
+using UnityEngine.Localization.Components;
 
 namespace Core
 {
@@ -398,9 +399,18 @@ namespace Core
                 InGameUIManager.Instance.countdownText.text = i.ToString(); 
                 yield return new WaitForSeconds(1f);
             }
-
-            InGameUIManager.Instance.countdownText.text = "GO!!";
-            _gameSeconds = 91f;
+            string iDText = "G035";
+            LocalizeStringEvent changeLocalizationText = InGameUIManager.Instance.countdownText.GetComponent<LocalizeStringEvent>();
+            if (changeLocalizationText != null)
+            {
+                changeLocalizationText.StringReference.TableEntryReference = iDText;
+                InGameUIManager.Instance.countdownText.text = changeLocalizationText.StringReference.GetLocalizedString();
+            }
+            else
+            {
+                Debug.LogError("No se encontró el componente LocalizeStringEvent en countdownText.");
+            }
+            _gameSeconds = 11f;
             
             yield return new WaitForSeconds(.5f);
             
@@ -426,8 +436,18 @@ namespace Core
                 InGameUIManager.Instance.countdownText.text = i.ToString(); 
                 yield return new WaitForSeconds(1f);
             }
-
-            InGameUIManager.Instance.countdownText.text = "GO!! \n Meat Gold timeee!!";
+            string iDText = "G035";
+            LocalizeStringEvent changeLocalizationText = InGameUIManager.Instance.countdownText.GetComponent<LocalizeStringEvent>();
+            if (changeLocalizationText != null)
+            {
+                changeLocalizationText.StringReference.TableEntryReference = iDText;
+                InGameUIManager.Instance.countdownText.text = changeLocalizationText.StringReference.GetLocalizedString();
+            }
+            else
+            {
+                Debug.LogError("No se encontró el componente LocalizeStringEvent en countdownText.");
+            }
+            //InGameUIManager.Instance.countdownText.text = "GO!! \n Meat Gold timeee!!";
             _gameSeconds = 91f;
             
             yield return new WaitForSeconds(1f);
