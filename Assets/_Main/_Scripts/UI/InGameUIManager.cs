@@ -16,6 +16,8 @@ namespace UI
     {
         public static InGameUIManager Instance { get; private set;}
 
+        [SerializeField] private Animator gameplayCanvasAnimator;
+
         [SerializeField] private List<Image> powerUpListImages = new();
 
         [Space]
@@ -177,6 +179,7 @@ namespace UI
             CountImageMeattP1.sprite = goldenMeatVoid;
             CountImageMeattP2.sprite = goldenMeatVoid;
         }
+
         public void TakeGoldMeatUI(int player)
         {
             if (player == 1)
@@ -217,13 +220,13 @@ namespace UI
 
             if (pauseState)
             {
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
 
                 ShowPause();
             }
             else
             {
-                Time.timeScale = 1;
+                //Time.timeScale = 1;
 
                 HidePause();
             }
@@ -233,49 +236,31 @@ namespace UI
         {
             isPaused = !isPaused;
 
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
 
             HidePause();
         }
 
         private void HidePause()
         {
-            for (int i = 0; i < panels.Length; i++)
-                {
-                    panels[i].SetActive(false);
-                }
-
-                panels[0].SetActive(true);
+            gameplayCanvasAnimator.SetTrigger("Gameplay");
+            panels[1].SetActive(false);
         }
 
         private void ShowPause()
         {
-            for (int i = 0; i < panels.Length; i++)
-            {
-                panels[i].SetActive(false);
-            }
-
             panels[1].SetActive(true);
+            gameplayCanvasAnimator.SetTrigger("Pause");
         }
 
         private void ShowControls()
         {   
-            for (int i = 0; i < panels.Length; i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[2].SetActive(true);
+            gameplayCanvasAnimator.SetTrigger("Controls");
         }
 
         private void ShowSettings()
         {   
-            for (int i = 0; i < panels.Length; i++)
-            {
-                panels[i].SetActive(false);
-            }
-
-            panels[3].SetActive(true);
+            gameplayCanvasAnimator.SetTrigger("Settings");
         }
 
         private void ExitGame()
