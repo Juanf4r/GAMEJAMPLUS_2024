@@ -63,6 +63,7 @@ namespace Core
         [HideInInspector] public PlayerManager _player2;
 
         private bool isPaused = false;
+        private bool canChangeVelocity = true;
 
         [Header("Sonidos")] 
         [SerializeField] private AudioClip cryingAudioClip;
@@ -121,6 +122,7 @@ namespace Core
             meatsOfPlayer2 = 0;
             StartGame();
             LocateMeat();
+            canChangeVelocity = true;
 
             InGameUIManager.Instance.RestartMeatsTexts();
 
@@ -132,6 +134,11 @@ namespace Core
         {
             _gameSeconds -= Time.deltaTime;
             InGameUIManager.Instance.timeLeftText.text = _gameSeconds.ToString("000"); 
+            if (_gameSeconds <= 20f && canChangeVelocity)
+            {
+                MusicManager.Instance.SetVelocity(1.5f);
+                canChangeVelocity = false;
+            }
             if (_gameSeconds <= 0)
             {
                 EndForTime();
@@ -280,6 +287,7 @@ namespace Core
 
                 //Change music
                 MusicManager.Instance.PlayInGameMusicExtraRound();
+                MusicManager.Instance.SetVelocity(1f);  
 
                 //Start ExtraRound
                 timeOver = true;

@@ -43,7 +43,6 @@ namespace _Scripts.Players
         {
             originalCameraPositionP1 = playerOneCamera.transform.localPosition;
             originalCameraPositionP2 = playerTwoCamera.transform.localPosition;
-            
         }
 
         private void Awake()

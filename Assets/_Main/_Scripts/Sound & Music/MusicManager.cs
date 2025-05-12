@@ -144,4 +144,12 @@ public class MusicManager : MonoBehaviour
         var config = ConfigManager.LoadConfig();
         _audioSource.volume = config.settings.musicvolume;
     }
+
+    public void SetVelocity(float velocity)
+    {
+        if (_audioSource != null)
+        {
+            _audioSource.pitch = velocity;
+        }
+    }
 }
