@@ -13,6 +13,7 @@ using UnityEngine.SceneManagement;
 using Assets.Minimap;
 using System;
 using UI;
+using UnityEngine.Localization.Components;
 
 namespace Core
 {
@@ -28,9 +29,10 @@ namespace Core
         [Header("Meats")]
         [SerializeField] private List<Transform> spawnMeats;
         private List<Transform> usedSpawns = new List<Transform>();
-        [SerializeField] private GameObject meatGameObject;
+        [SerializeField] private GameObject meatGoldSpawn;
         [SerializeField] private Sprite meat;
-        [SerializeField] private GameObject meatGold;
+        [SerializeField] private Sprite meatGold;
+        [SerializeField] private GameObject meatGameObject;
 
         [Header("Meats and Timer")]
         [HideInInspector] public int meatsOfPlayer1 = 0;
@@ -61,9 +63,6 @@ namespace Core
         private PlayerManager _player2;
 
         private bool isPaused = false;
-
-        [Header("Musica ganar")]
-        [SerializeField] private AudioSource winAudioSource;
 
         [Header("Sonidos")] 
         [SerializeField] private AudioClip cryingAudioClip;
@@ -126,7 +125,6 @@ namespace Core
             InGameUIManager.Instance.RestartMeatsTexts();
 
             startGameAction?.Invoke();
-            winAudioSource.Stop();
             MusicManager.Instance.PlayInGameMusic();
 
         }
@@ -199,6 +197,7 @@ namespace Core
             if (timeOver)
             {
                 meatsOfPlayer1 += 3;
+                InGameUIManager.Instance.TakeGoldMeatUI(1);
             }
             else
             {
@@ -208,7 +207,7 @@ namespace Core
             }
 
             if (meatsOfPlayer1 >= 3)
-            {
+            {   
                 CheckPlayerWin();
                 SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player2.transform.position, .5f, true);
             }
@@ -218,6 +217,7 @@ namespace Core
             if (timeOver)
             {
                 meatsOfPlayer2 += 3;
+                InGameUIManager.Instance.TakeGoldMeatUI(2);
             }
             else
             {
@@ -252,15 +252,15 @@ namespace Core
                 _player1.OnLose();
                 meatGameObject.SetActive(false);
             }
-
-            winAudioSource.Play();
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
+            MusicManager.Instance.PlayInGameMusicGameOver();
             StartCoroutine(BackToMenu(6f));
         }
 
 
         private void EndForTime()
         {
+            //Reset PowerUps Players
             var player1Actions = _player1.GetComponent<PlayerActions>();
             var player2Actions = _player2.GetComponent<PlayerActions>();
             player1Actions?.ResetPowerUpsForBothPlayers();
@@ -268,36 +268,63 @@ namespace Core
 
             CleanPowerUp();
 
+            //Extra round
             if (meatsOfPlayer1 == meatsOfPlayer2)
-            {
+            {   
+                //Disable mov players
                 _player1.canMove = false;
                 _player2.canMove = false;
                 _inputPlayers.Disable();
 
-                timeOver = true;
+                //Change music
+                MusicManager.Instance.PlayInGameMusicExtraRound();
 
+                //Start ExtraRound
+                timeOver = true;
                 InGameUIManager.Instance.timeLeftText.text = "";
-        
-                StartGame();
+                
+                refPlayer1.transform.localPosition = spawn1.transform.localPosition;
+                refPlayer2.transform.localPosition = spawn2.transform.localPosition;
+                PowerUp();
+                StartCoroutine(CountdownExtraRound());
                 _gameSeconds += 100;
 
                 InGameUIManager.Instance.containerTimeLeft.SetActive(false);
+                
+                //Change Meat to Gold
+                if (meatGameObject != null)
+                {
+                    var spriteRenderer = meatGameObject.GetComponentInChildren<SpriteRenderer>();
+                    if (spriteRenderer != null)
+                    {
+                        spriteRenderer.sprite = meatGold;
+                        Debug.Log("Sprite del Meat cambiado a Gold.");
+                    }
+                    else
+                    {
+                        Debug.LogError("SpriteRenderer no encontrado en los hijos de meatGameObject.");
+                    }
+                }
+                else
+                {
+                    Debug.LogError("meatGameObject no está asignado.");
+                }
+                meatGameObject.transform.localPosition = meatGoldSpawn.transform.position;
 
-                meatGameObject.transform.localPosition = meatGold.transform.position;
-
-               // InGameUIManager.Instance.PlayGoldMeatUI();
+                //Change UI to Gold meat
+                InGameUIManager.Instance.StartGoldMeatUI();
+                InGameUIManager.Instance.extraRoundPanel.SetActive(true);
 
                 // Create proper minimap element data
                 MinimapElementData goldMeatIcon = new MinimapElementData()
                 {
-                    TargetTransform = meatGold.transform,
+                    TargetTransform = meatGameObject.transform,
                     IconSprite = meat, // Add this reference to your class
                     BaseSize = new Vector2(40, 40), // Larger size for gold meat
                     ScaleWithMap = false,
                     PreserveAspect = true,
                     // Add any special visual effects if needed
                 };
-
                 MinimapController.instance.AddMinimapElement(goldMeatIcon);
 
                 if (_gameSeconds >= 5f)
@@ -314,6 +341,7 @@ namespace Core
         #endregion
 
         #region PowerUps
+
         private void PowerUp()
         {
             foreach (var spawnPoint in spawnPowerUP)
@@ -348,6 +376,7 @@ namespace Core
                 powerUpInstances.Add(powerUpInstance);
             }
         }
+
 
         private void CleanPowerUp()
         {
@@ -401,14 +430,62 @@ namespace Core
                 InGameUIManager.Instance.countdownText.text = i.ToString(); 
                 yield return new WaitForSeconds(1f);
             }
-
-            InGameUIManager.Instance.countdownText.text = "GO!!";
+            string iDText = "G035";
+            LocalizeStringEvent changeLocalizationText = InGameUIManager.Instance.countdownText.GetComponent<LocalizeStringEvent>();
+            if (changeLocalizationText != null)
+            {
+                changeLocalizationText.StringReference.TableEntryReference = iDText;
+                InGameUIManager.Instance.countdownText.text = changeLocalizationText.StringReference.GetLocalizedString();
+            }
+            else
+            {
+                Debug.LogError("No se encontró el componente LocalizeStringEvent en countdownText.");
+            }
             _gameSeconds = 91f;
             
             yield return new WaitForSeconds(.5f);
             
             InGameUIManager.Instance.panels[0].SetActive(true);
             InGameUIManager.Instance.panelCountdown.gameObject.SetActive(false);
+
+            _inputPlayers.Enable();
+            _player1.canMove = true;
+            _player2.canMove = true;
+        }
+        private IEnumerator CountdownExtraRound()
+        {
+            InGameUIManager.Instance.panels[0].SetActive(false);
+            InGameUIManager.Instance.panelCountdown.gameObject.SetActive(true);
+            Color goldColor;
+            if (ColorUtility.TryParseHtmlString("#FF9900", out goldColor))
+            {
+                InGameUIManager.Instance.countdownText.color = goldColor;
+            }
+            for (int i = 3; i > 0; i--)
+            {
+                
+                InGameUIManager.Instance.countdownText.text = i.ToString(); 
+                yield return new WaitForSeconds(1f);
+            }
+            string iDText = "G035";
+            LocalizeStringEvent changeLocalizationText = InGameUIManager.Instance.countdownText.GetComponent<LocalizeStringEvent>();
+            if (changeLocalizationText != null)
+            {
+                changeLocalizationText.StringReference.TableEntryReference = iDText;
+                InGameUIManager.Instance.countdownText.text = changeLocalizationText.StringReference.GetLocalizedString();
+            }
+            else
+            {
+                Debug.LogError("No se encontró el componente LocalizeStringEvent en countdownText.");
+            }
+            //InGameUIManager.Instance.countdownText.text = "GO!! \n Meat Gold timeee!!";
+            _gameSeconds = 91f;
+            
+            yield return new WaitForSeconds(1f);
+            
+            InGameUIManager.Instance.panels[0].SetActive(true);
+            InGameUIManager.Instance.panelCountdown.gameObject.SetActive(false);
+            InGameUIManager.Instance.extraRoundPanel.SetActive(false);
 
             _inputPlayers.Enable();
             _player1.canMove = true;
