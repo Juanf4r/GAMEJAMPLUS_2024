@@ -608,45 +608,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 308691475473402423, guid: a3c11f1efcff41645a4de76b4d6db810,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: fba0edde8de6e7645aebec0956480147, type: 2}
     - target: {fileID: 2447921644614680567, guid: a3c11f1efcff41645a4de76b4d6db810,
         type: 3}
       propertyPath: m_Name
       value: Meat
-      objectReference: {fileID: 0}
-    - target: {fileID: 4916197004050742652, guid: a3c11f1efcff41645a4de76b4d6db810,
-        type: 3}
-      propertyPath: meatAnimator
-      value: 
-      objectReference: {fileID: 1522213688}
-    - target: {fileID: 4916197004050742652, guid: a3c11f1efcff41645a4de76b4d6db810,
-        type: 3}
-      propertyPath: meatAnimatorController
-      value: 
-      objectReference: {fileID: 9100000, guid: 94423b3c022c6164b80356b6f6acdc5f, type: 2}
-    - target: {fileID: 4916197004050742652, guid: a3c11f1efcff41645a4de76b4d6db810,
-        type: 3}
-      propertyPath: meatGoldAnimatorController
-      value: 
-      objectReference: {fileID: 9100000, guid: ebe7eea29eab57d4fb9833b0d049306a, type: 2}
-    - target: {fileID: 8546861647248525613, guid: a3c11f1efcff41645a4de76b4d6db810,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546861647248525613, guid: a3c11f1efcff41645a4de76b4d6db810,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546861647248525613, guid: a3c11f1efcff41645a4de76b4d6db810,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8546861647248525613, guid: a3c11f1efcff41645a4de76b4d6db810,
         type: 3}
@@ -1614,12 +1579,6 @@ Transform:
   - {fileID: 908495123}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1522213688 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6097986478084419643, guid: a3c11f1efcff41645a4de76b4d6db810,
-    type: 3}
-  m_PrefabInstance: {fileID: 787338315}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568482964
 GameObject:
   m_ObjectHideFlags: 0
