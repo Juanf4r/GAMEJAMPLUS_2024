@@ -87,6 +87,24 @@ namespace UI
 
         private void OnEnable() 
         {
+            AddListenerOnButtons();
+        }
+
+        private void OnDisable()
+        {
+            RemoveListenerOnButtons();
+        }
+
+        private void Start()
+        {
+            UIMainMenu();
+            GetConfigValues();
+            ChangeLocale(config.settings.localeID);
+            MusicManager.Instance.PlayMainMenuMusic();
+        }
+
+        private void AddListenerOnButtons()
+        {
             //MainMenuButtons
             playButton.onClick.AddListener(UICharacterSelection);
             controlsButton.onClick.AddListener(UIControls);
@@ -126,9 +144,10 @@ namespace UI
 
             backExitButton.onClick.AddListener(UIMainMenu);
             exitButton.onClick.AddListener(UIExit);
+            exitGameButton.onClick.AddListener(ExitGame);
         }
 
-        private void OnDisable()
+        private void RemoveListenerOnButtons() 
         {
             //MainMenuButtons
             playButton.onClick.AddListener(UICharacterSelection);
@@ -169,21 +188,18 @@ namespace UI
 
             backExitButton.onClick.RemoveListener(UIMainMenu);
             exitButton.onClick.RemoveListener(UIExit);
+            exitGameButton.onClick.RemoveListener(ExitGame);
         }
 
-        private void Start()
-        {
-            UIMainMenu();
-            ChangeLocale(config.settings.localeID);
-            sfxSlider.value = config.settings.sfxvolume;
-            musicSlider.value = config.settings.musicvolume;
-            MusicManager.Instance.PlayMainMenuMusic();
-
-        }
-
-        public void ExitGame()
+        private void ExitGame()
         {
             Application.Quit();
+        }
+
+        private void GetConfigValues()
+        {
+            sfxSlider.value = config.settings.sfxvolume;
+            musicSlider.value = config.settings.musicvolume;
         }
 
         private void UpdateSFX(float value)
@@ -198,6 +214,7 @@ namespace UI
             MusicManager.UpdateMusicVolume();
             ConfigManager.SaveConfig(config);
         }
+        
         #region UILogic
 
         public void UIMainMenu()
