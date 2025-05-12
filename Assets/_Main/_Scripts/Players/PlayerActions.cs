@@ -31,6 +31,19 @@ namespace _Scripts.Players
         private Transform childObject;
         private ParticleSystem particle;
 
+        [Header("Cameras")]
+        [SerializeField] private Camera playerOneCamera;
+        [SerializeField] private Camera playerTwoCamera;
+        private Vector3 originalCameraPositionP1;
+        private Vector3 originalCameraPositionP2;
+        [SerializeField] private Vector3 newCameraPosition = new Vector3(0, 2.5f, -5);
+
+        void Start()
+        {
+            originalCameraPositionP1 = playerOneCamera.transform.localPosition;
+            originalCameraPositionP2 = playerTwoCamera.transform.localPosition;
+        }
+
         private void Awake()
         {
             childObject = this.transform.Find("FX_Trail_Dust_01");
@@ -64,6 +77,14 @@ namespace _Scripts.Players
                     
                     childObject.gameObject.SetActive(true);
                     particle.Play();
+                    if(_playerManager.isPlayerOne)
+                    {
+                        StartCoroutine(SmoothZoomOutCameras(1));
+                    }
+                    else if(!_playerManager.isPlayerOne)
+                    {
+                        StartCoroutine(SmoothZoomOutCameras(2));
+                    }
                     break;
                 case PowerUpType.Strength:
                 
@@ -119,6 +140,7 @@ namespace _Scripts.Players
             {
                 P2_Animator.runtimeAnimatorController = P2_Wood_AnimatorController;
             }
+            CamaraPositionBackToNormal();
         }
 
         private IEnumerator TeleportToEnemy()
@@ -143,6 +165,65 @@ namespace _Scripts.Players
             StartCoroutine(InvincibilityDuration(_playerConfig.invincibilityTime));
         }
 
+        private void CamaraPositionBackToNormal()
+        {
+            if(_playerManager.isPlayerOne)
+            {
+                StartCoroutine(SmoothZoomCameras(1));
+            }
+            else if(!_playerManager.isPlayerOne)
+            {
+                StartCoroutine(SmoothZoomCameras(2));
+            }
+        }
+
+        private IEnumerator SmoothZoomOutCameras(int player)
+        {   
+            float elapsed = 0f;
+            float duration = 0.3f;
+            if (player == 1)
+            {
+                while (elapsed < duration)
+                {
+                    playerOneCamera.transform.localPosition = Vector3.Lerp(originalCameraPositionP1, newCameraPosition, elapsed / duration);
+                    elapsed += Time.deltaTime;
+                    yield return null;
+                }
+            }
+            else if (player == 2)
+            {
+                while (elapsed < duration)
+                {
+                    playerTwoCamera.transform.localPosition = Vector3.Lerp(originalCameraPositionP2, newCameraPosition, elapsed / duration);
+                    elapsed += Time.deltaTime;
+                    yield return null;
+                }
+            }
+        }
+        private IEnumerator SmoothZoomCameras(int player)
+        {   
+            float elapsed = 0f;
+            float duration = 0.3f;
+            if (player == 1)
+            {
+                while (elapsed < duration)
+                {
+                    playerOneCamera.transform.localPosition = Vector3.Lerp(newCameraPosition, originalCameraPositionP1, elapsed / duration);
+                    elapsed += Time.deltaTime;
+                    yield return null;
+                }
+            }
+            else if (player == 2)
+            {
+                while (elapsed < duration)
+                {
+                    playerTwoCamera.transform.localPosition = Vector3.Lerp(newCameraPosition, originalCameraPositionP2, elapsed / duration);
+                    elapsed += Time.deltaTime;
+                    yield return null;
+                }
+            }
+        }
+        
         /* private IEnumerator InvincibilityDuration(float duration)
          {
              var spriteRenderer = _playerManager.GetComponentInChildren<SpriteRenderer>();
