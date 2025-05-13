@@ -118,6 +118,8 @@ namespace _Scripts.Players
         {
             if (_isInvulnerable) return;
             if(!_playerManager.canMove) return;
+            
+            _playerManager.playerInput = new Vector2(0,0);
 
             Debug.Log($"Stunned for {duration}");
             if (!_playerManager.canMove) return;
