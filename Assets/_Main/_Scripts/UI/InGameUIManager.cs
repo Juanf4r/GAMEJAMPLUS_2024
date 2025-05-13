@@ -43,6 +43,7 @@ namespace UI
         //1 pausePanel
         //2 controlsPanel
         //3 settingsPanel
+
         [Header("PauseButtons")]
         [SerializeField] private Button pauseButton;
         [SerializeField] private Button controlsButton;
@@ -63,7 +64,6 @@ namespace UI
         [SerializeField] private Button portugueseLanguageButton;
         [SerializeField] private Slider sfxSlider;
         [SerializeField] private Slider musicSlider;
-        
         
         [Space]
 
@@ -117,6 +117,8 @@ namespace UI
             sfxSlider.value = config.settings.sfxvolume;
             musicSlider.value = config.settings.musicvolume;
             extraRoundPanel.SetActive(false);
+
+            gameplayCanvasAnimator.updateMode = AnimatorUpdateMode.UnscaledTime; 
         }
 
         public void AddListenerOnButtons()
@@ -137,7 +139,6 @@ namespace UI
             portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
             sfxSlider.onValueChanged.AddListener(UpdateSFX);
             musicSlider.onValueChanged.AddListener( UpdateMusic);
-
         }
 
         public void RemoveListenerOnButtons()
@@ -225,13 +226,13 @@ namespace UI
 
             if (pauseState)
             {
-                //Time.timeScale = 0;
+                Time.timeScale = 0;
 
                 ShowPause(false);
             }
             else
             {
-                //Time.timeScale = 1;
+                Time.timeScale = 1;
 
                 HidePause();
             }
