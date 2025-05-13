@@ -63,19 +63,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12
-    m_Localized: MAPA 1
+    m_Localized: PRIMAL RACE
     m_Metadata:
       m_Items: []
   - m_Id: 13
-    m_Localized: MAPA 2
+    m_Localized: "ILHA DA \xC1RVORE"
     m_Metadata:
       m_Items: []
   - m_Id: 14
-    m_Localized: MAPA 3
+    m_Localized: ESTRADA ARBUSTIVA
     m_Metadata:
       m_Items: []
   - m_Id: 15
-    m_Localized: MAPA 4
+    m_Localized: ILHA DAS PALMEIRAS
     m_Metadata:
       m_Items: []
   - m_Id: 16
@@ -131,7 +131,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 29
-    m_Localized: ARTE ANTIGA
+    m_Localized: "MEN\xC7\xD5ES HONROSAS"
     m_Metadata:
       m_Items: []
   - m_Id: 30
@@ -168,6 +168,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 38
     m_Localized: RODADA EXTRA DE OURO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: REI DO MORRO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: "PICO PR\xC9-HIST\xD3RICO"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: "PLAN\xCDCIES GELADAS"
     m_Metadata:
       m_Items: []
   references:

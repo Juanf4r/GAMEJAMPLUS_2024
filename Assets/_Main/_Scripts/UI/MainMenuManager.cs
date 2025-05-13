@@ -101,26 +101,7 @@ namespace UI
 
         public void SelectLevel(int levelSelected)
         {
-            switch (levelSelected)
-            {
-                case 1: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 2: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 3: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 4: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 5: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 6: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 7: SceneManager.LoadScene(levelSelected);
-                    break;
-
-                default: Debug.LogWarning("This level do not exists: " + levelSelected);
-                    break;
-            }
+            SceneManager.LoadScene(levelSelected);
             MusicManager.Instance.StopMusic();
         }
 
