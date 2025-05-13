@@ -15,7 +15,8 @@ MonoBehaviour:
   buffType: 0
   buffSprite: {fileID: 601948492, guid: 798f6a3efb0478b45b42254e780d1451, type: 3}
   alphaTexture: {fileID: 21300000, guid: 0a778dccb18633d45bfce9e6a022c4d0, type: 3}
-  powerUpAnimator: {fileID: 9100000, guid: c3037b28e896b1844b5e09d95dfdb52c, type: 2}
+  powerUpAnimator: {fileID: 4006149486434352689, guid: 21d4d837b7c75d548961f73adfca3c77,
+    type: 3}
   speed: 5
   duration: 6
   strength: 4

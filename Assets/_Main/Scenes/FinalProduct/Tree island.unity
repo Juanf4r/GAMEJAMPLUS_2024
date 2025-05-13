@@ -1462,6 +1462,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4562326730359582445, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562326730359582445, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 5556262666985229689, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2051,6 +2061,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meat
       objectReference: {fileID: 0}
+    - target: {fileID: 4916197004050742652, guid: a3c11f1efcff41645a4de76b4d6db810,
+        type: 3}
+      propertyPath: meatAnimatorController
+      value: 
+      objectReference: {fileID: 5155496989235687509, guid: d32b72b5a670e22499bc372da4cd4fe8,
+        type: 3}
+    - target: {fileID: 4916197004050742652, guid: a3c11f1efcff41645a4de76b4d6db810,
+        type: 3}
+      propertyPath: meatGoldAnimatorController
+      value: 
+      objectReference: {fileID: 8130115140928718198, guid: 76fa8d1278f9b4e4db7b6a0542f8e73b,
+        type: 3}
     - target: {fileID: 8546861647248525613, guid: a3c11f1efcff41645a4de76b4d6db810,
         type: 3}
       propertyPath: m_LocalPosition.x
