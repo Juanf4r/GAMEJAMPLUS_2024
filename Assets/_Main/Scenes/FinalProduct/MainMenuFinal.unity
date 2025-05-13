@@ -11705,6 +11705,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4751759361452672801, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4751759361452672801, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6498660947074956139, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6498660947074956139, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6956199100700272374, guid: eef45459772e20e4880cece9752e6e9d,
         type: 3}
       propertyPath: m_Sprite
@@ -11740,6 +11760,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408581742610557387, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7864405553586453693, guid: eef45459772e20e4880cece9752e6e9d,
         type: 3}
@@ -11881,8 +11906,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9102505633884114941, guid: eef45459772e20e4880cece9752e6e9d,
+        type: 3}
+      propertyPath: m_text
+      value: HECTOR VALADEZ
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2353159179110898058, guid: eef45459772e20e4880cece9752e6e9d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef45459772e20e4880cece9752e6e9d, type: 3}
