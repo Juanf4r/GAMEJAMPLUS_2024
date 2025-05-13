@@ -45,15 +45,15 @@ namespace UI
             musicSlider.value = config.settings.musicvolume;
         }
 
-        public void UpdateSFX(float value)
+        public void UpdateSFX()
         {
-            config.settings.sfxvolume = value;
+            config.settings.sfxvolume = sfxSlider.value;
             ConfigManager.SaveConfig(config);
         }
 
-        public void UpdateMusic(float value)
+        public void UpdateMusic()
         {
-            config.settings.musicvolume = value;
+            config.settings.musicvolume = musicSlider.value;
             MusicManager.UpdateMusicVolume();
             ConfigManager.SaveConfig(config);
         }
