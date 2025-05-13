@@ -9904,7 +9904,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20.12
+  orthographic size: 22.71
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -13117,7 +13117,7 @@ PrefabInstance:
         type: 3}
       propertyPath: minimapImage
       value: 
-      objectReference: {fileID: 21300000, guid: fb06d09a41b8f0d4aae2ed0af29ac43b,
+      objectReference: {fileID: 21300000, guid: 3d72913a6372e4246b2075d12334122b,
         type: 3}
     - target: {fileID: 6804836429613481845, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
