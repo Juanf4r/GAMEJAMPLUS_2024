@@ -1,5 +1,6 @@
 using UnityEngine;
 using Core;
+using UnityEditor.Animations;
 
 namespace _Scripts.Players
 {
@@ -20,8 +21,8 @@ namespace _Scripts.Players
         }
         #endregion
         public AudioClip[] eatClips;
-        [SerializeField] private Animator meatAnimatorController;
-        public Animator meatGoldAnimatorController;
+        [SerializeField] private AnimatorController meatAnimatorController;
+        public AnimatorController meatGoldAnimatorController;
         [SerializeField] private Animator meatAnimator;
 
         void OnEnable()
@@ -47,12 +48,12 @@ namespace _Scripts.Players
         {
             if (isGold)
             {
-                meatAnimator.runtimeAnimatorController = meatGoldAnimatorController.runtimeAnimatorController;
+                meatAnimator.runtimeAnimatorController = meatGoldAnimatorController;
                 meatAnimator.Play(0);
             }
             else
             {
-                meatAnimator.runtimeAnimatorController = meatAnimatorController.runtimeAnimatorController;
+                meatAnimator.runtimeAnimatorController = meatAnimatorController;
                 meatAnimator.Play(0);
             }
         }

@@ -63,36 +63,43 @@ namespace UI
         public void UIMainMenu()
         {
             mainMenuAnimator.SetTrigger("MainMenu");
+            Debug.Log("AYUDA");
         }
 
         public void UICharacterSelection()
         {
             mainMenuAnimator.SetTrigger("SelectCharacter");
+            Debug.Log("AYUDA");
         }
 
         public void UILevelSelection()
         {
             mainMenuAnimator.SetTrigger("SelectMap");
+            Debug.Log("AYUDA");
         }
 
         public void UIControls()
         {
             mainMenuAnimator.SetTrigger("Controls");
+            Debug.Log("AYUDA");
         }
 
         public void UISettings()
         {   
             mainMenuAnimator.SetTrigger("Settings");
+            Debug.Log("AYUDA");
         }
 
         public void UICredits()
         {
             mainMenuAnimator.SetTrigger("Credits");
+            Debug.Log("AYUDA");
         }
 
         public void UIExit()
         {
             mainMenuAnimator.SetTrigger("Exit");
+            Debug.Log("AYUDA");
         }
 
         #endregion
@@ -101,26 +108,7 @@ namespace UI
 
         public void SelectLevel(int levelSelected)
         {
-            switch (levelSelected)
-            {
-                case 1: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 2: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 3: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 4: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 5: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 6: SceneManager.LoadScene(levelSelected);
-                    break;
-                case 7: SceneManager.LoadScene(levelSelected);
-                    break;
-
-                default: Debug.LogWarning("This level do not exists: " + levelSelected);
-                    break;
-            }
+            SceneManager.LoadScene(levelSelected);
             MusicManager.Instance.StopMusic();
         }
 
