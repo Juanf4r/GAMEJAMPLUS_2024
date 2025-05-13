@@ -92,12 +92,10 @@ namespace _Scripts.Players
                     if(_playerManager.isPlayerOne)
                     {
                         P1_Animator.runtimeAnimatorController = P1_Stone_AnimatorController;
-                        _gameManager._player1.canMove = false;
                     }
                     else if(!_playerManager.isPlayerOne)
                     {
                         P2_Animator.runtimeAnimatorController = P2_Stone_AnimatorController;
-                        _gameManager._player2.canMove = false;
                     }
                     
                     
