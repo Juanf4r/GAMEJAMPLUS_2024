@@ -63,43 +63,36 @@ namespace UI
         public void UIMainMenu()
         {
             mainMenuAnimator.SetTrigger("MainMenu");
-            Debug.Log("AYUDA");
         }
 
         public void UICharacterSelection()
         {
             mainMenuAnimator.SetTrigger("SelectCharacter");
-            Debug.Log("AYUDA");
         }
 
         public void UILevelSelection()
         {
             mainMenuAnimator.SetTrigger("SelectMap");
-            Debug.Log("AYUDA");
         }
 
         public void UIControls()
         {
             mainMenuAnimator.SetTrigger("Controls");
-            Debug.Log("AYUDA");
         }
 
         public void UISettings()
         {   
             mainMenuAnimator.SetTrigger("Settings");
-            Debug.Log("AYUDA");
         }
 
         public void UICredits()
         {
             mainMenuAnimator.SetTrigger("Credits");
-            Debug.Log("AYUDA");
         }
 
         public void UIExit()
         {
             mainMenuAnimator.SetTrigger("Exit");
-            Debug.Log("AYUDA");
         }
 
         #endregion

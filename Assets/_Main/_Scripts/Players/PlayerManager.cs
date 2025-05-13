@@ -105,7 +105,6 @@ namespace _Scripts.Players
 
         private void HandleMovement(Vector2 input)
         {
-            Debug.LogWarning($"Player {(isPlayerOne ? 1 : 2)} can move: {canMove}");
             if (!canMove) return;
     
             playerInput = input * -1f;

@@ -63,19 +63,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12
-    m_Localized: MAP 1
+    m_Localized: PRIMAL RACE
     m_Metadata:
       m_Items: []
   - m_Id: 13
-    m_Localized: MAP 2
+    m_Localized: TREE ISLAND
     m_Metadata:
       m_Items: []
   - m_Id: 14
-    m_Localized: MAP 3
+    m_Localized: BUSHY ROAD
     m_Metadata:
       m_Items: []
   - m_Id: 15
-    m_Localized: MAP 4
+    m_Localized: PALM ISLAND
     m_Metadata:
       m_Items: []
   - m_Id: 16
@@ -168,6 +168,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 38
     m_Localized: GOLDEAN MEAT ROUND
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: KING OF THE HILL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: PREHISTORIC PEAK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: ICY PLAINS
     m_Metadata:
       m_Items: []
   references:

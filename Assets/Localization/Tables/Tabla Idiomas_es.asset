@@ -63,19 +63,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12
-    m_Localized: MAPA 1
+    m_Localized: PRIMAL RACE
     m_Metadata:
       m_Items: []
   - m_Id: 13
-    m_Localized: MAPA 2
+    m_Localized: ISLA DEL ARBOL
     m_Metadata:
       m_Items: []
   - m_Id: 14
-    m_Localized: MAPA 3
+    m_Localized: CAMINO ARBUSTIVO
     m_Metadata:
       m_Items: []
   - m_Id: 15
-    m_Localized: MAPA 4
+    m_Localized: ISLA DE LAS PALMERAS
     m_Metadata:
       m_Items: []
   - m_Id: 16
@@ -168,6 +168,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 38
     m_Localized: EXTRA RONDA DE ORO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: REY DE LA COLINA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: "CIMA PREHIST\xD3RICA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: LLANURAS HELADAS
     m_Metadata:
       m_Items: []
   references:
