@@ -1,6 +1,5 @@
 using UnityEngine;
 using Core;
-using UnityEditor.Animations;
 
 namespace _Scripts.Players
 {

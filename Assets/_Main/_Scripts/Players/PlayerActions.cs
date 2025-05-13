@@ -149,8 +149,6 @@ namespace _Scripts.Players
             {
                 CamaraPositionBackToNormal();
             }
-            _gameManager._player1.canMove = true;
-            _gameManager._player2.canMove = true;
         }
 
         private IEnumerator TeleportToEnemy()
@@ -169,6 +167,7 @@ namespace _Scripts.Players
             _isInvulnerable = true;
             _playerManager.canMove = false;
             _playerManager.animator.SetBool(Stunt, true);
+            Debug.LogWarning(duration);
             yield return new WaitForSeconds(duration);
             _playerManager.animator.SetBool(Stunt, false);
             _playerManager.canMove = true;
