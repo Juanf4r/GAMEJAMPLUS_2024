@@ -24,7 +24,7 @@ namespace _Scripts.PowerUps
             spriteRenderer.material.SetTexture(AlphaTex, powerUpType.alphaTexture.texture);
             if (powerUpType.powerUpAnimator != null && powerUpAnimator != null)
             {
-                powerUpAnimator.runtimeAnimatorController = powerUpType.powerUpAnimator;
+                powerUpAnimator.runtimeAnimatorController = powerUpType.powerUpAnimator.runtimeAnimatorController;
                 powerUpAnimator.Play(0);
             }
         }

@@ -21,6 +21,7 @@ namespace _Scripts.Players
         private PlayerManager _playerManager;
         private PlayerConfig _playerConfig;
         private GameManager _gameManager;
+        
 
         private static readonly int Golpe = Animator.StringToHash("Golpe");
         private static readonly int Stunt = Animator.StringToHash("Stunt");
@@ -96,7 +97,8 @@ namespace _Scripts.Players
                     {
                         P2_Animator.runtimeAnimatorController = P2_Stone_AnimatorController;
                     }
-
+                    
+                    
                     _playerConfig.ApplyBuff("speed", powerUp.speed);
                     _playerConfig.ApplyBuff("strength", powerUp.strength);
                     break;
@@ -116,6 +118,8 @@ namespace _Scripts.Players
         {
             if (_isInvulnerable) return;
             if(!_playerManager.canMove) return;
+            
+            _playerManager.playerInput = new Vector2(0,0);
 
             Debug.Log($"Stunned for {duration}");
             if (!_playerManager.canMove) return;
@@ -163,6 +167,7 @@ namespace _Scripts.Players
             _isInvulnerable = true;
             _playerManager.canMove = false;
             _playerManager.animator.SetBool(Stunt, true);
+            Debug.LogWarning(duration);
             yield return new WaitForSeconds(duration);
             _playerManager.animator.SetBool(Stunt, false);
             _playerManager.canMove = true;

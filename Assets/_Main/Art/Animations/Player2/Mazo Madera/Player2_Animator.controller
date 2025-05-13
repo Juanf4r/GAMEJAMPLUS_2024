@@ -317,13 +317,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: Stunt
+  - m_Name: Lost
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: Lost
+  - m_Name: Stunt
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -392,13 +392,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 252622324148365489}
-    m_Position: {x: 40, y: 190, z: 0}
+    m_Position: {x: 40, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7868177114426368144}
     m_Position: {x: -360, y: 440, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8058106781693891353}
-    m_Position: {x: 460, y: 440, z: 0}
+    m_Position: {x: 550, y: 530, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4569317221464872969}
     m_Position: {x: 340, y: 810, z: 0}
@@ -416,9 +416,9 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 60, y: 110, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_AnyStatePosition: {x: -540, y: 20, z: 0}
+  m_EntryPosition: {x: -540, y: 70, z: 0}
+  m_ExitPosition: {x: -540, y: -30, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 252622324148365489}
 --- !u!1101 &414828919486829842
