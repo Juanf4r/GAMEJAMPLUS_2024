@@ -1,4 +1,6 @@
+using Complete;
 using UnityEngine;
+using Core;
 
 namespace _Scripts.Players.Deprecated
 {
@@ -27,6 +29,26 @@ namespace _Scripts.Players.Deprecated
         public void StopEating()
         {
             playerAnimator.SetBool(Eating, false);
+        }
+
+        public void StopMovingPlayer1()
+        {
+            
+        }
+
+        public void ContinueMovingPlayer1()
+        {
+            
+        }
+
+        public void StopMovingPlayer2()
+        {
+            
+        }
+
+        public void ContinueMovingPlayer2()
+        {
+            
         }
     }
 }
