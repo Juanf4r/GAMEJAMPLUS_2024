@@ -5065,18 +5065,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meat
       objectReference: {fileID: 0}
-    - target: {fileID: 4916197004050742652, guid: a3c11f1efcff41645a4de76b4d6db810,
-        type: 3}
-      propertyPath: meatAnimatorController
-      value: 
-      objectReference: {fileID: 5155496989235687509, guid: d32b72b5a670e22499bc372da4cd4fe8,
-        type: 3}
-    - target: {fileID: 4916197004050742652, guid: a3c11f1efcff41645a4de76b4d6db810,
-        type: 3}
-      propertyPath: meatGoldAnimatorController
-      value: 
-      objectReference: {fileID: 8130115140928718198, guid: 76fa8d1278f9b4e4db7b6a0542f8e73b,
-        type: 3}
     - target: {fileID: 8546861647248525613, guid: a3c11f1efcff41645a4de76b4d6db810,
         type: 3}
       propertyPath: m_LocalPosition.x

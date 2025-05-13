@@ -1,6 +1,5 @@
 using UnityEngine;
 using Core;
-using UnityEditor.Animations;
 
 namespace _Scripts.Players
 {
@@ -21,8 +20,8 @@ namespace _Scripts.Players
         }
         #endregion
         public AudioClip[] eatClips;
-        [SerializeField] private AnimatorController meatAnimatorController;
-        public AnimatorController meatGoldAnimatorController;
+        [SerializeField] private RuntimeAnimatorController meatAnimatorController;
+        public RuntimeAnimatorController meatGoldAnimatorController;
         [SerializeField] private Animator meatAnimator;
 
         void OnEnable()
