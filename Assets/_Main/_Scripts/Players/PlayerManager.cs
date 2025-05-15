@@ -100,7 +100,7 @@ namespace _Scripts.Players
         {
             if (!canMove) return;
             playerActions.HandlePrimaryAttack();
-            playerSoundManager.PlayPunch();
+            
         }
 
         private void HandleMovement(Vector2 input)
