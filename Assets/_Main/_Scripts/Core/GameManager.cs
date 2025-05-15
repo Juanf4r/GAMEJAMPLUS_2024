@@ -221,6 +221,7 @@ namespace Core
             {
                 meatsOfPlayer1++;
                 player1_Animator.SetBool("Eating", true);
+                _player1.canMove = false;
                 InGameUIManager.Instance.ModUIMeats(1, meatsOfPlayer1);
             }
 
@@ -240,6 +241,7 @@ namespace Core
             {
                 meatsOfPlayer2++;
                 player2_Animator.SetBool("Eating", true);
+                _player2.canMove = false;
                 InGameUIManager.Instance.ModUIMeats(2, meatsOfPlayer2);
             }
             if (meatsOfPlayer2 >= 3) 

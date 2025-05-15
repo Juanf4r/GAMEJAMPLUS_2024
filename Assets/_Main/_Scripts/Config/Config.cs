@@ -16,6 +16,8 @@ namespace Settings
         public float sfxvolume = .65f;
         public float musicvolume = .65f;
         public int localeID = 0;
+        public int selectedMonitor = 0;
+        public int fullscreenMode = (int)FullScreenMode.FullScreenWindow; 
     }
 
 

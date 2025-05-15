@@ -8,6 +8,7 @@ namespace _Scripts.Players.Deprecated
     {
         private Animator playerAnimator;
         private PlayerSoundManager playerSoundManager;
+        private PlayerManager _playerManager;
         private static readonly int Golpe = Animator.StringToHash("Golpe");
         private static readonly int Eating = Animator.StringToHash("Eating");
 
@@ -15,6 +16,7 @@ namespace _Scripts.Players.Deprecated
         {
             playerAnimator = GetComponent<Animator>();
             playerSoundManager = GetComponentInParent<PlayerSoundManager>();
+            _playerManager = GetComponentInParent<PlayerManager>();
         }
 
         public void PlaySoundPunch()
@@ -35,6 +37,7 @@ namespace _Scripts.Players.Deprecated
         public void StopEating()
         {
             playerAnimator.SetBool(Eating, false);
+            _playerManager.canMove = true;
         }
     }
 }
