@@ -2628,6 +2628,17 @@ PrefabInstance:
       propertyPath: elements.Array.data[1].TargetTransform
       value: 
       objectReference: {fileID: 1197279124}
+    - target: {fileID: 7333257131214303371, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8250730094829515950, guid: 7f4c0a780f141b54dbb13bc7bacbc443,
+        type: 2}
+    - target: {fileID: 7457359085893310522, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8001979124023753965, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: m_CellSize.x
