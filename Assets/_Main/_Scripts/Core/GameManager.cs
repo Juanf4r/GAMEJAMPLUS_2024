@@ -9,7 +9,6 @@ using _Scripts.PowerUps;
 using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
-using UnityEngine.SceneManagement;
 using Assets.Minimap;
 using System;
 using UI;
@@ -261,12 +260,12 @@ namespace Core
             }
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
             MusicManager.Instance.PlayInGameMusicGameOver();
-            StartCoroutine(BackToMenu(6f));
+            StartCoroutine(FinishGame(5f));
             _player1.canMove = false;
             _player2.canMove = false;
             _inputPlayers.Disable();
+            
         }
-
         private void EndForTime()
         {
             //Reset PowerUps Players
@@ -280,75 +279,80 @@ namespace Core
             //Extra round
             if (meatsOfPlayer1 == meatsOfPlayer2)
             {   
-                //Disable mov players
-                _player1.canMove = false;
-                _player2.canMove = false;
-                _inputPlayers.Disable();
-
-                //Change music
-                MusicManager.Instance.PlayInGameMusicExtraRound();
-                MusicManager.Instance.SetVelocity(1f);  
-
-                //Start ExtraRound
-                timeOver = true;
-                InGameUIManager.Instance.timeLeftText.text = "";
-                
-                refPlayer1.transform.localPosition = spawn1.transform.localPosition;
-                refPlayer2.transform.localPosition = spawn2.transform.localPosition;
-                PowerUp();
-                StartCoroutine(CountdownExtraRound());
-                _gameSeconds += 100;
-
-                InGameUIManager.Instance.containerTimeLeft.SetActive(false);
-                
-                //Change Meat to Gold
-                if (meatGameObject != null)
-                {
-                    var spriteRenderer = meatGameObject.GetComponentInChildren<SpriteRenderer>();
-                    if (spriteRenderer != null)
-                    {
-                        spriteRenderer.sprite = meatGold;
-                        Debug.Log("Sprite del Meat cambiado a Gold.");
-                    }
-                    else
-                    {
-                        Debug.LogError("SpriteRenderer no encontrado en los hijos de meatGameObject.");
-                    }
-                }
-                else
-                {
-                    Debug.LogError("meatGameObject no está asignado.");
-                }
-                MeatController.Instance.SetAnimatorController(true);
-                meatGameObject.transform.localPosition = meatGoldSpawn.transform.position;
-
-                //Change UI to Gold meat
-                InGameUIManager.Instance.StartGoldMeatUI();
-                InGameUIManager.Instance.extraRoundPanel.SetActive(true);
-
-                // Create proper minimap element data
-                MinimapElementData goldMeatIcon = new MinimapElementData()
-                {
-                    TargetTransform = meatGameObject.transform,
-                    IconSprite = meat, // Add this reference to your class
-                    BaseSize = new Vector2(40, 40), // Larger size for gold meat
-                    ScaleWithMap = false,
-                    PreserveAspect = true,
-                    // Add any special visual effects if needed
-                };
-                MinimapController.instance.AddMinimapElement(goldMeatIcon);
-
-                if (_gameSeconds >= 5f)
-                {
-                    StartCoroutine(AddGameSeconds());
-                }
+                MeatGoldRound();
             }
             else
             {
                 CheckPlayerWin();
             }
         }
-    
+
+        public void MeatGoldRound()
+        {
+            //Disable mov players
+            _player1.canMove = false;
+            _player2.canMove = false;
+            _inputPlayers.Disable();
+
+            //Change music
+            MusicManager.Instance.PlayInGameMusicExtraRound();
+            MusicManager.Instance.SetVelocity(1f);  
+
+            //Start ExtraRound
+            timeOver = true;
+            InGameUIManager.Instance.timeLeftText.text = "";
+                
+            refPlayer1.transform.localPosition = spawn1.transform.localPosition;
+            refPlayer2.transform.localPosition = spawn2.transform.localPosition;
+            PowerUp();
+            StartCoroutine(CountdownExtraRound());
+            _gameSeconds += 100;
+
+            InGameUIManager.Instance.containerTimeLeft.SetActive(false);
+                
+            //Change Meat to Gold
+            if (meatGameObject != null)
+            {
+                var spriteRenderer = meatGameObject.GetComponentInChildren<SpriteRenderer>();
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.sprite = meatGold;
+                    Debug.Log("Sprite del Meat cambiado a Gold.");
+                }
+                else
+                {
+                    Debug.LogError("SpriteRenderer no encontrado en los hijos de meatGameObject.");
+                }
+            }
+            else
+            {
+                Debug.LogError("meatGameObject no está asignado.");
+            }
+            MeatController.Instance.SetAnimatorController(true);
+            meatGameObject.transform.localPosition = meatGoldSpawn.transform.position;
+
+            //Change UI to Gold meat
+            InGameUIManager.Instance.StartGoldMeatUI();
+            InGameUIManager.Instance.extraRoundPanel.SetActive(true);
+
+            // Create proper minimap element data
+            MinimapElementData goldMeatIcon = new MinimapElementData()
+            {
+                TargetTransform = meatGameObject.transform,
+                IconSprite = meat, // Add this reference to your class
+                BaseSize = new Vector2(40, 40), // Larger size for gold meat
+                ScaleWithMap = false,
+                PreserveAspect = true,
+                // Add any special visual effects if needed
+            };
+            MinimapController.instance.AddMinimapElement(goldMeatIcon);
+
+            if (_gameSeconds >= 5f)
+            {
+                StartCoroutine(AddGameSeconds());
+            }
+        }
+
         #endregion
 
         #region PowerUps
@@ -503,10 +507,10 @@ namespace Core
             _player2.canMove = true;
         }
 
-        private IEnumerator BackToMenu(float time)
+        private IEnumerator FinishGame(float time)
         {
             yield return new WaitForSeconds(time);
-            SceneManager.LoadScene(0);
+            InGameUIManager.Instance.finishGamePanel.SetActive(true);
         }
 
         private IEnumerator AddGameSeconds()
