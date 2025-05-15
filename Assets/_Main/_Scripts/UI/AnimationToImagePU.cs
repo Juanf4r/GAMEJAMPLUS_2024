@@ -33,8 +33,6 @@ public class AnimationToImagePU : MonoBehaviour
 
     public void SelectPO(PowerUpSo powerUp, bool isPlayer1)
     {
-        Debug.LogWarning("Animation to UI");
-
         List<Sprite> selectedAnimation = powerUp.buffType switch
         {
             PowerUpType.Teleport => TPAnimation,

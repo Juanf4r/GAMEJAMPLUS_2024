@@ -167,29 +167,38 @@ namespace Core
         {
             if (spawnMeats.Count > 0)
             {
-                var randomIndex = UnityEngine.Random.Range(0, spawnMeats.Count);
-                meatGameObject.transform.localPosition = spawnMeats[randomIndex].position;
-                MinimapElementData meatIconData = new MinimapElementData()
-                {
-                    TargetTransform = meatGameObject.transform,
-                    IconSprite = meat, 
-                    BaseSize = new Vector2(30, 30),
-                    ScaleWithMap = false,
-                    PreserveAspect = true
-                };
-                
-                MinimapController.instance.AddMinimapElement(meatIconData);
-                usedSpawns.Add(spawnMeats[randomIndex]);
-                spawnMeats.RemoveAt(randomIndex);
+                Transform farthestSpawn = null;
+                float maxDistance = 0f;
 
-                if (usedSpawns.Count > 1)
+                foreach (var spawn in spawnMeats)
                 {
-                    spawnMeats.Add(usedSpawns[usedSpawns.Count - 2]);
-                    usedSpawns.RemoveAt(usedSpawns.Count - 2);
+                    float distancePlayer1 = Vector3.Distance(spawn.position, _player1.transform.position);
+                    float distancePlayer2 = Vector3.Distance(spawn.position, _player2.transform.position);
+                    float minDistance = Mathf.Min(distancePlayer1, distancePlayer2);
+
+                    if (minDistance > maxDistance)
+                    {
+                        maxDistance = minDistance;
+                        farthestSpawn = spawn;
+                    }
                 }
-            }
 
-            meatGameObject.gameObject.SetActive(true);
+                if (farthestSpawn != null)
+                {
+                    meatGameObject.transform.position = farthestSpawn.position;
+                    MinimapElementData meatIconData = new MinimapElementData()
+                    {
+                        TargetTransform = meatGameObject.transform,
+                        IconSprite = meat,
+                        BaseSize = new Vector2(30, 30),
+                        ScaleWithMap = false,
+                        PreserveAspect = true
+                    };
+                    MinimapController.instance.AddMinimapElement(meatIconData);
+                }
+
+                meatGameObject.SetActive(true);
+            }
         }
 
         private void StartGame()
@@ -464,7 +473,7 @@ namespace Core
             {
                 Debug.LogError("No se encontró el componente LocalizeStringEvent en countdownText.");
             }
-            _gameSeconds = 11f;
+            _gameSeconds = 91f;
             
             yield return new WaitForSeconds(.5f);
             
