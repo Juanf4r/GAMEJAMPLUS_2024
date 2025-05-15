@@ -59,7 +59,7 @@ namespace _Scripts.Players
         {
             _playerManager.animator.SetBool(Golpe, true);
         }
-
+        public bool HasMovementPowerUp { get; private set; }
         public void ActivatePowerUp(PowerUpSo powerUp)
         {
             if (!_playerConfig) return;
@@ -76,7 +76,7 @@ namespace _Scripts.Players
                     break;
                 case PowerUpType.Movement:
                     _playerConfig.ApplyBuff("speed", powerUp.speed);
-                    
+                    HasMovementPowerUp = true;
                     childObject.gameObject.SetActive(true);
                     particle.Play();
                     if(_playerManager.isPlayerOne)
@@ -139,19 +139,20 @@ namespace _Scripts.Players
 
             _playerConfig.RevertBuff();
 
-            if(_playerManager.isPlayerOne)
+            if (_playerManager.isPlayerOne)
             {
                 P1_Animator.runtimeAnimatorController = P1_Wood_AnimatorController;
             }
-            else if(!_playerManager.isPlayerOne)
+            else if (!_playerManager.isPlayerOne)
             {
                 P2_Animator.runtimeAnimatorController = P2_Wood_AnimatorController;
             }
-            if (playerOneCamera.transform.localPosition != originalCameraPositionP1 || 
+            if (playerOneCamera.transform.localPosition != originalCameraPositionP1 ||
                 playerTwoCamera.transform.localPosition != originalCameraPositionP2)
             {
                 CamaraPositionBackToNormal();
             }
+            HasMovementPowerUp = false;
         }
 
         private IEnumerator TeleportToEnemy()
