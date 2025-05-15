@@ -150,7 +150,7 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d401abfc-be80-4370-a1d2-f4ef41de8c36"",
-                    ""path"": ""<Keyboard>/v"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -216,7 +216,7 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ae18195d-555a-42dd-b22e-1c5a1f165023"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -227,7 +227,7 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""41a0941b-9848-4cf3-a1cc-2d33d0d24af2"",
-                    ""path"": ""<Keyboard>/b"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -238,7 +238,7 @@ public partial class @InputPlayers: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""453af183-3368-4c99-a034-a940fce0c123"",
-                    ""path"": ""<Keyboard>/l"",
+                    ""path"": ""<Keyboard>/rightShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
