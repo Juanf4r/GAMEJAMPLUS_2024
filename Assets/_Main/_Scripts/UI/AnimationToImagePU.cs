@@ -18,7 +18,6 @@ public class AnimationToImagePU : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
 

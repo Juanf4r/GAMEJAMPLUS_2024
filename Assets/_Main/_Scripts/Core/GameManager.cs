@@ -66,6 +66,8 @@ namespace Core
 
         [Header("Sonidos")] 
         [SerializeField] private AudioClip cryingAudioClip;
+        private bool gameFinished = false;
+
 
         private void Awake()
         {
@@ -86,8 +88,8 @@ namespace Core
                 {
                     _player2 = player;
                 }
-            }        
-            
+            }
+
             //Singleton
             if (Instance != null && Instance != this)
             {
@@ -122,6 +124,7 @@ namespace Core
             StartGame();
             LocateMeat();
             canChangeVelocity = true;
+            gameFinished = false;
 
             InGameUIManager.Instance.RestartMeatsTexts();
 
@@ -215,7 +218,6 @@ namespace Core
             if (meatsOfPlayer1 >= 3)
             {   
                 CheckPlayerWin();
-                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player2.transform.position, .5f, true);
             }
         }
         public void CheckPlayer2Meat()
@@ -234,38 +236,43 @@ namespace Core
             if (meatsOfPlayer2 >= 3) 
             {
                 CheckPlayerWin();
-                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player1.transform.position, .5f,true);
             }
         }
 
         private void CheckPlayerWin()
         {
+            if (gameFinished) return;
+            gameFinished = true;
+
             CleanPowerUp();
-            
+
             if (meatsOfPlayer1 > meatsOfPlayer2)
             {
                 InGameUIManager.Instance.panelWinnerPlayer1.SetActive(true);
-                
+
                 _player1.OnWin();
                 _player2.OnLose();
                 meatGameObject.SetActive(false);
+                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player2.transform.position, .5f, true);
             }
             else if (meatsOfPlayer2 > meatsOfPlayer1)
             {
                 InGameUIManager.Instance.panelWinnerPlayer2.SetActive(true);
-                
+
                 _player2.OnWin();
                 _player1.OnLose();
                 meatGameObject.SetActive(false);
+                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player1.transform.position, .5f, true);
             }
+
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
             MusicManager.Instance.PlayInGameMusicGameOver();
             StartCoroutine(FinishGame(5f));
             _player1.canMove = false;
             _player2.canMove = false;
             _inputPlayers.Disable();
-            
         }
+
         private void EndForTime()
         {
             //Reset PowerUps Players
@@ -457,7 +464,7 @@ namespace Core
             {
                 Debug.LogError("No se encontró el componente LocalizeStringEvent en countdownText.");
             }
-            _gameSeconds = 91f;
+            _gameSeconds = 11f;
             
             yield return new WaitForSeconds(.5f);
             
