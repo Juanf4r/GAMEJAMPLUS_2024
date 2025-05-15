@@ -182,6 +182,18 @@ MonoBehaviour:
     m_Localized: ICY PLAINS
     m_Metadata:
       m_Items: []
+  - m_Id: 42
+    m_Localized: SHIFT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: BACK TO LOBBY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: PLAY AGAIN
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

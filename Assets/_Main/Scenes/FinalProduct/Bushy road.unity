@@ -2603,10 +2603,25 @@ PrefabInstance:
       propertyPath: elements.Array.data[1].TargetTransform
       value: 
       objectReference: {fileID: 1197279124}
+    - target: {fileID: 8001979124023753965, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_CellSize.x
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001979124023753965, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_CellSize.y
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 8222801343488655707, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 8679604309731916451, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 59.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
