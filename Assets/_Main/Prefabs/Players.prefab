@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 6950854659717240544}
   - component: {fileID: 3244584986374198669}
   - component: {fileID: 44384235882836217}
-  - component: {fileID: 8918030985522200748}
   - component: {fileID: 5284627815118467906}
   - component: {fileID: 702766418180955838}
   m_Layer: 0
@@ -333,27 +332,6 @@ MonoBehaviour:
   transMainCam: {fileID: 236823808283731522}
   materialTransparent: {fileID: 2100000, guid: 9f160cf2a67918a499e7609cb4281744, type: 2}
   currentlyTransparent: []
---- !u!65 &8918030985522200748
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2446224993149516498}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 86016
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.4615384, y: 1, z: 4.0000005}
-  m_Center: {x: 0, y: 0.5, z: -1.5384613}
 --- !u!65 &5284627815118467906
 BoxCollider:
   m_ObjectHideFlags: 0
