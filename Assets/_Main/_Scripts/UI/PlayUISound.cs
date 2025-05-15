@@ -10,7 +10,7 @@ namespace _Scripts.Players
 
         public void PlaySound()
         {
-            SoundFXChannel.PlaySoundFxClip(buttonSound, transform.position, .8f, false);
+            SoundFXChannel.PlaySoundFxClip(buttonSound, transform.position, .5f, false);
         }
     }
 }

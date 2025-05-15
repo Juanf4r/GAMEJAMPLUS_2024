@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Collections;
 using Settings;
 using TMPro;
-using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -34,6 +33,8 @@ namespace UI
         public GameObject panelWinnerPlayer2;
         public GameObject containerTimeLeft;
         public GameObject extraRoundPanel;
+
+        public GameObject finishGamePanel;
 
         [Space]
 
@@ -73,6 +74,10 @@ namespace UI
         [SerializeField] private Sprite goldenMeatVoid;
         [SerializeField] private Sprite goldenMeat;
         [SerializeField] private List<Sprite> meatsPlayers = new List<Sprite>();
+
+        [Header("Buttons FinishGame")]
+        [SerializeField] private Button playAgainButton;
+        [SerializeField] private Button backLobbyButton;
 
         private bool _active = false;
         [HideInInspector] public bool isPaused = false;
@@ -119,6 +124,7 @@ namespace UI
             extraRoundPanel.SetActive(false);
 
             gameplayCanvasAnimator.updateMode = AnimatorUpdateMode.UnscaledTime; 
+            finishGamePanel.SetActive(false);
         }
 
         public void AddListenerOnButtons()
@@ -139,6 +145,10 @@ namespace UI
             portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
             sfxSlider.onValueChanged.AddListener(UpdateSFX);
             musicSlider.onValueChanged.AddListener( UpdateMusic);
+
+            //Finish Game
+            playAgainButton.onClick.AddListener(PlayAgainMap);
+            backLobbyButton.onClick.AddListener(BackLobby);
         }
 
         public void RemoveListenerOnButtons()
@@ -159,6 +169,10 @@ namespace UI
             portugueseLanguageButton.onClick.RemoveListener(() => ChangeLocale(2));
             sfxSlider.onValueChanged.RemoveListener(UpdateSFX);
             musicSlider.onValueChanged.RemoveListener(UpdateMusic);
+
+            //Finish Game
+            playAgainButton.onClick.RemoveListener(PlayAgainMap);
+            backLobbyButton.onClick.RemoveListener(BackLobby);
         }
 
         public void HidePlayersPanels()
@@ -213,6 +227,15 @@ namespace UI
             ConfigManager.SaveConfig(config);
         }
         
+        private void PlayAgainMap()
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+        }
+        public void BackLobby()
+        {
+            SceneManager.LoadScene(0);
+        }
         #region PauseLogic
 
         public void PauseGame(bool pauseState, bool UIPressed)

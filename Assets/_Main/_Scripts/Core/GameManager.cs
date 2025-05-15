@@ -9,7 +9,6 @@ using _Scripts.PowerUps;
 using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
-using UnityEngine.SceneManagement;
 using Assets.Minimap;
 using System;
 using UI;
@@ -67,6 +66,8 @@ namespace Core
 
         [Header("Sonidos")] 
         [SerializeField] private AudioClip cryingAudioClip;
+        private bool gameFinished = false;
+
 
         private void Awake()
         {
@@ -87,8 +88,8 @@ namespace Core
                 {
                     _player2 = player;
                 }
-            }        
-            
+            }
+
             //Singleton
             if (Instance != null && Instance != this)
             {
@@ -123,6 +124,7 @@ namespace Core
             StartGame();
             LocateMeat();
             canChangeVelocity = true;
+            gameFinished = false;
 
             InGameUIManager.Instance.RestartMeatsTexts();
 
@@ -165,29 +167,38 @@ namespace Core
         {
             if (spawnMeats.Count > 0)
             {
-                var randomIndex = UnityEngine.Random.Range(0, spawnMeats.Count);
-                meatGameObject.transform.localPosition = spawnMeats[randomIndex].position;
-                MinimapElementData meatIconData = new MinimapElementData()
-                {
-                    TargetTransform = meatGameObject.transform,
-                    IconSprite = meat, 
-                    BaseSize = new Vector2(30, 30),
-                    ScaleWithMap = false,
-                    PreserveAspect = true
-                };
-                
-                MinimapController.instance.AddMinimapElement(meatIconData);
-                usedSpawns.Add(spawnMeats[randomIndex]);
-                spawnMeats.RemoveAt(randomIndex);
+                Transform farthestSpawn = null;
+                float maxDistance = 0f;
 
-                if (usedSpawns.Count > 1)
+                foreach (var spawn in spawnMeats)
                 {
-                    spawnMeats.Add(usedSpawns[usedSpawns.Count - 2]);
-                    usedSpawns.RemoveAt(usedSpawns.Count - 2);
+                    float distancePlayer1 = Vector3.Distance(spawn.position, _player1.transform.position);
+                    float distancePlayer2 = Vector3.Distance(spawn.position, _player2.transform.position);
+                    float minDistance = Mathf.Min(distancePlayer1, distancePlayer2);
+
+                    if (minDistance > maxDistance)
+                    {
+                        maxDistance = minDistance;
+                        farthestSpawn = spawn;
+                    }
                 }
-            }
 
-            meatGameObject.gameObject.SetActive(true);
+                if (farthestSpawn != null)
+                {
+                    meatGameObject.transform.position = farthestSpawn.position;
+                    MinimapElementData meatIconData = new MinimapElementData()
+                    {
+                        TargetTransform = meatGameObject.transform,
+                        IconSprite = meat,
+                        BaseSize = new Vector2(30, 30),
+                        ScaleWithMap = false,
+                        PreserveAspect = true
+                    };
+                    MinimapController.instance.AddMinimapElement(meatIconData);
+                }
+
+                meatGameObject.SetActive(true);
+            }
         }
 
         private void StartGame()
@@ -216,7 +227,6 @@ namespace Core
             if (meatsOfPlayer1 >= 3)
             {   
                 CheckPlayerWin();
-                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player2.transform.position, .5f, true);
             }
         }
         public void CheckPlayer2Meat()
@@ -235,33 +245,38 @@ namespace Core
             if (meatsOfPlayer2 >= 3) 
             {
                 CheckPlayerWin();
-                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player1.transform.position, .5f,true);
             }
         }
 
         private void CheckPlayerWin()
         {
+            if (gameFinished) return;
+            gameFinished = true;
+
             CleanPowerUp();
-            
+
             if (meatsOfPlayer1 > meatsOfPlayer2)
             {
                 InGameUIManager.Instance.panelWinnerPlayer1.SetActive(true);
-                
+
                 _player1.OnWin();
                 _player2.OnLose();
                 meatGameObject.SetActive(false);
+                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player2.transform.position, .5f, true);
             }
             else if (meatsOfPlayer2 > meatsOfPlayer1)
             {
                 InGameUIManager.Instance.panelWinnerPlayer2.SetActive(true);
-                
+
                 _player2.OnWin();
                 _player1.OnLose();
                 meatGameObject.SetActive(false);
+                SoundFXChannel.PlaySoundFxClip(cryingAudioClip, _player1.transform.position, .5f, true);
             }
+
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
             MusicManager.Instance.PlayInGameMusicGameOver();
-            StartCoroutine(BackToMenu(6f));
+            StartCoroutine(FinishGame(5f));
             _player1.canMove = false;
             _player2.canMove = false;
             _inputPlayers.Disable();
@@ -280,75 +295,80 @@ namespace Core
             //Extra round
             if (meatsOfPlayer1 == meatsOfPlayer2)
             {   
-                //Disable mov players
-                _player1.canMove = false;
-                _player2.canMove = false;
-                _inputPlayers.Disable();
-
-                //Change music
-                MusicManager.Instance.PlayInGameMusicExtraRound();
-                MusicManager.Instance.SetVelocity(1f);  
-
-                //Start ExtraRound
-                timeOver = true;
-                InGameUIManager.Instance.timeLeftText.text = "";
-                
-                refPlayer1.transform.localPosition = spawn1.transform.localPosition;
-                refPlayer2.transform.localPosition = spawn2.transform.localPosition;
-                PowerUp();
-                StartCoroutine(CountdownExtraRound());
-                _gameSeconds += 100;
-
-                InGameUIManager.Instance.containerTimeLeft.SetActive(false);
-                
-                //Change Meat to Gold
-                if (meatGameObject != null)
-                {
-                    var spriteRenderer = meatGameObject.GetComponentInChildren<SpriteRenderer>();
-                    if (spriteRenderer != null)
-                    {
-                        spriteRenderer.sprite = meatGold;
-                        Debug.Log("Sprite del Meat cambiado a Gold.");
-                    }
-                    else
-                    {
-                        Debug.LogError("SpriteRenderer no encontrado en los hijos de meatGameObject.");
-                    }
-                }
-                else
-                {
-                    Debug.LogError("meatGameObject no está asignado.");
-                }
-                MeatController.Instance.SetAnimatorController(true);
-                meatGameObject.transform.localPosition = meatGoldSpawn.transform.position;
-
-                //Change UI to Gold meat
-                InGameUIManager.Instance.StartGoldMeatUI();
-                InGameUIManager.Instance.extraRoundPanel.SetActive(true);
-
-                // Create proper minimap element data
-                MinimapElementData goldMeatIcon = new MinimapElementData()
-                {
-                    TargetTransform = meatGameObject.transform,
-                    IconSprite = meat, // Add this reference to your class
-                    BaseSize = new Vector2(40, 40), // Larger size for gold meat
-                    ScaleWithMap = false,
-                    PreserveAspect = true,
-                    // Add any special visual effects if needed
-                };
-                MinimapController.instance.AddMinimapElement(goldMeatIcon);
-
-                if (_gameSeconds >= 5f)
-                {
-                    StartCoroutine(AddGameSeconds());
-                }
+                MeatGoldRound();
             }
             else
             {
                 CheckPlayerWin();
             }
         }
-    
+
+        public void MeatGoldRound()
+        {
+            //Disable mov players
+            _player1.canMove = false;
+            _player2.canMove = false;
+            _inputPlayers.Disable();
+
+            //Change music
+            MusicManager.Instance.PlayInGameMusicExtraRound();
+            MusicManager.Instance.SetVelocity(1f);  
+
+            //Start ExtraRound
+            timeOver = true;
+            InGameUIManager.Instance.timeLeftText.text = "";
+                
+            refPlayer1.transform.localPosition = spawn1.transform.localPosition;
+            refPlayer2.transform.localPosition = spawn2.transform.localPosition;
+            PowerUp();
+            StartCoroutine(CountdownExtraRound());
+            _gameSeconds += 100;
+
+            InGameUIManager.Instance.containerTimeLeft.SetActive(false);
+                
+            //Change Meat to Gold
+            if (meatGameObject != null)
+            {
+                var spriteRenderer = meatGameObject.GetComponentInChildren<SpriteRenderer>();
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.sprite = meatGold;
+                    Debug.Log("Sprite del Meat cambiado a Gold.");
+                }
+                else
+                {
+                    Debug.LogError("SpriteRenderer no encontrado en los hijos de meatGameObject.");
+                }
+            }
+            else
+            {
+                Debug.LogError("meatGameObject no está asignado.");
+            }
+            MeatController.Instance.SetAnimatorController(true);
+            meatGameObject.transform.localPosition = meatGoldSpawn.transform.position;
+
+            //Change UI to Gold meat
+            InGameUIManager.Instance.StartGoldMeatUI();
+            InGameUIManager.Instance.extraRoundPanel.SetActive(true);
+
+            // Create proper minimap element data
+            MinimapElementData goldMeatIcon = new MinimapElementData()
+            {
+                TargetTransform = meatGameObject.transform,
+                IconSprite = meat, // Add this reference to your class
+                BaseSize = new Vector2(40, 40), // Larger size for gold meat
+                ScaleWithMap = false,
+                PreserveAspect = true,
+                // Add any special visual effects if needed
+            };
+            MinimapController.instance.AddMinimapElement(goldMeatIcon);
+
+            if (_gameSeconds >= 5f)
+            {
+                StartCoroutine(AddGameSeconds());
+            }
+        }
+
         #endregion
 
         #region PowerUps
@@ -503,10 +523,10 @@ namespace Core
             _player2.canMove = true;
         }
 
-        private IEnumerator BackToMenu(float time)
+        private IEnumerator FinishGame(float time)
         {
             yield return new WaitForSeconds(time);
-            SceneManager.LoadScene(0);
+            InGameUIManager.Instance.finishGamePanel.SetActive(true);
         }
 
         private IEnumerator AddGameSeconds()
