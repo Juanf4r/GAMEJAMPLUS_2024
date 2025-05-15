@@ -12,12 +12,12 @@ namespace _Scripts.Players
         public AudioClip[] attackClips;
         public AudioClip[] onDamagedClips;
         public void PlayFootStep(){
-            SoundFXChannel.PlaySoundFxClip(footstepClips,transform.position, 0.075f, false);
+            SoundFXChannel.PlaySoundFxClip(footstepClips,transform.position, 0.06f, false);
         }
 
         public void PlayPickup()
         {
-            SoundFXChannel.PlaySoundFxClip(pickupClips,transform.position, .5f, false);
+            SoundFXChannel.PlaySoundFxClip(pickupClips,transform.position, .4f, false);
         }
 
         public void PlayPowerUp(PowerUpSo powerUp)
@@ -30,18 +30,18 @@ namespace _Scripts.Players
                 _ => throw new ArgumentOutOfRangeException()
             };
             
-            SoundFXChannel.PlaySoundFxClip(sound, transform.position, .25f, false);
+            SoundFXChannel.PlaySoundFxClip(sound, transform.position, .20f, false);
         }
 
         public void PlayPunch()
         {
-            SoundFXChannel.PlaySoundFxClip(attackClips, transform.position, .4f, false);
+            SoundFXChannel.PlaySoundFxClip(attackClips, transform.position, .3f, false);
         }
 
         public void PlayOnHit(bool strong)
         {
             var audioClip = strong ? onDamagedClips[1] : onDamagedClips[0];
-            SoundFXChannel.PlaySoundFxClip(audioClip, transform.position, .45f, false);
+            SoundFXChannel.PlaySoundFxClip(audioClip, transform.position, .4f, false);
         }
     }
 }

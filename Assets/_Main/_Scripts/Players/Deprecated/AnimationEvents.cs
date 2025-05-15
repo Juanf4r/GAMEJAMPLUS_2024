@@ -16,6 +16,12 @@ namespace _Scripts.Players.Deprecated
             playerAnimator = GetComponent<Animator>();
             playerSoundManager = GetComponentInParent<PlayerSoundManager>();
         }
+
+        public void PlaySoundPunch()
+        {
+            playerSoundManager.PlayPunch();
+        }
+
         public void StopPunch()
         {
             playerAnimator.SetBool(Golpe, false);
@@ -29,26 +35,6 @@ namespace _Scripts.Players.Deprecated
         public void StopEating()
         {
             playerAnimator.SetBool(Eating, false);
-        }
-
-        public void StopMovingPlayer1()
-        {
-            
-        }
-
-        public void ContinueMovingPlayer1()
-        {
-            
-        }
-
-        public void StopMovingPlayer2()
-        {
-            
-        }
-
-        public void ContinueMovingPlayer2()
-        {
-            
         }
     }
 }
