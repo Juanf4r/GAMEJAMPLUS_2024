@@ -35,6 +35,7 @@ namespace _Scripts.PowerUps
             component.UpdateStoredPowerUp(powerUpType);
             MinimapController.instance.RemoveElementAtRuntime(this.transform);
             gameObject.SetActive(false);
+            AnimationToImagePU.Instance.SelectPO(powerUpType, component.isPlayerOne);
         }
     }
 }

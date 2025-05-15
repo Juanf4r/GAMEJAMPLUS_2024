@@ -72,6 +72,7 @@ namespace _Scripts.Players
                     HandleTeleport();
                     _playerConfig.ApplyBuff("speed", powerUp.speed);
                     _playerConfig.ApplyBuff("strength", powerUp.strength);
+                    
                     break;
                 case PowerUpType.Movement:
                     _playerConfig.ApplyBuff("speed", powerUp.speed);
@@ -86,6 +87,7 @@ namespace _Scripts.Players
                     {
                         StartCoroutine(SmoothZoomOutCameras(2));
                     }
+
                     break;
                 case PowerUpType.Strength:
                 
@@ -101,6 +103,7 @@ namespace _Scripts.Players
                     
                     _playerConfig.ApplyBuff("speed", powerUp.speed);
                     _playerConfig.ApplyBuff("strength", powerUp.strength);
+
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
