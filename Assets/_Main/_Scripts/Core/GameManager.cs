@@ -319,7 +319,7 @@ namespace Core
             //Start ExtraRound
             timeOver = true;
             InGameUIManager.Instance.timeLeftText.text = "";
-                
+            PowerUp();
             refPlayer1.transform.localPosition = spawn1.transform.localPosition;
             refPlayer2.transform.localPosition = spawn2.transform.localPosition;
             PowerUp();
