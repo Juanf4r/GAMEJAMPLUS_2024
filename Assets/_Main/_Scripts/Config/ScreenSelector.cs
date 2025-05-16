@@ -1,14 +1,14 @@
-using System.Collections.Generic;
+using TMPro;
 using Settings;
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections.Generic;
 
 namespace _Main._Scripts.Config
 {
     public class ScreenSelector : MonoBehaviour
     {
-        public Dropdown screenDropdown;
-        public Dropdown fullscreenDropdown; 
+        public TMP_Dropdown screenDropdown;
+        public TMP_Dropdown fullscreenDropdown; 
 
         private List<DisplayInfo> displays = new List<DisplayInfo>();
 
