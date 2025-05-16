@@ -324,7 +324,7 @@ namespace Core
             PowerUp();
             refPlayer1.transform.localPosition = spawn1.transform.localPosition;
             refPlayer2.transform.localPosition = spawn2.transform.localPosition;
-            PowerUp();
+            //PowerUp();
             StartCoroutine(CountdownExtraRound());
             _gameSeconds += 100;
 
@@ -477,7 +477,7 @@ namespace Core
             {
                 Debug.LogError("No se encontró el componente LocalizeStringEvent en countdownText.");
             }
-            _gameSeconds = 91f;
+            _gameSeconds = 11f;
             
             yield return new WaitForSeconds(.5f);
             
