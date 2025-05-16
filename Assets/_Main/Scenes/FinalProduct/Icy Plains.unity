@@ -8501,6 +8501,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1097597641}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109952353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2490480654325177239, guid: 90e4a522428d28a49ba6e5a0637e6239,
+    type: 3}
+  m_PrefabInstance: {fileID: 1641203534}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4818c0afcbacf614c831f57591fa6dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1141397702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13154,6 +13166,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400408466750686226, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1109952353}
+    - target: {fileID: 4400408466750686226, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToogleScreenMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400408466750686226, guid: 90e4a522428d28a49ba6e5a0637e6239,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI.InGameUIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4562326730359582445, guid: 90e4a522428d28a49ba6e5a0637e6239,
         type: 3}

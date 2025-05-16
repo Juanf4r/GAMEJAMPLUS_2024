@@ -117,7 +117,7 @@ namespace Core
         private void Start()
         {
             Time.timeScale = 1;
-            
+
             timeOver = false;
             meatsOfPlayer1 = 0;
             meatsOfPlayer2 = 0;
@@ -130,6 +130,7 @@ namespace Core
 
             startGameAction?.Invoke();
             MusicManager.Instance.PlayInGameMusic();
+            
         }
 
         private void FixedUpdate()
@@ -278,6 +279,7 @@ namespace Core
 
             InGameUIManager.Instance.containerTimeLeft.SetActive(false);
             MusicManager.Instance.PlayInGameMusicGameOver();
+            MusicManager.Instance.SetVelocity(1f);
             StartCoroutine(FinishGame(5f));
             _player1.canMove = false;
             _player2.canMove = false;

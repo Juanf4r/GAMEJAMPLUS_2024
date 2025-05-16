@@ -9,7 +9,7 @@ using UnityEngine.UI;
 namespace UI
 {
     public class MainMenuManager : MonoBehaviour
-    {   
+    {
         [SerializeField] private Animator mainMenuAnimator;
 
         [SerializeField] private Slider sfxSlider;
@@ -31,6 +31,16 @@ namespace UI
             GetConfigValues();
             ChangeLocale(config.settings.localeID);
             MusicManager.Instance.PlayMainMenuMusic();
+
+            MusicManager.Instance.SetVelocity(1f);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.F11))
+            {
+                ToogleScreenMode();
+            }
         }
 
 
@@ -57,7 +67,7 @@ namespace UI
             MusicManager.UpdateMusicVolume();
             ConfigManager.SaveConfig(config);
         }
-        
+
         #region UILogic
 
         public void UIMainMenu()
@@ -81,7 +91,7 @@ namespace UI
         }
 
         public void UISettings()
-        {   
+        {
             mainMenuAnimator.SetTrigger("Settings");
         }
 
@@ -117,7 +127,7 @@ namespace UI
 
         public void ChangeLocale(int localeID)
         {
-            if(_active)
+            if (_active)
             {
                 return;
             }
@@ -126,13 +136,16 @@ namespace UI
 
         private IEnumerator SetLocale(int localeID)
         {
-            switch(localeID)
+            switch (localeID)
             {
-                case 0: mainMenuAnimator.SetTrigger("English");
+                case 0:
+                    mainMenuAnimator.SetTrigger("English");
                     break;
-                case 1: mainMenuAnimator.SetTrigger("Spanish");
+                case 1:
+                    mainMenuAnimator.SetTrigger("Spanish");
                     break;
-                case 2: mainMenuAnimator.SetTrigger("Portuguese");
+                case 2:
+                    mainMenuAnimator.SetTrigger("Portuguese");
                     break;
             }
 
@@ -145,6 +158,11 @@ namespace UI
         }
 
         #endregion
+        
+        public void ToogleScreenMode()
+        {
+            Screen.fullScreen = !Screen.fullScreen;
+        }
     }
 }
 

@@ -13,7 +13,7 @@ namespace UI
 {
     public class InGameUIManager : MonoBehaviour
     {
-        public static InGameUIManager Instance { get; private set;}
+        public static InGameUIManager Instance { get; private set; }
 
         [SerializeField] private Animator gameplayCanvasAnimator;
 
@@ -65,7 +65,7 @@ namespace UI
         [SerializeField] private Button portugueseLanguageButton;
         [SerializeField] private Slider sfxSlider;
         [SerializeField] private Slider musicSlider;
-        
+
         [Space]
 
         [Header("UI Meats")]
@@ -106,7 +106,7 @@ namespace UI
         }
 
         private void OnDisable()
-        {         
+        {
             RemoveListenerOnButtons();
 
             PlayerManager.OnPowerUpUpdated -= UpdateImage;
@@ -123,8 +123,16 @@ namespace UI
             musicSlider.value = config.settings.musicvolume;
             extraRoundPanel.SetActive(false);
 
-            gameplayCanvasAnimator.updateMode = AnimatorUpdateMode.UnscaledTime; 
+            gameplayCanvasAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
             finishGamePanel.SetActive(false);
+        }
+
+        private void Update()
+        {   
+            if (Input.GetKeyDown(KeyCode.F11))
+            {
+                ToogleScreenMode();
+            }
         }
 
         public void AddListenerOnButtons()
@@ -144,7 +152,7 @@ namespace UI
             spanishLanguageButton.onClick.AddListener(() => ChangeLocale(1));
             portugueseLanguageButton.onClick.AddListener(() => ChangeLocale(2));
             sfxSlider.onValueChanged.AddListener(UpdateSFX);
-            musicSlider.onValueChanged.AddListener( UpdateMusic);
+            musicSlider.onValueChanged.AddListener(UpdateMusic);
 
             //Finish Game
             playAgainButton.onClick.AddListener(PlayAgainMap);
@@ -190,7 +198,8 @@ namespace UI
             CountImageMeattP2.sprite = meatsPlayers[0];
         }
 
-        public void StartGoldMeatUI(){
+        public void StartGoldMeatUI()
+        {
             CountImageMeattP1.sprite = goldenMeatVoid;
             CountImageMeattP2.sprite = goldenMeatVoid;
         }
@@ -226,7 +235,7 @@ namespace UI
             MusicManager.UpdateMusicVolume();
             ConfigManager.SaveConfig(config);
         }
-        
+
         private void PlayAgainMap()
         {
             Scene currentScene = SceneManager.GetActiveScene();
@@ -240,7 +249,7 @@ namespace UI
 
         public void PauseGame(bool pauseState, bool UIPressed)
         {
-            if(UIPressed)
+            if (UIPressed)
             {
                 pauseState = false;
                 isPaused = pauseState;
@@ -263,7 +272,7 @@ namespace UI
 
         private void HidePause()
         {
-            for(int i = 0; i < panels.Length; i++)
+            for (int i = 0; i < panels.Length; i++)
             {
                 panels[i].SetActive(false);
             }
@@ -273,24 +282,24 @@ namespace UI
 
         private void ShowPause(bool isBackButton)
         {
-            if(isBackButton)
+            if (isBackButton)
             {
                 gameplayCanvasAnimator.SetTrigger("Pause");
             }
 
-            for(int i = 0; i < panels.Length; i++)
+            for (int i = 0; i < panels.Length; i++)
             {
                 panels[i].SetActive(true);
             }
         }
 
         private void ShowControls()
-        {   
+        {
             gameplayCanvasAnimator.SetTrigger("Controls");
         }
 
         private void ShowSettings()
-        {   
+        {
             gameplayCanvasAnimator.SetTrigger("Settings");
         }
 
@@ -318,10 +327,10 @@ namespace UI
         #endregion
 
         #region Localization
-        
+
         public void ChangeLocale(int localeID)
         {
-            if(_active)
+            if (_active)
             {
                 return;
             }
@@ -339,5 +348,10 @@ namespace UI
         }
 
         #endregion
+        
+        public void ToogleScreenMode()
+        {
+            Screen.fullScreen = !Screen.fullScreen;
+        }
     }
 }
