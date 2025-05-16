@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accelerationTime: 0.12
   speed: 4.75
-  strength: 4
+  strength: 3.5
   invincibilityTime: 2
   playerAnimator: {fileID: 9100000, guid: 06059cfd101705449b451da4da6f49c7, type: 2}
   terrainLayer:
