@@ -35,10 +35,12 @@ namespace _Scripts.Players
             if (other.gameObject.GetComponent<PlayerManager>().isPlayerOne)
             {
                 GameManager.Instance.CheckPlayer1Meat();
+                other.gameObject.GetComponent<PlayerManager>().playerInput = Vector2.zero;
             }
             else
             {
                 GameManager.Instance.CheckPlayer2Meat();
+                other.gameObject.GetComponent<PlayerManager>().playerInput = Vector2.zero;
             }
             SoundFXChannel.PlaySoundFxClip(eatClips, transform.position, .6f);
             GameManager.Instance.LocateMeat();
