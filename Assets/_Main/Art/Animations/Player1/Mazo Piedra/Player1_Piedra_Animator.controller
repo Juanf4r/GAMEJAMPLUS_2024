@@ -862,12 +862,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Eating
     m_EventTreshold: 0
-  - m_ConditionMode: 3
-    m_ConditionEvent: Movimiento
-    m_EventTreshold: 0
-  - m_ConditionMode: 4
-    m_ConditionEvent: Movimiento
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1789655655117661027}
   m_Solo: 0
