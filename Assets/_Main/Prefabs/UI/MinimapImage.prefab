@@ -98,5 +98,13 @@ MonoBehaviour:
   elements:
   - TargetTransform: {fileID: 0}
     IconSprite: {fileID: -645797201, guid: c3b8c07bb4c93fc4ab75fe2c18de3b40, type: 3}
+    BaseSize: {x: 20, y: 20}
+    ScaleWithMap: 0
+    ScaleFactor: 0.05
+    PreserveAspect: 1
   - TargetTransform: {fileID: 0}
     IconSprite: {fileID: 21300000, guid: 2c8bfd9ad1985e845acaff26c4f067e6, type: 3}
+    BaseSize: {x: 20, y: 20}
+    ScaleWithMap: 0
+    ScaleFactor: 0.05
+    PreserveAspect: 1

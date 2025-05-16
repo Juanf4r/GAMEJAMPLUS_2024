@@ -202,6 +202,14 @@ MonoBehaviour:
     m_Localized: SELECCIONAR VENTANA
     m_Metadata:
       m_Items: []
+  - m_Id: 47
+    m_Localized: CAMBIAR A PANTALLA COMPLETA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: APLICAR
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

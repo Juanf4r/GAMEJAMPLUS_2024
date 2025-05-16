@@ -1775,12 +1775,6 @@ SpriteRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 1197279122}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1827766216 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4129466686698144826, guid: b9b7d8e25312d9a42aba637fb36d3148,
-    type: 3}
-  m_PrefabInstance: {fileID: 2553519656905452205}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1846638926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,7 +2125,7 @@ PrefabInstance:
         type: 3}
       propertyPath: winAudioSource
       value: 
-      objectReference: {fileID: 1827766216}
+      objectReference: {fileID: 0}
     - target: {fileID: 6669681067730853375, guid: b9b7d8e25312d9a42aba637fb36d3148,
         type: 3}
       propertyPath: cryingAudioClip

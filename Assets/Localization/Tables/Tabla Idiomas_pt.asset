@@ -202,6 +202,14 @@ MonoBehaviour:
     m_Localized: SELECIONAR JANELA
     m_Metadata:
       m_Items: []
+  - m_Id: 47
+    m_Localized: ALTERAR PARA TELA CHEIA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: APLICAR
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
