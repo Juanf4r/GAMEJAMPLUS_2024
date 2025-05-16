@@ -531,6 +531,9 @@ namespace Core
         {
             yield return new WaitForSeconds(time);
             InGameUIManager.Instance.finishGamePanel.SetActive(true);
+            _player1.canMove = false;
+            _player2.canMove = false;
+            _inputPlayers.Disable();
         }
 
         private IEnumerator AddGameSeconds()
