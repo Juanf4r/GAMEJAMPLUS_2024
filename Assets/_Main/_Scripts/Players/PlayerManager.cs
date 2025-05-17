@@ -93,7 +93,6 @@ namespace _Scripts.Players
             if(!storedPowerUp || !canMove) return;
             playerSoundManager.PlayPowerUp(storedPowerUp);
             playerActions.ActivatePowerUp(storedPowerUp);
-            storedPowerUp = null;
         }
 
         private void HandlePunch()
@@ -133,6 +132,7 @@ namespace _Scripts.Players
         //Public methods
         public void UpdateStoredPowerUp(PowerUpSo newPowerUp)
         {
+            if (storedPowerUp != null) return;
             OnPowerUpUpdated?.Invoke(newPowerUp, isPlayerOne ? 1 : 2);
             playerSoundManager.PlayPickup();
             storedPowerUp = newPowerUp;

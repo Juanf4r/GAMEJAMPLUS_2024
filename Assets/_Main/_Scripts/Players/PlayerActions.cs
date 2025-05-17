@@ -134,6 +134,8 @@ namespace _Scripts.Players
             yield return new WaitForSeconds(timer);
             Debug.Log($"PowerUp has expired");
 
+            _playerManager.storedPowerUp = null;
+
             childObject.gameObject.SetActive(false);
             particle.Stop();
 

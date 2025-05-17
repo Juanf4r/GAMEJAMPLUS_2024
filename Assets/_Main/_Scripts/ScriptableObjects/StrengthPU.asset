@@ -17,6 +17,6 @@ MonoBehaviour:
   alphaTexture: {fileID: 21300000, guid: 438e82baf12e55f4896998f88efbe92c, type: 3}
   powerUpAnimator: {fileID: 3980703203610211442, guid: b91ab541da57d2d4abf1f6a85a354eea,
     type: 3}
-  speed: 4.75
+  speed: 5
   duration: 6
   strength: 6.5

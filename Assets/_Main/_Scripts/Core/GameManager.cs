@@ -477,7 +477,7 @@ namespace Core
             {
                 Debug.LogError("No se encontró el componente LocalizeStringEvent en countdownText.");
             }
-            _gameSeconds = 11f;
+            _gameSeconds = 91f;
             
             yield return new WaitForSeconds(.5f);
             

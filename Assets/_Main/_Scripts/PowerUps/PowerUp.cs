@@ -32,6 +32,8 @@ namespace _Scripts.PowerUps
         {
             if (!other.CompareTag("Player")) return;
             var component = other.GetComponent<PlayerManager>();
+
+            if (component.storedPowerUp != null) return;
             component.UpdateStoredPowerUp(powerUpType);
             MinimapController.instance.RemoveElementAtRuntime(this.transform);
             gameObject.SetActive(false);
