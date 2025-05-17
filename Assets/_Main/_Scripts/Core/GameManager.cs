@@ -403,7 +403,7 @@ namespace Core
                 {
                     TargetTransform = powerUpInstance.transform,
                     IconSprite = powerUpInstance.GetComponent<PowerUp>().powerUpType.buffSprite,
-                    BaseSize = new Vector2(15, 15), // Smaller size for power-ups
+                    BaseSize = new Vector2(40, 40), // Smaller size for power-ups
                     ScaleWithMap = false,
                     PreserveAspect = true
                 };
