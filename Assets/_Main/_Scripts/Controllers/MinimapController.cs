@@ -43,14 +43,42 @@ namespace Assets.Minimap
                 }
             }
         }
+
+        public void RemoveAllElements()
+        {
+            // Ensure at least two elements exist
+            if (elements.Count < 2) return;
+
+            // Keep references to the first two elements
+            var keepList = new List<MinimapElementData> { elements[0], elements[1] };
+            var keepTransforms = new HashSet<Transform> { elements[0].TargetTransform, elements[1].TargetTransform };
+
+            // Destroy minimap icons that aren't part of the first two
+            foreach (Transform child in minimapRect)
+            {
+                var element = child.GetComponent<MinimapElement>();
+                if (element != null && !keepTransforms.Contains(element.GetTargetTransform()))
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+
+            // Update the elements list to only keep the first two
+            elements = keepList;
+
+            Debug.Log("Removed all minimap elements except the first two.");
+        }
+
         public void RemoveMinimapElement(Transform targetTransform)
         {
-            elements.RemoveAll(e => e.TargetTransform == targetTransform);
+            elements.RemoveAll(e => e.TargetTransform == targetTransform );
+
             foreach (Transform child in minimapRect)
             {
                 var element = child.GetComponent<MinimapElement>();
                 if (element != null && element.GetTargetTransform() == targetTransform)
                 {
+                    Debug.Log($"Remove {element.name}");
                     Destroy(child.gameObject);
                     return; 
                 }
@@ -144,6 +172,8 @@ namespace Assets.Minimap
             rectTransform = GetComponent<RectTransform>(); 
 
         }
+
+
 
         private void Update()
         {

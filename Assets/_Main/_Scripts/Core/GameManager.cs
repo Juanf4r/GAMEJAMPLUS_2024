@@ -417,6 +417,7 @@ namespace Core
 
         private void CleanPowerUp()
         {
+            MinimapController.instance.RemoveAllElements();
             foreach (var powerUp in powerUpInstances)
             {
                 if (powerUp)
@@ -424,6 +425,7 @@ namespace Core
                     Destroy(powerUp);
                 }
             }
+            MinimapController.instance.RemoveAllElements();
             powerUpInstances.Clear();
         }
 
